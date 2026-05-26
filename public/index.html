@@ -7,290 +7,319 @@
   <meta name="description" content="Kelly Mello — Senior Product Manager with 15+ years in healthcare AI, omnichannel platforms, and member self-service products." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --ac: #185FA5; --acs: #E6F1FB; --act: #0C447C;
-      --te: #1D9E75; --tes: #E1F5EE; --tet: #085041;
-      --go: #EF9F27; --gos: #FAEEDA; --got: #633806;
-      --co: #D85A30; --cos: #FAECE7; --cot: #712B13;
-      --pu: #534AB7; --pus: #EEEDFE; --put: #3C3489;
-      --bd: #E5E7EB; --bd2: #D1D5DB;
-      --bg: #FFFFFF; --bg2: #F9FAFB;
-      --tx: #111827; --mu: #6B7280;
-      --r: 12px; --rm: 8px;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --navy: #0D1117;
+      --navy2: #111827;
+      --navy3: #1A2235;
+      --border: #1E2A3A;
+      --border2: #2A3A50;
+      --gold: #C9A84C;
+      --gold-soft: #C9A84C18;
+      --gold-text: #E8C96A;
+      --text: #E8E4D9;
+      --text2: #A8A39A;
+      --text3: #6B7280;
+      --teal: #1D9E75;
+      --teal-soft: #1D9E7518;
+      --coral: #D85A30;
+      --coral-soft: #D85A3018;
+      --r: 4px;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bd: #374151; --bd2: #4B5563;
-        --bg: #111827; --bg2: #1F2937;
-        --tx: #F9FAFB; --mu: #9CA3AF;
-        --acs: #1E3A5F; --act: #93C5FD;
-        --tes: #064E3B; --tet: #6EE7B7;
-        --gos: #451A03; --got: #FCD34D;
-        --cos: #450A0A; --cot: #FCA5A5;
-        --pus: #2E1065; --put: #C4B5FD;
-      }
-    }
-    html { font-family: var(--font); font-size: 14px; }
-    body { background: var(--bg); color: var(--tx); min-height: 100vh; }
+    html { font-family: var(--sans); font-size: 14px; }
+    body { background: var(--navy); color: var(--text); min-height: 100vh; }
 
-    nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 0.5px solid var(--bd); background: var(--bg); position: sticky; top: 0; z-index: 100; }
-    .brand { display: flex; align-items: center; gap: 9px; }
-    .bdot { width: 8px; height: 8px; border-radius: 50%; background: var(--ac); }
-    .bname { font-size: 14px; font-weight: 500; color: var(--tx); }
-    .brole { font-size: 11px; color: var(--mu); }
-    .nlinks { display: flex; gap: 2px; flex-wrap: wrap; }
-    .nl { padding: 5px 10px; border-radius: 20px; font-size: 12px; color: var(--mu); cursor: pointer; border: none; background: none; transition: all 0.12s; white-space: nowrap; font-family: var(--font); }
-    .nl:hover, .nl.active { background: var(--acs); color: var(--act); }
+    /* NAV */
+    nav { background: var(--navy); border-bottom: 0.5px solid var(--border); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; position: sticky; top: 0; z-index: 100; }
+    .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .brand-mark { width: 30px; height: 30px; border: 1.5px solid var(--gold); border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--gold); font-family: var(--serif); letter-spacing: 0.5px; }
+    .brand-name { font-size: 13px; color: var(--text); font-family: var(--sans); }
+    .brand-role { font-size: 10px; color: var(--text3); letter-spacing: 0.5px; text-transform: uppercase; }
+    .navlinks { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .navlinks::-webkit-scrollbar { display: none; }
+    .nl { padding: 5px 11px; border-radius: 20px; font-size: 11px; color: var(--text3); cursor: pointer; border: none; background: none; transition: all 0.12s; white-space: nowrap; font-family: var(--sans); letter-spacing: 0.2px; }
+    .nl:hover { color: var(--text); }
+    .nl.active { color: var(--gold); background: var(--gold-soft); }
 
+    /* SECTIONS */
     .sec { display: none; } .sec.active { display: block; }
-    .pad { padding: 18px 20px; }
-    .stitle { font-size: 17px; font-weight: 600; color: var(--tx); margin-bottom: 3px; }
-    .ssub { font-size: 12px; color: var(--mu); margin-bottom: 14px; }
+    .pad { padding: 24px 20px; }
+    .stitle { font-size: 22px; font-weight: 400; color: var(--text); font-family: var(--serif); letter-spacing: -0.3px; margin-bottom: 4px; }
+    .ssub { font-size: 11px; color: var(--text3); margin-bottom: 16px; letter-spacing: 0.2px; }
 
-    textarea, select, input[type=text] { width: 100%; font-family: var(--font); font-size: 12px; color: var(--tx); background: var(--bg2); }
-    textarea { resize: none; padding: 8px 10px; border-radius: var(--rm); border: 0.5px solid var(--bd2); line-height: 1.5; }
-    select { padding: 7px 10px; border-radius: var(--rm); border: 0.5px solid var(--bd2); height: 34px; }
-    input[type=text] { padding: 7px 10px; border-radius: var(--rm); border: 0.5px solid var(--bd2); }
-    .fl { font-size: 10px; font-weight: 500; color: var(--mu); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+    /* FORMS */
+    textarea, select, input[type=text] { width: 100%; font-family: var(--sans); font-size: 12px; color: var(--text); background: var(--navy2); border: 0.5px solid var(--border2); border-radius: var(--r); }
+    textarea { resize: none; padding: 9px 11px; line-height: 1.55; }
+    select { padding: 7px 10px; height: 34px; }
+    input[type=text] { padding: 7px 10px; }
+    .fl { font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
     .fr { margin-bottom: 10px; }
     .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
     .chips { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
-    .chip { padding: 3px 10px; border-radius: 20px; font-size: 11px; border: 0.5px solid var(--bd); background: none; cursor: pointer; color: var(--mu); font-family: var(--font); }
-    .chip:hover { border-color: var(--ac); color: var(--ac); }
-    .card { background: var(--bg); border: 0.5px solid var(--bd); border-radius: var(--r); padding: 14px 16px; margin-bottom: 10px; }
-    .badge { font-size: 10px; padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
-    .tb { background: var(--tes); color: var(--tet); }
-    .bb { background: var(--acs); color: var(--act); }
-    .gb { background: var(--gos); color: var(--got); }
-    .run-btn { padding: 8px 16px; border-radius: var(--rm); color: white; border: none; cursor: pointer; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; transition: opacity 0.15s; font-family: var(--font); }
-    .run-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .chip { padding: 3px 10px; border-radius: 20px; font-size: 11px; border: 0.5px solid var(--border2); background: none; cursor: pointer; color: var(--text3); font-family: var(--sans); transition: all 0.12s; }
+    .chip:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* CARDS */
+    .card { background: var(--navy2); border: 0.5px solid var(--border); border-radius: var(--r); padding: 16px 18px; margin-bottom: 10px; }
+    .badge { font-size: 10px; padding: 2px 8px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.4px; }
+    .badge-gold { background: var(--gold-soft); color: var(--gold); border: 0.5px solid var(--gold)44; }
+    .badge-teal { background: var(--teal-soft); color: var(--teal); border: 0.5px solid var(--teal)44; }
+    .badge-coral { background: var(--coral-soft); color: var(--coral); border: 0.5px solid var(--coral)44; }
+
+    /* BUTTONS */
+    .run-btn { padding: 8px 18px; border-radius: var(--r); color: var(--navy); border: none; cursor: pointer; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; transition: opacity 0.15s; font-family: var(--sans); background: var(--gold); letter-spacing: 0.2px; }
+    .run-btn:disabled { opacity: 0.4; cursor: not-allowed; }
     .run-btn:hover:not(:disabled) { opacity: 0.88; }
-    .btn-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
-    .tnote { font-size: 10px; color: var(--mu); display: flex; align-items: center; gap: 3px; }
-    .status { display: none; align-items: center; gap: 6px; padding: 8px 0; font-size: 11px; color: var(--mu); }
-    .dots span { display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: var(--mu); margin: 0 1px; animation: bd 0.9s infinite; }
-    .dots span:nth-child(2) { animation-delay: .15s; }
-    .dots span:nth-child(3) { animation-delay: .3s; }
+    .btn-row { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+    .tnote { font-size: 10px; color: var(--text3); display: flex; align-items: center; gap: 3px; }
+    .status { display: none; align-items: center; gap: 7px; padding: 8px 0; font-size: 11px; color: var(--text3); }
+    .dots span { display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: var(--gold); margin: 0 1px; animation: bd 0.9s infinite; }
+    .dots span:nth-child(2) { animation-delay: .15s; } .dots span:nth-child(3) { animation-delay: .3s; }
     @keyframes bd { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
-    .ocard { display: none; margin-top: 12px; border: 0.5px solid var(--bd); border-radius: var(--r); overflow: hidden; }
-    .ohdr { padding: 8px 12px; background: var(--bg2); border-bottom: 0.5px solid var(--bd); display: flex; align-items: center; justify-content: space-between; }
-    .olbl { font-size: 10px; font-weight: 500; color: var(--mu); text-transform: uppercase; letter-spacing: 0.4px; }
-    .oacts { display: flex; gap: 4px; }
-    .ab { padding: 3px 8px; border-radius: var(--rm); border: 0.5px solid var(--bd2); background: none; cursor: pointer; font-size: 10px; color: var(--mu); font-family: var(--font); }
-    .ab:hover { background: var(--bg2); color: var(--tx); }
-    .obody { padding: 12px; font-size: 12px; color: var(--tx); line-height: 1.7; white-space: pre-wrap; max-height: 340px; overflow-y: auto; }
+    .act-btn { padding: 5px 11px; border-radius: var(--r); border: 0.5px solid var(--border2); background: none; cursor: pointer; font-size: 10px; color: var(--text3); font-family: var(--sans); transition: all 0.12s; }
+    .act-btn:hover { border-color: var(--gold); color: var(--gold); }
     .acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
-    .act-btn { padding: 5px 10px; border-radius: var(--rm); border: 0.5px solid var(--bd2); background: none; cursor: pointer; font-size: 10px; color: var(--mu); font-family: var(--font); }
-    .act-btn:hover { background: var(--bg2); color: var(--tx); }
+    .ab { padding: 3px 9px; border-radius: var(--r); border: 0.5px solid var(--border2); background: none; cursor: pointer; font-size: 10px; color: var(--text3); font-family: var(--sans); }
+    .ab:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* OUTPUT CARDS */
+    .ocard { display: none; margin-top: 12px; border: 0.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .ohdr { padding: 9px 13px; background: var(--navy3); border-bottom: 0.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .olbl { font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
+    .oacts { display: flex; gap: 4px; }
+    .obody { padding: 14px; font-size: 12px; color: var(--text2); line-height: 1.75; white-space: pre-wrap; max-height: 360px; overflow-y: auto; }
 
     /* HERO */
-    .hero { padding: 32px 20px 24px; border-bottom: 0.5px solid var(--bd); }
-    .htag { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; background: var(--acs); color: var(--act); padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
-    .hero h1 { font-size: 26px; font-weight: 600; line-height: 1.2; margin-bottom: 10px; }
-    .hero h1 em { font-style: normal; color: var(--ac); }
-    .hsub { font-size: 14px; color: var(--mu); line-height: 1.65; max-width: 560px; margin-bottom: 16px; }
-    .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
-    .pill { padding: 4px 11px; border-radius: 20px; font-size: 11px; background: var(--bg2); border: 0.5px solid var(--bd); color: var(--tx); }
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-    .stat { background: var(--bg2); border-radius: var(--rm); padding: 14px; text-align: center; }
-    .stn { font-size: 22px; font-weight: 600; color: var(--ac); }
-    .stl { font-size: 11px; color: var(--mu); margin-top: 2px; line-height: 1.35; }
-    .ncards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 16px 20px; }
-    .nc { background: var(--bg); border: 0.5px solid var(--bd); border-radius: var(--r); padding: 14px 16px; cursor: pointer; transition: border-color 0.15s; }
-    .nc:hover { border-color: var(--ac); }
-    .nc-ico { font-size: 20px; margin-bottom: 8px; }
-    .nc-t { font-size: 13px; font-weight: 500; color: var(--tx); }
-    .nc-s { font-size: 11px; color: var(--mu); margin-top: 3px; line-height: 1.4; }
-    .nc.soon { opacity: 0.5; cursor: default; }
-    .nc.soon:hover { border-color: var(--bd); }
+    .hero { padding: 48px 20px 36px; border-bottom: 0.5px solid var(--border); }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .eyebrow-line { width: 28px; height: 1px; background: var(--gold); }
+    .eyebrow-text { font-size: 10px; color: var(--gold); letter-spacing: 1.8px; text-transform: uppercase; }
+    .hero h1 { font-size: 36px; font-weight: 400; line-height: 1.18; color: var(--text); font-family: var(--serif); letter-spacing: -0.5px; margin-bottom: 16px; }
+    .hero h1 em { font-style: italic; color: var(--gold-text); }
+    .hero-sub { font-size: 13px; color: var(--text3); line-height: 1.75; max-width: 500px; margin-bottom: 24px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 32px; }
+    .pill { padding: 4px 12px; border-radius: 2px; font-size: 11px; color: var(--text3); border: 0.5px solid var(--border2); letter-spacing: 0.2px; }
+    .pill.hi { border-color: var(--gold)55; color: var(--gold); background: var(--gold-soft); }
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border-top: 0.5px solid var(--border); }
+    .stat { padding: 20px 16px; border-right: 0.5px solid var(--border); }
+    .stat:last-child { border-right: none; }
+    .stat-n { font-size: 28px; font-weight: 400; color: var(--gold-text); font-family: var(--serif); letter-spacing: -0.5px; line-height: 1; }
+    .stat-l { font-size: 10px; color: var(--text3); margin-top: 4px; letter-spacing: 0.4px; text-transform: uppercase; line-height: 1.4; }
 
-    /* CASES */
-    .chead { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 9px; }
-    .ct { font-size: 14px; font-weight: 500; color: var(--tx); }
-    .cs2 { font-size: 11px; color: var(--mu); margin-top: 2px; }
-    .cbody { font-size: 12px; color: var(--mu); line-height: 1.65; margin-bottom: 11px; }
+    /* NAV CARDS */
+    .ncards { display: grid; grid-template-columns: repeat(3,1fr); border-bottom: 0.5px solid var(--border); }
+    .nc { padding: 18px 20px; border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); cursor: pointer; transition: background 0.12s; }
+    .nc:hover { background: var(--navy3); }
+    .nc:nth-child(3n) { border-right: none; }
+    .nc:nth-child(4), .nc:nth-child(5), .nc:nth-child(6) { border-bottom: none; }
+    .nc.soon { opacity: 0.35; cursor: default; }
+    .nc.soon:hover { background: transparent; }
+    .nc-ico { font-size: 17px; color: var(--gold); margin-bottom: 9px; opacity: 0.8; }
+    .nc-t { font-size: 12px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+    .nc-s { font-size: 11px; color: var(--text3); line-height: 1.45; }
+
+    /* SECTION HEADER */
+    .sec-hdr { display: flex; align-items: baseline; gap: 14px; margin-bottom: 20px; }
+    .sec-rule { flex: 1; height: 0.5px; background: var(--border); }
+    .sec-count { font-size: 10px; color: var(--text3); letter-spacing: 0.5px; text-transform: uppercase; }
+
+    /* CASE STUDIES */
+    .case-card { background: var(--navy2); border: 0.5px solid var(--border); border-radius: var(--r); padding: 18px 20px; margin-bottom: 8px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; transition: border-color 0.12s; }
+    .case-card:hover { border-color: var(--gold)55; }
+    .case-tag { font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+    .case-title { font-size: 14px; font-weight: 400; color: var(--text); line-height: 1.4; font-family: var(--serif); margin-bottom: 5px; }
+    .case-co { font-size: 11px; color: var(--text3); }
+    .case-body { font-size: 12px; color: var(--text3); line-height: 1.7; margin: 10px 0 12px; }
+    .case-metric { text-align: right; flex-shrink: 0; }
+    .metric-n { font-size: 26px; font-weight: 400; color: var(--gold-text); font-family: var(--serif); line-height: 1; }
+    .metric-l { font-size: 9px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
     .mets { display: flex; gap: 14px; flex-wrap: wrap; }
-    .met { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--mu); }
-    .met strong { color: var(--tx); font-size: 12px; }
+    .met { display: flex; align-items: center; gap: 4px; font-size: 11px; color: var(--text3); }
+    .met strong { color: var(--text2); }
 
     /* PERSONAS */
-    .ptabs { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
-    .ptab { padding: 5px 12px; border-radius: 20px; font-size: 11px; border: 0.5px solid var(--bd); background: none; cursor: pointer; color: var(--tx); font-family: var(--font); }
-    .ptab.active { background: var(--ac); color: white; border-color: var(--ac); }
+    .ptabs { display: flex; gap: 5px; margin-bottom: 14px; flex-wrap: wrap; }
+    .ptab { padding: 5px 13px; border-radius: 2px; font-size: 11px; border: 0.5px solid var(--border2); background: none; cursor: pointer; color: var(--text3); font-family: var(--sans); transition: all 0.12s; }
+    .ptab.active { background: var(--gold-soft); color: var(--gold); border-color: var(--gold)44; }
     .pc { display: none; } .pc.active { display: block; }
     .phead { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-    .pav { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; flex-shrink: 0; }
-    .pname { font-size: 14px; font-weight: 500; color: var(--tx); }
-    .prole { font-size: 11px; color: var(--mu); margin-top: 2px; }
+    .pav { width: 42px; height: 42px; border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
+    .pname { font-size: 14px; font-weight: 400; color: var(--text); font-family: var(--serif); }
+    .prole { font-size: 11px; color: var(--text3); margin-top: 2px; }
     .pbadges { display: flex; gap: 4px; margin-top: 5px; flex-wrap: wrap; }
-    .pb { font-size: 10px; padding: 2px 7px; border-radius: 20px; background: var(--bg2); border: 0.5px solid var(--bd); color: var(--mu); }
-    .quote { padding: 10px 13px; margin-bottom: 12px; border-left: 3px solid var(--ac); background: var(--acs); font-size: 12px; font-style: italic; color: var(--act); line-height: 1.55; }
+    .pb { font-size: 10px; padding: 2px 8px; border-radius: 2px; background: var(--navy3); border: 0.5px solid var(--border); color: var(--text3); }
+    .quote { padding: 11px 14px; margin-bottom: 14px; border-left: 2px solid var(--gold); background: var(--gold-soft); font-size: 12px; font-style: italic; color: var(--gold-text); line-height: 1.6; font-family: var(--serif); }
     .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .pcell { background: var(--bg2); border-radius: var(--rm); padding: 11px 13px; }
-    .plbl { font-size: 10px; font-weight: 500; color: var(--mu); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 7px; }
+    .pcell { background: var(--navy3); border-radius: var(--r); padding: 12px 14px; border: 0.5px solid var(--border); }
+    .plbl { font-size: 9px; font-weight: 500; color: var(--gold); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
     .plist { list-style: none; }
-    .plist li { font-size: 12px; color: var(--tx); padding: 2px 0; display: flex; gap: 5px; line-height: 1.4; }
-    .plist li::before { content: "–"; color: var(--mu); flex-shrink: 0; }
+    .plist li { font-size: 12px; color: var(--text2); padding: 2px 0; display: flex; gap: 6px; line-height: 1.45; }
+    .plist li::before { content: "—"; color: var(--text3); flex-shrink: 0; font-size: 10px; margin-top: 2px; }
 
     /* JOURNEY */
-    .jg { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 12px; }
+    .jg { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; margin-bottom: 14px; }
     .js { text-align: center; }
-    .jl { font-size: 9px; font-weight: 500; color: var(--mu); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px; }
-    .ji { width: 32px; height: 32px; border-radius: 50%; margin: 0 auto 7px; display: flex; align-items: center; justify-content: center; background: var(--bg2); }
-    .eds { display: flex; justify-content: center; gap: 2px; margin-bottom: 5px; }
-    .ed { width: 6px; height: 6px; border-radius: 50%; background: var(--bd); }
-    .ed.h { background: var(--te); } .ed.m { background: var(--go); } .ed.l { background: var(--co); }
-    .jtp { font-size: 10px; color: var(--mu); line-height: 1.35; }
+    .jl { font-size: 9px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+    .ji { width: 32px; height: 32px; border-radius: var(--r); margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; background: var(--navy3); border: 0.5px solid var(--border); }
+    .eds { display: flex; justify-content: center; gap: 2px; margin-bottom: 6px; }
+    .ed { width: 6px; height: 6px; border-radius: 50%; background: var(--border2); }
+    .ed.h { background: var(--teal); } .ed.m { background: var(--gold); } .ed.l { background: var(--coral); }
+    .jtp { font-size: 10px; color: var(--text3); line-height: 1.4; }
     .pains { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
-    .pain { font-size: 11px; padding: 3px 9px; border-radius: var(--rm); display: flex; align-items: center; gap: 3px; }
-    .pp { background: var(--cos); color: var(--cot); } .po { background: var(--tes); color: var(--tet); }
+    .pain { font-size: 10px; padding: 3px 9px; border-radius: 2px; display: flex; align-items: center; gap: 3px; }
+    .pp { background: var(--coral-soft); color: var(--coral); border: 0.5px solid var(--coral)33; }
+    .po { background: var(--teal-soft); color: var(--teal); border: 0.5px solid var(--teal)33; }
 
     /* AI PERSONA OUTPUT */
-    .pout { display: none; border: 0.5px solid var(--bd); border-radius: var(--r); overflow: hidden; margin-top: 10px; }
-    .pot { padding: 14px; border-bottom: 0.5px solid var(--bd); display: flex; align-items: center; gap: 12px; }
-    .poq { padding: 10px 14px; border-bottom: 0.5px solid var(--bd); font-size: 12px; font-style: italic; color: var(--act); background: var(--acs); border-left: 3px solid var(--ac); line-height: 1.5; }
+    .pout { display: none; border: 0.5px solid var(--border); border-radius: var(--r); overflow: hidden; margin-top: 12px; }
+    .pot { padding: 14px 16px; border-bottom: 0.5px solid var(--border); display: flex; align-items: center; gap: 12px; background: var(--navy3); }
+    .poq { padding: 11px 14px; border-bottom: 0.5px solid var(--border); font-size: 12px; font-style: italic; color: var(--gold-text); background: var(--gold-soft); border-left: 2px solid var(--gold); line-height: 1.6; font-family: var(--serif); }
     .pog { display: grid; grid-template-columns: 1fr 1fr; }
-    .poc { padding: 11px 14px; border-right: 0.5px solid var(--bd); border-bottom: 0.5px solid var(--bd); }
+    .poc { padding: 12px 14px; border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); background: var(--navy2); }
     .poc:nth-child(2n) { border-right: none; } .poc:nth-last-child(-n+2) { border-bottom: none; }
-    .popp { padding: 11px 14px; background: var(--bg2); }
-    .oppl { font-size: 10px; font-weight: 500; color: var(--tet); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px; }
-    .opcs { display: flex; flex-wrap: wrap; gap: 4px; }
-    .opc { font-size: 11px; padding: 3px 8px; border-radius: var(--rm); background: var(--tes); color: var(--tet); border: 0.5px solid #9FE1CB; }
-    .pacts { display: flex; gap: 6px; padding: 10px 14px; border-top: 0.5px solid var(--bd); }
-    .pab { padding: 5px 10px; border-radius: var(--rm); border: 0.5px solid var(--bd2); background: none; cursor: pointer; font-size: 11px; color: var(--mu); font-family: var(--font); }
-    .pab:hover { background: var(--bg2); color: var(--tx); }
+    .popp { padding: 12px 14px; background: var(--navy3); }
+    .oppl { font-size: 9px; font-weight: 500; color: var(--teal); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+    .opcs { display: flex; flex-wrap: wrap; gap: 5px; }
+    .opc { font-size: 11px; padding: 3px 9px; border-radius: 2px; background: var(--teal-soft); color: var(--teal); border: 0.5px solid var(--teal)33; }
+    .pacts { display: flex; gap: 6px; padding: 10px 14px; border-top: 0.5px solid var(--border); background: var(--navy3); }
+    .pab { padding: 5px 11px; border-radius: var(--r); border: 0.5px solid var(--border2); background: none; cursor: pointer; font-size: 11px; color: var(--text3); font-family: var(--sans); }
+    .pab:hover { border-color: var(--gold); color: var(--gold); }
 
     /* RICE */
-    .dims { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px; }
-    .dim { background: var(--bg2); border-radius: var(--rm); padding: 10px 12px; }
-    .dim-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
-    .dim-l { font-size: 10px; font-weight: 500; color: var(--mu); }
-    .dim-v { font-size: 16px; font-weight: 500; }
-    .dim-bar { height: 4px; border-radius: 2px; background: var(--bd); margin-bottom: 6px; }
-    .dim-fill { height: 100%; border-radius: 2px; }
-    .dim-r { font-size: 11px; color: var(--mu); line-height: 1.4; }
-    .score-hero { background: var(--bg); border: 0.5px solid var(--bd); border-radius: var(--r); padding: 14px 16px; margin-bottom: 10px; }
-    .score-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
-    .score-f { font-size: 14px; font-weight: 500; color: var(--tx); }
-    .score-ctx { font-size: 11px; color: var(--mu); margin-top: 2px; }
+    .score-hero { background: var(--navy2); border: 0.5px solid var(--border); border-radius: var(--r); padding: 16px 18px; margin-bottom: 10px; }
+    .score-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .score-f { font-size: 14px; font-weight: 400; color: var(--text); font-family: var(--serif); }
+    .score-ctx { font-size: 11px; color: var(--text3); margin-top: 3px; }
     .score-big { text-align: right; flex-shrink: 0; }
-    .score-n { font-size: 32px; font-weight: 600; color: var(--ac); line-height: 1; }
-    .score-lbl { font-size: 10px; color: var(--mu); margin-top: 2px; }
-    .verdict { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; padding: 3px 9px; border-radius: 20px; margin-top: 5px; }
-    .rc-lbl { font-size: 10px; font-weight: 500; color: var(--mu); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px; }
-    .tcard { background: var(--bg); border: 0.5px solid var(--bd); border-radius: var(--r); overflow: hidden; margin-bottom: 10px; }
-    .to-hdr { padding: 9px 13px; background: var(--bg2); border-bottom: 0.5px solid var(--bd); font-size: 10px; font-weight: 500; color: var(--mu); text-transform: uppercase; letter-spacing: 0.4px; }
+    .score-n { font-size: 36px; font-weight: 400; color: var(--gold-text); font-family: var(--serif); line-height: 1; }
+    .score-lbl { font-size: 10px; color: var(--text3); margin-top: 2px; letter-spacing: 0.4px; text-transform: uppercase; }
+    .verdict { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; padding: 3px 9px; border-radius: 2px; margin-top: 6px; letter-spacing: 0.3px; }
+    .dims { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+    .dim { background: var(--navy3); border-radius: var(--r); padding: 11px 13px; border: 0.5px solid var(--border); }
+    .dim-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .dim-l { font-size: 10px; color: var(--text3); letter-spacing: 0.3px; }
+    .dim-v { font-size: 18px; font-weight: 400; font-family: var(--serif); }
+    .dim-bar { height: 3px; border-radius: 2px; background: var(--border2); margin-bottom: 7px; }
+    .dim-fill { height: 100%; border-radius: 2px; }
+    .dim-r { font-size: 11px; color: var(--text3); line-height: 1.45; }
+    .rc-lbl { font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+    .tcard { background: var(--navy2); border: 0.5px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: 10px; }
+    .to-hdr { padding: 9px 14px; background: var(--navy3); border-bottom: 0.5px solid var(--border); font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
     .to-grid { display: grid; grid-template-columns: 1fr 1fr; }
-    .to-col { padding: 11px 13px; }
-    .to-col:first-child { border-right: 0.5px solid var(--bd); }
-    .to-ch { font-size: 11px; font-weight: 500; margin-bottom: 7px; display: flex; align-items: center; gap: 4px; }
-    .to-item { font-size: 11px; color: var(--mu); padding: 2px 0; display: flex; align-items: flex-start; gap: 4px; line-height: 1.4; }
-    .to-item::before { content: "–"; flex-shrink: 0; }
-    .q-item { font-size: 12px; color: var(--tx); padding: 6px 0; display: flex; align-items: flex-start; gap: 7px; border-bottom: 0.5px solid var(--bd); line-height: 1.5; }
+    .to-col { padding: 12px 14px; }
+    .to-col:first-child { border-right: 0.5px solid var(--border); }
+    .to-ch { font-size: 11px; font-weight: 500; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+    .to-item { font-size: 11px; color: var(--text3); padding: 2px 0; display: flex; align-items: flex-start; gap: 5px; line-height: 1.45; }
+    .to-item::before { content: "—"; flex-shrink: 0; font-size: 10px; margin-top: 1px; }
+    .q-item { font-size: 12px; color: var(--text2); padding: 7px 0; display: flex; align-items: flex-start; gap: 8px; border-bottom: 0.5px solid var(--border); line-height: 1.55; }
     .q-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .q-num { font-size: 11px; font-weight: 500; color: var(--ac); flex-shrink: 0; margin-top: 1px; }
+    .q-num { font-size: 11px; font-weight: 500; color: var(--gold); flex-shrink: 0; margin-top: 1px; font-family: var(--serif); }
 
     /* JOURNEY NARRATOR */
-    .pp-card { border: 0.5px solid var(--bd); border-radius: var(--r); padding: 11px 13px; cursor: pointer; transition: all 0.15s; background: var(--bg); }
-    .pp-card:hover { border-color: var(--ac); }
-    .pp-card.active { border: 2px solid var(--ac); background: var(--acs); }
+    .pp-card { border: 0.5px solid var(--border); border-radius: var(--r); padding: 12px 14px; cursor: pointer; transition: all 0.15s; background: var(--navy2); }
+    .pp-card:hover { border-color: var(--gold)55; }
+    .pp-card.active { border: 1.5px solid var(--gold); background: var(--gold-soft); }
     .pp-top2 { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; }
-    .pp-nm { font-size: 12px; font-weight: 500; color: var(--tx); }
-    .pp-rl { font-size: 10px; color: var(--mu); line-height: 1.3; }
+    .pp-nm { font-size: 12px; font-weight: 500; color: var(--text); }
+    .pp-rl { font-size: 10px; color: var(--text3); line-height: 1.3; }
     .pp-tags { display: flex; flex-wrap: wrap; gap: 3px; }
-    .pp-tag { font-size: 10px; padding: 2px 6px; border-radius: 20px; background: var(--bg2); border: 0.5px solid var(--bd); color: var(--mu); }
-    .jsum { background: var(--bg); border: 0.5px solid var(--bd); border-radius: var(--r); padding: 14px 16px; margin-bottom: 10px; }
+    .pp-tag { font-size: 10px; padding: 2px 6px; border-radius: 2px; background: var(--navy3); border: 0.5px solid var(--border); color: var(--text3); }
+    .jsum { background: var(--navy2); border: 0.5px solid var(--border); border-radius: var(--r); padding: 14px 16px; margin-bottom: 10px; }
     .js-top2 { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
-    .js-pn { font-size: 14px; font-weight: 500; color: var(--tx); }
-    .js-sc { font-size: 11px; color: var(--mu); margin-top: 2px; }
+    .js-pn { font-size: 14px; font-weight: 400; color: var(--text); font-family: var(--serif); }
+    .js-sc { font-size: 11px; color: var(--text3); margin-top: 2px; }
     .sent-bar { display: flex; gap: 3px; justify-content: flex-end; }
     .sent-dot { width: 8px; height: 8px; border-radius: 50%; }
-    .js-hl { font-size: 12px; color: var(--mu); line-height: 1.55; font-style: italic; border-left: 3px solid var(--te); padding-left: 10px; }
-    .stage-card { background: var(--bg); border: 0.5px solid var(--bd); border-radius: var(--r); margin-bottom: 8px; overflow: hidden; }
-    .sh { display: flex; align-items: center; gap: 9px; padding: 10px 13px; border-bottom: 0.5px solid var(--bd); cursor: pointer; }
-    .snum { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; }
-    .snm { font-size: 12px; font-weight: 500; color: var(--tx); flex: 1; }
-    .semo { font-size: 11px; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
-    .sch { font-size: 14px; color: var(--mu); transition: transform 0.2s; flex-shrink: 0; }
+    .js-hl { font-size: 12px; color: var(--text3); line-height: 1.6; font-style: italic; border-left: 2px solid var(--teal); padding-left: 10px; font-family: var(--serif); }
+    .stage-card { background: var(--navy2); border: 0.5px solid var(--border); border-radius: var(--r); margin-bottom: 7px; overflow: hidden; }
+    .sh { display: flex; align-items: center; gap: 9px; padding: 10px 14px; border-bottom: 0.5px solid var(--border); cursor: pointer; background: var(--navy3); }
+    .snum { width: 22px; height: 22px; border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
+    .snm { font-size: 12px; font-weight: 500; color: var(--text); flex: 1; }
+    .semo { font-size: 10px; padding: 2px 8px; border-radius: 2px; white-space: nowrap; letter-spacing: 0.3px; }
+    .sch { font-size: 14px; color: var(--text3); transition: transform 0.2s; flex-shrink: 0; }
     .sch.open { transform: rotate(180deg); }
-    .sb { padding: 12px 13px; display: none; }
+    .sb { padding: 12px 14px; display: none; }
     .sb.open { display: block; }
-    .ss { margin-bottom: 9px; } .ss:last-child { margin-bottom: 0; }
-    .ssl { font-size: 10px; font-weight: 500; color: var(--mu); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
-    .st { font-size: 12px; color: var(--tx); line-height: 1.6; }
+    .ss { margin-bottom: 10px; } .ss:last-child { margin-bottom: 0; }
+    .ssl { font-size: 9px; font-weight: 500; color: var(--gold); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+    .st { font-size: 12px; color: var(--text2); line-height: 1.65; }
     .schips { display: flex; flex-wrap: wrap; gap: 4px; }
-    .pc2 { font-size: 11px; padding: 3px 8px; border-radius: var(--rm); display: flex; align-items: center; gap: 3px; }
-    .pc2.pain { background: var(--cos); color: var(--cot); }
-    .pc2.opp { background: var(--tes); color: var(--tet); }
-    .pc2.touch { background: var(--bg2); color: var(--mu); border: 0.5px solid var(--bd); }
-    .ins-card { background: var(--bg); border: 0.5px solid var(--bd); border-radius: var(--r); overflow: hidden; margin-bottom: 10px; }
-    .ins-hdr { padding: 9px 13px; background: var(--bg2); border-bottom: 0.5px solid var(--bd); font-size: 10px; font-weight: 500; color: var(--mu); text-transform: uppercase; letter-spacing: 0.4px; }
+    .pc2 { font-size: 10px; padding: 3px 8px; border-radius: 2px; display: flex; align-items: center; gap: 3px; }
+    .pc2.pain { background: var(--coral-soft); color: var(--coral); border: 0.5px solid var(--coral)33; }
+    .pc2.opp { background: var(--teal-soft); color: var(--teal); border: 0.5px solid var(--teal)33; }
+    .pc2.touch { background: var(--navy3); color: var(--text3); border: 0.5px solid var(--border); }
+    .ins-card { background: var(--navy2); border: 0.5px solid var(--border); border-radius: var(--r); overflow: hidden; margin-bottom: 10px; }
+    .ins-hdr { padding: 9px 14px; background: var(--navy3); border-bottom: 0.5px solid var(--border); font-size: 10px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
     .ins-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
-    .ins-col { padding: 11px 13px; border-right: 0.5px solid var(--bd); }
+    .ins-col { padding: 12px 14px; border-right: 0.5px solid var(--border); }
     .ins-col:last-child { border-right: none; }
-    .ins-lbl { font-size: 10px; font-weight: 500; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
-    .ins-item { font-size: 11px; color: var(--mu); padding: 2px 0; line-height: 1.4; display: flex; gap: 4px; align-items: flex-start; }
-    .ins-item::before { content: "–"; flex-shrink: 0; }
+    .ins-lbl { font-size: 10px; font-weight: 500; margin-bottom: 7px; display: flex; align-items: center; gap: 4px; }
+    .ins-item { font-size: 11px; color: var(--text3); padding: 2px 0; line-height: 1.45; display: flex; gap: 4px; align-items: flex-start; }
+    .ins-item::before { content: "—"; flex-shrink: 0; font-size: 10px; margin-top: 1px; }
 
     /* WORKFLOW */
-    .wtabs { display: flex; border-bottom: 0.5px solid var(--bd); }
-    .wt { padding: 9px 14px; font-size: 12px; color: var(--mu); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.12s; font-family: var(--font); }
-    .wt.active { color: var(--ac); border-bottom-color: var(--ac); font-weight: 500; }
+    .wtabs { display: flex; border-bottom: 0.5px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+    .wtabs::-webkit-scrollbar { display: none; }
+    .wt { padding: 10px 14px; font-size: 11px; color: var(--text3); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.12s; font-family: var(--sans); letter-spacing: 0.2px; }
+    .wt.active { color: var(--gold); border-bottom-color: var(--gold); }
     .wp { display: none; padding: 16px 20px; } .wp.active { display: block; }
-    .ibar { display: flex; align-items: flex-start; gap: 8px; padding: 9px 12px; background: var(--bg2); border-left: 3px solid var(--ac); margin-bottom: 13px; }
-    .ibar-t { font-size: 11px; color: var(--mu); line-height: 1.5; }
-    .ibar-t strong { color: var(--tx); font-weight: 500; }
-    .sgrid { display: flex; flex-direction: column; gap: 8px; padding: 13px; }
-    .sc3 { border: 0.5px solid var(--bd); border-radius: var(--rm); overflow: hidden; }
-    .sh2 { padding: 7px 11px; background: var(--bg2); display: flex; align-items: center; justify-content: space-between; border-bottom: 0.5px solid var(--bd); }
-    .sr { font-size: 11px; font-weight: 500; color: var(--tx); }
-    .sp { font-size: 10px; padding: 2px 7px; border-radius: 20px; background: var(--gos); color: var(--got); }
-    .sb2 { padding: 9px 11px; font-size: 11px; color: var(--tx); line-height: 1.6; }
-    .acr { display: flex; align-items: flex-start; gap: 5px; padding: 2px 0; font-size: 11px; color: var(--mu); }
-    .rgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 13px; }
-    .rc2 { border: 0.5px solid var(--bd); border-radius: var(--rm); overflow: hidden; }
-    .rch { padding: 7px 11px; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; border-bottom: 0.5px solid var(--bd); }
-    .rch.w { background: var(--tes); color: var(--tet); }
-    .rch.i { background: var(--gos); color: var(--got); }
-    .rch.a { background: var(--acs); color: var(--act); }
-    .ri { padding: 8px 11px; display: flex; flex-direction: column; gap: 5px; }
-    .rit { font-size: 11px; color: var(--tx); padding: 5px 8px; border-radius: var(--rm); background: var(--bg2); line-height: 1.4; }
+    .ibar { display: flex; align-items: flex-start; gap: 8px; padding: 10px 13px; background: var(--gold-soft); border-left: 2px solid var(--gold); margin-bottom: 14px; border-radius: 0 var(--r) var(--r) 0; }
+    .ibar-t { font-size: 11px; color: var(--text3); line-height: 1.55; }
+    .ibar-t strong { color: var(--gold-text); font-weight: 500; }
+    .sgrid { display: flex; flex-direction: column; gap: 8px; padding: 14px; }
+    .sc3 { border: 0.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .sh2 { padding: 7px 12px; background: var(--navy3); display: flex; align-items: center; justify-content: space-between; border-bottom: 0.5px solid var(--border); }
+    .sr { font-size: 11px; font-weight: 500; color: var(--text2); }
+    .sp { font-size: 10px; padding: 2px 7px; border-radius: 2px; background: var(--gold-soft); color: var(--gold); border: 0.5px solid var(--gold)33; }
+    .sb2 { padding: 10px 12px; font-size: 11px; color: var(--text2); line-height: 1.65; background: var(--navy2); }
+    .acr { display: flex; align-items: flex-start; gap: 5px; padding: 2px 0; font-size: 11px; color: var(--text3); }
+    .rgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 14px; }
+    .rc2 { border: 0.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .rch { padding: 7px 11px; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 0.5px solid var(--border); }
+    .rch.w { background: var(--teal-soft); color: var(--teal); }
+    .rch.i { background: var(--gold-soft); color: var(--gold); }
+    .rch.a { background: var(--navy3); color: var(--text3); }
+    .ri { padding: 8px 11px; display: flex; flex-direction: column; gap: 5px; background: var(--navy2); }
+    .rit { font-size: 11px; color: var(--text2); padding: 5px 8px; border-radius: var(--r); background: var(--navy3); line-height: 1.4; border: 0.5px solid var(--border); }
 
     /* CHAT */
-    .cwrap { border: 0.5px solid var(--bd); border-radius: var(--r); overflow: hidden; }
-    .chdr { padding: 10px 14px; border-bottom: 0.5px solid var(--bd); background: var(--bg2); display: flex; align-items: center; gap: 8px; }
-    .ldot { width: 8px; height: 8px; border-radius: 50%; background: var(--te); animation: pulse 2s infinite; }
+    .cwrap { border: 0.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
+    .chdr { padding: 11px 16px; border-bottom: 0.5px solid var(--border); background: var(--navy3); display: flex; align-items: center; gap: 8px; }
+    .ldot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
-    .cmsgs { padding: 13px; min-height: 180px; max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 9px; }
-    .msg { display: flex; gap: 7px; } .msg.u { flex-direction: row-reverse; }
-    .bub { max-width: 82%; padding: 8px 12px; border-radius: 14px; font-size: 13px; line-height: 1.5; }
-    .msg.ai .bub { background: var(--bg2); color: var(--tx); border-radius: 3px 14px 14px 14px; }
-    .msg.u .bub { background: var(--ac); color: white; border-radius: 14px 3px 14px 14px; }
-    .mav { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; margin-top: 2px; }
-    .aiav { background: var(--acs); color: var(--act); } .uav { background: var(--gos); color: var(--got); }
-    .typing { display: flex; align-items: center; gap: 3px; padding: 8px 12px; background: var(--bg2); border-radius: 3px 14px 14px 14px; width: fit-content; }
-    .typing span { width: 4px; height: 4px; border-radius: 50%; background: var(--mu); animation: bd 0.9s infinite; }
+    .cmsgs { padding: 14px; min-height: 180px; max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: var(--navy); }
+    .msg { display: flex; gap: 8px; } .msg.u { flex-direction: row-reverse; }
+    .bub { max-width: 82%; padding: 9px 13px; font-size: 12px; line-height: 1.6; }
+    .msg.ai .bub { background: var(--navy2); color: var(--text2); border-radius: var(--r); border: 0.5px solid var(--border); }
+    .msg.u .bub { background: var(--gold); color: var(--navy); border-radius: var(--r); font-weight: 500; }
+    .mav { width: 24px; height: 24px; border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; margin-top: 2px; }
+    .aiav { background: var(--navy3); color: var(--gold); border: 0.5px solid var(--border); }
+    .uav { background: var(--gold-soft); color: var(--gold); border: 0.5px solid var(--gold)33; }
+    .typing { display: flex; align-items: center; gap: 3px; padding: 9px 13px; background: var(--navy2); border-radius: var(--r); border: 0.5px solid var(--border); width: fit-content; }
+    .typing span { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); animation: bd 0.9s infinite; }
     .typing span:nth-child(2) { animation-delay: .15s; } .typing span:nth-child(3) { animation-delay: .3s; }
-    .csuggs { padding: 0 13px 9px; display: flex; flex-wrap: wrap; gap: 4px; }
-    .cs4 { padding: 4px 9px; border-radius: 20px; font-size: 11px; border: 0.5px solid var(--bd); background: none; cursor: pointer; color: var(--mu); font-family: var(--font); }
-    .cs4:hover { border-color: var(--ac); color: var(--ac); }
-    .cfoot { padding: 9px 13px; border-top: 0.5px solid var(--bd); display: flex; gap: 6px; }
-    .cin { flex: 1; padding: 7px 11px; border-radius: 20px; border: 0.5px solid var(--bd); background: var(--bg2); font-size: 13px; color: var(--tx); }
-    .csend { padding: 7px 14px; border-radius: 20px; background: var(--ac); color: white; border: none; cursor: pointer; font-size: 12px; font-family: var(--font); }
+    .csuggs { padding: 0 14px 10px; display: flex; flex-wrap: wrap; gap: 4px; background: var(--navy); }
+    .cs4 { padding: 4px 10px; border-radius: 2px; font-size: 10px; border: 0.5px solid var(--border2); background: none; cursor: pointer; color: var(--text3); font-family: var(--sans); letter-spacing: 0.2px; }
+    .cs4:hover { border-color: var(--gold); color: var(--gold); }
+    .cfoot { padding: 10px 14px; border-top: 0.5px solid var(--border); display: flex; gap: 7px; background: var(--navy3); }
+    .cin { flex: 1; padding: 7px 11px; border-radius: var(--r); border: 0.5px solid var(--border2); background: var(--navy2); font-size: 12px; color: var(--text); font-family: var(--sans); }
+    .csend { padding: 7px 16px; border-radius: var(--r); background: var(--gold); color: var(--navy); border: none; cursor: pointer; font-size: 11px; font-family: var(--sans); font-weight: 500; letter-spacing: 0.2px; }
 
-    @media (max-width: 600px) {
-      .stats { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: repeat(2,1fr); }
       .ncards { grid-template-columns: 1fr 1fr; }
       .two-col, .pgrid, .pog, .to-grid, .ins-grid, .rgrid { grid-template-columns: 1fr; }
-      .jg { grid-template-columns: repeat(3, 1fr); }
-      .dims { grid-template-columns: repeat(2, 1fr); }
+      .jg { grid-template-columns: repeat(3,1fr); }
+      .dims { grid-template-columns: repeat(2,1fr); }
       .three-col { grid-template-columns: 1fr; }
-      nav { flex-wrap: wrap; gap: 6px; }
+      .hero h1 { font-size: 28px; }
+      .case-card { grid-template-columns: 1fr; }
+      .case-metric { text-align: left; }
     }
   </style>
 </head>
@@ -298,58 +327,110 @@
 
 <nav>
   <div class="brand">
-    <div class="bdot"></div>
-    <div><div class="bname">Kelly Mello</div><div class="brole">Senior Product Manager</div></div>
+    <div class="brand-mark">KM</div>
+    <div>
+      <div class="brand-name">Kelly Mello</div>
+      <div class="brand-role">Senior Product Manager</div>
+    </div>
   </div>
-  <div class="nlinks">
+  <div class="navlinks">
     <button class="nl active" onclick="go('home')">Home</button>
-    <button class="nl" onclick="go('cases')">Case studies</button>
-    <button class="nl" onclick="go('cx')">CX artifacts</button>
+    <button class="nl" onclick="go('cases')">Cases</button>
+    <button class="nl" onclick="go('cx')">Personas</button>
     <button class="nl" onclick="go('ai')">AI tools</button>
-    <button class="nl" onclick="go('auto')">Automation lab</button>
-    <button class="nl" onclick="go('chat')">AI assistant</button>
+    <button class="nl" onclick="go('auto')">Automation</button>
+    <button class="nl" onclick="go('chat')">Assistant</button>
   </div>
 </nav>
 
 <!-- HOME -->
 <div id="s-home" class="sec active">
   <div class="hero">
-    <div class="htag"><i class="ti ti-briefcase"></i> Senior Product Manager · Healthcare &amp; AI</div>
-    <h1>15+ years turning <em>complex healthcare</em> problems into products people trust</h1>
-    <p class="hsub">I build AI-enabled experiences, omnichannel platforms, and self-service products at the intersection of enterprise technology and human-centered design. Based in Louisville, KY — open to remote.</p>
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Senior Product Manager · Healthcare &amp; AI</span>
+    </div>
+    <h1>15+ years turning complex<br>healthcare problems into<br><em>products people trust</em></h1>
+    <p class="hero-sub">I build AI-enabled experiences, omnichannel platforms, and self-service products at the intersection of enterprise technology and human-centered design. Based in Louisville, KY — open to remote.</p>
     <div class="pills">
-      <span class="pill">Conversational AI</span><span class="pill">Omnichannel Strategy</span><span class="pill">Member Self-Service</span><span class="pill">Payments &amp; Billing UX</span><span class="pill">Healthcare &amp; PBM</span><span class="pill">Agile / SAFe</span><span class="pill">Cross-functional Leadership</span><span class="pill">Digital Transformation</span>
+      <span class="pill hi">Conversational AI</span>
+      <span class="pill hi">Member Self-Service</span>
+      <span class="pill">Omnichannel Strategy</span>
+      <span class="pill">Payments &amp; Billing UX</span>
+      <span class="pill">Healthcare &amp; PBM</span>
+      <span class="pill">Agile / SAFe</span>
+      <span class="pill">Cross-functional Leadership</span>
+      <span class="pill">Digital Transformation</span>
     </div>
     <div class="stats">
-      <div class="stat"><div class="stn">15+</div><div class="stl">Years PM experience</div></div>
-      <div class="stat"><div class="stn">~40%</div><div class="stl">After-call work reduction via AI</div></div>
-      <div class="stat"><div class="stn">7-fig</div><div class="stl">LTV impact from billing redesign</div></div>
-      <div class="stat"><div class="stn">3.5%</div><div class="stl">Digital lift in underserved segment</div></div>
+      <div class="stat"><div class="stat-n">15+</div><div class="stat-l">Years PM experience</div></div>
+      <div class="stat"><div class="stat-n">~40%</div><div class="stat-l">After-call work reduction</div></div>
+      <div class="stat"><div class="stat-n">7-fig</div><div class="stat-l">LTV impact, billing redesign</div></div>
+      <div class="stat"><div class="stat-n">3.5%</div><div class="stat-l">Digital lift, underserved segment</div></div>
     </div>
   </div>
   <div class="ncards">
-    <div class="nc" onclick="go('cases')"><div class="nc-ico" style="color:var(--ac)"><i class="ti ti-report-analytics"></i></div><div class="nc-t">Case studies</div><div class="nc-s">Real projects — anonymized, with outcomes</div></div>
-    <div class="nc" onclick="go('cx')"><div class="nc-ico" style="color:var(--te)"><i class="ti ti-users"></i></div><div class="nc-t">CX artifacts</div><div class="nc-s">Personas, journey maps, AI persona generator</div></div>
-    <div class="nc" onclick="go('ai')"><div class="nc-ico" style="color:var(--pu)"><i class="ti ti-wand"></i></div><div class="nc-t">AI tools</div><div class="nc-s">Live RICE scorer &amp; journey narrator</div></div>
-    <div class="nc" onclick="go('auto')"><div class="nc-ico" style="color:var(--go)"><i class="ti ti-bolt"></i></div><div class="nc-t">Automation lab</div><div class="nc-s">PRD generator, user stories, retro summarizer</div></div>
-    <div class="nc" onclick="go('chat')"><div class="nc-ico" style="color:var(--co)"><i class="ti ti-message-circle"></i></div><div class="nc-t">AI assistant</div><div class="nc-s">Ask anything about my background &amp; approach</div></div>
-    <div class="nc soon"><div class="nc-ico" style="color:var(--mu)"><i class="ti ti-file-text"></i></div><div class="nc-t">PRD sample</div><div class="nc-s">Coming soon — full anonymized PRD</div></div>
+    <div class="nc" onclick="go('cases')"><div class="nc-ico"><i class="ti ti-report-analytics"></i></div><div class="nc-t">Cases</div><div class="nc-s">Real projects — anonymized, with outcomes</div></div>
+    <div class="nc" onclick="go('cx')"><div class="nc-ico"><i class="ti ti-users"></i></div><div class="nc-t">Personas</div><div class="nc-s">Personas, journey maps, AI generator</div></div>
+    <div class="nc" onclick="go('ai')"><div class="nc-ico"><i class="ti ti-wand"></i></div><div class="nc-t">AI tools</div><div class="nc-s">Live RICE scorer &amp; journey narrator</div></div>
+    <div class="nc" onclick="go('auto')"><div class="nc-ico"><i class="ti ti-bolt"></i></div><div class="nc-t">Automation</div><div class="nc-s">PRD generator, user stories, retro summarizer</div></div>
+    <div class="nc" onclick="go('chat')"><div class="nc-ico"><i class="ti ti-message-circle"></i></div><div class="nc-t">Assistant</div><div class="nc-s">Ask anything about my background &amp; approach</div></div>
+    <div class="nc soon"><div class="nc-ico"><i class="ti ti-file-text"></i></div><div class="nc-t">PRD sample</div><div class="nc-s">Coming soon</div></div>
   </div>
 </div>
 
-<!-- CASE STUDIES -->
+<!-- CASES -->
 <div id="s-cases" class="sec"><div class="pad">
-  <div class="stitle">Case studies</div>
+  <div class="sec-hdr"><span class="stitle">Case studies</span><div class="sec-rule"></div><span class="sec-count">3 projects</span></div>
   <div class="ssub">Anonymized — employer details generalized to protect proprietary information</div>
-  <div class="card"><div class="chead"><div><div class="ct">AI post-interaction summarization — ~40% after-call work reduction</div><div class="cs2">National health plan · Cloud-based member services platform</div></div><span class="badge gb">AI / 0→1</span></div><div class="cbody">Agents spent 8–12 minutes per call manually documenting summaries across multiple systems. I defined and led delivery of a generative AI feature that analyzed call transcripts in real time and auto-populated structured notes. Key PM challenge: balancing recall against precision — too much noise and agents wouldn't trust it. Navigated through phased piloting with agent feedback loops before full rollout.</div><div class="mets"><div class="met"><i class="ti ti-trending-down" style="color:var(--te)"></i><strong>~40%</strong> reduction in after-call work</div><div class="met"><i class="ti ti-users" style="color:var(--ac)"></i>Enterprise contact center rollout</div><div class="met"><i class="ti ti-bolt" style="color:var(--go)"></i>Reduced multi-system context switching</div></div></div>
-  <div class="card"><div class="chead"><div><div class="ct">Billing friction redesign — seven-figure LTV impact</div><div class="cs2">Large B2C health plan · Member payment experience</div></div><span class="badge tb">Monetization</span></div><div class="cbody">Churn analysis surfaced members lapsing not from dissatisfaction but from payment friction — confusing statements, limited methods, no proactive outreach. Led discovery across support call analysis and member interviews, then owned cross-functional roadmap with finance, legal, and engineering. This was fundamentally a UX problem dressed up as a revenue problem.</div><div class="mets"><div class="met"><i class="ti ti-currency-dollar" style="color:var(--te)"></i><strong>7-figure</strong> LTV impact</div><div class="met"><i class="ti ti-arrows-shuffle" style="color:var(--ac)"></i>Finance, legal, eng alignment</div><div class="met"><i class="ti ti-trending-up" style="color:var(--go)"></i>Reduced preventable lapse</div></div></div>
-  <div class="card"><div class="chead"><div><div class="ct">Digital adoption initiative — 3.5% lift in underserved Medicare segment</div><div class="cs2">National health plan · Omnichannel &amp; self-service</div></div><span class="badge bb">Growth</span></div><div class="cbody">A Medicare segment bypassed digital entirely. Standard tactics had no effect. Discovery revealed distrust wasn't about capability — it was about confidence. Redesigned onboarding to use trusted offline touchpoints to initiate digital engagement, with in-product guidance that reduced perceived risk.</div><div class="mets"><div class="met"><i class="ti ti-trending-up" style="color:var(--te)"></i><strong>+3.5%</strong> digital adoption</div><div class="met"><i class="ti ti-eye" style="color:var(--ac)"></i>Mixed-method discovery</div><div class="met"><i class="ti ti-heart" style="color:var(--co)"></i>Medicare beneficiary focus</div></div></div>
+  <div class="case-card">
+    <div>
+      <div class="case-tag">AI / 0→1</div>
+      <div class="case-title">AI post-interaction summarization — reducing after-call work by ~40%</div>
+      <div class="case-co" style="margin-top:5px;">National health plan · Cloud-based member services platform</div>
+      <div class="case-body">Agents spent 8–12 minutes per call manually documenting summaries across multiple systems. I defined and led delivery of a generative AI feature that analyzed call transcripts in real time and auto-populated structured notes. Key PM challenge: balancing recall against precision — too much noise and agents wouldn't trust it. Navigated through phased piloting with agent feedback loops before full rollout.</div>
+      <div class="mets">
+        <div class="met"><i class="ti ti-trending-down" style="color:var(--teal)"></i><strong>~40%</strong> reduction in after-call work</div>
+        <div class="met"><i class="ti ti-users" style="color:var(--gold)"></i>Enterprise contact center rollout</div>
+        <div class="met"><i class="ti ti-bolt" style="color:var(--gold)"></i>Reduced multi-system context switching</div>
+      </div>
+    </div>
+    <div class="case-metric"><div class="metric-n">~40%</div><div class="metric-l">Work reduction</div></div>
+  </div>
+  <div class="case-card">
+    <div>
+      <div class="case-tag">Monetization</div>
+      <div class="case-title">Billing friction redesign — seven-figure LTV impact</div>
+      <div class="case-co" style="margin-top:5px;">Large B2C health plan · Member payment experience</div>
+      <div class="case-body">Churn analysis surfaced members lapsing not from dissatisfaction but from payment friction — confusing statements, limited methods, no proactive outreach. Led discovery across support call analysis and member interviews, then owned cross-functional roadmap with finance, legal, and engineering. This was fundamentally a UX problem dressed up as a revenue problem.</div>
+      <div class="mets">
+        <div class="met"><i class="ti ti-currency-dollar" style="color:var(--teal)"></i><strong>7-figure</strong> LTV impact</div>
+        <div class="met"><i class="ti ti-arrows-shuffle" style="color:var(--gold)"></i>Finance, legal, eng alignment</div>
+        <div class="met"><i class="ti ti-trending-up" style="color:var(--gold)"></i>Reduced preventable lapse</div>
+      </div>
+    </div>
+    <div class="case-metric"><div class="metric-n">7-fig</div><div class="metric-l">LTV impact</div></div>
+  </div>
+  <div class="case-card">
+    <div>
+      <div class="case-tag">Growth</div>
+      <div class="case-title">Digital adoption initiative — 3.5% lift in underserved Medicare segment</div>
+      <div class="case-co" style="margin-top:5px;">National health plan · Omnichannel &amp; self-service</div>
+      <div class="case-body">A Medicare segment bypassed digital entirely. Standard tactics had no effect. Discovery revealed distrust wasn't about capability — it was about confidence. Redesigned onboarding to use trusted offline touchpoints to initiate digital engagement, with in-product guidance that reduced perceived risk.</div>
+      <div class="mets">
+        <div class="met"><i class="ti ti-trending-up" style="color:var(--teal)"></i><strong>+3.5%</strong> digital adoption</div>
+        <div class="met"><i class="ti ti-eye" style="color:var(--gold)"></i>Mixed-method discovery</div>
+        <div class="met"><i class="ti ti-heart" style="color:var(--gold)"></i>Medicare beneficiary focus</div>
+      </div>
+    </div>
+    <div class="case-metric"><div class="metric-n">3.5%</div><div class="metric-l">Adoption lift</div></div>
+  </div>
 </div></div>
 
-<!-- CX ARTIFACTS -->
+<!-- CX / PERSONAS -->
 <div id="s-cx" class="sec"><div class="pad">
-  <div class="stitle">User personas</div>
-  <div class="ssub">Composites from healthcare member, agent, and administrator research. Names fictional.</div>
+  <div class="sec-hdr"><span class="stitle">User personas</span><div class="sec-rule"></div><span class="sec-count">3 composites</span></div>
+  <div class="ssub">Grounded in healthcare member, agent, and administrator research. Names are fictional.</div>
   <div class="ptabs">
     <button class="ptab active" onclick="showP('maria')">Maria — Medicare member</button>
     <button class="ptab" onclick="showP('david')">David — Agent</button>
@@ -357,7 +438,7 @@
   </div>
   <div id="p-maria" class="pc active">
     <div class="quote">"I just want to know what I owe and when. Every time I call I get a different answer."</div>
-    <div class="phead"><div class="pav" style="background:#E6F1FB;color:#0C447C;">MM</div><div><div class="pname">Maria Martinez</div><div class="prole">Medicare Advantage member · Retired · Age 68</div><div class="pbadges"><span class="pb">Low digital confidence</span><span class="pb">High call volume</span><span class="pb">Payment anxiety</span></div></div></div>
+    <div class="phead"><div class="pav" style="background:#1A2235;color:#C9A84C;border:1px solid #C9A84C44;">MM</div><div><div class="pname">Maria Martinez</div><div class="prole">Medicare Advantage member · Retired · Age 68</div><div class="pbadges"><span class="pb">Low digital confidence</span><span class="pb">High call volume</span><span class="pb">Payment anxiety</span></div></div></div>
     <div class="pgrid">
       <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Understand benefits without calling every time</li><li>Pay her premium simply and on time</li><li>Feel confident she won't lose coverage</li></ul></div>
       <div class="pcell"><div class="plbl">Frustrations</div><ul class="plist"><li>Billing statements feel confusing</li><li>Long hold times for simple questions</li><li>Digital tools feel built for someone else</li></ul></div>
@@ -367,7 +448,7 @@
   </div>
   <div id="p-david" class="pc">
     <div class="quote">"By the time I've pulled up their account across all the systems, we've already lost two minutes."</div>
-    <div class="phead"><div class="pav" style="background:#E1F5EE;color:#085041;">DK</div><div><div class="pname">David Kim</div><div class="prole">Contact center agent · 4 years tenure · Remote</div><div class="pbadges"><span class="pb">Power user</span><span class="pb">High workload</span><span class="pb">Tool frustrated</span></div></div></div>
+    <div class="phead"><div class="pav" style="background:#1A2235;color:#1D9E75;border:1px solid #1D9E7544;">DK</div><div><div class="pname">David Kim</div><div class="prole">Contact center agent · 4 years tenure · Remote</div><div class="pbadges"><span class="pb">Power user</span><span class="pb">High workload</span><span class="pb">Tool frustrated</span></div></div></div>
     <div class="pgrid">
       <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Resolve issues on the first call</li><li>Get off the phone faster without sacrificing quality</li><li>Not worry about incomplete notes after</li></ul></div>
       <div class="pcell"><div class="plbl">Frustrations</div><ul class="plist"><li>Context scattered across multiple systems</li><li>After-call work eats time for next member</li><li>AI tools that surface wrong answers</li></ul></div>
@@ -377,7 +458,7 @@
   </div>
   <div id="p-priya" class="pc">
     <div class="quote">"I need my team on cases that need human judgment — not answering the same administrative questions all day."</div>
-    <div class="phead"><div class="pav" style="background:#FAEEDA;color:#633806;">PS</div><div><div class="pname">Priya Shah</div><div class="prole">Health plan operations manager · Regional payer · Age 43</div><div class="pbadges"><span class="pb">Economic buyer</span><span class="pb">Outcome-focused</span><span class="pb">AI skeptic</span></div></div></div>
+    <div class="phead"><div class="pav" style="background:#1A2235;color:#D85A30;border:1px solid #D85A3044;">PS</div><div><div class="pname">Priya Shah</div><div class="prole">Health plan operations manager · Regional payer · Age 43</div><div class="pbadges"><span class="pb">Economic buyer</span><span class="pb">Outcome-focused</span><span class="pb">AI skeptic</span></div></div></div>
     <div class="pgrid">
       <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Reduce inbound volume through self-service</li><li>Show measurable ROI on tech investments</li><li>Keep team on complex, high-value cases</li></ul></div>
       <div class="pcell"><div class="plbl">Frustrations</div><ul class="plist"><li>Vendors who promise transformation, deliver complexity</li><li>Metrics that measure activity, not outcomes</li><li>Implementation timelines that slip</li></ul></div>
@@ -385,15 +466,16 @@
       <div class="pcell"><div class="plbl">Decision drivers</div><ul class="plist"><li>Proven ROI from comparable environments</li><li>Vendor partnership quality</li><li>Transparency about what it won't do</li></ul></div>
     </div>
   </div>
-  <div style="border-top:0.5px solid var(--bd);margin:18px 0 14px;"></div>
-  <div class="stitle">Customer journey map</div>
+
+  <div style="border-top:0.5px solid var(--border);margin:24px 0 20px;"></div>
+  <div class="sec-hdr"><span class="stitle">Customer journey map</span><div class="sec-rule"></div></div>
   <div class="ssub">Maria's path — billing confusion → digital payment confidence</div>
   <div class="jg">
-    <div class="js"><div class="jl">Trigger</div><div class="ji"><i class="ti ti-mail" style="font-size:14px;color:var(--go)"></i></div><div class="eds"><div class="ed m"></div><div class="ed m"></div><div class="ed"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Confusing bill arrives</div></div>
-    <div class="js"><div class="jl">Confusion</div><div class="ji"><i class="ti ti-help" style="font-size:14px;color:var(--co)"></i></div><div class="eds"><div class="ed l"></div><div class="ed l"></div><div class="ed l"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Calls — 18 min hold</div></div>
-    <div class="js"><div class="jl">Resolution</div><div class="ji"><i class="ti ti-headphones" style="font-size:14px;color:var(--ac)"></i></div><div class="eds"><div class="ed m"></div><div class="ed m"></div><div class="ed m"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Agent resolves, explains options</div></div>
-    <div class="js"><div class="jl">First try</div><div class="ji"><i class="ti ti-device-mobile" style="font-size:14px;color:var(--te)"></i></div><div class="eds"><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed"></div></div><div class="jtp">Tries digital with agent coaching</div></div>
-    <div class="js"><div class="jl">Confidence</div><div class="ji"><i class="ti ti-check" style="font-size:14px;color:var(--te)"></i></div><div class="eds"><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div></div><div class="jtp">Pays independently — calls drop</div></div>
+    <div class="js"><div class="jl">Trigger</div><div class="ji"><i class="ti ti-mail" style="font-size:14px;color:var(--gold)"></i></div><div class="eds"><div class="ed m"></div><div class="ed m"></div><div class="ed"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Confusing bill arrives</div></div>
+    <div class="js"><div class="jl">Confusion</div><div class="ji"><i class="ti ti-help" style="font-size:14px;color:var(--coral)"></i></div><div class="eds"><div class="ed l"></div><div class="ed l"></div><div class="ed l"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Calls — 18 min hold</div></div>
+    <div class="js"><div class="jl">Resolution</div><div class="ji"><i class="ti ti-headphones" style="font-size:14px;color:var(--gold)"></i></div><div class="eds"><div class="ed m"></div><div class="ed m"></div><div class="ed m"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Agent resolves, explains options</div></div>
+    <div class="js"><div class="jl">First try</div><div class="ji"><i class="ti ti-device-mobile" style="font-size:14px;color:var(--teal)"></i></div><div class="eds"><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed"></div></div><div class="jtp">Tries digital with agent coaching</div></div>
+    <div class="js"><div class="jl">Confidence</div><div class="ji"><i class="ti ti-check" style="font-size:14px;color:var(--teal)"></i></div><div class="eds"><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div></div><div class="jtp">Pays independently — calls drop</div></div>
   </div>
   <div class="pains">
     <span class="pain pp"><i class="ti ti-alert-circle" style="font-size:11px"></i>Pain: Statement confusion drives call volume</span>
@@ -405,9 +487,10 @@
 
 <!-- AI TOOLS -->
 <div id="s-ai" class="sec"><div class="pad">
-  <div class="stitle">AI persona generator</div>
-  <div class="ssub" style="margin-bottom:12px;">Describe any user type — Claude generates a structured, research-quality persona instantly</div>
-  <div class="card" style="padding:12px 14px;">
+
+  <div class="sec-hdr"><span class="stitle">AI persona generator</span><div class="sec-rule"></div></div>
+  <div class="ssub" style="margin-bottom:14px;">Describe any user type — Claude generates a structured, research-quality persona instantly</div>
+  <div class="card">
     <div class="fl" style="margin-bottom:5px;">Quick prompts</div>
     <div class="chips">
       <button class="chip" onclick="spg('A Medicare member managing multiple chronic conditions who struggles to understand prescription coverage')">Medicare member</button>
@@ -415,9 +498,9 @@
       <button class="chip" onclick="spg('A health plan IT director evaluating AI tools for member engagement')">Health plan IT director</button>
       <button class="chip" onclick="spg('A family caregiver managing healthcare decisions for an elderly parent with dementia')">Family caregiver</button>
     </div>
-    <div style="display:flex;gap:7px;">
+    <div style="display:flex;gap:8px;">
       <textarea id="gin" rows="2" placeholder="Describe a user type, role, or problem space…"></textarea>
-      <button class="run-btn" id="gbtn" style="background:var(--ac);align-self:flex-end;height:36px;" onclick="genP()">Generate</button>
+      <button class="run-btn" id="gbtn" style="align-self:flex-end;height:36px;" onclick="genP()">Generate</button>
     </div>
   </div>
   <div class="status" id="gst"><div class="dots"><span></span><span></span><span></span></div><span>Building persona…</span></div>
@@ -437,10 +520,10 @@
     </div>
   </div>
 
-  <div style="border-top:0.5px solid var(--bd);margin:20px 0 16px;"></div>
-  <div class="stitle">AI RICE scorer</div>
-  <div class="ssub" style="margin-bottom:12px;">Describe a feature — see the score and the reasoning behind it</div>
-  <div class="card" style="padding:12px 14px;">
+  <div style="border-top:0.5px solid var(--border);margin:24px 0 20px;"></div>
+  <div class="sec-hdr"><span class="stitle">AI RICE scorer</span><div class="sec-rule"></div></div>
+  <div class="ssub" style="margin-bottom:14px;">Describe a feature — see the score and the reasoning behind every dimension</div>
+  <div class="card">
     <div class="fl" style="margin-bottom:5px;">Quick prompts</div>
     <div class="chips">
       <button class="chip" onclick="sri('Allow members to update their payment method in the app without calling customer service')">Self-serve payment update</button>
@@ -454,16 +537,16 @@
       <div class="fr"><div class="fl">Primary goal</div><select id="rice-goal"><option>Reduce member churn / lapse</option><option>Increase digital self-service adoption</option><option>Reduce contact center volume</option><option>Improve agent efficiency</option><option>Drive revenue / upsell</option></select></div>
     </div>
     <div class="btn-row">
-      <button class="run-btn" id="rice-btn" style="background:var(--ac);" onclick="runRice()"><i class="ti ti-calculator" style="font-size:13px"></i>Score this feature</button>
+      <button class="run-btn" id="rice-btn" onclick="runRice()"><i class="ti ti-calculator" style="font-size:13px"></i>Score this feature</button>
       <span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec · reasoning not just numbers</span>
     </div>
     <div class="status" id="rice-st"><div class="dots"><span></span><span></span><span></span></div><span>Thinking through trade-offs…</span></div>
   </div>
   <div id="rice-out" style="display:none;">
     <div class="score-hero"><div class="score-top"><div><div class="score-f" id="ro-feat"></div><div class="score-ctx" id="ro-ctx"></div><div id="ro-verdict"></div></div><div class="score-big"><div class="score-n" id="ro-score"></div><div class="score-lbl">RICE score</div></div></div><div class="dims" id="ro-dims"></div></div>
-    <div class="card"><div class="rc-lbl"><i class="ti ti-brain" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Kelly's reasoning</div><div style="font-size:12px;color:var(--tx);line-height:1.7;" id="ro-reason"></div></div>
-    <div class="tcard"><div class="to-hdr"><i class="ti ti-scale" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Trade-offs</div><div class="to-grid"><div class="to-col"><div class="to-ch" style="color:var(--tet);"><i class="ti ti-thumb-up" style="font-size:12px"></i>Arguments for</div><div id="ro-for"></div></div><div class="to-col"><div class="to-ch" style="color:var(--cot);"><i class="ti ti-alert-triangle" style="font-size:12px"></i>Watch out for</div><div id="ro-against"></div></div></div></div>
-    <div class="card"><div class="rc-lbl" style="margin-bottom:8px;"><i class="ti ti-help-circle" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Discovery questions before committing</div><div id="ro-qs"></div></div>
+    <div class="card"><div class="rc-lbl"><i class="ti ti-brain" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Kelly's reasoning</div><div style="font-size:12px;color:var(--text2);line-height:1.75;" id="ro-reason"></div></div>
+    <div class="tcard"><div class="to-hdr"><i class="ti ti-scale" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Trade-offs</div><div class="to-grid"><div class="to-col"><div class="to-ch" style="color:var(--teal);"><i class="ti ti-thumb-up" style="font-size:12px"></i>Arguments for</div><div id="ro-for"></div></div><div class="to-col"><div class="to-ch" style="color:var(--coral);"><i class="ti ti-alert-triangle" style="font-size:12px"></i>Watch out for</div><div id="ro-against"></div></div></div></div>
+    <div class="card"><div class="rc-lbl" style="margin-bottom:9px;"><i class="ti ti-help-circle" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Discovery questions before committing</div><div id="ro-qs"></div></div>
     <div class="acts">
       <button class="act-btn" onclick="runRice()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Re-score</button>
       <button class="act-btn" onclick="chatAsk('How would you sequence this feature relative to other priorities?');go('chat')">Discuss prioritization ↗</button>
@@ -471,15 +554,15 @@
     </div>
   </div>
 
-  <div style="border-top:0.5px solid var(--bd);margin:20px 0 16px;"></div>
-  <div class="stitle">AI journey narrator</div>
-  <div class="ssub" style="margin-bottom:12px;">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</div>
-  <div class="card" style="padding:12px 14px;">
-    <div class="fl" style="margin-bottom:6px;">Choose a persona</div>
-    <div class="three-col" style="margin-bottom:12px;">
-      <div class="pp-card active" onclick="selJP(this,'maria')" id="jp-maria"><div class="pp-top2"><div class="pav" style="background:#E6F1FB;color:#0C447C;width:30px;height:30px;font-size:10px;">MM</div><div><div class="pp-nm">Maria Martinez</div><div class="pp-rl">Medicare member · Age 68</div></div></div><div class="pp-tags"><span class="pp-tag">Payment anxiety</span><span class="pp-tag">Phone-first</span></div></div>
-      <div class="pp-card" onclick="selJP(this,'david')" id="jp-david"><div class="pp-top2"><div class="pav" style="background:#E1F5EE;color:#085041;width:30px;height:30px;font-size:10px;">DK</div><div><div class="pp-nm">David Kim</div><div class="pp-rl">Contact center agent</div></div></div><div class="pp-tags"><span class="pp-tag">Power user</span><span class="pp-tag">Tool frustrated</span></div></div>
-      <div class="pp-card" onclick="selJP(this,'priya')" id="jp-priya"><div class="pp-top2"><div class="pav" style="background:#FAEEDA;color:#633806;width:30px;height:30px;font-size:10px;">PS</div><div><div class="pp-nm">Priya Shah</div><div class="pp-rl">Health plan ops manager</div></div></div><div class="pp-tags"><span class="pp-tag">Economic buyer</span><span class="pp-tag">AI skeptic</span></div></div>
+  <div style="border-top:0.5px solid var(--border);margin:24px 0 20px;"></div>
+  <div class="sec-hdr"><span class="stitle">AI journey narrator</span><div class="sec-rule"></div></div>
+  <div class="ssub" style="margin-bottom:14px;">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</div>
+  <div class="card">
+    <div class="fl" style="margin-bottom:7px;">Choose a persona</div>
+    <div class="three-col" style="margin-bottom:14px;">
+      <div class="pp-card active" onclick="selJP(this,'maria')" id="jp-maria"><div class="pp-top2"><div class="pav" style="background:#1A2235;color:#C9A84C;border:1px solid #C9A84C44;width:30px;height:30px;font-size:10px;">MM</div><div><div class="pp-nm">Maria Martinez</div><div class="pp-rl">Medicare member · Age 68</div></div></div><div class="pp-tags"><span class="pp-tag">Payment anxiety</span><span class="pp-tag">Phone-first</span></div></div>
+      <div class="pp-card" onclick="selJP(this,'david')" id="jp-david"><div class="pp-top2"><div class="pav" style="background:#1A2235;color:#1D9E75;border:1px solid #1D9E7544;width:30px;height:30px;font-size:10px;">DK</div><div><div class="pp-nm">David Kim</div><div class="pp-rl">Contact center agent</div></div></div><div class="pp-tags"><span class="pp-tag">Power user</span><span class="pp-tag">Tool frustrated</span></div></div>
+      <div class="pp-card" onclick="selJP(this,'priya')" id="jp-priya"><div class="pp-top2"><div class="pav" style="background:#1A2235;color:#D85A30;border:1px solid #D85A3044;width:30px;height:30px;font-size:10px;">PS</div><div><div class="pp-nm">Priya Shah</div><div class="pp-rl">Health plan ops manager</div></div></div><div class="pp-tags"><span class="pp-tag">Economic buyer</span><span class="pp-tag">AI skeptic</span></div></div>
     </div>
     <div class="fl" style="margin-bottom:5px;">Scenario</div>
     <div class="chips" id="jn-chips"></div>
@@ -489,15 +572,15 @@
       <div class="fr"><div class="fl">Stages</div><select id="jn-stages"><option value="4">4 stages</option><option value="5" selected>5 stages</option><option value="6">6 stages</option></select></div>
     </div>
     <div class="btn-row">
-      <button class="run-btn" id="jn-btn" style="background:var(--te);" onclick="runJourney()"><i class="ti ti-player-play" style="font-size:13px"></i>Narrate this journey</button>
+      <button class="run-btn" id="jn-btn" onclick="runJourney()"><i class="ti ti-player-play" style="font-size:13px"></i>Narrate this journey</button>
       <span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~20 sec</span>
     </div>
     <div class="status" id="jn-st"><div class="dots"><span></span><span></span><span></span></div><span>Mapping the experience…</span></div>
   </div>
   <div id="jn-out" style="display:none;">
-    <div class="jsum"><div class="js-top2"><div><div class="js-pn" id="jno-p"></div><div class="js-sc" id="jno-s"></div></div><div><div style="font-size:10px;color:var(--mu);margin-bottom:3px;text-align:right;">Overall sentiment</div><div class="sent-bar" id="jno-sent"></div></div></div><div class="js-hl" id="jno-hl"></div></div>
+    <div class="jsum"><div class="js-top2"><div><div class="js-pn" id="jno-p"></div><div class="js-sc" id="jno-s"></div></div><div><div style="font-size:10px;color:var(--text3);margin-bottom:4px;text-align:right;letter-spacing:0.3px;text-transform:uppercase;">Sentiment</div><div class="sent-bar" id="jno-sent"></div></div></div><div class="js-hl" id="jno-hl"></div></div>
     <div id="jno-stages"></div>
-    <div class="ins-card"><div class="ins-hdr"><i class="ti ti-bulb" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>PM insights</div><div class="ins-grid"><div class="ins-col"><div class="ins-lbl" style="color:var(--cot);"><i class="ti ti-alert-circle" style="font-size:12px"></i>Top pain points</div><div id="jno-pains"></div></div><div class="ins-col"><div class="ins-lbl" style="color:var(--tet);"><i class="ti ti-bulb" style="font-size:12px"></i>Opportunities</div><div id="jno-opps"></div></div><div class="ins-col"><div class="ins-lbl" style="color:var(--act);"><i class="ti ti-chart-bar" style="font-size:12px"></i>Metrics to track</div><div id="jno-mets"></div></div></div></div>
+    <div class="ins-card"><div class="ins-hdr"><i class="ti ti-bulb" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>PM insights</div><div class="ins-grid"><div class="ins-col"><div class="ins-lbl" style="color:var(--coral);"><i class="ti ti-alert-circle" style="font-size:12px"></i>Top pain points</div><div id="jno-pains"></div></div><div class="ins-col"><div class="ins-lbl" style="color:var(--teal);"><i class="ti ti-bulb" style="font-size:12px"></i>Opportunities</div><div id="jno-opps"></div></div><div class="ins-col"><div class="ins-lbl" style="color:var(--gold);"><i class="ti ti-chart-bar" style="font-size:12px"></i>Metrics to track</div><div id="jno-mets"></div></div></div></div>
     <div class="acts">
       <button class="act-btn" onclick="runJourney()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Regenerate</button>
       <button class="act-btn" onclick="chatAsk('Based on this journey map, what is the highest-leverage product intervention and how would you validate it?');go('chat')">Highest-leverage intervention ↗</button>
@@ -506,9 +589,9 @@
   </div>
 </div></div>
 
-<!-- AUTOMATION LAB -->
+<!-- AUTOMATION -->
 <div id="s-auto" class="sec">
-  <div style="padding:14px 20px 0;"><div class="stitle">Workflow automation lab</div><div class="ssub">Live AI tools — each saves 30–90 minutes of manual PM work</div></div>
+  <div style="padding:20px 20px 0;"><div class="sec-hdr"><span class="stitle">Workflow automation lab</span><div class="sec-rule"></div></div><div class="ssub">Live AI tools — each saves 30–90 minutes of manual PM work</div></div>
   <div class="wtabs">
     <button class="wt active" onclick="wTab('prd')"><i class="ti ti-file-description" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>PRD generator</button>
     <button class="wt" onclick="wTab('us')"><i class="ti ti-cards" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>User story writer</button>
@@ -516,42 +599,42 @@
     <button class="wt" onclick="wTab('comp')"><i class="ti ti-chart-bar" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>Competitive snapshot</button>
   </div>
   <div id="w-prd" class="wp active">
-    <div class="ibar"><i class="ti ti-info-circle" style="font-size:14px;color:var(--ac);flex-shrink:0"></i><div class="ibar-t"><strong>Personal workflow.</strong> Paste a feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
+    <div class="ibar"><i class="ti ti-info-circle" style="font-size:14px;color:var(--gold);flex-shrink:0"></i><div class="ibar-t"><strong>Personal workflow.</strong> Paste a feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
     <div class="fr"><div class="fl">Feature brief</div><textarea id="pb" rows="3" placeholder="e.g. Members should update payment method without calling — 23% of billing calls are about this."></textarea></div>
     <div class="two-col">
       <div class="fr"><div class="fl">Product type</div><select id="pt"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option></select></div>
       <div class="fr"><div class="fl">Audience</div><select id="pa"><option>Medicare members (B2C)</option><option>Health plan admins (B2B)</option><option>Contact center agents</option><option>Clinical staff</option></select></div>
     </div>
-    <div class="btn-row"><button class="run-btn" id="pb-btn" style="background:var(--ac);" onclick="runPRD()"><i class="ti ti-wand" style="font-size:13px"></i>Generate PRD</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec · saves 45–90 min</span></div>
+    <div class="btn-row"><button class="run-btn" id="pb-btn" onclick="runPRD()"><i class="ti ti-wand" style="font-size:13px"></i>Generate PRD</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec · saves 45–90 min</span></div>
     <div class="status" id="pb-st"><div class="dots"><span></span><span></span><span></span></div><span>Drafting PRD…</span></div>
     <div class="ocard" id="pb-out"><div class="ohdr"><span class="olbl">Generated PRD</span><div class="oacts"><button class="ab" onclick="cp('pb-body')">Copy</button><button class="ab" onclick="chatAsk('Add edge cases and non-goals to this PRD');go('chat')">Refine ↗</button></div></div><div class="obody" id="pb-body"></div></div>
   </div>
   <div id="w-us" class="wp">
-    <div class="ibar"><i class="ti ti-info-circle" style="font-size:14px;color:var(--ac);flex-shrink:0"></i><div class="ibar-t"><strong>Personal workflow.</strong> Feature idea → role-based user stories with acceptance criteria. Ready for Jira.</div></div>
+    <div class="ibar"><i class="ti ti-info-circle" style="font-size:14px;color:var(--gold);flex-shrink:0"></i><div class="ibar-t"><strong>Personal workflow.</strong> Feature idea → role-based user stories with acceptance criteria. Ready for Jira.</div></div>
     <div class="fr"><div class="fl">Feature idea</div><textarea id="ub" rows="2" placeholder="e.g. Members can view explanation of benefits history, filterable by date and claim type."></textarea></div>
     <div class="two-col">
       <div class="fr"><div class="fl">Epic</div><select id="ue"><option>Member self-service</option><option>Billing &amp; payments</option><option>AI &amp; automation</option><option>Agent tools</option></select></div>
       <div class="fr"><div class="fl">Stories</div><select id="uc"><option>3 stories</option><option>5 stories</option></select></div>
     </div>
-    <div class="btn-row"><button class="run-btn" id="ub-btn" style="background:var(--ac);" onclick="runUS()"><i class="ti ti-cards" style="font-size:13px"></i>Write user stories</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~12 sec · saves 30–60 min</span></div>
+    <div class="btn-row"><button class="run-btn" id="ub-btn" onclick="runUS()"><i class="ti ti-cards" style="font-size:13px"></i>Write user stories</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~12 sec · saves 30–60 min</span></div>
     <div class="status" id="ub-st"><div class="dots"><span></span><span></span><span></span></div><span>Writing stories…</span></div>
     <div class="ocard" id="ub-out"><div class="ohdr"><span class="olbl">User stories</span><div class="oacts"><button class="ab" onclick="cp('ub-raw')">Copy</button><button class="ab" onclick="chatAsk('Add technical acceptance criteria and edge cases to these user stories');go('chat')">Add tech AC ↗</button></div></div><div id="ub-body" class="sgrid"></div><div id="ub-raw" style="display:none;"></div></div>
   </div>
   <div id="w-retro" class="wp">
-    <div class="ibar"><i class="ti ti-info-circle" style="font-size:14px;color:var(--ac);flex-shrink:0"></i><div class="ibar-t"><strong>Personal workflow.</strong> Paste raw retro notes → structured went-well / improve / actions in seconds.</div></div>
+    <div class="ibar"><i class="ti ti-info-circle" style="font-size:14px;color:var(--gold);flex-shrink:0"></i><div class="ibar-t"><strong>Personal workflow.</strong> Paste raw retro notes → structured went-well / improve / actions in seconds.</div></div>
     <div class="fr"><div class="fl">Raw retro notes</div><textarea id="rn" rows="5" placeholder="e.g.&#10;- Deployments went smoothly&#10;- Design review blocked eng for 2 days&#10;- Need clearer definition of done&#10;- Stakeholder feedback arrived late, caused scope creep"></textarea></div>
     <div class="fr"><div class="fl">Sprint context (optional)</div><textarea id="rc" rows="1" placeholder="e.g. Sprint 14 · AI summarization · Team of 6"></textarea></div>
-    <div class="btn-row"><button class="run-btn" id="rn-btn" style="background:var(--ac);" onclick="runRetro()"><i class="ti ti-refresh" style="font-size:13px"></i>Summarize retro</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~10 sec · saves 20–30 min</span></div>
+    <div class="btn-row"><button class="run-btn" id="rn-btn" onclick="runRetro()"><i class="ti ti-refresh" style="font-size:13px"></i>Summarize retro</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~10 sec · saves 20–30 min</span></div>
     <div class="status" id="rn-st"><div class="dots"><span></span><span></span><span></span></div><span>Organizing retro…</span></div>
-    <div class="ocard" id="rn-out"><div class="ohdr"><span class="olbl">Retro summary</span><div class="oacts"><button class="ab" onclick="cp('rn-raw')">Copy</button><button class="ab" onclick="chatAsk('Turn these action items into Jira ticket descriptions');go('chat')">To Jira ↗</button></div></div><div id="rn-body" style="padding:12px;"></div><div id="rn-raw" style="display:none;"></div></div>
+    <div class="ocard" id="rn-out"><div class="ohdr"><span class="olbl">Retro summary</span><div class="oacts"><button class="ab" onclick="cp('rn-raw')">Copy</button><button class="ab" onclick="chatAsk('Turn these action items into Jira ticket descriptions');go('chat')">To Jira ↗</button></div></div><div id="rn-body" style="padding:14px;"></div><div id="rn-raw" style="display:none;"></div></div>
   </div>
   <div id="w-comp" class="wp">
-    <div class="ibar"><i class="ti ti-info-circle" style="font-size:14px;color:var(--ac);flex-shrink:0"></i><div class="ibar-t"><strong>Personal workflow.</strong> Describe your product and a competitor → frank competitive snapshot with strategic questions.</div></div>
+    <div class="ibar"><i class="ti ti-info-circle" style="font-size:14px;color:var(--gold);flex-shrink:0"></i><div class="ibar-t"><strong>Personal workflow.</strong> Describe your product and a competitor → frank competitive snapshot with strategic questions.</div></div>
     <div class="two-col">
       <div class="fr"><div class="fl">Your product</div><textarea id="cy" rows="2" placeholder="e.g. AI-powered self-service for Medicare members — resolves billing questions without agent intervention."></textarea></div>
       <div class="fr"><div class="fl">Competitor</div><textarea id="ct" rows="2" placeholder="e.g. Enterprise conversational AI vendor focused on healthcare contact centers."></textarea></div>
     </div>
-    <div class="btn-row"><button class="run-btn" id="cy-btn" style="background:var(--ac);" onclick="runComp()"><i class="ti ti-chart-bar" style="font-size:13px"></i>Generate snapshot</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec</span></div>
+    <div class="btn-row"><button class="run-btn" id="cy-btn" onclick="runComp()"><i class="ti ti-chart-bar" style="font-size:13px"></i>Generate snapshot</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec</span></div>
     <div class="status" id="cy-st"><div class="dots"><span></span><span></span><span></span></div><span>Analyzing…</span></div>
     <div class="ocard" id="cy-out"><div class="ohdr"><span class="olbl">Competitive snapshot</span><div class="oacts"><button class="ab" onclick="cp('cy-body')">Copy</button></div></div><div class="obody" id="cy-body"></div></div>
   </div>
@@ -559,12 +642,12 @@
 
 <!-- CHAT -->
 <div id="s-chat" class="sec"><div class="pad">
-  <div class="stitle">AI assistant</div>
+  <div class="sec-hdr"><span class="stitle">AI assistant</span><div class="sec-rule"></div></div>
   <div class="ssub">Ask anything about Kelly's background, PM approach, or how she thinks through product problems</div>
   <div class="cwrap">
-    <div class="chdr"><div class="ldot"></div><span style="font-size:13px;font-weight:500;">Kelly's portfolio assistant</span><span style="font-size:11px;color:var(--mu);margin-left:auto;">Powered by Claude</span></div>
+    <div class="chdr"><div class="ldot"></div><span style="font-size:12px;font-weight:500;color:var(--text);">Kelly's portfolio assistant</span><span style="font-size:10px;color:var(--text3);margin-left:auto;letter-spacing:0.3px;text-transform:uppercase;">Powered by Claude</span></div>
     <div class="cmsgs" id="cmsgs">
-      <div class="msg ai"><div class="mav aiav"><i class="ti ti-robot" style="font-size:11px"></i></div><div class="bub">Hi! I'm Kelly's portfolio assistant. Ask me about her 15+ years in healthcare PM — AI-enabled platforms, billing UX, digital adoption, cross-functional leadership, or how she thinks through product problems.</div></div>
+      <div class="msg ai"><div class="mav aiav"><i class="ti ti-robot" style="font-size:11px"></i></div><div class="bub">Hi — I'm Kelly's portfolio assistant. Ask me about her 15+ years in healthcare PM, her work on AI-enabled platforms, or how she thinks through product problems.</div></div>
     </div>
     <div class="csuggs">
       <button class="cs4" onclick="chatAsk('Tell me about the AI summarization project and the decisions you made.')">AI summarization project</button>
@@ -590,12 +673,12 @@ function setR(b,s,on){document.getElementById(b).disabled=on;document.getElement
 function showO(id){document.getElementById(id).style.display='block';}
 
 async function api(sys,msg,maxT=1000){
-  const r=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-opus-4-5',max_tokens:maxT,system:sys,messages:[{role:'user',content:msg}]})});
+  const r=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:maxT,system:sys,messages:[{role:'user',content:msg}]})});
   if(!r.ok)throw new Error('API error '+r.status);
   const d=await r.json();return d.content?.[0]?.text||'';
 }
 
-const AVC={blue:['#E6F1FB','#0C447C'],teal:['#E1F5EE','#085041'],amber:['#FAEEDA','#633806'],coral:['#FAECE7','#712B13'],purple:['#EEEDFE','#3C3489']};
+const AVC={blue:['#1A2235','#C9A84C'],teal:['#1A2235','#1D9E75'],amber:['#1A2235','#EF9F27'],coral:['#1A2235','#D85A30'],purple:['#1A2235','#9B8FD4']};
 let curN='';
 function spg(t){document.getElementById('gin').value=t;}
 function li(id,arr){document.getElementById(id).innerHTML=arr.map(i=>`<li>${i}</li>`).join('');}
@@ -608,7 +691,9 @@ async function genP(){
     const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
     curN=p.name;
     const c=AVC[p.avatarColor]||AVC.blue;
-    const av=document.getElementById('poav');av.textContent=p.initials;av.style.cssText=`width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;flex-shrink:0;background:${c[0]};color:${c[1]};`;
+    const av=document.getElementById('poav');
+    av.textContent=p.initials;
+    av.style.cssText=`width:42px;height:42px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;font-family:'Playfair Display',serif;background:${c[0]};color:${c[1]};border:1px solid ${c[1]}44;`;
     document.getElementById('ponm').textContent=p.name;document.getElementById('poro').textContent=p.role;
     document.getElementById('poq').textContent='\u201C'+p.quote+'\u201D';
     document.getElementById('pobg').innerHTML=p.badges.map(b=>`<span class="pb">${b}</span>`).join('');
@@ -619,8 +704,8 @@ async function genP(){
   document.getElementById('gst').style.display='none';document.getElementById('gbtn').disabled=false;
 }
 
-const VERDICTS=[{min:0,max:15,l:'Low priority',bg:'#FAECE7',c:'#712B13',i:'ti-circle'},{min:15,max:35,l:'Worth exploring',bg:'#FAEEDA',c:'#633806',i:'ti-circle-half'},{min:35,max:60,l:'Strong candidate',bg:'#E1F5EE',c:'#085041',i:'ti-circle-check'},{min:60,max:999,l:'High priority',bg:'#E6F1FB',c:'#0C447C',i:'ti-stars'}];
-const DC={R:{bar:'#185FA5',txt:'#185FA5'},I:{bar:'#1D9E75',txt:'#1D9E75'},C:{bar:'#EF9F27',txt:'#EF9F27'},E:{bar:'#D85A30',txt:'#D85A30'}};
+const VERDICTS=[{min:0,max:15,l:'Low priority',bg:'#D85A3018',c:'#D85A30',bd:'#D85A3044'},{min:15,max:35,l:'Worth exploring',bg:'#C9A84C18',c:'#C9A84C',bd:'#C9A84C44'},{min:35,max:60,l:'Strong candidate',bg:'#1D9E7518',c:'#1D9E75',bd:'#1D9E7544'},{min:60,max:999,l:'High priority',bg:'#C9A84C22',c:'#E8C96A',bd:'#C9A84C66'}];
+const DC={R:{bar:'#C9A84C',txt:'#C9A84C'},I:{bar:'#1D9E75',txt:'#1D9E75'},C:{bar:'#9B8FD4',txt:'#9B8FD4'},E:{bar:'#D85A30',txt:'#D85A30'}};
 function sri(t){document.getElementById('rice-in').value=t;}
 async function runRice(){
   const feat=document.getElementById('rice-in').value.trim();if(!feat){document.getElementById('rice-in').focus();return;}
@@ -631,10 +716,10 @@ async function runRice(){
     const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
     const sc=Math.round((p.reach*p.impact*p.confidence)/p.effort*10)/10;
     const vd=VERDICTS.find(v=>sc>=v.min&&sc<v.max)||VERDICTS[0];
-    document.getElementById('ro-feat').textContent=feat.length>60?feat.slice(0,60)+'…':feat;
+    document.getElementById('ro-feat').textContent=feat.length>65?feat.slice(0,65)+'…':feat;
     document.getElementById('ro-ctx').textContent=document.getElementById('rice-prod').value+' · '+document.getElementById('rice-goal').value;
     document.getElementById('ro-score').textContent=sc;
-    document.getElementById('ro-verdict').innerHTML=`<span class="verdict" style="background:${vd.bg};color:${vd.c};"><i class="ti ${vd.i}" style="font-size:12px"></i>${vd.l}</span>`;
+    document.getElementById('ro-verdict').innerHTML=`<span class="verdict" style="background:${vd.bg};color:${vd.c};border:0.5px solid ${vd.bd};"><i class="ti ti-circle-check" style="font-size:11px"></i>${vd.l}</span>`;
     const dims=[{k:'R',n:'Reach',v:p.reach,max:10,fmt:p.reach,r:p.reach_reasoning},{k:'I',n:'Impact',v:p.impact,max:3,fmt:p.impact,r:p.impact_reasoning},{k:'C',n:'Confidence',v:p.confidence,max:1,fmt:Math.round(p.confidence*100)+'%',r:p.confidence_reasoning},{k:'E',n:'Effort',v:p.effort,max:12,fmt:p.effort+'mo',r:p.effort_reasoning}];
     document.getElementById('ro-dims').innerHTML=dims.map(d=>{const pct=Math.round((d.k==='E'?(1-(d.v-1)/11):d.v/d.max)*100);const c=DC[d.k];return`<div class="dim"><div class="dim-hdr"><span class="dim-l" style="color:${c.txt};">${d.k} — ${d.n}</span><span class="dim-v" style="color:${c.txt};">${d.fmt}</span></div><div class="dim-bar"><div class="dim-fill" style="width:${pct}%;background:${c.bar};"></div></div><div class="dim-r">${d.r}</div></div>`;}).join('');
     document.getElementById('ro-reason').textContent=p.overall_reasoning;
@@ -648,8 +733,8 @@ async function runRice(){
 
 const JP={maria:{name:'Maria Martinez',desc:'Medicare Advantage member · Retired · Age 68',traits:'low digital confidence, payment anxiety, phone-first, relies on family, high call volume user',scenarios:['Receives a confusing billing statement and tries to understand what she owes','Premium payment fails and she receives a lapse warning letter','Tries to find out if a new prescription is covered under her plan']},david:{name:'David Kim',desc:'Contact center agent · 4 years tenure · Remote',traits:'power user, high workload, frustrated with context-switching, accuracy-first mindset',scenarios:['Handles a complex billing dispute while managing a queue of waiting callers','Tries a new AI assist tool for the first time during a live member call','Receives a call about a claim denial and needs to explain the appeals process']},priya:{name:'Priya Shah',desc:'Health plan operations manager · Regional payer · Age 43',traits:'economic buyer, outcome-focused, AI skeptic, sets hard success criteria before pilots',scenarios:['Evaluating a new AI self-service vendor for the member portal','Presenting quarterly call volume reduction results to her VP','Running a pilot for a new digital payment feature with her team']}};
 let curJP='maria';
-const EC={frustrated:'#D85A30',anxious:'#D85A30',confused:'#EF9F27',neutral:'#888780',hopeful:'#1D9E75',relieved:'#1D9E75',satisfied:'#1D9E75',confident:'#185FA5',overwhelmed:'#D85A30',skeptical:'#EF9F27'};
-function gec(e){const k=Object.keys(EC).find(k=>e.toLowerCase().includes(k));return k?EC[k]:'#888780';}
+const EC={frustrated:'#D85A30',anxious:'#D85A30',confused:'#EF9F27',neutral:'#6B7280',hopeful:'#1D9E75',relieved:'#1D9E75',satisfied:'#1D9E75',confident:'#C9A84C',overwhelmed:'#D85A30',skeptical:'#EF9F27'};
+function gec(e){const k=Object.keys(EC).find(k=>e.toLowerCase().includes(k));return k?EC[k]:'#6B7280';}
 function selJP(el,id){document.querySelectorAll('.pp-card').forEach(c=>c.classList.remove('active'));el.classList.add('active');curJP=id;updJChips();document.getElementById('jn-in').value='';}
 function updJChips(){const p=JP[curJP];document.getElementById('jn-chips').innerHTML=p.scenarios.map(s=>`<button class="chip" onclick="document.getElementById('jn-in').value=this.dataset.s" data-s="${s}">${s.length>52?s.slice(0,52)+'…':s}</button>`).join('');}
 function toggleStage(i){const b=document.getElementById('jns-'+i);const c=document.getElementById('jnc-'+i);const o=b.classList.contains('open');b.classList.toggle('open',!o);c.classList.toggle('open',!o);}
@@ -665,10 +750,10 @@ async function runJourney(){
     document.getElementById('jno-s').textContent=sc;
     document.getElementById('jno-hl').textContent=j.headline;
     const sc2=Math.max(1,Math.min(5,Math.round(j.sentiment_score)));
-    const scols=['#D85A30','#EF9F27','#888780','#1D9E75','#185FA5'];
-    document.getElementById('jno-sent').innerHTML=[1,2,3,4,5].map(i=>`<div class="sent-dot" style="background:${i<=sc2?scols[sc2-1]:'var(--bd)'};"></div>`).join('');
-    const stcols=['#185FA5','#1D9E75','#EF9F27','#D85A30','#534AB7','#3C3489'];
-    document.getElementById('jno-stages').innerHTML=j.stages.map((s,i)=>{const ec=gec(s.emotion);const sc3=stcols[i%stcols.length];const ity=Math.max(1,Math.min(5,s.emotion_intensity));return`<div class="stage-card"><div class="sh" onclick="toggleStage(${i})"><div class="snum" style="background:${sc3}22;color:${sc3};">${i+1}</div><span class="snm">${s.name}</span><span class="semo" style="background:${ec}18;color:${ec};">${s.emotion} ${'●'.repeat(ity)}${'○'.repeat(5-ity)}</span><i class="ti ti-chevron-down sch${i===0?' open':''}" id="jnc-${i}"></i></div><div class="sb${i===0?' open':''}" id="jns-${i}"><div class="ss"><div class="ssl">What happens</div><div class="st">${s.what_happens}</div></div><div class="ss"><div class="ssl">Internal monologue</div><div class="st" style="font-style:italic;color:var(--mu);">"${s.internal_monologue}"</div></div><div class="ss"><div class="ssl">Touchpoints</div><div class="schips">${s.touchpoints.map(t=>`<span class="pc2 touch"><i class="ti ti-point" style="font-size:11px"></i>${t}</span>`).join('')}</div></div>${s.pain_points.length?`<div class="ss"><div class="ssl">Pain points</div><div class="schips">${s.pain_points.map(pp=>`<span class="pc2 pain"><i class="ti ti-alert-circle" style="font-size:11px"></i>${pp}</span>`).join('')}</div></div>`:''} ${s.opportunities.length?`<div class="ss"><div class="ssl">Opportunities</div><div class="schips">${s.opportunities.map(o=>`<span class="pc2 opp"><i class="ti ti-bulb" style="font-size:11px"></i>${o}</span>`).join('')}</div></div>`:''}</div></div>`;}).join('');
+    const scols=['#D85A30','#EF9F27','#6B7280','#1D9E75','#C9A84C'];
+    document.getElementById('jno-sent').innerHTML=[1,2,3,4,5].map(i=>`<div class="sent-dot" style="background:${i<=sc2?scols[sc2-1]:'var(--border2)'};"></div>`).join('');
+    const stcols=['#C9A84C','#1D9E75','#EF9F27','#D85A30','#9B8FD4','#4A9EBF'];
+    document.getElementById('jno-stages').innerHTML=j.stages.map((s,i)=>{const ec=gec(s.emotion);const sc3=stcols[i%stcols.length];const ity=Math.max(1,Math.min(5,s.emotion_intensity));return`<div class="stage-card"><div class="sh" onclick="toggleStage(${i})"><div class="snum" style="background:${sc3}22;color:${sc3};border:0.5px solid ${sc3}44;">${i+1}</div><span class="snm">${s.name}</span><span class="semo" style="background:${ec}18;color:${ec};border:0.5px solid ${ec}33;">${s.emotion} ${'●'.repeat(ity)}${'○'.repeat(5-ity)}</span><i class="ti ti-chevron-down sch${i===0?' open':''}" id="jnc-${i}"></i></div><div class="sb${i===0?' open':''}" id="jns-${i}"><div class="ss"><div class="ssl">What happens</div><div class="st">${s.what_happens}</div></div><div class="ss"><div class="ssl">Internal monologue</div><div class="st" style="font-style:italic;color:var(--text3);font-family:var(--serif);">"${s.internal_monologue}"</div></div><div class="ss"><div class="ssl">Touchpoints</div><div class="schips">${s.touchpoints.map(t=>`<span class="pc2 touch"><i class="ti ti-point" style="font-size:11px"></i>${t}</span>`).join('')}</div></div>${s.pain_points.length?`<div class="ss"><div class="ssl">Pain points</div><div class="schips">${s.pain_points.map(pp=>`<span class="pc2 pain"><i class="ti ti-alert-circle" style="font-size:11px"></i>${pp}</span>`).join('')}</div></div>`:''} ${s.opportunities.length?`<div class="ss"><div class="ssl">Opportunities</div><div class="schips">${s.opportunities.map(o=>`<span class="pc2 opp"><i class="ti ti-bulb" style="font-size:11px"></i>${o}</span>`).join('')}</div></div>`:''}</div></div>`;}).join('');
     document.getElementById('jno-pains').innerHTML=j.top_pain_points.map(pp=>`<div class="ins-item">${pp}</div>`).join('');
     document.getElementById('jno-opps').innerHTML=j.product_opportunities.map(o=>`<div class="ins-item">${o}</div>`).join('');
     document.getElementById('jno-mets').innerHTML=j.metrics_to_track.map(m=>`<div class="ins-item">${m}</div>`).join('');
@@ -693,7 +778,7 @@ async function runUS(){
     const raw=await api(sys,`Feature: ${b}\nEpic: ${document.getElementById('ue').value}`);
     const ss=JSON.parse(raw.replace(/```json|```/g,'').trim());
     document.getElementById('ub-raw').textContent=ss.map(s=>`${s.role}\n${s.action}\n${s.benefit}\n\nAC:\n${s.ac.map(a=>'• '+a).join('\n')}`).join('\n\n---\n\n');
-    document.getElementById('ub-body').innerHTML=ss.map(s=>`<div class="sc3"><div class="sh2"><span class="sr">${s.role}</span><span class="sp">${s.points}pts</span></div><div class="sb2"><div style="margin-bottom:7px;">${s.action} <span style="color:var(--mu)">${s.benefit}</span></div><div style="font-size:10px;font-weight:500;color:var(--mu);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px;">Acceptance criteria</div>${s.ac.map(a=>`<div class="acr"><i class="ti ti-check" style="font-size:11px;color:var(--te)"></i><span>${a}</span></div>`).join('')}</div></div>`).join('');
+    document.getElementById('ub-body').innerHTML=ss.map(s=>`<div class="sc3"><div class="sh2"><span class="sr">${s.role}</span><span class="sp">${s.points}pts</span></div><div class="sb2"><div style="margin-bottom:7px;">${s.action} <span style="color:var(--text3)">${s.benefit}</span></div><div style="font-size:9px;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Acceptance criteria</div>${s.ac.map(a=>`<div class="acr"><i class="ti ti-check" style="font-size:11px;color:var(--teal)"></i><span>${a}</span></div>`).join('')}</div></div>`).join('');
     showO('ub-out');
   }catch(e){alert('Error — try again.');}
   setR('ub-btn','ub-st',false);
@@ -706,7 +791,7 @@ async function runRetro(){
     const raw=await api(sys,`Notes:\n${n}\nContext: ${document.getElementById('rc').value||'Not provided'}`);
     const r=JSON.parse(raw.replace(/```json|```/g,'').trim());
     document.getElementById('rn-raw').textContent=`Went well:\n${r.wentWell.map(i=>'• '+i).join('\n')}\n\nNeeds improvement:\n${r.improve.map(i=>'• '+i).join('\n')}\n\nActions:\n${r.actions.map(a=>`• ${a.item} [${a.owner}]`).join('\n')}`;
-    document.getElementById('rn-body').innerHTML=`<div style="font-size:11px;color:var(--mu);margin-bottom:10px;">${r.context}</div><div class="rgrid"><div class="rc2"><div class="rch w"><i class="ti ti-thumb-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Went well</div><div class="ri">${r.wentWell.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch i"><i class="ti ti-arrow-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Needs improvement</div><div class="ri">${r.improve.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch a"><i class="ti ti-checkbox" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Action items</div><div class="ri">${r.actions.map(a=>`<div class="rit">${a.item}<div style="font-size:10px;color:var(--mu);margin-top:2px;">${a.owner}</div></div>`).join('')}</div></div></div>`;
+    document.getElementById('rn-body').innerHTML=`<div style="font-size:11px;color:var(--text3);margin-bottom:12px;">${r.context}</div><div class="rgrid"><div class="rc2"><div class="rch w"><i class="ti ti-thumb-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Went well</div><div class="ri">${r.wentWell.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch i"><i class="ti ti-arrow-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Needs improvement</div><div class="ri">${r.improve.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch a"><i class="ti ti-checkbox" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Action items</div><div class="ri">${r.actions.map(a=>`<div class="rit">${a.item}<div style="font-size:10px;color:var(--text3);margin-top:2px;">${a.owner}</div></div>`).join('')}</div></div></div>`;
     showO('rn-out');
   }catch(e){alert('Error — try again.');}
   setR('rn-btn','rn-st',false);
@@ -744,7 +829,7 @@ async function sendChat(){
   addM('u',msg);const typ=addTyp();
   try{
     const msgs=hist.map(m=>({role:m.r,content:m.c}));msgs.push({role:'user',content:msg});
-    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-opus-4-5',max_tokens:1000,system:CHAT_SYS,messages:msgs})});
+    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:CHAT_SYS,messages:msgs})});
     const d=await res.json();const reply=d.content?.[0]?.text||'Try again!';
     hist.push({r:'user',c:msg},{r:'assistant',c:reply});typ.remove();addM('ai',reply);
   }catch(e){typ.remove();addM('ai','Something went wrong — please try again.');}
