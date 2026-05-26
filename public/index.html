@@ -590,7 +590,7 @@ function setR(b,s,on){document.getElementById(b).disabled=on;document.getElement
 function showO(id){document.getElementById(id).style.display='block';}
 
 async function api(sys,msg,maxT=1000){
-  const r=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:maxT,system:sys,messages:[{role:'user',content:msg}]})});
+  const r=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-opus-4-5',max_tokens:maxT,system:sys,messages:[{role:'user',content:msg}]})});
   if(!r.ok)throw new Error('API error '+r.status);
   const d=await r.json();return d.content?.[0]?.text||'';
 }
@@ -744,7 +744,7 @@ async function sendChat(){
   addM('u',msg);const typ=addTyp();
   try{
     const msgs=hist.map(m=>({role:m.r,content:m.c}));msgs.push({role:'user',content:msg});
-    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:CHAT_SYS,messages:msgs})});
+    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-opus-4-5',max_tokens:1000,system:CHAT_SYS,messages:msgs})});
     const d=await res.json();const reply=d.content?.[0]?.text||'Try again!';
     hist.push({r:'user',c:msg},{r:'assistant',c:reply});typ.remove();addM('ai',reply);
   }catch(e){typ.remove();addM('ai','Something went wrong — please try again.');}
