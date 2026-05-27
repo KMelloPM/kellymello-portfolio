@@ -1,38 +1,50 @@
-export default async function handler(req, res) {
-  // Only allow POST requests
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import 'fontawesome-all.min.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600');
 
-  // Basic rate limiting — max 50 requests per day per IP
-  // (Vercel handles this statelessly; for stricter limits add a KV store)
+/*
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
-  const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+// Breakpoints.
 
-  if (!ANTHROPIC_API_KEY) {
-    return res.status(500).json({ error: 'API key not configured' });
-  }
+	@include breakpoints((
+		xlarge:   ( 1281px,  1680px ),
+		large:    ( 981px,   1280px ),
+		medium:   ( 737px,   980px  ),
+		small:    ( 481px,   736px  ),
+		xsmall:   ( 361px,   480px  ),
+		xxsmall:  ( null,    360px  )
+	));
 
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify(req.body),
-    });
+// Base.
 
-    const data = await response.json();
+	@import 'base/reset';
+	@import 'base/page';
+	@import 'base/typography';
 
-    if (!response.ok) {
-      return res.status(response.status).json(data);
-    }
+// Component.
 
-    return res.status(200).json(data);
-  } catch (error) {
-    console.error('Proxy error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
-  }
-}
+	@import 'components/form';
+	@import 'components/box';
+	@import 'components/icon';
+	@import 'components/image';
+	@import 'components/list';
+	@import 'components/actions';
+	@import 'components/icons';
+	@import 'components/table';
+	@import 'components/button';
+
+// Layout.
+
+	@import 'layout/bg';
+	@import 'layout/wrapper';
+	@import 'layout/header';
+	@import 'layout/main';
+	@import 'layout/footer';
