@@ -1,663 +1,748 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kelly Mello — Senior Product Manager</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <meta name="description" content="Kelly Mello — Senior PM with 15+ years in healthcare AI, omnichannel platforms, and member self-service." />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
+      --navy: #0D1117;
+      --navy2: #111827;
+      --navy3: #1A2235;
       --gold: #C9A84C;
       --gold-soft: rgba(201,168,76,0.12);
+      --gold-text: #E8C96A;
       --teal: #1D9E75;
+      --teal-soft: rgba(29,158,117,0.12);
       --coral: #D85A30;
+      --coral-soft: rgba(216,90,48,0.12);
+      --border-dark: #1E2A3A;
+      --border-light: #E0DBD0;
+      --bg-light: #FFFFFF;
+      --bg-light2: #F8F7F4;
+      --text-dark: #1A1A1A;
+      --text-mid: #6B6660;
+      --text-light: #9B9589;
       --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
     }
+    html { font-family: var(--sans); font-size: 14px; scroll-behavior: smooth; }
+    body { background: var(--bg-light2); color: var(--text-dark); }
 
-    /* Header customization */
-    #header .logo { border-color: var(--gold); color: var(--gold); font-family: var(--serif); font-size: 1.4em; letter-spacing: 0.05em; }
-    #header h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; }
-    #header h1 em { font-style: italic; color: var(--gold); }
-    #header p { font-size: 0.9em; line-height: 1.7; opacity: 0.75; }
-    #header nav ul li a { letter-spacing: 0.05em; font-size: 0.8em; text-transform: uppercase; }
-    #header nav ul li a:hover { background: var(--gold-soft); border-color: var(--gold); color: var(--gold); }
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy);
+      border-bottom: 0.5px solid var(--border-dark);
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 52px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .brand-mark {
+      width: 30px; height: 30px; border-radius: 4px;
+      border: 1.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 500; color: var(--gold);
+      font-family: var(--serif); letter-spacing: 0.5px;
+    }
+    .brand-name { font-size: 13px; color: #E8E4D9; }
+    .brand-role { font-size: 10px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; }
+    .navlinks { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+    .navlinks::-webkit-scrollbar { display: none; }
+    .nl {
+      padding: 5px 11px; border-radius: 20px; font-size: 11px;
+      color: #6B7280; cursor: pointer; border: none; background: none;
+      white-space: nowrap; font-family: var(--sans); letter-spacing: 0.2px;
+      transition: all 0.12s; text-decoration: none; display: block;
+    }
+    .nl:hover { color: #E8E4D9; }
+    .nl.active { color: var(--gold); background: var(--gold-soft); }
 
-    /* Article panels */
-    #main article h2.major { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; }
-    #main article h2.major::after { background: var(--gold); }
+    /* HERO — dark */
+    .hero {
+      background: var(--navy);
+      padding: 100px 24px 56px;
+      text-align: center;
+      border-bottom: 0.5px solid var(--border-dark);
+    }
+    .eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
+    .eyebrow-line { width: 28px; height: 1px; background: var(--gold); }
+    .eyebrow-text { font-size: 10px; color: var(--gold); letter-spacing: 1.8px; text-transform: uppercase; }
+    .hero h1 { font-size: 38px; font-weight: 400; line-height: 1.18; color: #E8E4D9; font-family: var(--serif); letter-spacing: -0.5px; margin-bottom: 16px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .hero h1 em { font-style: italic; color: var(--gold-text); }
+    .hero-sub { font-size: 14px; color: #6B7280; line-height: 1.75; max-width: 520px; margin: 0 auto 32px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 40px; }
+    .pill { padding: 4px 12px; border-radius: 2px; font-size: 11px; color: #6B7280; border: 0.5px solid #2A3A50; letter-spacing: 0.2px; }
+    .pill.hi { border-color: rgba(201,168,76,0.4); color: var(--gold); background: var(--gold-soft); }
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); max-width: 680px; margin: 0 auto; border: 0.5px solid var(--border-dark); border-radius: 4px; overflow: hidden; }
+    .stat { padding: 20px 16px; text-align: center; border-right: 0.5px solid var(--border-dark); }
+    .stat:last-child { border-right: none; }
+    .stat-n { font-size: 26px; font-weight: 400; color: var(--gold-text); font-family: var(--serif); line-height: 1; }
+    .stat-l { font-size: 10px; color: #6B7280; margin-top: 4px; letter-spacing: 0.4px; text-transform: uppercase; line-height: 1.4; }
 
-    /* Gold accent for buttons */
-    input[type="submit"].primary,
-    .button.primary { background-color: var(--gold) !important; border-color: var(--gold) !important; }
+    /* SECTIONS — light */
+    .section { padding: 56px 24px; border-bottom: 0.5px solid var(--border-light); }
+    .section.alt { background: var(--bg-light2); }
+    .section.reg { background: var(--bg-light); }
+    .container { max-width: 960px; margin: 0 auto; }
+    .sec-hdr { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+    .sec-title { font-size: 24px; font-weight: 400; color: var(--text-dark); font-family: var(--serif); letter-spacing: -0.3px; }
+    .sec-rule { flex: 1; height: 0.5px; background: var(--border-light); }
+    .sec-count { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+    .sec-sub { font-size: 12px; color: var(--text-light); margin-bottom: 24px; }
 
-    /* Custom content styles inside panels */
-    .km-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 1.2em; }
-    .km-eyebrow-line { width: 24px; height: 1px; background: var(--gold); }
-    .km-eyebrow-text { font-size: 0.65em; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+    /* CASE STUDIES */
+    .case-card {
+      background: var(--bg-light); border: 0.5px solid var(--border-light);
+      border-radius: 4px; padding: 20px 22px; margin-bottom: 10px;
+      display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;
+      transition: border-color 0.15s;
+    }
+    .case-card:hover { border-color: rgba(185,148,63,0.5); }
+    .section.alt .case-card { background: var(--bg-light); }
+    .case-tag { font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: #B8943F; margin-bottom: 7px; }
+    .case-title { font-size: 15px; font-weight: 400; color: var(--text-dark); font-family: var(--serif); line-height: 1.35; margin-bottom: 5px; }
+    .case-co { font-size: 11px; color: var(--text-light); margin-bottom: 10px; }
+    .case-body { font-size: 12px; color: var(--text-mid); line-height: 1.7; margin-bottom: 12px; }
+    .case-metrics { display: flex; flex-wrap: wrap; gap: 14px; }
+    .case-met { font-size: 11px; color: var(--text-light); display: flex; align-items: center; gap: 4px; }
+    .case-met strong { color: var(--text-dark); }
+    .metric-big { text-align: right; flex-shrink: 0; }
+    .metric-n { font-size: 28px; font-weight: 400; color: #B8943F; font-family: var(--serif); line-height: 1; }
+    .metric-l { font-size: 9px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
 
-    .km-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: rgba(255,255,255,0.08); margin: 1.5em 0; }
-    .km-stat { background: rgba(0,0,0,0.2); padding: 1em; text-align: center; }
-    .km-stat-n { font-size: 1.6em; font-weight: 400; color: var(--gold); font-family: var(--serif); line-height: 1; }
-    .km-stat-l { font-size: 0.6em; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; margin-top: 0.3em; line-height: 1.4; }
+    /* PERSONAS */
+    .ptabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
+    .ptab {
+      padding: 5px 13px; border-radius: 2px; font-size: 11px;
+      border: 0.5px solid var(--border-light); background: none;
+      cursor: pointer; color: var(--text-mid); font-family: var(--sans); transition: all 0.12s;
+    }
+    .ptab.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+    .pc { display: none; } .pc.active { display: block; }
+    .phead { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .pav { width: 42px; height: 42px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
+    .pname { font-size: 14px; font-weight: 400; color: var(--text-dark); font-family: var(--serif); }
+    .prole { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+    .pbadges { display: flex; gap: 4px; margin-top: 5px; flex-wrap: wrap; }
+    .pb { font-size: 10px; padding: 2px 7px; border-radius: 2px; background: var(--bg-light2); border: 0.5px solid var(--border-light); color: var(--text-light); }
+    .quote { padding: 11px 14px; margin-bottom: 14px; border-left: 2px solid #B8943F; background: rgba(185,148,63,0.06); font-size: 12px; font-style: italic; color: #8B6E2E; line-height: 1.6; font-family: var(--serif); border-radius: 0 3px 3px 0; }
+    .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .pcell { background: var(--bg-light2); border-radius: 4px; padding: 12px 14px; border: 0.5px solid var(--border-light); }
+    .plbl { font-size: 9px; font-weight: 500; color: #B8943F; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
+    .plist { list-style: none; }
+    .plist li { font-size: 12px; color: var(--text-mid); padding: 2px 0; display: flex; gap: 6px; line-height: 1.45; }
+    .plist li::before { content: "—"; color: var(--text-light); flex-shrink: 0; font-size: 10px; margin-top: 2px; }
 
-    .km-pills { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 1em 0; }
-    .km-pill { font-size: 0.65em; padding: 0.3em 0.8em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2em; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
-    .km-pill.hi { border-color: rgba(201,168,76,0.5); color: var(--gold); background: var(--gold-soft); }
+    /* JOURNEY */
+    .jg { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; margin-bottom: 14px; }
+    .js { text-align: center; }
+    .jl { font-size: 9px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+    .ji { width: 32px; height: 32px; border-radius: 4px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; background: var(--bg-light2); border: 0.5px solid var(--border-light); }
+    .eds { display: flex; justify-content: center; gap: 2px; margin-bottom: 6px; }
+    .ed { width: 6px; height: 6px; border-radius: 50%; background: var(--border-light); }
+    .ed.h { background: var(--teal); } .ed.m { background: #B8943F; } .ed.l { background: var(--coral); }
+    .jtp { font-size: 10px; color: var(--text-light); line-height: 1.4; }
+    .pains { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .pain { font-size: 11px; padding: 3px 9px; border-radius: 2px; display: flex; align-items: center; gap: 3px; }
+    .pp { background: rgba(216,90,48,0.08); color: #993C1D; border: 0.5px solid rgba(216,90,48,0.2); }
+    .po { background: rgba(29,158,117,0.08); color: #085041; border: 0.5px solid rgba(29,158,117,0.2); }
 
-    .km-case { border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 1em 1.2em; margin-bottom: 0.8em; transition: border-color 0.2s; }
-    .km-case:hover { border-color: rgba(201,168,76,0.4); }
-    .km-case-tag { font-size: 0.6em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4em; }
-    .km-case-title { font-family: var(--serif); font-weight: 400; font-size: 0.95em; line-height: 1.4; margin-bottom: 0.3em; }
-    .km-case-co { font-size: 0.7em; opacity: 0.55; margin-bottom: 0.8em; }
-    .km-case-body { font-size: 0.75em; line-height: 1.75; opacity: 0.7; margin-bottom: 0.8em; }
-    .km-case-metrics { display: flex; flex-wrap: wrap; gap: 0.8em; }
-    .km-metric { font-size: 0.65em; opacity: 0.6; display: flex; align-items: center; gap: 0.3em; }
-    .km-metric strong { color: rgba(255,255,255,0.9); opacity: 1; }
+    /* TOOL CARDS */
+    .tool-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 24px; }
+    .tool-card { background: var(--bg-light); border: 0.5px solid var(--border-light); border-radius: 4px; padding: 16px 18px; transition: border-color 0.15s; }
+    .tool-card:hover { border-color: rgba(185,148,63,0.5); }
+    .section.reg .tool-card { background: var(--bg-light2); }
+    .tool-ico { font-size: 18px; color: #B8943F; margin-bottom: 9px; }
+    .tool-t { font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
+    .tool-s { font-size: 11px; color: var(--text-light); line-height: 1.5; }
 
-    .km-ptabs { display: flex; gap: 0.4em; margin-bottom: 1em; flex-wrap: wrap; }
-    .km-ptab { font-size: 0.65em; padding: 0.35em 0.9em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2em; cursor: pointer; background: none; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; transition: all 0.15s; font-family: inherit; }
-    .km-ptab.active { border-color: rgba(201,168,76,0.5); color: var(--gold); background: var(--gold-soft); }
-    .km-pc { display: none; } .km-pc.active { display: block; }
-    .km-quote { padding: 0.8em 1em; border-left: 2px solid var(--gold); background: var(--gold-soft); font-size: 0.8em; font-style: italic; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1em; font-family: var(--serif); }
-    .km-persona-head { display: flex; align-items: center; gap: 0.8em; margin-bottom: 0.8em; }
-    .km-pav { width: 36px; height: 36px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
-    .km-pname { font-family: var(--serif); font-size: 0.9em; }
-    .km-prole { font-size: 0.65em; opacity: 0.55; margin-top: 0.2em; }
-    .km-pbadges { display: flex; gap: 0.3em; margin-top: 0.4em; flex-wrap: wrap; }
-    .km-pb { font-size: 0.6em; padding: 0.2em 0.6em; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; color: rgba(255,255,255,0.5); }
-    .km-pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; margin-top: 0.8em; }
-    .km-pcell { background: rgba(0,0,0,0.2); border-radius: 4px; padding: 0.8em; }
-    .km-plbl { font-size: 0.58em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5em; }
-    .km-plist { list-style: none; padding: 0; margin: 0; }
-    .km-plist li { font-size: 0.72em; padding: 0.15em 0; opacity: 0.7; display: flex; gap: 0.4em; line-height: 1.4; }
-    .km-plist li::before { content: "—"; opacity: 0.4; flex-shrink: 0; font-size: 0.85em; margin-top: 0.1em; }
+    /* AI PERSONA OUTPUT */
+    .pout { display: none; border: 0.5px solid var(--border-light); border-radius: 4px; overflow: hidden; margin-top: 12px; }
+    .pot { padding: 14px 16px; border-bottom: 0.5px solid var(--border-light); display: flex; align-items: center; gap: 12px; background: var(--bg-light2); }
+    .poq { padding: 11px 14px; border-bottom: 0.5px solid var(--border-light); font-size: 12px; font-style: italic; color: #8B6E2E; background: rgba(185,148,63,0.06); border-left: 2px solid #B8943F; line-height: 1.55; font-family: var(--serif); border-radius: 0; }
+    .pog { display: grid; grid-template-columns: 1fr 1fr; }
+    .poc { padding: 12px 14px; border-right: 0.5px solid var(--border-light); border-bottom: 0.5px solid var(--border-light); background: var(--bg-light); }
+    .poc:nth-child(2n) { border-right: none; } .poc:nth-last-child(-n+2) { border-bottom: none; }
+    .popp { padding: 12px 14px; background: var(--bg-light2); }
+    .oppl { font-size: 9px; font-weight: 500; color: #085041; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+    .opcs { display: flex; flex-wrap: wrap; gap: 5px; }
+    .opc { font-size: 11px; padding: 3px 9px; border-radius: 2px; background: rgba(29,158,117,0.08); color: #085041; border: 0.5px solid rgba(29,158,117,0.2); }
+    .pacts { display: flex; gap: 6px; padding: 10px 14px; border-top: 0.5px solid var(--border-light); background: var(--bg-light2); }
+    .pab { padding: 5px 11px; border-radius: 2px; border: 0.5px solid var(--border-light); background: none; cursor: pointer; font-size: 11px; color: var(--text-mid); font-family: var(--sans); }
+    .pab:hover { border-color: #B8943F; color: #B8943F; }
 
-    .km-jg { display: grid; grid-template-columns: repeat(5,1fr); gap: 4px; margin: 1em 0; }
-    .km-js { text-align: center; }
-    .km-jl { font-size: 0.55em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.5; margin-bottom: 0.4em; }
-    .km-ji { width: 28px; height: 28px; border-radius: 3px; margin: 0 auto 0.5em; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.08); font-size: 0.9em; }
-    .km-eds { display: flex; justify-content: center; gap: 2px; margin-bottom: 0.4em; }
-    .km-ed { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.15); }
-    .km-ed.h { background: var(--teal); } .km-ed.m { background: var(--gold); } .km-ed.l { background: var(--coral); }
-    .km-jtp { font-size: 0.6em; opacity: 0.55; line-height: 1.3; }
-    .km-pains { display: flex; flex-wrap: wrap; gap: 0.4em; margin-top: 0.8em; }
-    .km-pain { font-size: 0.62em; padding: 0.25em 0.7em; border-radius: 2px; display: flex; align-items: center; gap: 0.3em; }
-    .km-pain.p { background: rgba(216,90,48,0.15); color: #f08060; border: 1px solid rgba(216,90,48,0.3); }
-    .km-pain.o { background: rgba(29,158,117,0.15); color: #5dd4a8; border: 1px solid rgba(29,158,117,0.3); }
+    /* SHARED FORM ELEMENTS */
+    textarea, select, input[type=text] { width: 100%; font-family: var(--sans); font-size: 12px; color: var(--text-dark); background: var(--bg-light); border: 0.5px solid var(--border-light); border-radius: 3px; }
+    textarea { resize: none; padding: 9px 11px; line-height: 1.55; }
+    select { padding: 7px 10px; height: 34px; }
+    .fl { font-size: 10px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .fr { margin-bottom: 10px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 9px; }
+    .chip { padding: 3px 10px; border-radius: 20px; font-size: 11px; border: 0.5px solid var(--border-light); background: none; cursor: pointer; color: var(--text-light); font-family: var(--sans); transition: all 0.12s; }
+    .chip:hover { border-color: #B8943F; color: #B8943F; }
+    .run-btn { padding: 9px 18px; border-radius: 3px; background: var(--navy); color: var(--gold); border: 1px solid var(--gold); cursor: pointer; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s; font-family: var(--sans); letter-spacing: 0.2px; }
+    .run-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .run-btn:hover:not(:disabled) { background: var(--gold); color: var(--navy); }
+    .btn-row { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+    .tnote { font-size: 10px; color: var(--text-light); display: flex; align-items: center; gap: 3px; }
+    .status { display: none; align-items: center; gap: 7px; padding: 8px 0; font-size: 11px; color: var(--text-light); }
+    .dots span { display: inline-block; width: 3px; height: 3px; border-radius: 50%; background: #B8943F; margin: 0 1px; animation: bd 0.9s infinite; }
+    .dots span:nth-child(2) { animation-delay: .15s; } .dots span:nth-child(3) { animation-delay: .3s; }
+    @keyframes bd { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+    .act-btn { padding: 5px 11px; border-radius: 3px; border: 0.5px solid var(--border-light); background: none; cursor: pointer; font-size: 10px; color: var(--text-light); font-family: var(--sans); transition: all 0.12s; }
+    .act-btn:hover { border-color: #B8943F; color: #B8943F; }
+    .acts { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+    .ocard { display: none; margin-top: 12px; border: 0.5px solid var(--border-light); border-radius: 4px; overflow: hidden; }
+    .ohdr { padding: 9px 13px; background: var(--bg-light2); border-bottom: 0.5px solid var(--border-light); display: flex; align-items: center; justify-content: space-between; }
+    .olbl { font-size: 10px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+    .oacts { display: flex; gap: 4px; }
+    .ab { padding: 3px 9px; border-radius: 2px; border: 0.5px solid var(--border-light); background: none; cursor: pointer; font-size: 10px; color: var(--text-light); font-family: var(--sans); }
+    .ab:hover { border-color: #B8943F; color: #B8943F; }
+    .obody { padding: 14px; font-size: 12px; color: var(--text-mid); line-height: 1.75; white-space: pre-wrap; max-height: 360px; overflow-y: auto; }
 
-    /* AI Tools shared styles */
-    .km-tool-section { margin-bottom: 1.5em; }
-    .km-tool-section h3 { font-family: var(--serif); font-weight: 400; font-size: 1em; margin-bottom: 0.3em; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5em; margin-bottom: 0.8em; }
-    .km-chips { display: flex; flex-wrap: wrap; gap: 0.35em; margin-bottom: 0.7em; }
-    .km-chip { font-size: 0.62em; padding: 0.3em 0.7em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2em; background: none; cursor: pointer; color: rgba(255,255,255,0.5); font-family: inherit; transition: all 0.12s; }
-    .km-chip:hover { border-color: rgba(201,168,76,0.5); color: var(--gold); }
-    .km-field { margin-bottom: 0.8em; }
-    .km-label { font-size: 0.62em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.55; display: block; margin-bottom: 0.3em; }
-    .km-textarea { width: 100%; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; padding: 0.6em 0.8em; font-size: 0.75em; color: rgba(255,255,255,0.8); resize: none; line-height: 1.5; font-family: inherit; }
-    .km-select { width: 100%; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; padding: 0.5em 0.8em; font-size: 0.75em; color: rgba(255,255,255,0.8); font-family: inherit; height: 32px; }
-    .km-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; }
-    .km-btn { display: inline-flex; align-items: center; gap: 0.4em; padding: 0.5em 1.2em; background: var(--gold); color: #0d1117; border: none; border-radius: 3px; font-size: 0.72em; font-weight: 600; cursor: pointer; font-family: inherit; letter-spacing: 0.03em; transition: opacity 0.15s; }
-    .km-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    .km-btn:hover:not(:disabled) { opacity: 0.88; }
-    .km-btn-row { display: flex; align-items: center; gap: 0.8em; margin-top: 0.4em; }
-    .km-tnote { font-size: 0.6em; opacity: 0.45; }
-    .km-status { display: none; align-items: center; gap: 0.5em; padding: 0.5em 0; font-size: 0.7em; opacity: 0.6; }
-    .km-dots span { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); margin: 0 1px; animation: kmbd 0.9s infinite; }
-    .km-dots span:nth-child(2) { animation-delay: .15s; } .km-dots span:nth-child(3) { animation-delay: .3s; }
-    @keyframes kmbd { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
-    .km-out { display: none; margin-top: 0.8em; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
-    .km-out-hdr { padding: 0.5em 0.8em; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; }
-    .km-out-lbl { font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.5; }
-    .km-out-acts { display: flex; gap: 0.3em; }
-    .km-ab { font-size: 0.6em; padding: 0.2em 0.6em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; background: none; cursor: pointer; color: rgba(255,255,255,0.5); font-family: inherit; }
-    .km-ab:hover { border-color: var(--gold); color: var(--gold); }
-    .km-out-body { padding: 0.8em; font-size: 0.75em; color: rgba(255,255,255,0.7); line-height: 1.75; white-space: pre-wrap; max-height: 280px; overflow-y: auto; }
+    /* RICE */
+    .score-hero { background: var(--bg-light2); border: 0.5px solid var(--border-light); border-radius: 4px; padding: 16px 18px; margin-bottom: 10px; }
+    .score-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .score-f { font-size: 14px; font-weight: 400; color: var(--text-dark); font-family: var(--serif); }
+    .score-ctx { font-size: 11px; color: var(--text-light); margin-top: 3px; }
+    .score-n { font-size: 36px; font-weight: 400; color: #B8943F; font-family: var(--serif); line-height: 1; text-align: right; }
+    .score-lbl { font-size: 10px; color: var(--text-light); margin-top: 2px; letter-spacing: 0.4px; text-transform: uppercase; text-align: right; }
+    .verdict { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; padding: 3px 9px; border-radius: 2px; margin-top: 6px; letter-spacing: 0.3px; }
+    .dims { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+    .dim { background: var(--bg-light); border-radius: 3px; padding: 11px 13px; border: 0.5px solid var(--border-light); }
+    .dim-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .dim-l { font-size: 10px; color: var(--text-light); }
+    .dim-v { font-size: 18px; font-weight: 400; font-family: var(--serif); }
+    .dim-bar { height: 3px; border-radius: 2px; background: var(--border-light); margin-bottom: 7px; }
+    .dim-fill { height: 100%; border-radius: 2px; }
+    .dim-r { font-size: 11px; color: var(--text-light); line-height: 1.45; }
+    .rc-lbl { font-size: 10px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
+    .tcard { background: var(--bg-light2); border: 0.5px solid var(--border-light); border-radius: 4px; overflow: hidden; margin-bottom: 10px; }
+    .to-hdr { padding: 9px 14px; background: var(--bg-light); border-bottom: 0.5px solid var(--border-light); font-size: 10px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+    .to-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .to-col { padding: 12px 14px; }
+    .to-col:first-child { border-right: 0.5px solid var(--border-light); }
+    .to-ch { font-size: 11px; font-weight: 500; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+    .to-item { font-size: 11px; color: var(--text-light); padding: 2px 0; display: flex; align-items: flex-start; gap: 5px; line-height: 1.45; }
+    .to-item::before { content: "—"; flex-shrink: 0; font-size: 10px; margin-top: 1px; }
+    .q-item { font-size: 12px; color: var(--text-mid); padding: 7px 0; display: flex; align-items: flex-start; gap: 8px; border-bottom: 0.5px solid var(--border-light); line-height: 1.55; }
+    .q-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .q-num { font-size: 11px; font-weight: 500; color: #B8943F; flex-shrink: 0; margin-top: 1px; font-family: var(--serif); }
 
-    /* RICE specific */
-    .km-score-hero { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 0.8em 1em; margin-bottom: 0.7em; }
-    .km-score-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; margin-bottom: 0.8em; }
-    .km-score-f { font-family: var(--serif); font-size: 0.85em; line-height: 1.35; }
-    .km-score-ctx { font-size: 0.62em; opacity: 0.5; margin-top: 0.2em; }
-    .km-score-n { font-size: 2.2em; font-weight: 400; color: var(--gold); font-family: var(--serif); line-height: 1; text-align: right; }
-    .km-score-lbl { font-size: 0.58em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.5; text-align: right; margin-top: 0.2em; }
-    .km-verdict { display: inline-flex; align-items: center; gap: 0.3em; font-size: 0.62em; padding: 0.2em 0.7em; border-radius: 2px; margin-top: 0.4em; }
-    .km-dims { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.5em; }
-    .km-dim { background: rgba(0,0,0,0.2); border-radius: 3px; padding: 0.6em 0.8em; border: 1px solid rgba(255,255,255,0.06); }
-    .km-dim-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em; }
-    .km-dim-l { font-size: 0.6em; opacity: 0.5; letter-spacing: 0.05em; }
-    .km-dim-v { font-size: 1.1em; font-weight: 400; font-family: var(--serif); }
-    .km-dim-bar { height: 2px; border-radius: 1px; background: rgba(255,255,255,0.1); margin-bottom: 0.4em; }
-    .km-dim-fill { height: 100%; border-radius: 1px; }
-    .km-dim-r { font-size: 0.68em; opacity: 0.6; line-height: 1.45; }
-    .km-reasoning { background: rgba(0,0,0,0.2); border-radius: 4px; padding: 0.8em; margin-bottom: 0.7em; font-size: 0.75em; color: rgba(255,255,255,0.7); line-height: 1.7; }
-    .km-to-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 0.7em; }
-    .km-to-col { padding: 0.7em 0.8em; }
-    .km-to-col:first-child { border-right: 1px solid rgba(255,255,255,0.08); }
-    .km-to-ch { font-size: 0.62em; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5em; display: flex; align-items: center; gap: 0.3em; }
-    .km-to-item { font-size: 0.7em; opacity: 0.6; padding: 0.15em 0; display: flex; gap: 0.4em; line-height: 1.4; }
-    .km-to-item::before { content: "—"; opacity: 0.5; flex-shrink: 0; font-size: 0.85em; }
-    .km-q-item { font-size: 0.72em; color: rgba(255,255,255,0.75); padding: 0.5em 0; display: flex; gap: 0.6em; border-bottom: 1px solid rgba(255,255,255,0.06); line-height: 1.5; }
-    .km-q-item:last-child { border-bottom: none; }
-    .km-q-num { color: var(--gold); flex-shrink: 0; font-family: var(--serif); }
-    .km-acts { display: flex; gap: 0.4em; flex-wrap: wrap; margin-top: 0.7em; }
-    .km-act-btn { font-size: 0.62em; padding: 0.3em 0.8em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; background: none; cursor: pointer; color: rgba(255,255,255,0.5); font-family: inherit; }
-    .km-act-btn:hover { border-color: var(--gold); color: var(--gold); }
+    /* JOURNEY NARRATOR */
+    .pp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 12px; }
+    .pp-card { border: 0.5px solid var(--border-light); border-radius: 4px; padding: 12px 14px; cursor: pointer; transition: all 0.15s; background: var(--bg-light); }
+    .pp-card:hover { border-color: rgba(185,148,63,0.5); }
+    .pp-card.active { border: 1.5px solid #B8943F; background: rgba(185,148,63,0.06); }
+    .pp-top { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; }
+    .pp-av { width: 30px; height: 30px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
+    .pp-nm { font-size: 12px; font-weight: 500; color: var(--text-dark); }
+    .pp-rl { font-size: 10px; color: var(--text-light); line-height: 1.3; }
+    .pp-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+    .pp-tag { font-size: 10px; padding: 2px 6px; border-radius: 2px; background: var(--bg-light2); border: 0.5px solid var(--border-light); color: var(--text-light); }
+    .jsum { background: var(--bg-light2); border: 0.5px solid var(--border-light); border-radius: 4px; padding: 14px 16px; margin-bottom: 10px; }
+    .js-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .js-pn { font-size: 14px; font-weight: 400; color: var(--text-dark); font-family: var(--serif); }
+    .js-sc { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+    .sent-bar { display: flex; gap: 3px; }
+    .sent-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .js-hl { font-size: 12px; color: var(--text-mid); line-height: 1.6; font-style: italic; border-left: 2px solid var(--teal); padding-left: 10px; font-family: var(--serif); border-radius: 0; }
+    .stage-card { background: var(--bg-light); border: 0.5px solid var(--border-light); border-radius: 4px; margin-bottom: 7px; overflow: hidden; }
+    .sh { display: flex; align-items: center; gap: 9px; padding: 10px 14px; border-bottom: 0.5px solid var(--border-light); cursor: pointer; background: var(--bg-light2); }
+    .snum { width: 22px; height: 22px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
+    .snm { font-size: 12px; font-weight: 500; color: var(--text-dark); flex: 1; }
+    .semo { font-size: 10px; padding: 2px 8px; border-radius: 2px; white-space: nowrap; }
+    .sch { font-size: 14px; color: var(--text-light); transition: transform 0.2s; flex-shrink: 0; }
+    .sch.open { transform: rotate(180deg); }
+    .sb { padding: 12px 14px; display: none; }
+    .sb.open { display: block; }
+    .ss { margin-bottom: 10px; } .ss:last-child { margin-bottom: 0; }
+    .ssl { font-size: 9px; font-weight: 500; color: #B8943F; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+    .st { font-size: 12px; color: var(--text-mid); line-height: 1.65; }
+    .schips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .pc2 { font-size: 10px; padding: 3px 8px; border-radius: 2px; display: flex; align-items: center; gap: 3px; }
+    .pc2.pain { background: rgba(216,90,48,0.08); color: #993C1D; border: 0.5px solid rgba(216,90,48,0.2); }
+    .pc2.opp { background: rgba(29,158,117,0.08); color: #085041; border: 0.5px solid rgba(29,158,117,0.2); }
+    .pc2.touch { background: var(--bg-light2); color: var(--text-light); border: 0.5px solid var(--border-light); }
+    .ins-card { background: var(--bg-light2); border: 0.5px solid var(--border-light); border-radius: 4px; overflow: hidden; margin-bottom: 10px; }
+    .ins-hdr { padding: 9px 14px; background: var(--bg-light); border-bottom: 0.5px solid var(--border-light); font-size: 10px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
+    .ins-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    .ins-col { padding: 12px 14px; border-right: 0.5px solid var(--border-light); }
+    .ins-col:last-child { border-right: none; }
+    .ins-lbl { font-size: 10px; font-weight: 500; margin-bottom: 7px; display: flex; align-items: center; gap: 4px; }
+    .ins-item { font-size: 11px; color: var(--text-light); padding: 2px 0; line-height: 1.45; display: flex; gap: 4px; }
+    .ins-item::before { content: "—"; flex-shrink: 0; font-size: 10px; }
 
-    /* Journey narrator */
-    .km-pp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.5em; margin-bottom: 0.8em; }
-    .km-pp-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0.7em 0.8em; cursor: pointer; transition: all 0.15s; }
-    .km-pp-card:hover { border-color: rgba(201,168,76,0.4); }
-    .km-pp-card.active { border-color: var(--gold); background: var(--gold-soft); }
-    .km-pp-top { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.4em; }
-    .km-pp-av { width: 24px; height: 24px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.6em; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
-    .km-pp-nm { font-size: 0.72em; font-weight: 500; }
-    .km-pp-rl { font-size: 0.6em; opacity: 0.5; line-height: 1.3; }
-    .km-pp-tags { display: flex; flex-wrap: wrap; gap: 0.25em; }
-    .km-pp-tag { font-size: 0.55em; padding: 0.1em 0.5em; border-radius: 2px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.45); }
-    .km-jsum { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 0.8em 1em; margin-bottom: 0.6em; }
-    .km-js-pn { font-family: var(--serif); font-size: 0.85em; }
-    .km-js-sc { font-size: 0.62em; opacity: 0.5; margin-top: 0.2em; }
-    .km-js-hl { font-size: 0.72em; opacity: 0.65; line-height: 1.6; font-style: italic; border-left: 2px solid var(--teal); padding-left: 0.7em; margin-top: 0.6em; font-family: var(--serif); }
-    .km-sent-bar { display: flex; gap: 2px; }
-    .km-sent-dot { width: 7px; height: 7px; border-radius: 50%; }
-    .km-stage-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; margin-bottom: 0.5em; overflow: hidden; }
-    .km-stage-hdr { display: flex; align-items: center; gap: 0.6em; padding: 0.6em 0.8em; cursor: pointer; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .km-stage-num { width: 18px; height: 18px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.6em; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
-    .km-stage-nm { font-size: 0.75em; font-weight: 500; flex: 1; }
-    .km-stage-emo { font-size: 0.6em; padding: 0.15em 0.6em; border-radius: 2px; white-space: nowrap; }
-    .km-stage-chev { font-size: 0.8em; opacity: 0.4; transition: transform 0.2s; }
-    .km-stage-chev.open { transform: rotate(180deg); }
-    .km-stage-body { padding: 0.7em 0.8em; display: none; }
-    .km-stage-body.open { display: block; }
-    .km-ss { margin-bottom: 0.6em; } .km-ss:last-child { margin-bottom: 0; }
-    .km-ssl { font-size: 0.58em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.3em; }
-    .km-st { font-size: 0.72em; opacity: 0.7; line-height: 1.6; }
-    .km-schips { display: flex; flex-wrap: wrap; gap: 0.3em; }
-    .km-sc2 { font-size: 0.62em; padding: 0.2em 0.6em; border-radius: 2px; display: flex; align-items: center; gap: 0.25em; }
-    .km-sc2.pain { background: rgba(216,90,48,0.12); color: #f08060; border: 1px solid rgba(216,90,48,0.25); }
-    .km-sc2.opp { background: rgba(29,158,117,0.12); color: #5dd4a8; border: 1px solid rgba(29,158,117,0.25); }
-    .km-sc2.touch { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.1); }
-    .km-ins-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5em; margin-top: 0.6em; }
-    .km-ins-col { background: rgba(0,0,0,0.2); border-radius: 3px; padding: 0.7em 0.8em; border: 1px solid rgba(255,255,255,0.06); }
-    .km-ins-lbl { font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5em; display: flex; align-items: center; gap: 0.3em; }
-    .km-ins-item { font-size: 0.68em; opacity: 0.6; padding: 0.15em 0; line-height: 1.4; display: flex; gap: 0.3em; }
-    .km-ins-item::before { content: "—"; opacity: 0.5; flex-shrink: 0; font-size: 0.85em; }
+    /* WORKFLOW TABS */
+    .wtabs { display: flex; border-bottom: 0.5px solid var(--border-light); overflow-x: auto; scrollbar-width: none; margin-bottom: 20px; }
+    .wtabs::-webkit-scrollbar { display: none; }
+    .wt { padding: 9px 14px; font-size: 11px; color: var(--text-light); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; white-space: nowrap; font-family: var(--sans); letter-spacing: 0.2px; transition: all 0.12s; }
+    .wt.active { color: var(--navy); border-bottom-color: #B8943F; font-weight: 500; }
+    .wp { display: none; } .wp.active { display: block; }
+    .ibar { display: flex; align-items: flex-start; gap: 8px; padding: 10px 13px; background: rgba(185,148,63,0.06); border-left: 2px solid #B8943F; margin-bottom: 14px; border-radius: 0 3px 3px 0; }
+    .ibar-t { font-size: 11px; color: var(--text-mid); line-height: 1.55; }
+    .ibar-t strong { color: #8B6E2E; font-weight: 500; }
+    .sgrid { display: flex; flex-direction: column; gap: 8px; }
+    .sc3 { border: 0.5px solid var(--border-light); border-radius: 3px; overflow: hidden; }
+    .sh2 { padding: 7px 12px; background: var(--bg-light2); display: flex; align-items: center; justify-content: space-between; border-bottom: 0.5px solid var(--border-light); }
+    .sr { font-size: 11px; font-weight: 500; color: var(--text-dark); }
+    .sp { font-size: 10px; padding: 2px 7px; border-radius: 2px; background: rgba(185,148,63,0.08); color: #B8943F; border: 0.5px solid rgba(185,148,63,0.2); }
+    .sb2 { padding: 10px 12px; font-size: 11px; color: var(--text-mid); line-height: 1.65; background: var(--bg-light); }
+    .acr { display: flex; align-items: flex-start; gap: 5px; padding: 2px 0; font-size: 11px; color: var(--text-light); }
+    .rgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .rc2 { border: 0.5px solid var(--border-light); border-radius: 3px; overflow: hidden; }
+    .rch { padding: 7px 11px; font-size: 9px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 0.5px solid var(--border-light); }
+    .rch.w { background: rgba(29,158,117,0.08); color: #085041; }
+    .rch.i { background: rgba(185,148,63,0.08); color: #8B6E2E; }
+    .rch.a { background: var(--bg-light2); color: var(--text-light); }
+    .ri { padding: 8px 11px; display: flex; flex-direction: column; gap: 5px; background: var(--bg-light); }
+    .rit { font-size: 11px; color: var(--text-mid); padding: 5px 8px; border-radius: 2px; background: var(--bg-light2); line-height: 1.4; border: 0.5px solid var(--border-light); }
 
-    /* Workflow tabs */
-    .km-wtabs { display: flex; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1em; overflow-x: auto; scrollbar-width: none; }
-    .km-wtabs::-webkit-scrollbar { display: none; }
-    .km-wt { padding: 0.5em 0.8em; font-size: 0.65em; color: rgba(255,255,255,0.4); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; white-space: nowrap; font-family: inherit; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.12s; }
-    .km-wt.active { color: var(--gold); border-bottom-color: var(--gold); }
-    .km-wp { display: none; } .km-wp.active { display: block; }
-    .km-ibar { display: flex; align-items: flex-start; gap: 0.6em; padding: 0.6em 0.8em; background: var(--gold-soft); border-left: 2px solid var(--gold); margin-bottom: 0.8em; border-radius: 0 3px 3px 0; }
-    .km-ibar-t { font-size: 0.7em; color: rgba(255,255,255,0.6); line-height: 1.5; }
-    .km-ibar-t strong { color: rgba(201,168,76,0.9); font-weight: 500; }
-    .km-sgrid { display: flex; flex-direction: column; gap: 0.5em; }
-    .km-sc3 { border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
-    .km-sh2 { padding: 0.4em 0.7em; background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .km-sr { font-size: 0.7em; color: rgba(255,255,255,0.75); }
-    .km-sp { font-size: 0.6em; padding: 0.1em 0.5em; border-radius: 2px; background: var(--gold-soft); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
-    .km-sb2 { padding: 0.6em 0.7em; font-size: 0.7em; color: rgba(255,255,255,0.65); line-height: 1.6; }
-    .km-acr { display: flex; align-items: flex-start; gap: 0.3em; padding: 0.1em 0; font-size: 0.68em; opacity: 0.65; }
-    .km-rgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5em; }
-    .km-rc2 { border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
-    .km-rch { padding: 0.4em 0.7em; font-size: 0.58em; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .km-rch.w { color: #5dd4a8; background: rgba(29,158,117,0.1); }
-    .km-rch.i { color: var(--gold); background: var(--gold-soft); }
-    .km-rch.a { color: rgba(255,255,255,0.5); background: rgba(0,0,0,0.2); }
-    .km-ri { padding: 0.5em 0.7em; display: flex; flex-direction: column; gap: 0.4em; }
-    .km-rit { font-size: 0.68em; color: rgba(255,255,255,0.65); padding: 0.3em 0.6em; border-radius: 2px; background: rgba(0,0,0,0.2); line-height: 1.4; }
-
-    /* Chat */
-    .km-chat-wrap { border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
-    .km-chat-hdr { padding: 0.6em 0.9em; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 0.5em; }
-    .km-live { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+    /* CHAT — dark themed */
+    .cwrap { border: 0.5px solid var(--border-dark); border-radius: 4px; overflow: hidden; }
+    .chdr { padding: 11px 16px; border-bottom: 0.5px solid var(--border-dark); background: var(--navy2); display: flex; align-items: center; gap: 8px; }
+    .ldot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
-    .km-chat-title { font-size: 0.72em; }
-    .km-chat-badge { font-size: 0.58em; margin-left: auto; color: rgba(201,168,76,0.6); border: 1px solid rgba(201,168,76,0.2); padding: 0.1em 0.5em; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .km-chat-msgs { padding: 0.8em; min-height: 140px; max-height: 240px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.6em; }
-    .km-msg { display: flex; gap: 0.5em; } .km-msg.u { flex-direction: row-reverse; }
-    .km-bub { max-width: 82%; padding: 0.55em 0.8em; font-size: 0.75em; line-height: 1.6; }
-    .km-msg.ai .km-bub { background: rgba(0,0,0,0.25); color: rgba(255,255,255,0.75); border-radius: 2px 10px 10px 10px; border: 1px solid rgba(255,255,255,0.08); }
-    .km-msg.u .km-bub { background: var(--gold); color: #0d1117; border-radius: 10px 2px 10px 10px; font-weight: 500; }
-    .km-mav { width: 20px; height: 20px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.58em; flex-shrink: 0; margin-top: 0.15em; }
-    .km-aiav { background: rgba(201,168,76,0.12); color: var(--gold); border: 1px solid rgba(201,168,76,0.2); }
-    .km-uav { background: var(--gold-soft); color: var(--gold); }
-    .km-typing { display: flex; align-items: center; gap: 2px; padding: 0.55em 0.8em; background: rgba(0,0,0,0.25); border-radius: 2px 10px 10px 10px; border: 1px solid rgba(255,255,255,0.08); width: fit-content; }
-    .km-typing span { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); animation: kmbd 0.9s infinite; }
-    .km-typing span:nth-child(2) { animation-delay: .15s; } .km-typing span:nth-child(3) { animation-delay: .3s; }
-    .km-suggs { padding: 0 0.8em 0.6em; display: flex; flex-wrap: wrap; gap: 0.3em; }
-    .km-sugg { font-size: 0.6em; padding: 0.25em 0.7em; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; background: none; cursor: pointer; color: rgba(255,255,255,0.45); font-family: inherit; }
-    .km-sugg:hover { border-color: var(--gold); color: var(--gold); }
-    .km-chat-foot { padding: 0.6em 0.8em; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 0.5em; background: rgba(0,0,0,0.2); }
-    .km-cin { flex: 1; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; padding: 0.5em 0.7em; font-size: 0.75em; color: rgba(255,255,255,0.8); font-family: inherit; }
-    .km-csend { padding: 0.5em 1em; background: var(--gold); color: #0d1117; border: none; border-radius: 2px; font-size: 0.7em; font-weight: 600; cursor: pointer; font-family: inherit; }
+    .cmsgs { padding: 14px; min-height: 180px; max-height: 300px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: var(--navy); }
+    .msg { display: flex; gap: 8px; } .msg.u { flex-direction: row-reverse; }
+    .bub { max-width: 82%; padding: 9px 13px; font-size: 12px; line-height: 1.6; }
+    .msg.ai .bub { background: var(--navy2); color: #A8A39A; border-radius: 3px 14px 14px 14px; border: 0.5px solid var(--border-dark); }
+    .msg.u .bub { background: var(--gold); color: var(--navy); border-radius: 14px 3px 14px 14px; font-weight: 500; }
+    .mav { width: 24px; height: 24px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; margin-top: 2px; }
+    .aiav { background: var(--gold-soft); color: var(--gold); border: 0.5px solid var(--border-dark); }
+    .uav { background: rgba(201,168,76,0.2); color: var(--gold); }
+    .typing { display: flex; align-items: center; gap: 3px; padding: 9px 13px; background: var(--navy2); border-radius: 3px 14px 14px 14px; border: 0.5px solid var(--border-dark); width: fit-content; }
+    .typing span { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); animation: bd 0.9s infinite; }
+    .typing span:nth-child(2) { animation-delay: .15s; } .typing span:nth-child(3) { animation-delay: .3s; }
+    .csuggs { padding: 0 14px 10px; display: flex; flex-wrap: wrap; gap: 4px; background: var(--navy); }
+    .cs4 { padding: 4px 10px; border-radius: 2px; font-size: 10px; border: 0.5px solid var(--border-dark); background: none; cursor: pointer; color: #6B7280; font-family: var(--sans); }
+    .cs4:hover { border-color: var(--gold); color: var(--gold); }
+    .cfoot { padding: 10px 14px; border-top: 0.5px solid var(--border-dark); display: flex; gap: 7px; background: var(--navy2); }
+    .cin { flex: 1; padding: 7px 11px; border-radius: 3px; border: 0.5px solid var(--border-dark); background: var(--navy); font-size: 12px; color: #E8E4D9; font-family: var(--sans); }
+    .csend { padding: 7px 16px; border-radius: 3px; background: var(--gold); color: var(--navy); border: none; cursor: pointer; font-size: 11px; font-family: var(--sans); font-weight: 500; }
 
-    /* Panel scroll */
-    #main article { overflow-y: auto; max-height: 90vh; }
+    /* FOOTER */
+    footer { background: var(--navy); border-top: 0.5px solid var(--border-dark); padding: 28px 24px; }
+    .footer-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .footer-brand { font-size: 13px; color: #E8E4D9; font-family: var(--serif); }
+    .footer-brand span { color: var(--gold); font-style: italic; }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-link { font-size: 11px; color: #6B7280; text-decoration: none; transition: color 0.12s; }
+    .footer-link:hover { color: var(--gold); }
+    .footer-copy { font-size: 10px; color: #3A4A5A; margin-top: 12px; text-align: center; }
 
-    @media screen and (max-width: 736px) {
-      .km-two-col, .km-pgrid, .km-pp-grid, .km-ins-grid, .km-rgrid, .km-to-grid { grid-template-columns: 1fr; }
-      .km-jg { grid-template-columns: repeat(3,1fr); }
-      .km-dims { grid-template-columns: 1fr 1fr; }
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .stats { grid-template-columns: repeat(2,1fr); }
+      .tool-grid { grid-template-columns: 1fr 1fr; }
+      .two-col, .pgrid, .pog, .to-grid, .ins-grid, .rgrid, .pp-grid { grid-template-columns: 1fr; }
+      .jg { grid-template-columns: repeat(3,1fr); }
+      .dims { grid-template-columns: repeat(2,1fr); }
+      .case-card { grid-template-columns: 1fr; }
+      .metric-big { text-align: left; }
+      .hero h1 { font-size: 28px; }
+      nav { padding: 0 12px; }
     }
   </style>
 </head>
-<body class="is-preload">
-<div id="wrapper">
+<body>
 
-  <!-- Header -->
-  <header id="header">
-    <div class="logo">
-      <span style="font-family:'Playfair Display',serif;font-size:1.1em;letter-spacing:0.05em;">KM</span>
+<nav id="mainnav">
+  <div class="brand">
+    <div class="brand-mark">KM</div>
+    <div>
+      <div class="brand-name">Kelly Mello</div>
+      <div class="brand-role">Senior Product Manager</div>
     </div>
-    <div class="content">
-      <div class="inner">
-        <h1>Kelly <em>Mello</em></h1>
-        <p>Senior Product Manager · 15+ years in healthcare AI,<br>omnichannel platforms &amp; member self-service.<br>Based in Louisville, KY — open to remote.</p>
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#cases">Cases</a></li>
-        <li><a href="#cx">Personas</a></li>
-        <li><a href="#aitools">AI Tools</a></li>
-        <li><a href="#automation">Automation</a></li>
-        <li><a href="#assistant">Assistant</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div id="main">
-
-    <!-- ABOUT -->
-    <article id="about">
-      <h2 class="major">About</h2>
-      <div class="km-eyebrow"><div class="km-eyebrow-line"></div><span class="km-eyebrow-text">Senior Product Manager · Healthcare &amp; AI</span></div>
-      <p>I build AI-enabled experiences, omnichannel platforms, and self-service products at the intersection of enterprise technology and human-centered design. I translate messy, high-stakes problems — billing friction, contact center overload, digital adoption gaps — into products that work for real people in regulated environments.</p>
-      <div class="km-pills">
-        <span class="km-pill hi">Conversational AI</span>
-        <span class="km-pill hi">Member Self-Service</span>
-        <span class="km-pill">Omnichannel Strategy</span>
-        <span class="km-pill">Payments &amp; Billing UX</span>
-        <span class="km-pill">Healthcare &amp; PBM</span>
-        <span class="km-pill">Agile / SAFe</span>
-        <span class="km-pill">Cross-functional Leadership</span>
-        <span class="km-pill">Digital Transformation</span>
-      </div>
-      <div class="km-stats">
-        <div class="km-stat"><div class="km-stat-n">15+</div><div class="km-stat-l">Years PM experience</div></div>
-        <div class="km-stat"><div class="km-stat-n">~40%</div><div class="km-stat-l">After-call work reduction via AI</div></div>
-        <div class="km-stat"><div class="km-stat-n">7-fig</div><div class="km-stat-l">LTV impact, billing redesign</div></div>
-        <div class="km-stat"><div class="km-stat-n">3.5%</div><div class="km-stat-l">Digital lift, underserved segment</div></div>
-      </div>
-      <ul class="icons">
-        <li><a href="https://linkedin.com" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="mailto:kelly@kellymello.me" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-      </ul>
-    </article>
-
-    <!-- CASE STUDIES -->
-    <article id="cases">
-      <h2 class="major">Case studies</h2>
-      <p style="font-size:0.75em;opacity:0.55;margin-bottom:1.2em;">Employer details generalized to protect proprietary information.</p>
-
-      <div class="km-case">
-        <div class="km-case-tag">AI / 0→1</div>
-        <div class="km-case-title">AI post-interaction summarization — reducing after-call work by ~40%</div>
-        <div class="km-case-co">National health plan · Cloud-based member services platform</div>
-        <div class="km-case-body">Agents spent 8–12 minutes per call manually documenting summaries across multiple systems. I defined and led delivery of a generative AI feature that analyzed call transcripts in real time and auto-populated structured notes. Key PM challenge: balancing recall against precision — too much noise and agents wouldn't trust it. Navigated through phased piloting with agent feedback loops before full rollout.</div>
-        <div class="km-case-metrics">
-          <span class="km-metric">↓ <strong>~40%</strong> after-call work</span>
-          <span class="km-metric">⚡ Enterprise rollout</span>
-          <span class="km-metric">🔗 Reduced context switching</span>
-        </div>
-      </div>
-
-      <div class="km-case">
-        <div class="km-case-tag">Monetization</div>
-        <div class="km-case-title">Billing friction redesign — seven-figure LTV impact</div>
-        <div class="km-case-co">Large B2C health plan · Member payment experience</div>
-        <div class="km-case-body">Churn analysis surfaced members lapsing not from dissatisfaction but from payment friction — confusing statements, limited methods, no proactive outreach. Led discovery across support call analysis and member interviews, then owned cross-functional roadmap with finance, legal, and engineering. This was fundamentally a UX problem dressed up as a revenue problem.</div>
-        <div class="km-case-metrics">
-          <span class="km-metric">$ <strong>7-figure</strong> LTV impact</span>
-          <span class="km-metric">🔀 Finance, legal, eng aligned</span>
-          <span class="km-metric">↑ Reduced preventable lapse</span>
-        </div>
-      </div>
-
-      <div class="km-case">
-        <div class="km-case-tag">Growth</div>
-        <div class="km-case-title">Digital adoption initiative — 3.5% lift in underserved Medicare segment</div>
-        <div class="km-case-co">National health plan · Omnichannel &amp; self-service</div>
-        <div class="km-case-body">A Medicare segment bypassed digital entirely. Standard tactics had no effect. Discovery revealed distrust wasn't about capability — it was about confidence. Redesigned onboarding to use trusted offline touchpoints to initiate digital engagement, with in-product guidance that reduced perceived risk.</div>
-        <div class="km-case-metrics">
-          <span class="km-metric">↑ <strong>+3.5%</strong> digital adoption</span>
-          <span class="km-metric">🔍 Mixed-method discovery</span>
-          <span class="km-metric">♥ Medicare beneficiary focus</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- CX / PERSONAS -->
-    <article id="cx">
-      <h2 class="major">Personas</h2>
-      <p style="font-size:0.75em;opacity:0.55;margin-bottom:1em;">Composites from healthcare member, agent, and administrator research. Names fictional.</p>
-
-      <div class="km-ptabs">
-        <button class="km-ptab active" onclick="showP('maria')">Maria — Medicare member</button>
-        <button class="km-ptab" onclick="showP('david')">David — Agent</button>
-        <button class="km-ptab" onclick="showP('priya')">Priya — Health plan admin</button>
-      </div>
-
-      <div id="km-p-maria" class="km-pc active">
-        <div class="km-quote">"I just want to know what I owe and when. Every time I call I get a different answer."</div>
-        <div class="km-persona-head">
-          <div class="km-pav" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">MM</div>
-          <div><div class="km-pname">Maria Martinez</div><div class="km-prole">Medicare Advantage member · Retired · Age 68</div><div class="km-pbadges"><span class="km-pb">Low digital confidence</span><span class="km-pb">Payment anxiety</span><span class="km-pb">High call volume</span></div></div>
-        </div>
-        <div class="km-pgrid">
-          <div class="km-pcell"><div class="km-plbl">Goals</div><ul class="km-plist"><li>Understand benefits without calling every time</li><li>Pay her premium simply and on time</li><li>Feel confident she won't lose coverage</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Frustrations</div><ul class="km-plist"><li>Billing statements feel confusing</li><li>Long hold times for simple questions</li><li>Digital tools feel built for someone else</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Behaviors</div><ul class="km-plist"><li>Calls before trying self-service</li><li>Pays by check or phone</li><li>Relies on family to interpret documents</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Decision drivers</div><ul class="km-plist"><li>Trust through consistent human interaction</li><li>Simplicity — one clear action at a time</li><li>Reassurance she won't make a mistake</li></ul></div>
-        </div>
-      </div>
-
-      <div id="km-p-david" class="km-pc">
-        <div class="km-quote">"By the time I've pulled up their account across all the systems, we've already lost two minutes."</div>
-        <div class="km-persona-head">
-          <div class="km-pav" style="background:rgba(29,158,117,0.15);color:#5dd4a8;border:1px solid rgba(29,158,117,0.3);">DK</div>
-          <div><div class="km-pname">David Kim</div><div class="km-prole">Contact center agent · 4 years tenure · Remote</div><div class="km-pbadges"><span class="km-pb">Power user</span><span class="km-pb">Tool frustrated</span><span class="km-pb">High workload</span></div></div>
-        </div>
-        <div class="km-pgrid">
-          <div class="km-pcell"><div class="km-plbl">Goals</div><ul class="km-plist"><li>Resolve issues on the first call</li><li>Get off the phone faster without sacrificing quality</li><li>Not worry about incomplete notes after</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Frustrations</div><ul class="km-plist"><li>Context scattered across multiple systems</li><li>After-call work eats time for next member</li><li>AI tools that surface wrong answers</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Behaviors</div><ul class="km-plist"><li>Builds personal cheat sheets for bad tooling</li><li>Escalates edge cases to avoid errors</li><li>Drafts notes mentally during calls</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Decision drivers</div><ul class="km-plist"><li>Accuracy before speed</li><li>Trust comes from consistency</li><li>Adoption when a tool removes real pain</li></ul></div>
-        </div>
-      </div>
-
-      <div id="km-p-priya" class="km-pc">
-        <div class="km-quote">"I need my team on cases that need human judgment — not answering the same administrative questions all day."</div>
-        <div class="km-persona-head">
-          <div class="km-pav" style="background:rgba(216,90,48,0.15);color:#f08060;border:1px solid rgba(216,90,48,0.3);">PS</div>
-          <div><div class="km-pname">Priya Shah</div><div class="km-prole">Health plan operations manager · Regional payer · Age 43</div><div class="km-pbadges"><span class="km-pb">Economic buyer</span><span class="km-pb">AI skeptic</span><span class="km-pb">Outcome-focused</span></div></div>
-        </div>
-        <div class="km-pgrid">
-          <div class="km-pcell"><div class="km-plbl">Goals</div><ul class="km-plist"><li>Reduce inbound volume through self-service</li><li>Show measurable ROI on tech investments</li><li>Keep team on complex, high-value cases</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Frustrations</div><ul class="km-plist"><li>Vendors who promise transformation, deliver complexity</li><li>Metrics that measure activity, not outcomes</li><li>Implementation timelines that slip</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Behaviors</div><ul class="km-plist"><li>Reads case studies before agreeing to a demo</li><li>Involves ops team in evaluation</li><li>Sets hard success criteria before pilots</li></ul></div>
-          <div class="km-pcell"><div class="km-plbl">Decision drivers</div><ul class="km-plist"><li>Proven ROI from comparable environments</li><li>Vendor partnership quality</li><li>Transparency about what it won't do</li></ul></div>
-        </div>
-      </div>
-
-      <hr style="border-color:rgba(255,255,255,0.08);margin:1.2em 0;" />
-      <h3 style="font-family:var(--serif);font-weight:400;font-size:1em;margin-bottom:0.8em;">Customer journey map</h3>
-      <p style="font-size:0.72em;opacity:0.55;margin-bottom:0.8em;">Maria's path — billing confusion → digital payment confidence</p>
-      <div class="km-jg">
-        <div class="km-js"><div class="km-jl">Trigger</div><div class="km-ji">✉</div><div class="km-eds"><div class="km-ed m"></div><div class="km-ed m"></div><div class="km-ed"></div><div class="km-ed"></div><div class="km-ed"></div></div><div class="km-jtp">Confusing bill arrives</div></div>
-        <div class="km-js"><div class="km-jl">Confusion</div><div class="km-ji">?</div><div class="km-eds"><div class="km-ed l"></div><div class="km-ed l"></div><div class="km-ed l"></div><div class="km-ed"></div><div class="km-ed"></div></div><div class="km-jtp">Calls — 18 min hold</div></div>
-        <div class="km-js"><div class="km-jl">Resolution</div><div class="km-ji">☎</div><div class="km-eds"><div class="km-ed m"></div><div class="km-ed m"></div><div class="km-ed m"></div><div class="km-ed"></div><div class="km-ed"></div></div><div class="km-jtp">Agent resolves, explains options</div></div>
-        <div class="km-js"><div class="km-jl">First try</div><div class="km-ji">📱</div><div class="km-eds"><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed"></div></div><div class="km-jtp">Tries digital with coaching</div></div>
-        <div class="km-js"><div class="km-jl">Confidence</div><div class="km-ji">✓</div><div class="km-eds"><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div></div><div class="km-jtp">Pays independently — calls drop</div></div>
-      </div>
-      <div class="km-pains">
-        <span class="km-pain p">⚠ Pain: Statement confusion drives call volume</span>
-        <span class="km-pain p">⚠ Pain: No bridge phone → digital</span>
-        <span class="km-pain o">💡 Opp: Agent-assisted digital onboarding</span>
-        <span class="km-pain o">💡 Opp: Simplified statement design</span>
-      </div>
-    </article>
-
-    <!-- AI TOOLS -->
-    <article id="aitools">
-      <h2 class="major">AI tools</h2>
-
-      <!-- AI PERSONA GENERATOR -->
-      <div class="km-tool-section">
-        <h3>AI persona generator</h3>
-        <div class="km-chips">
-          <button class="km-chip" onclick="spg('A Medicare member managing chronic conditions who struggles to understand prescription coverage')">Medicare member</button>
-          <button class="km-chip" onclick="spg('A hospital billing coordinator managing prior authorization requests and claims denials')">Hospital billing coordinator</button>
-          <button class="km-chip" onclick="spg('A health plan IT director evaluating AI tools for member engagement')">Health plan IT director</button>
-          <button class="km-chip" onclick="spg('A family caregiver managing healthcare decisions for an elderly parent with dementia')">Family caregiver</button>
-        </div>
-        <div class="km-field"><textarea class="km-textarea" id="gin" rows="2" placeholder="Describe a user type, role, or problem space…"></textarea></div>
-        <div class="km-btn-row">
-          <button class="km-btn" id="gbtn" onclick="genP()">✦ Generate persona</button>
-          <span class="km-tnote">~15 sec</span>
-        </div>
-        <div class="km-status" id="gst"><div class="km-dots"><span></span><span></span><span></span></div><span>Building persona…</span></div>
-        <div class="km-out" id="pout">
-          <div class="km-out-hdr"><span class="km-out-lbl">Generated persona</span><div class="km-out-acts"><button class="km-ab" onclick="genP()">↺ Regenerate</button></div></div>
-          <div style="padding:0.8em;">
-            <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.6em;">
-              <div class="km-pav" id="poav"></div>
-              <div><div class="km-pname" id="ponm"></div><div class="km-prole" id="poro"></div><div class="km-pbadges" id="pobg"></div></div>
-            </div>
-            <div class="km-quote" id="poq"></div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5em;">
-              <div class="km-pcell"><div class="km-plbl">Goals</div><ul class="km-plist" id="pogo"></ul></div>
-              <div class="km-pcell"><div class="km-plbl">Frustrations</div><ul class="km-plist" id="pofr"></ul></div>
-              <div class="km-pcell"><div class="km-plbl">Behaviors</div><ul class="km-plist" id="pobe"></ul></div>
-              <div class="km-pcell"><div class="km-plbl">Decision drivers</div><ul class="km-plist" id="podr"></ul></div>
-            </div>
-            <div style="margin-top:0.6em;"><div class="km-ssl" style="margin-bottom:0.4em;">Product opportunities</div><div style="display:flex;flex-wrap:wrap;gap:0.3em;" id="pooc"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <hr style="border-color:rgba(255,255,255,0.08);margin:1em 0;" />
-
-      <!-- RICE SCORER -->
-      <div class="km-tool-section">
-        <h3>AI RICE scorer</h3>
-        <div class="km-chips">
-          <button class="km-chip" onclick="sri('Allow members to update payment method in the app without calling customer service')">Self-serve payment update</button>
-          <button class="km-chip" onclick="sri('Proactive SMS alert 5 days before premium due to prevent member lapse')">Pre-lapse SMS alert</button>
-          <button class="km-chip" onclick="sri('Real-time agent assist panel surfacing member history during a call')">Real-time agent assist</button>
-          <button class="km-chip" onclick="sri('AI plain-language explanation of benefits summary after each claim')">Plain-language EOB</button>
-        </div>
-        <div class="km-field"><textarea class="km-textarea" id="rice-in" rows="2" placeholder="Describe a feature idea in plain language…"></textarea></div>
-        <div class="km-two-col">
-          <div class="km-field"><label class="km-label">Product context</label><select class="km-select" id="rice-prod"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option><option>Pharmacy / PBM platform</option></select></div>
-          <div class="km-field"><label class="km-label">Primary goal</label><select class="km-select" id="rice-goal"><option>Reduce member churn / lapse</option><option>Increase digital self-service adoption</option><option>Reduce contact center volume</option><option>Improve agent efficiency</option><option>Drive revenue / upsell</option></select></div>
-        </div>
-        <div class="km-btn-row">
-          <button class="km-btn" id="rice-btn" onclick="runRice()">⬡ Score this feature</button>
-          <span class="km-tnote">~15 sec · reasoning not just numbers</span>
-        </div>
-        <div class="km-status" id="rice-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Thinking through trade-offs…</span></div>
-        <div id="rice-out" style="display:none;margin-top:0.8em;">
-          <div class="km-score-hero">
-            <div class="km-score-top">
-              <div><div class="km-score-f" id="ro-feat"></div><div class="km-score-ctx" id="ro-ctx"></div><div id="ro-verdict"></div></div>
-              <div><div class="km-score-n" id="ro-score"></div><div class="km-score-lbl">RICE score</div></div>
-            </div>
-            <div class="km-dims" id="ro-dims"></div>
-          </div>
-          <div class="km-reasoning" id="ro-reason"></div>
-          <div class="km-to-grid">
-            <div class="km-to-col"><div class="km-to-ch" style="color:#5dd4a8;">✓ Arguments for</div><div id="ro-for"></div></div>
-            <div class="km-to-col"><div class="km-to-ch" style="color:#f08060;">⚠ Watch out for</div><div id="ro-against"></div></div>
-          </div>
-          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:0.7em 0.8em;margin-bottom:0.6em;" id="ro-qs"></div>
-          <div class="km-acts">
-            <button class="km-act-btn" onclick="runRice()">↺ Re-score</button>
-            <button class="km-act-btn" onclick="chatSend('How would you sequence this feature relative to other priorities?')">Discuss prioritization ↗</button>
-          </div>
-        </div>
-      </div>
-
-      <hr style="border-color:rgba(255,255,255,0.08);margin:1em 0;" />
-
-      <!-- JOURNEY NARRATOR -->
-      <div class="km-tool-section">
-        <h3>AI journey narrator</h3>
-        <div class="km-pp-grid">
-          <div class="km-pp-card active" onclick="selJP(this,'maria')" id="jp-maria">
-            <div class="km-pp-top"><div class="km-pp-av" style="background:rgba(201,168,76,0.15);color:var(--gold);">MM</div><div><div class="km-pp-nm">Maria Martinez</div><div class="km-pp-rl">Medicare member · Age 68</div></div></div>
-            <div class="km-pp-tags"><span class="km-pp-tag">Payment anxiety</span><span class="km-pp-tag">Phone-first</span></div>
-          </div>
-          <div class="km-pp-card" onclick="selJP(this,'david')" id="jp-david">
-            <div class="km-pp-top"><div class="km-pp-av" style="background:rgba(29,158,117,0.15);color:#5dd4a8;">DK</div><div><div class="km-pp-nm">David Kim</div><div class="km-pp-rl">Contact center agent</div></div></div>
-            <div class="km-pp-tags"><span class="km-pp-tag">Power user</span><span class="km-pp-tag">Tool frustrated</span></div>
-          </div>
-          <div class="km-pp-card" onclick="selJP(this,'priya')" id="jp-priya">
-            <div class="km-pp-top"><div class="km-pp-av" style="background:rgba(216,90,48,0.15);color:#f08060;">PS</div><div><div class="km-pp-nm">Priya Shah</div><div class="km-pp-rl">Health plan ops manager</div></div></div>
-            <div class="km-pp-tags"><span class="km-pp-tag">Economic buyer</span><span class="km-pp-tag">AI skeptic</span></div>
-          </div>
-        </div>
-        <div class="km-chips" id="jn-chips"></div>
-        <div class="km-field"><textarea class="km-textarea" id="jn-in" rows="2" placeholder="Describe a specific situation or trigger event…"></textarea></div>
-        <div class="km-two-col">
-          <div class="km-field"><label class="km-label">Journey type</label><select class="km-select" id="jn-type"><option>Problem discovery → resolution</option><option>Onboarding → first value</option><option>Renewal / retention moment</option><option>Support escalation</option><option>Feature adoption</option></select></div>
-          <div class="km-field"><label class="km-label">Stages</label><select class="km-select" id="jn-stages"><option value="4">4 stages</option><option value="5" selected>5 stages</option><option value="6">6 stages</option></select></div>
-        </div>
-        <div class="km-btn-row">
-          <button class="km-btn" id="jn-btn" onclick="runJourney()">▶ Narrate this journey</button>
-          <span class="km-tnote">~20 sec</span>
-        </div>
-        <div class="km-status" id="jn-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Mapping the experience…</span></div>
-        <div id="jn-out" style="display:none;margin-top:0.8em;">
-          <div class="km-jsum">
-            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.8em;margin-bottom:0.5em;">
-              <div><div class="km-js-pn" id="jno-p"></div><div class="km-js-sc" id="jno-s"></div></div>
-              <div><div style="font-size:0.58em;opacity:0.45;margin-bottom:0.3em;text-align:right;text-transform:uppercase;letter-spacing:0.06em;">Sentiment</div><div class="km-sent-bar" id="jno-sent"></div></div>
-            </div>
-            <div class="km-js-hl" id="jno-hl"></div>
-          </div>
-          <div id="jno-stages"></div>
-          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;margin-bottom:0.6em;">
-            <div style="padding:0.5em 0.8em;background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.62em;text-transform:uppercase;letter-spacing:0.08em;opacity:0.5;">PM insights</div>
-            <div class="km-ins-grid" style="padding:0.7em;">
-              <div><div class="km-ins-lbl" style="color:#f08060;">⚠ Top pain points</div><div id="jno-pains"></div></div>
-              <div><div class="km-ins-lbl" style="color:#5dd4a8;">💡 Opportunities</div><div id="jno-opps"></div></div>
-              <div><div class="km-ins-lbl" style="color:var(--gold);">📊 Metrics to track</div><div id="jno-mets"></div></div>
-            </div>
-          </div>
-          <div class="km-acts">
-            <button class="km-act-btn" onclick="runJourney()">↺ Regenerate</button>
-            <button class="km-act-btn" onclick="chatSend('What is the highest-leverage product intervention from this journey map?')">Highest intervention ↗</button>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- AUTOMATION LAB -->
-    <article id="automation">
-      <h2 class="major">Automation lab</h2>
-      <p style="font-size:0.75em;opacity:0.55;margin-bottom:1em;">Live AI tools — each saves 30–90 minutes of manual PM work</p>
-      <div class="km-wtabs">
-        <button class="km-wt active" onclick="wTab('prd')">PRD generator</button>
-        <button class="km-wt" onclick="wTab('us')">User story writer</button>
-        <button class="km-wt" onclick="wTab('retro')">Retro summarizer</button>
-        <button class="km-wt" onclick="wTab('comp')">Competitive snapshot</button>
-      </div>
-
-      <div id="w-prd" class="km-wp active">
-        <div class="km-ibar"><div class="km-ibar-t"><strong>Personal workflow.</strong> Paste a feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
-        <div class="km-field"><label class="km-label">Feature brief</label><textarea class="km-textarea" id="pb" rows="3" placeholder="e.g. Members should update payment method without calling — 23% of billing calls are about this."></textarea></div>
-        <div class="km-two-col">
-          <div class="km-field"><label class="km-label">Product type</label><select class="km-select" id="pt"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option></select></div>
-          <div class="km-field"><label class="km-label">Audience</label><select class="km-select" id="pa"><option>Medicare members (B2C)</option><option>Health plan admins (B2B)</option><option>Contact center agents</option><option>Clinical staff</option></select></div>
-        </div>
-        <div class="km-btn-row"><button class="km-btn" id="pb-btn" onclick="runPRD()">✦ Generate PRD</button><span class="km-tnote">~15 sec · saves 45–90 min</span></div>
-        <div class="km-status" id="pb-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Drafting PRD…</span></div>
-        <div class="km-out" id="pb-out"><div class="km-out-hdr"><span class="km-out-lbl">Generated PRD</span><div class="km-out-acts"><button class="km-ab" onclick="cp('pb-body')">Copy</button></div></div><div class="km-out-body" id="pb-body"></div></div>
-      </div>
-
-      <div id="w-us" class="km-wp">
-        <div class="km-ibar"><div class="km-ibar-t"><strong>Personal workflow.</strong> Feature idea → role-based user stories with acceptance criteria. Ready for Jira.</div></div>
-        <div class="km-field"><label class="km-label">Feature idea</label><textarea class="km-textarea" id="ub" rows="2" placeholder="e.g. Members can view explanation of benefits history, filterable by date and claim type."></textarea></div>
-        <div class="km-two-col">
-          <div class="km-field"><label class="km-label">Epic</label><select class="km-select" id="ue"><option>Member self-service</option><option>Billing &amp; payments</option><option>AI &amp; automation</option><option>Agent tools</option></select></div>
-          <div class="km-field"><label class="km-label">Stories</label><select class="km-select" id="uc"><option>3 stories</option><option>5 stories</option></select></div>
-        </div>
-        <div class="km-btn-row"><button class="km-btn" id="ub-btn" onclick="runUS()">✦ Write user stories</button><span class="km-tnote">~12 sec</span></div>
-        <div class="km-status" id="ub-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Writing stories…</span></div>
-        <div class="km-out" id="ub-out"><div class="km-out-hdr"><span class="km-out-lbl">User stories</span><div class="km-out-acts"><button class="km-ab" onclick="cp('ub-raw')">Copy</button></div></div><div class="km-sgrid" id="ub-body" style="padding:0.8em;"></div><div id="ub-raw" style="display:none;"></div></div>
-      </div>
-
-      <div id="w-retro" class="km-wp">
-        <div class="km-ibar"><div class="km-ibar-t"><strong>Personal workflow.</strong> Paste raw retro notes → structured went-well / improve / actions in seconds.</div></div>
-        <div class="km-field"><label class="km-label">Raw retro notes</label><textarea class="km-textarea" id="rn" rows="5" placeholder="e.g.&#10;- Deployments went smoothly&#10;- Design review blocked eng for 2 days&#10;- Need clearer definition of done&#10;- Stakeholder feedback arrived late"></textarea></div>
-        <div class="km-field"><label class="km-label">Sprint context (optional)</label><textarea class="km-textarea" id="rc" rows="1" placeholder="e.g. Sprint 14 · AI summarization · Team of 6"></textarea></div>
-        <div class="km-btn-row"><button class="km-btn" id="rn-btn" onclick="runRetro()">✦ Summarize retro</button><span class="km-tnote">~10 sec</span></div>
-        <div class="km-status" id="rn-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Organizing retro…</span></div>
-        <div class="km-out" id="rn-out"><div class="km-out-hdr"><span class="km-out-lbl">Retro summary</span><div class="km-out-acts"><button class="km-ab" onclick="cp('rn-raw')">Copy</button></div></div><div id="rn-body" style="padding:0.8em;"></div><div id="rn-raw" style="display:none;"></div></div>
-      </div>
-
-      <div id="w-comp" class="km-wp">
-        <div class="km-ibar"><div class="km-ibar-t"><strong>Personal workflow.</strong> Describe your product and a competitor → frank competitive snapshot with strategic questions.</div></div>
-        <div class="km-two-col">
-          <div class="km-field"><label class="km-label">Your product</label><textarea class="km-textarea" id="cy" rows="2" placeholder="e.g. AI-powered self-service for Medicare members — resolves billing questions without agent intervention."></textarea></div>
-          <div class="km-field"><label class="km-label">Competitor</label><textarea class="km-textarea" id="ct" rows="2" placeholder="e.g. Enterprise conversational AI vendor focused on healthcare contact centers."></textarea></div>
-        </div>
-        <div class="km-btn-row"><button class="km-btn" id="cy-btn" onclick="runComp()">✦ Generate snapshot</button><span class="km-tnote">~15 sec</span></div>
-        <div class="km-status" id="cy-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Analyzing…</span></div>
-        <div class="km-out" id="cy-out"><div class="km-out-hdr"><span class="km-out-lbl">Competitive snapshot</span><div class="km-out-acts"><button class="km-ab" onclick="cp('cy-body')">Copy</button></div></div><div class="km-out-body" id="cy-body"></div></div>
-      </div>
-    </article>
-
-    <!-- AI ASSISTANT -->
-    <article id="assistant">
-      <h2 class="major">AI assistant</h2>
-      <p style="font-size:0.75em;opacity:0.55;margin-bottom:0.8em;">Ask anything about my background, PM approach, or how I think through product problems.</p>
-      <div class="km-chat-wrap">
-        <div class="km-chat-hdr"><div class="km-live"></div><span class="km-chat-title">Kelly's portfolio assistant</span><span class="km-chat-badge">Powered by Claude</span></div>
-        <div class="km-chat-msgs" id="cmsgs">
-          <div class="km-msg ai"><div class="km-mav km-aiav">✦</div><div class="km-bub">Hi — I'm Kelly's portfolio assistant. Ask me about her 15+ years in healthcare PM, her work on AI-enabled platforms, or how she thinks through product problems.</div></div>
-        </div>
-        <div class="km-suggs">
-          <button class="km-sugg" onclick="chatSend('Tell me about the AI summarization project and the decisions you made.')">AI summarization project</button>
-          <button class="km-sugg" onclick="chatSend('How do you approach discovery when data and users tell you different things?')">Discovery approach</button>
-          <button class="km-sugg" onclick="chatSend('How do you handle a stakeholder who wants to skip discovery and build?')">Stakeholder pushback</button>
-          <button class="km-sugg" onclick="chatSend('What is your PM philosophy in your own words?')">PM philosophy</button>
-        </div>
-        <div class="km-chat-foot">
-          <input type="text" class="km-cin" id="cin" placeholder="Ask about experience, approach, leadership…" onkeydown="if(event.key==='Enter')sendChat()" />
-          <button class="km-csend" onclick="sendChat()">Send</button>
-        </div>
-      </div>
-    </article>
-
   </div>
+  <div class="navlinks">
+    <a class="nl active" href="#about">About</a>
+    <a class="nl" href="#cases">Cases</a>
+    <a class="nl" href="#personas">Personas</a>
+    <a class="nl" href="#aitools">AI tools</a>
+    <a class="nl" href="#automation">Automation</a>
+    <a class="nl" href="#assistant">Assistant</a>
+  </div>
+</nav>
 
-  <footer id="footer">
-    <p class="copyright">&copy; Kelly Mello 2026 &nbsp;·&nbsp; <a href="https://html5up.net">HTML5 UP</a></p>
-  </footer>
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Senior Product Manager · Healthcare &amp; AI</span><div class="eyebrow-line"></div></div>
+  <h1>15+ years turning complex<br>healthcare problems into<br><em>products people trust</em></h1>
+  <p class="hero-sub">I build AI-enabled experiences, omnichannel platforms, and self-service products at the intersection of enterprise technology and human-centered design. Based in Louisville, KY — open to remote.</p>
+  <div class="pills">
+    <span class="pill hi">Conversational AI</span>
+    <span class="pill hi">Member Self-Service</span>
+    <span class="pill">Omnichannel Strategy</span>
+    <span class="pill">Payments &amp; Billing UX</span>
+    <span class="pill">Healthcare &amp; PBM</span>
+    <span class="pill">Agile / SAFe</span>
+    <span class="pill">Cross-functional Leadership</span>
+    <span class="pill">Digital Transformation</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-n">15+</div><div class="stat-l">Years PM experience</div></div>
+    <div class="stat"><div class="stat-n">~40%</div><div class="stat-l">After-call work reduction</div></div>
+    <div class="stat"><div class="stat-n">7-fig</div><div class="stat-l">LTV impact, billing redesign</div></div>
+    <div class="stat"><div class="stat-n">3.5%</div><div class="stat-l">Digital lift, underserved segment</div></div>
+  </div>
 </div>
 
-<div id="bg"></div>
+<!-- ABOUT -->
+<div class="section reg" id="about">
+  <div class="container">
+    <div class="sec-hdr"><span class="sec-title">About</span><div class="sec-rule"></div></div>
+    <div class="sec-sub">Open to healthcare and beyond — AI platform and regulated-environment experience transfers</div>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:32px;align-items:start;">
+      <div>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">I translate messy, high-stakes problems — billing friction, contact center overload, digital adoption gaps — into AI-enabled products that work for real people in regulated environments. I connect user insight to business outcomes through structured experimentation and cross-functional leadership.</p>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.8;">My PM philosophy: <em style="color:var(--text-dark);font-style:italic;">start with the human problem</em>. Move fast on learning, slow on commitment. AI is a tool for insight, not a shortcut for thinking.</p>
+      </div>
+      <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:16px;">
+        <div style="font-size:9px;font-weight:500;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Connect</div>
+        <a href="https://linkedin.com" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;border-bottom:0.5px solid var(--border-light);" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-brand-linkedin" style="font-size:16px;color:#B8943F"></i>LinkedIn</a>
+        <a href="mailto:kelly@kellymello.me" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-mail" style="font-size:16px;color:#B8943F"></i>kelly@kellymello.me</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<!-- CASE STUDIES -->
+<div class="section alt" id="cases">
+  <div class="container">
+    <div class="sec-hdr"><span class="sec-title">Case studies</span><div class="sec-rule"></div><span class="sec-count">3 projects</span></div>
+    <div class="sec-sub">Employer details generalized to protect proprietary information</div>
+    <div class="case-card">
+      <div>
+        <div class="case-tag">AI / 0→1</div>
+        <div class="case-title">AI post-interaction summarization — reducing after-call work by ~40%</div>
+        <div class="case-co">National health plan · Cloud-based member services platform</div>
+        <div class="case-body">Agents spent 8–12 minutes per call manually documenting summaries across multiple systems. I defined and led delivery of a generative AI feature that analyzed call transcripts in real time and auto-populated structured notes. Key PM challenge: balancing recall against precision — too much noise and agents wouldn't trust it. Navigated through phased piloting with agent feedback loops before full rollout.</div>
+        <div class="case-metrics">
+          <span class="case-met"><i class="ti ti-trending-down" style="color:var(--teal)"></i><strong>~40%</strong> reduction in after-call work</span>
+          <span class="case-met"><i class="ti ti-users" style="color:#B8943F"></i>Enterprise contact center rollout</span>
+          <span class="case-met"><i class="ti ti-bolt" style="color:#B8943F"></i>Reduced multi-system context switching</span>
+        </div>
+      </div>
+      <div class="metric-big"><div class="metric-n">~40%</div><div class="metric-l">Work reduction</div></div>
+    </div>
+    <div class="case-card">
+      <div>
+        <div class="case-tag">Monetization</div>
+        <div class="case-title">Billing friction redesign — seven-figure LTV impact</div>
+        <div class="case-co">Large B2C health plan · Member payment experience</div>
+        <div class="case-body">Churn analysis surfaced members lapsing not from dissatisfaction but from payment friction — confusing statements, limited methods, no proactive outreach. Led discovery across support call analysis and member interviews, then owned cross-functional roadmap with finance, legal, and engineering. This was fundamentally a UX problem dressed up as a revenue problem.</div>
+        <div class="case-metrics">
+          <span class="case-met"><i class="ti ti-currency-dollar" style="color:var(--teal)"></i><strong>7-figure</strong> LTV impact</span>
+          <span class="case-met"><i class="ti ti-arrows-shuffle" style="color:#B8943F"></i>Finance, legal, eng alignment</span>
+          <span class="case-met"><i class="ti ti-trending-up" style="color:#B8943F"></i>Reduced preventable lapse</span>
+        </div>
+      </div>
+      <div class="metric-big"><div class="metric-n">7-fig</div><div class="metric-l">LTV impact</div></div>
+    </div>
+    <div class="case-card">
+      <div>
+        <div class="case-tag">Growth</div>
+        <div class="case-title">Digital adoption initiative — 3.5% lift in underserved Medicare segment</div>
+        <div class="case-co">National health plan · Omnichannel &amp; self-service</div>
+        <div class="case-body">A Medicare segment bypassed digital entirely. Standard tactics had no effect. Discovery revealed distrust wasn't about capability — it was about confidence. Redesigned onboarding to use trusted offline touchpoints to initiate digital engagement, with in-product guidance that reduced perceived risk.</div>
+        <div class="case-metrics">
+          <span class="case-met"><i class="ti ti-trending-up" style="color:var(--teal)"></i><strong>+3.5%</strong> digital adoption</span>
+          <span class="case-met"><i class="ti ti-eye" style="color:#B8943F"></i>Mixed-method discovery</span>
+          <span class="case-met"><i class="ti ti-heart" style="color:#B8943F"></i>Medicare beneficiary focus</span>
+        </div>
+      </div>
+      <div class="metric-big"><div class="metric-n">3.5%</div><div class="metric-l">Adoption lift</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PERSONAS -->
+<div class="section reg" id="personas">
+  <div class="container">
+    <div class="sec-hdr"><span class="sec-title">User personas</span><div class="sec-rule"></div><span class="sec-count">3 composites</span></div>
+    <div class="sec-sub">Grounded in healthcare member, agent, and administrator research. Names are fictional.</div>
+    <div class="ptabs">
+      <button class="ptab active" onclick="showP('maria')">Maria — Medicare member</button>
+      <button class="ptab" onclick="showP('david')">David — Agent</button>
+      <button class="ptab" onclick="showP('priya')">Priya — Health plan admin</button>
+    </div>
+    <div id="p-maria" class="pc active">
+      <div class="quote">"I just want to know what I owe and when. Every time I call I get a different answer."</div>
+      <div class="phead"><div class="pav" style="background:rgba(185,148,63,0.1);color:#8B6E2E;border:1px solid rgba(185,148,63,0.25);">MM</div><div><div class="pname">Maria Martinez</div><div class="prole">Medicare Advantage member · Retired · Age 68</div><div class="pbadges"><span class="pb">Low digital confidence</span><span class="pb">Payment anxiety</span><span class="pb">High call volume</span></div></div></div>
+      <div class="pgrid">
+        <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Understand benefits without calling every time</li><li>Pay her premium simply and on time</li><li>Feel confident she won't lose coverage</li></ul></div>
+        <div class="pcell"><div class="plbl">Frustrations</div><ul class="plist"><li>Billing statements feel confusing</li><li>Long hold times for simple questions</li><li>Digital tools feel built for someone else</li></ul></div>
+        <div class="pcell"><div class="plbl">Behaviors</div><ul class="plist"><li>Calls before trying self-service</li><li>Pays by check or phone</li><li>Relies on family to interpret documents</li></ul></div>
+        <div class="pcell"><div class="plbl">Decision drivers</div><ul class="plist"><li>Trust through consistent human interaction</li><li>Simplicity — one clear action at a time</li><li>Reassurance she won't make a mistake</li></ul></div>
+      </div>
+    </div>
+    <div id="p-david" class="pc">
+      <div class="quote">"By the time I've pulled up their account across all the systems, we've already lost two minutes."</div>
+      <div class="phead"><div class="pav" style="background:rgba(29,158,117,0.1);color:#085041;border:1px solid rgba(29,158,117,0.25);">DK</div><div><div class="pname">David Kim</div><div class="prole">Contact center agent · 4 years tenure · Remote</div><div class="pbadges"><span class="pb">Power user</span><span class="pb">Tool frustrated</span><span class="pb">High workload</span></div></div></div>
+      <div class="pgrid">
+        <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Resolve issues on the first call</li><li>Get off the phone faster without sacrificing quality</li><li>Not worry about incomplete notes after</li></ul></div>
+        <div class="pcell"><div class="plbl">Frustrations</div><ul class="plist"><li>Context scattered across multiple systems</li><li>After-call work eats time for next member</li><li>AI tools that surface wrong answers</li></ul></div>
+        <div class="pcell"><div class="plbl">Behaviors</div><ul class="plist"><li>Builds personal cheat sheets for bad tooling</li><li>Escalates edge cases to avoid errors</li><li>Drafts notes mentally during calls</li></ul></div>
+        <div class="pcell"><div class="plbl">Decision drivers</div><ul class="plist"><li>Accuracy before speed</li><li>Trust comes from consistency</li><li>Adoption when a tool removes real pain</li></ul></div>
+      </div>
+    </div>
+    <div id="p-priya" class="pc">
+      <div class="quote">"I need my team on cases that need human judgment — not answering the same administrative questions all day."</div>
+      <div class="phead"><div class="pav" style="background:rgba(216,90,48,0.1);color:#712B13;border:1px solid rgba(216,90,48,0.25);">PS</div><div><div class="pname">Priya Shah</div><div class="prole">Health plan operations manager · Regional payer · Age 43</div><div class="pbadges"><span class="pb">Economic buyer</span><span class="pb">AI skeptic</span><span class="pb">Outcome-focused</span></div></div></div>
+      <div class="pgrid">
+        <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Reduce inbound volume through self-service</li><li>Show measurable ROI on tech investments</li><li>Keep team on complex, high-value cases</li></ul></div>
+        <div class="pcell"><div class="plbl">Frustrations</div><ul class="plist"><li>Vendors who promise transformation, deliver complexity</li><li>Metrics that measure activity, not outcomes</li><li>Implementation timelines that slip</li></ul></div>
+        <div class="pcell"><div class="plbl">Behaviors</div><ul class="plist"><li>Reads case studies before agreeing to a demo</li><li>Involves ops team in evaluation</li><li>Sets hard success criteria before pilots</li></ul></div>
+        <div class="pcell"><div class="plbl">Decision drivers</div><ul class="plist"><li>Proven ROI from comparable environments</li><li>Vendor partnership quality</li><li>Transparency about what it won't do</li></ul></div>
+      </div>
+    </div>
+
+    <div style="border-top:0.5px solid var(--border-light);margin:32px 0 24px;"></div>
+    <div class="sec-hdr"><span class="sec-title">Customer journey map</span><div class="sec-rule"></div></div>
+    <div class="sec-sub">Maria's path — billing confusion → digital payment confidence</div>
+    <div class="jg">
+      <div class="js"><div class="jl">Trigger</div><div class="ji"><i class="ti ti-mail" style="font-size:14px;color:#B8943F"></i></div><div class="eds"><div class="ed m"></div><div class="ed m"></div><div class="ed"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Confusing bill arrives</div></div>
+      <div class="js"><div class="jl">Confusion</div><div class="ji"><i class="ti ti-help" style="font-size:14px;color:var(--coral)"></i></div><div class="eds"><div class="ed l"></div><div class="ed l"></div><div class="ed l"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Calls — 18 min hold</div></div>
+      <div class="js"><div class="jl">Resolution</div><div class="ji"><i class="ti ti-headphones" style="font-size:14px;color:#B8943F"></i></div><div class="eds"><div class="ed m"></div><div class="ed m"></div><div class="ed m"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Agent resolves, explains options</div></div>
+      <div class="js"><div class="jl">First try</div><div class="ji"><i class="ti ti-device-mobile" style="font-size:14px;color:var(--teal)"></i></div><div class="eds"><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed"></div></div><div class="jtp">Tries digital with coaching</div></div>
+      <div class="js"><div class="jl">Confidence</div><div class="ji"><i class="ti ti-check" style="font-size:14px;color:var(--teal)"></i></div><div class="eds"><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div><div class="ed h"></div></div><div class="jtp">Pays independently — calls drop</div></div>
+    </div>
+    <div class="pains">
+      <span class="pain pp"><i class="ti ti-alert-circle" style="font-size:11px"></i>Pain: Statement confusion drives call volume</span>
+      <span class="pain pp"><i class="ti ti-alert-circle" style="font-size:11px"></i>Pain: No bridge phone → digital</span>
+      <span class="pain po"><i class="ti ti-bulb" style="font-size:11px"></i>Opp: Agent-assisted digital onboarding</span>
+      <span class="pain po"><i class="ti ti-bulb" style="font-size:11px"></i>Opp: Simplified statement design</span>
+    </div>
+  </div>
+</div>
+
+<!-- AI TOOLS -->
+<div class="section alt" id="aitools">
+  <div class="container">
+    <div class="sec-hdr"><span class="sec-title">AI tools</span><div class="sec-rule"></div></div>
+    <div class="sec-sub">Live demonstrations of AI-powered PM thinking — persona generation, prioritization, and journey mapping</div>
+
+    <div class="tool-grid">
+      <div class="tool-card"><div class="tool-ico"><i class="ti ti-users"></i></div><div class="tool-t">AI persona generator</div><div class="tool-s">Describe any user type and Claude generates a structured, research-quality persona instantly</div></div>
+      <div class="tool-card"><div class="tool-ico"><i class="ti ti-calculator"></i></div><div class="tool-t">AI RICE scorer</div><div class="tool-s">Describe a feature — see RICE scoring with visible reasoning across all four dimensions</div></div>
+      <div class="tool-card"><div class="tool-ico"><i class="ti ti-route"></i></div><div class="tool-t">AI journey narrator</div><div class="tool-s">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</div></div>
+    </div>
+
+    <!-- AI PERSONA GENERATOR -->
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;">AI persona generator</h3>
+    <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Describe any user type — Claude generates a structured, research-quality persona instantly</p>
+    <div class="chips">
+      <button class="chip" onclick="spg('A Medicare member managing chronic conditions who struggles to understand prescription coverage')">Medicare member</button>
+      <button class="chip" onclick="spg('A hospital billing coordinator managing prior authorization requests and claims denials')">Hospital billing coordinator</button>
+      <button class="chip" onclick="spg('A health plan IT director evaluating AI tools for member engagement')">Health plan IT director</button>
+      <button class="chip" onclick="spg('A family caregiver managing healthcare decisions for an elderly parent with dementia')">Family caregiver</button>
+    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;">
+      <textarea id="gin" rows="2" placeholder="Describe a user type, role, or problem space…"></textarea>
+      <button class="run-btn" id="gbtn" style="align-self:flex-end;height:36px;" onclick="genP()"><i class="ti ti-wand" style="font-size:13px"></i>Generate</button>
+    </div>
+    <div class="status" id="gst"><div class="dots"><span></span><span></span><span></span></div><span>Building persona…</span></div>
+    <div class="pout" id="pout">
+      <div class="pot"><div class="pav" id="poav"></div><div><div class="pname" id="ponm"></div><div class="prole" id="poro"></div><div class="pbadges" id="pobg"></div></div></div>
+      <div class="poq" id="poq"></div>
+      <div class="pog">
+        <div class="poc"><div class="plbl">Goals</div><ul class="plist" id="pogo"></ul></div>
+        <div class="poc"><div class="plbl">Frustrations</div><ul class="plist" id="pofr"></ul></div>
+        <div class="poc"><div class="plbl">Behaviors</div><ul class="plist" id="pobe"></ul></div>
+        <div class="poc"><div class="plbl">Decision drivers</div><ul class="plist" id="podr"></ul></div>
+      </div>
+      <div class="popp"><div class="oppl"><i class="ti ti-bulb" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Product opportunities</div><div class="opcs" id="pooc"></div></div>
+      <div class="pacts">
+        <button class="pab" onclick="genP()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Regenerate</button>
+        <button class="pab" onclick="chatAsk('How would you design onboarding for '+curN+'?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Ask about onboarding ↗</button>
+      </div>
+    </div>
+
+    <!-- RICE SCORER -->
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;margin-top:24px;">AI RICE scorer</h3>
+    <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Describe a feature — see the score and the reasoning behind every dimension</p>
+    <div class="chips">
+      <button class="chip" onclick="sri('Allow members to update payment method in the app without calling customer service')">Self-serve payment update</button>
+      <button class="chip" onclick="sri('Proactive SMS alert 5 days before premium due to prevent member lapse')">Pre-lapse SMS alert</button>
+      <button class="chip" onclick="sri('Real-time agent assist panel surfacing member history during a call')">Real-time agent assist</button>
+      <button class="chip" onclick="sri('AI plain-language explanation of benefits summary after each claim')">Plain-language EOB</button>
+    </div>
+    <div class="fr"><textarea id="rice-in" rows="2" placeholder="Describe a feature idea in plain language…"></textarea></div>
+    <div class="two-col">
+      <div class="fr"><div class="fl">Product context</div><select id="rice-prod"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option><option>Pharmacy / PBM platform</option></select></div>
+      <div class="fr"><div class="fl">Primary goal</div><select id="rice-goal"><option>Reduce member churn / lapse</option><option>Increase digital self-service adoption</option><option>Reduce contact center volume</option><option>Improve agent efficiency</option><option>Drive revenue / upsell</option></select></div>
+    </div>
+    <div class="btn-row">
+      <button class="run-btn" id="rice-btn" onclick="runRice()"><i class="ti ti-calculator" style="font-size:13px"></i>Score this feature</button>
+      <span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec · reasoning not just numbers</span>
+    </div>
+    <div class="status" id="rice-st"><div class="dots"><span></span><span></span><span></span></div><span>Thinking through trade-offs…</span></div>
+    <div id="rice-out" style="display:none;margin-top:12px;">
+      <div class="score-hero"><div class="score-top"><div><div class="score-f" id="ro-feat"></div><div class="score-ctx" id="ro-ctx"></div><div id="ro-verdict"></div></div><div><div class="score-n" id="ro-score"></div><div class="score-lbl">RICE score</div></div></div><div class="dims" id="ro-dims"></div></div>
+      <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:14px;margin-bottom:10px;"><div class="rc-lbl"><i class="ti ti-brain" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Kelly's reasoning</div><div style="font-size:12px;color:var(--text-mid);line-height:1.75;" id="ro-reason"></div></div>
+      <div class="tcard"><div class="to-hdr"><i class="ti ti-scale" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Trade-offs</div><div class="to-grid"><div class="to-col"><div class="to-ch" style="color:#085041;"><i class="ti ti-thumb-up" style="font-size:12px"></i>Arguments for</div><div id="ro-for"></div></div><div class="to-col"><div class="to-ch" style="color:#993C1D;"><i class="ti ti-alert-triangle" style="font-size:12px"></i>Watch out for</div><div id="ro-against"></div></div></div></div>
+      <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:14px;margin-bottom:10px;"><div class="rc-lbl" style="margin-bottom:9px;"><i class="ti ti-help-circle" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Discovery questions before committing</div><div id="ro-qs"></div></div>
+      <div class="acts">
+        <button class="act-btn" onclick="runRice()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Re-score</button>
+        <button class="act-btn" onclick="chatAsk('How would you sequence this feature relative to other priorities?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Discuss prioritization ↗</button>
+      </div>
+    </div>
+
+    <!-- JOURNEY NARRATOR -->
+    <h3 style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;margin-top:24px;">AI journey narrator</h3>
+    <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</p>
+    <div class="pp-grid">
+      <div class="pp-card active" onclick="selJP(this,'maria')" id="jp-maria"><div class="pp-top"><div class="pp-av" style="background:rgba(185,148,63,0.1);color:#8B6E2E;">MM</div><div><div class="pp-nm">Maria Martinez</div><div class="pp-rl">Medicare member · Age 68</div></div></div><div class="pp-tags"><span class="pp-tag">Payment anxiety</span><span class="pp-tag">Phone-first</span></div></div>
+      <div class="pp-card" onclick="selJP(this,'david')" id="jp-david"><div class="pp-top"><div class="pp-av" style="background:rgba(29,158,117,0.1);color:#085041;">DK</div><div><div class="pp-nm">David Kim</div><div class="pp-rl">Contact center agent</div></div></div><div class="pp-tags"><span class="pp-tag">Power user</span><span class="pp-tag">Tool frustrated</span></div></div>
+      <div class="pp-card" onclick="selJP(this,'priya')" id="jp-priya"><div class="pp-top"><div class="pp-av" style="background:rgba(216,90,48,0.1);color:#712B13;">PS</div><div><div class="pp-nm">Priya Shah</div><div class="pp-rl">Health plan ops manager</div></div></div><div class="pp-tags"><span class="pp-tag">Economic buyer</span><span class="pp-tag">AI skeptic</span></div></div>
+    </div>
+    <div class="chips" id="jn-chips"></div>
+    <div class="fr"><textarea id="jn-in" rows="2" placeholder="Describe a specific situation or trigger event…"></textarea></div>
+    <div class="two-col">
+      <div class="fr"><div class="fl">Journey type</div><select id="jn-type"><option>Problem discovery → resolution</option><option>Onboarding → first value</option><option>Renewal / retention moment</option><option>Support escalation</option><option>Feature adoption</option></select></div>
+      <div class="fr"><div class="fl">Stages</div><select id="jn-stages"><option value="4">4 stages</option><option value="5" selected>5 stages</option><option value="6">6 stages</option></select></div>
+    </div>
+    <div class="btn-row">
+      <button class="run-btn" id="jn-btn" onclick="runJourney()"><i class="ti ti-player-play" style="font-size:13px"></i>Narrate this journey</button>
+      <span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~20 sec</span>
+    </div>
+    <div class="status" id="jn-st"><div class="dots"><span></span><span></span><span></span></div><span>Mapping the experience…</span></div>
+    <div id="jn-out" style="display:none;margin-top:12px;">
+      <div class="jsum"><div class="js-top"><div><div class="js-pn" id="jno-p"></div><div class="js-sc" id="jno-s"></div></div><div><div style="font-size:10px;color:var(--text-light);margin-bottom:4px;text-align:right;text-transform:uppercase;letter-spacing:0.4px;">Sentiment</div><div class="sent-bar" id="jno-sent"></div></div></div><div class="js-hl" id="jno-hl"></div></div>
+      <div id="jno-stages"></div>
+      <div class="ins-card"><div class="ins-hdr"><i class="ti ti-bulb" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>PM insights</div><div class="ins-grid"><div class="ins-col"><div class="ins-lbl" style="color:#993C1D;"><i class="ti ti-alert-circle" style="font-size:12px"></i>Top pain points</div><div id="jno-pains"></div></div><div class="ins-col"><div class="ins-lbl" style="color:#085041;"><i class="ti ti-bulb" style="font-size:12px"></i>Opportunities</div><div id="jno-opps"></div></div><div class="ins-col"><div class="ins-lbl" style="color:#8B6E2E;"><i class="ti ti-chart-bar" style="font-size:12px"></i>Metrics to track</div><div id="jno-mets"></div></div></div></div>
+      <div class="acts">
+        <button class="act-btn" onclick="runJourney()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Regenerate</button>
+        <button class="act-btn" onclick="chatAsk('What is the highest-leverage product intervention from this journey map?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Highest intervention ↗</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AUTOMATION -->
+<div class="section reg" id="automation">
+  <div class="container">
+    <div class="sec-hdr"><span class="sec-title">Workflow automation lab</span><div class="sec-rule"></div></div>
+    <div class="sec-sub">Live AI tools — each saves 30–90 minutes of manual PM work</div>
+    <div class="tool-grid" style="margin-bottom:28px;">
+      <div class="tool-card"><div class="tool-ico"><i class="ti ti-file-description"></i></div><div class="tool-t">PRD generator</div><div class="tool-s">Feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
+      <div class="tool-card"><div class="tool-ico"><i class="ti ti-cards"></i></div><div class="tool-t">User story writer</div><div class="tool-s">Feature idea → role-based stories with acceptance criteria. Ready for Jira.</div></div>
+      <div class="tool-card"><div class="tool-ico"><i class="ti ti-refresh"></i></div><div class="tool-t">Retro summarizer</div><div class="tool-s">Paste raw retro notes → structured went-well / improve / actions instantly.</div></div>
+      <div class="tool-card"><div class="tool-ico"><i class="ti ti-chart-bar"></i></div><div class="tool-t">Competitive snapshot</div><div class="tool-s">Describe your product and a competitor → frank competitive analysis with strategic questions.</div></div>
+    </div>
+    <div class="wtabs">
+      <button class="wt active" onclick="wTab('prd')"><i class="ti ti-file-description" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>PRD generator</button>
+      <button class="wt" onclick="wTab('us')"><i class="ti ti-cards" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>User story writer</button>
+      <button class="wt" onclick="wTab('retro')"><i class="ti ti-refresh" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>Retro summarizer</button>
+      <button class="wt" onclick="wTab('comp')"><i class="ti ti-chart-bar" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>Competitive snapshot</button>
+    </div>
+    <div id="w-prd" class="wp active">
+      <div class="ibar"><div class="ibar-t"><strong>Personal workflow.</strong> Paste a feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
+      <div class="fr"><div class="fl">Feature brief</div><textarea id="pb" rows="3" placeholder="e.g. Members should update payment method without calling — 23% of billing calls are about this."></textarea></div>
+      <div class="two-col">
+        <div class="fr"><div class="fl">Product type</div><select id="pt"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option></select></div>
+        <div class="fr"><div class="fl">Audience</div><select id="pa"><option>Medicare members (B2C)</option><option>Health plan admins (B2B)</option><option>Contact center agents</option><option>Clinical staff</option></select></div>
+      </div>
+      <div class="btn-row"><button class="run-btn" id="pb-btn" onclick="runPRD()"><i class="ti ti-wand" style="font-size:13px"></i>Generate PRD</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec</span></div>
+      <div class="status" id="pb-st"><div class="dots"><span></span><span></span><span></span></div><span>Drafting PRD…</span></div>
+      <div class="ocard" id="pb-out"><div class="ohdr"><span class="olbl">Generated PRD</span><div class="oacts"><button class="ab" onclick="cp('pb-body')">Copy</button></div></div><div class="obody" id="pb-body"></div></div>
+    </div>
+    <div id="w-us" class="wp">
+      <div class="ibar"><div class="ibar-t"><strong>Personal workflow.</strong> Feature idea → role-based user stories with acceptance criteria. Ready for Jira.</div></div>
+      <div class="fr"><div class="fl">Feature idea</div><textarea id="ub" rows="2" placeholder="e.g. Members can view explanation of benefits history, filterable by date and claim type."></textarea></div>
+      <div class="two-col">
+        <div class="fr"><div class="fl">Epic</div><select id="ue"><option>Member self-service</option><option>Billing &amp; payments</option><option>AI &amp; automation</option><option>Agent tools</option></select></div>
+        <div class="fr"><div class="fl">Stories</div><select id="uc"><option>3 stories</option><option>5 stories</option></select></div>
+      </div>
+      <div class="btn-row"><button class="run-btn" id="ub-btn" onclick="runUS()"><i class="ti ti-cards" style="font-size:13px"></i>Write user stories</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~12 sec</span></div>
+      <div class="status" id="ub-st"><div class="dots"><span></span><span></span><span></span></div><span>Writing stories…</span></div>
+      <div class="ocard" id="ub-out"><div class="ohdr"><span class="olbl">User stories</span><div class="oacts"><button class="ab" onclick="cp('ub-raw')">Copy</button></div></div><div id="ub-body" class="sgrid" style="padding:14px;"></div><div id="ub-raw" style="display:none;"></div></div>
+    </div>
+    <div id="w-retro" class="wp">
+      <div class="ibar"><div class="ibar-t"><strong>Personal workflow.</strong> Paste raw retro notes → structured went-well / improve / actions in seconds.</div></div>
+      <div class="fr"><div class="fl">Raw retro notes</div><textarea id="rn" rows="5" placeholder="e.g.&#10;- Deployments went smoothly&#10;- Design review blocked eng for 2 days&#10;- Need clearer definition of done&#10;- Stakeholder feedback arrived late"></textarea></div>
+      <div class="fr"><div class="fl">Sprint context (optional)</div><textarea id="rc" rows="1" placeholder="e.g. Sprint 14 · AI summarization · Team of 6"></textarea></div>
+      <div class="btn-row"><button class="run-btn" id="rn-btn" onclick="runRetro()"><i class="ti ti-refresh" style="font-size:13px"></i>Summarize retro</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~10 sec</span></div>
+      <div class="status" id="rn-st"><div class="dots"><span></span><span></span><span></span></div><span>Organizing retro…</span></div>
+      <div class="ocard" id="rn-out"><div class="ohdr"><span class="olbl">Retro summary</span><div class="oacts"><button class="ab" onclick="cp('rn-raw')">Copy</button></div></div><div id="rn-body" style="padding:14px;"></div><div id="rn-raw" style="display:none;"></div></div>
+    </div>
+    <div id="w-comp" class="wp">
+      <div class="ibar"><div class="ibar-t"><strong>Personal workflow.</strong> Describe your product and a competitor → frank competitive snapshot with strategic questions.</div></div>
+      <div class="two-col">
+        <div class="fr"><div class="fl">Your product</div><textarea id="cy" rows="2" placeholder="e.g. AI-powered self-service for Medicare members — resolves billing questions without agent intervention."></textarea></div>
+        <div class="fr"><div class="fl">Competitor</div><textarea id="ct" rows="2" placeholder="e.g. Enterprise conversational AI vendor focused on healthcare contact centers."></textarea></div>
+      </div>
+      <div class="btn-row"><button class="run-btn" id="cy-btn" onclick="runComp()"><i class="ti ti-chart-bar" style="font-size:13px"></i>Generate snapshot</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec</span></div>
+      <div class="status" id="cy-st"><div class="dots"><span></span><span></span><span></span></div><span>Analyzing…</span></div>
+      <div class="ocard" id="cy-out"><div class="ohdr"><span class="olbl">Competitive snapshot</span><div class="oacts"><button class="ab" onclick="cp('cy-body')">Copy</button></div></div><div class="obody" id="cy-body"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ASSISTANT -->
+<div class="section alt" id="assistant">
+  <div class="container">
+    <div class="sec-hdr"><span class="sec-title">AI assistant</span><div class="sec-rule"></div></div>
+    <div class="sec-sub">Ask anything about Kelly's background, PM approach, or how she thinks through product problems</div>
+    <div class="cwrap">
+      <div class="chdr"><div class="ldot"></div><span style="font-size:12px;font-weight:500;color:#E8E4D9;">Kelly's portfolio assistant</span><span style="font-size:10px;color:#6B7280;margin-left:auto;letter-spacing:0.3px;text-transform:uppercase;">Powered by Claude</span></div>
+      <div class="cmsgs" id="cmsgs">
+        <div class="msg ai"><div class="mav aiav"><i class="ti ti-robot" style="font-size:11px"></i></div><div class="bub">Hi — I'm Kelly's portfolio assistant. Ask me about her 15+ years in healthcare PM, her work on AI-enabled platforms, or how she thinks through product problems.</div></div>
+      </div>
+      <div class="csuggs">
+        <button class="cs4" onclick="chatAsk('Tell me about the AI summarization project and the decisions you made.')">AI summarization project</button>
+        <button class="cs4" onclick="chatAsk('How do you approach discovery when data and users tell you different things?')">Discovery approach</button>
+        <button class="cs4" onclick="chatAsk('How do you handle a stakeholder who wants to skip discovery and build?')">Stakeholder pushback</button>
+        <button class="cs4" onclick="chatAsk('Why would your healthcare experience translate to a different industry?')">Cross-industry fit</button>
+        <button class="cs4" onclick="chatAsk('What is your PM philosophy in your own words?')">PM philosophy</button>
+      </div>
+      <div class="cfoot">
+        <input type="text" class="cin" id="cin" placeholder="Ask about experience, approach, leadership…" onkeydown="if(event.key==='Enter')sendChat()" />
+        <button class="csend" onclick="sendChat()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Kelly <span>Mello</span></div>
+    <div class="footer-links">
+      <a href="https://linkedin.com" class="footer-link">LinkedIn</a>
+      <a href="mailto:kelly@kellymello.me" class="footer-link">Email</a>
+    </div>
+  </div>
+  <div class="footer-copy">Design: HTML5 UP (Dimension template, adapted)</div>
+</footer>
 
 <script>
-// Persona tabs
-function showP(id){document.querySelectorAll('.km-ptab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.km-pc').forEach(c=>c.classList.remove('active'));document.getElementById('km-p-'+id).classList.add('active');event.target.classList.add('active');}
+// NAV ACTIVE STATE ON SCROLL
+const sections = ['about','cases','personas','aitools','automation','assistant'];
+window.addEventListener('scroll', () => {
+  let current = 'about';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 80) current = id;
+  });
+  document.querySelectorAll('.nl').forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#'+current);
+  });
+});
 
-// Workflow tabs
-function wTab(id){document.querySelectorAll('.km-wp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.km-wt').forEach(t=>t.classList.remove('active'));document.getElementById('w-'+id).classList.add('active');event.target.classList.add('active');}
-
-// Copy
+function showP(id){document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pc').forEach(c=>c.classList.remove('active'));document.getElementById('p-'+id).classList.add('active');event.target.classList.add('active');}
+function wTab(id){document.querySelectorAll('.wp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.wt').forEach(t=>t.classList.remove('active'));document.getElementById('w-'+id).classList.add('active');event.target.classList.add('active');}
 function cp(id){navigator.clipboard.writeText(document.getElementById(id).innerText||'').catch(()=>{});}
-
-// Button state
 function setR(b,s,on){document.getElementById(b).disabled=on;document.getElementById(s).style.display=on?'flex':'none';}
 function showO(id){document.getElementById(id).style.display='block';}
 
-// API
 async function api(sys,msg,maxT=1000){
   const r=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:maxT,system:sys,messages:[{role:'user',content:msg}]})});
   if(!r.ok)throw new Error('API error');
@@ -665,7 +750,7 @@ async function api(sys,msg,maxT=1000){
 }
 
 // PERSONA GENERATOR
-const AVC={blue:['rgba(201,168,76,0.15)','#C9A84C'],teal:['rgba(29,158,117,0.15)','#5dd4a8'],amber:['rgba(239,159,39,0.15)','#EF9F27'],coral:['rgba(216,90,48,0.15)','#f08060'],purple:['rgba(155,143,212,0.15)','#9B8FD4']};
+const AVC={blue:['rgba(185,148,63,0.1)','#8B6E2E'],teal:['rgba(29,158,117,0.1)','#085041'],amber:['rgba(185,148,63,0.1)','#B8943F'],coral:['rgba(216,90,48,0.1)','#712B13'],purple:['rgba(83,74,183,0.1)','#3C3489']};
 let curN='';
 function spg(t){document.getElementById('gin').value=t;}
 function li(id,arr){document.getElementById(id).innerHTML=arr.map(i=>`<li>${i}</li>`).join('');}
@@ -680,21 +765,20 @@ async function genP(){
     const c=AVC[p.avatarColor]||AVC.blue;
     const av=document.getElementById('poav');
     av.textContent=p.initials;
-    av.style.cssText=`width:36px;height:36px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.75em;font-weight:500;flex-shrink:0;font-family:'Playfair Display',serif;background:${c[0]};color:${c[1]};border:1px solid ${c[1]}44;`;
-    document.getElementById('ponm').textContent=p.name;
-    document.getElementById('poro').textContent=p.role;
+    av.style.cssText=`width:42px;height:42px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;font-family:'Playfair Display',serif;background:${c[0]};color:${c[1]};border:1px solid ${c[1]}44;`;
+    document.getElementById('ponm').textContent=p.name;document.getElementById('poro').textContent=p.role;
     document.getElementById('poq').textContent='\u201C'+p.quote+'\u201D';
-    document.getElementById('pobg').innerHTML=p.badges.map(b=>`<span class="km-pb">${b}</span>`).join('');
+    document.getElementById('pobg').innerHTML=p.badges.map(b=>`<span class="pb">${b}</span>`).join('');
     li('pogo',p.goals);li('pofr',p.frustrations);li('pobe',p.behaviors);li('podr',p.drivers);
-    document.getElementById('pooc').innerHTML=p.opportunities.map(o=>`<span class="km-sc2 opp">${o}</span>`).join('');
+    document.getElementById('pooc').innerHTML=p.opportunities.map(o=>`<span class="opc">${o}</span>`).join('');
     document.getElementById('pout').style.display='block';
   }catch(e){alert('Error — please try again.');}
   document.getElementById('gst').style.display='none';document.getElementById('gbtn').disabled=false;
 }
 
-// RICE
-const VERDICTS=[{min:0,max:15,l:'Low priority',bg:'rgba(216,90,48,0.15)',c:'#f08060',bd:'rgba(216,90,48,0.3)'},{min:15,max:35,l:'Worth exploring',bg:'rgba(201,168,76,0.12)',c:'#C9A84C',bd:'rgba(201,168,76,0.3)'},{min:35,max:60,l:'Strong candidate',bg:'rgba(29,158,117,0.12)',c:'#5dd4a8',bd:'rgba(29,158,117,0.3)'},{min:60,max:999,l:'High priority',bg:'rgba(201,168,76,0.18)',c:'#E8C96A',bd:'rgba(201,168,76,0.4)'}];
-const DC={R:{bar:'#C9A84C',txt:'#C9A84C'},I:{bar:'#5dd4a8',txt:'#5dd4a8'},C:{bar:'#9B8FD4',txt:'#9B8FD4'},E:{bar:'#f08060',txt:'#f08060'}};
+// RICE SCORER
+const VERDICTS=[{min:0,max:15,l:'Low priority',bg:'rgba(216,90,48,0.08)',c:'#993C1D',bd:'rgba(216,90,48,0.2)'},{min:15,max:35,l:'Worth exploring',bg:'rgba(185,148,63,0.08)',c:'#8B6E2E',bd:'rgba(185,148,63,0.2)'},{min:35,max:60,l:'Strong candidate',bg:'rgba(29,158,117,0.08)',c:'#085041',bd:'rgba(29,158,117,0.2)'},{min:60,max:999,l:'High priority',bg:'rgba(185,148,63,0.12)',c:'#6B4F1A',bd:'rgba(185,148,63,0.3)'}];
+const DC={R:{bar:'#B8943F',txt:'#8B6E2E'},I:{bar:'#1D9E75',txt:'#085041'},C:{bar:'#7B6BAA',txt:'#3C3489'},E:{bar:'#D85A30',txt:'#993C1D'}};
 function sri(t){document.getElementById('rice-in').value=t;}
 async function runRice(){
   const feat=document.getElementById('rice-in').value.trim();if(!feat){document.getElementById('rice-in').focus();return;}
@@ -705,16 +789,16 @@ async function runRice(){
     const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
     const sc=Math.round((p.reach*p.impact*p.confidence)/p.effort*10)/10;
     const vd=VERDICTS.find(v=>sc>=v.min&&sc<v.max)||VERDICTS[0];
-    document.getElementById('ro-feat').textContent=feat.length>60?feat.slice(0,60)+'…':feat;
+    document.getElementById('ro-feat').textContent=feat.length>65?feat.slice(0,65)+'…':feat;
     document.getElementById('ro-ctx').textContent=document.getElementById('rice-prod').value+' · '+document.getElementById('rice-goal').value;
     document.getElementById('ro-score').textContent=sc;
-    document.getElementById('ro-verdict').innerHTML=`<span class="km-verdict" style="background:${vd.bg};color:${vd.c};border:1px solid ${vd.bd};">${vd.l}</span>`;
+    document.getElementById('ro-verdict').innerHTML=`<span class="verdict" style="background:${vd.bg};color:${vd.c};border:0.5px solid ${vd.bd};">${vd.l}</span>`;
     const dims=[{k:'R',n:'Reach',v:p.reach,max:10,fmt:p.reach,r:p.reach_reasoning},{k:'I',n:'Impact',v:p.impact,max:3,fmt:p.impact,r:p.impact_reasoning},{k:'C',n:'Confidence',v:p.confidence,max:1,fmt:Math.round(p.confidence*100)+'%',r:p.confidence_reasoning},{k:'E',n:'Effort',v:p.effort,max:12,fmt:p.effort+'mo',r:p.effort_reasoning}];
-    document.getElementById('ro-dims').innerHTML=dims.map(d=>{const pct=Math.round((d.k==='E'?(1-(d.v-1)/11):d.v/d.max)*100);const c=DC[d.k];return`<div class="km-dim"><div class="km-dim-hdr"><span class="km-dim-l" style="color:${c.txt};">${d.k} — ${d.n}</span><span class="km-dim-v" style="color:${c.txt};">${d.fmt}</span></div><div class="km-dim-bar"><div class="km-dim-fill" style="width:${pct}%;background:${c.bar};"></div></div><div class="km-dim-r">${d.r}</div></div>`;}).join('');
+    document.getElementById('ro-dims').innerHTML=dims.map(d=>{const pct=Math.round((d.k==='E'?(1-(d.v-1)/11):d.v/d.max)*100);const c=DC[d.k];return`<div class="dim"><div class="dim-hdr"><span class="dim-l" style="color:${c.txt};">${d.k} — ${d.n}</span><span class="dim-v" style="color:${c.txt};">${d.fmt}</span></div><div class="dim-bar"><div class="dim-fill" style="width:${pct}%;background:${c.bar};"></div></div><div class="dim-r">${d.r}</div></div>`;}).join('');
     document.getElementById('ro-reason').textContent=p.overall_reasoning;
-    document.getElementById('ro-for').innerHTML=p.arguments_for.map(a=>`<div class="km-to-item">${a}</div>`).join('');
-    document.getElementById('ro-against').innerHTML=p.watch_out_for.map(a=>`<div class="km-to-item">${a}</div>`).join('');
-    document.getElementById('ro-qs').innerHTML=p.discovery_questions.map((q,i)=>`<div class="km-q-item"><span class="km-q-num">Q${i+1}</span><span>${q}</span></div>`).join('');
+    document.getElementById('ro-for').innerHTML=p.arguments_for.map(a=>`<div class="to-item">${a}</div>`).join('');
+    document.getElementById('ro-against').innerHTML=p.watch_out_for.map(a=>`<div class="to-item">${a}</div>`).join('');
+    document.getElementById('ro-qs').innerHTML=p.discovery_questions.map((q,i)=>`<div class="q-item"><span class="q-num">Q${i+1}</span><span>${q}</span></div>`).join('');
     document.getElementById('rice-out').style.display='block';
   }catch(e){alert('Error — please try again.');}
   setR('rice-btn','rice-st',false);
@@ -723,10 +807,10 @@ async function runRice(){
 // JOURNEY NARRATOR
 const JP={maria:{name:'Maria Martinez',desc:'Medicare Advantage member · Retired · Age 68',traits:'low digital confidence, payment anxiety, phone-first, relies on family, high call volume user',scenarios:['Receives a confusing billing statement and tries to understand what she owes','Premium payment fails and she receives a lapse warning letter','Tries to find out if a new prescription is covered under her plan']},david:{name:'David Kim',desc:'Contact center agent · 4 years tenure · Remote',traits:'power user, high workload, frustrated with context-switching, accuracy-first mindset',scenarios:['Handles a complex billing dispute while managing a queue of waiting callers','Tries a new AI assist tool for the first time during a live member call','Receives a call about a claim denial and needs to explain the appeals process']},priya:{name:'Priya Shah',desc:'Health plan operations manager · Regional payer · Age 43',traits:'economic buyer, outcome-focused, AI skeptic, sets hard success criteria before pilots',scenarios:['Evaluating a new AI self-service vendor for the member portal','Presenting quarterly call volume reduction results to her VP','Running a pilot for a new digital payment feature with her team']}};
 let curJP='maria';
-const EC={frustrated:'#f08060',anxious:'#f08060',confused:'#C9A84C',neutral:'rgba(255,255,255,0.4)',hopeful:'#5dd4a8',relieved:'#5dd4a8',satisfied:'#5dd4a8',confident:'#C9A84C',overwhelmed:'#f08060',skeptical:'#C9A84C'};
-function gec(e){const k=Object.keys(EC).find(k=>e.toLowerCase().includes(k));return k?EC[k]:'rgba(255,255,255,0.4)';}
-function selJP(el,id){document.querySelectorAll('.km-pp-card').forEach(c=>c.classList.remove('active'));el.classList.add('active');curJP=id;updJChips();document.getElementById('jn-in').value='';}
-function updJChips(){const p=JP[curJP];document.getElementById('jn-chips').innerHTML=p.scenarios.map(s=>`<button class="km-chip" onclick="document.getElementById('jn-in').value=this.dataset.s" data-s="${s}">${s.length>50?s.slice(0,50)+'…':s}</button>`).join('');}
+const EC={frustrated:'#D85A30',anxious:'#D85A30',confused:'#B8943F',neutral:'#9B9589',hopeful:'#1D9E75',relieved:'#1D9E75',satisfied:'#1D9E75',confident:'#B8943F',overwhelmed:'#D85A30',skeptical:'#B8943F'};
+function gec(e){const k=Object.keys(EC).find(k=>e.toLowerCase().includes(k));return k?EC[k]:'#9B9589';}
+function selJP(el,id){document.querySelectorAll('.pp-card').forEach(c=>c.classList.remove('active'));el.classList.add('active');curJP=id;updJChips();document.getElementById('jn-in').value='';}
+function updJChips(){const p=JP[curJP];document.getElementById('jn-chips').innerHTML=p.scenarios.map(s=>`<button class="chip" onclick="document.getElementById('jn-in').value=this.dataset.s" data-s="${s}">${s.length>52?s.slice(0,52)+'…':s}</button>`).join('');}
 function toggleStage(i){const b=document.getElementById('jns-'+i);const c=document.getElementById('jnc-'+i);const o=b.classList.contains('open');b.classList.toggle('open',!o);c.classList.toggle('open',!o);}
 async function runJourney(){
   const sc=document.getElementById('jn-in').value.trim();if(!sc){document.getElementById('jn-in').focus();return;}
@@ -740,13 +824,13 @@ async function runJourney(){
     document.getElementById('jno-s').textContent=sc;
     document.getElementById('jno-hl').textContent=j.headline;
     const sc2=Math.max(1,Math.min(5,Math.round(j.sentiment_score)));
-    const scols=['#f08060','#C9A84C','rgba(255,255,255,0.3)','#5dd4a8','#E8C96A'];
-    document.getElementById('jno-sent').innerHTML=[1,2,3,4,5].map(i=>`<div class="km-sent-dot" style="background:${i<=sc2?scols[sc2-1]:'rgba(255,255,255,0.12)'};"></div>`).join('');
-    const stcols=['#C9A84C','#5dd4a8','#9B8FD4','#f08060','#4A9EBF'];
-    document.getElementById('jno-stages').innerHTML=j.stages.map((s,i)=>{const ec=gec(s.emotion);const sc3=stcols[i%stcols.length];const ity=Math.max(1,Math.min(5,s.emotion_intensity));return`<div class="km-stage-card"><div class="km-stage-hdr" onclick="toggleStage(${i})"><div class="km-stage-num" style="background:${sc3}22;color:${sc3};border:1px solid ${sc3}44;">${i+1}</div><span class="km-stage-nm">${s.name}</span><span class="km-stage-emo" style="background:${ec}18;color:${ec};border:1px solid ${ec}33;">${s.emotion} ${'●'.repeat(ity)}${'○'.repeat(5-ity)}</span><span class="km-stage-chev${i===0?' open':''}" id="jnc-${i}">▼</span></div><div class="km-stage-body${i===0?' open':''}" id="jns-${i}"><div class="km-ss"><div class="km-ssl">What happens</div><div class="km-st">${s.what_happens}</div></div><div class="km-ss"><div class="km-ssl">Internal monologue</div><div class="km-st" style="font-style:italic;opacity:0.6;font-family:'Playfair Display',serif;">"${s.internal_monologue}"</div></div><div class="km-ss"><div class="km-ssl">Touchpoints</div><div class="km-schips">${s.touchpoints.map(t=>`<span class="km-sc2 touch">${t}</span>`).join('')}</div></div>${s.pain_points.length?`<div class="km-ss"><div class="km-ssl">Pain points</div><div class="km-schips">${s.pain_points.map(pp=>`<span class="km-sc2 pain">${pp}</span>`).join('')}</div></div>`:''} ${s.opportunities.length?`<div class="km-ss"><div class="km-ssl">Opportunities</div><div class="km-schips">${s.opportunities.map(o=>`<span class="km-sc2 opp">${o}</span>`).join('')}</div></div>`:''}</div></div>`;}).join('');
-    document.getElementById('jno-pains').innerHTML=j.top_pain_points.map(pp=>`<div class="km-ins-item">${pp}</div>`).join('');
-    document.getElementById('jno-opps').innerHTML=j.product_opportunities.map(o=>`<div class="km-ins-item">${o}</div>`).join('');
-    document.getElementById('jno-mets').innerHTML=j.metrics_to_track.map(m=>`<div class="km-ins-item">${m}</div>`).join('');
+    const scols=['#D85A30','#B8943F','#9B9589','#1D9E75','#8B6E2E'];
+    document.getElementById('jno-sent').innerHTML=[1,2,3,4,5].map(i=>`<div class="sent-dot" style="background:${i<=sc2?scols[sc2-1]:'var(--border-light)'};"></div>`).join('');
+    const stcols=['#B8943F','#1D9E75','#7B6BAA','#D85A30','#4A9EBF'];
+    document.getElementById('jno-stages').innerHTML=j.stages.map((s,i)=>{const ec=gec(s.emotion);const sc3=stcols[i%stcols.length];const ity=Math.max(1,Math.min(5,s.emotion_intensity));return`<div class="stage-card"><div class="sh" onclick="toggleStage(${i})"><div class="snum" style="background:${sc3}18;color:${sc3};border:0.5px solid ${sc3}33;">${i+1}</div><span class="snm">${s.name}</span><span class="semo" style="background:${ec}12;color:${ec};border:0.5px solid ${ec}2A;">${s.emotion} ${'●'.repeat(ity)}${'○'.repeat(5-ity)}</span><i class="ti ti-chevron-down sch${i===0?' open':''}" id="jnc-${i}"></i></div><div class="sb${i===0?' open':''}" id="jns-${i}"><div class="ss"><div class="ssl">What happens</div><div class="st">${s.what_happens}</div></div><div class="ss"><div class="ssl">Internal monologue</div><div class="st" style="font-style:italic;color:var(--text-light);font-family:'Playfair Display',serif;">"${s.internal_monologue}"</div></div><div class="ss"><div class="ssl">Touchpoints</div><div class="schips">${s.touchpoints.map(t=>`<span class="pc2 touch">${t}</span>`).join('')}</div></div>${s.pain_points.length?`<div class="ss"><div class="ssl">Pain points</div><div class="schips">${s.pain_points.map(pp=>`<span class="pc2 pain"><i class="ti ti-alert-circle" style="font-size:11px"></i>${pp}</span>`).join('')}</div></div>`:''} ${s.opportunities.length?`<div class="ss"><div class="ssl">Opportunities</div><div class="schips">${s.opportunities.map(o=>`<span class="pc2 opp"><i class="ti ti-bulb" style="font-size:11px"></i>${o}</span>`).join('')}</div></div>`:''}</div></div>`;}).join('');
+    document.getElementById('jno-pains').innerHTML=j.top_pain_points.map(pp=>`<div class="ins-item">${pp}</div>`).join('');
+    document.getElementById('jno-opps').innerHTML=j.product_opportunities.map(o=>`<div class="ins-item">${o}</div>`).join('');
+    document.getElementById('jno-mets').innerHTML=j.metrics_to_track.map(m=>`<div class="ins-item">${m}</div>`).join('');
     document.getElementById('jn-out').style.display='block';
   }catch(e){alert('Error — please try again.');}
   setR('jn-btn','jn-st',false);
@@ -769,7 +853,7 @@ async function runUS(){
     const raw=await api(sys,`Feature: ${b}\nEpic: ${document.getElementById('ue').value}`);
     const ss=JSON.parse(raw.replace(/```json|```/g,'').trim());
     document.getElementById('ub-raw').textContent=ss.map(s=>`${s.role}\n${s.action}\n${s.benefit}\n\nAC:\n${s.ac.map(a=>'• '+a).join('\n')}`).join('\n\n---\n\n');
-    document.getElementById('ub-body').innerHTML=ss.map(s=>`<div class="km-sc3"><div class="km-sh2"><span class="km-sr">${s.role}</span><span class="km-sp">${s.points}pts</span></div><div class="km-sb2"><div style="margin-bottom:0.5em;">${s.action} <span style="opacity:0.55">${s.benefit}</span></div><div style="font-size:0.7em;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:0.3em;">Acceptance criteria</div>${s.ac.map(a=>`<div class="km-acr"><span style="color:#5dd4a8;">✓</span><span>${a}</span></div>`).join('')}</div></div>`).join('');
+    document.getElementById('ub-body').innerHTML=ss.map(s=>`<div class="sc3"><div class="sh2"><span class="sr">${s.role}</span><span class="sp">${s.points}pts</span></div><div class="sb2"><div style="margin-bottom:7px;">${s.action} <span style="color:var(--text-light)">${s.benefit}</span></div><div style="font-size:9px;font-weight:500;color:#B8943F;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Acceptance criteria</div>${s.ac.map(a=>`<div class="acr"><i class="ti ti-check" style="font-size:11px;color:var(--teal)"></i><span>${a}</span></div>`).join('')}</div></div>`).join('');
     showO('ub-out');
   }catch(e){alert('Error.');}
   setR('ub-btn','ub-st',false);
@@ -782,7 +866,7 @@ async function runRetro(){
     const raw=await api(sys,`Notes:\n${n}\nContext: ${document.getElementById('rc').value||'Not provided'}`);
     const r=JSON.parse(raw.replace(/```json|```/g,'').trim());
     document.getElementById('rn-raw').textContent=`Went well:\n${r.wentWell.map(i=>'• '+i).join('\n')}\n\nNeeds improvement:\n${r.improve.map(i=>'• '+i).join('\n')}\n\nActions:\n${r.actions.map(a=>`• ${a.item} [${a.owner}]`).join('\n')}`;
-    document.getElementById('rn-body').innerHTML=`<div style="font-size:0.7em;opacity:0.5;margin-bottom:0.7em;">${r.context}</div><div class="km-rgrid"><div class="km-rc2"><div class="km-rch w">✓ Went well</div><div class="km-ri">${r.wentWell.map(i=>`<div class="km-rit">${i}</div>`).join('')}</div></div><div class="km-rc2"><div class="km-rch i">↑ Needs improvement</div><div class="km-ri">${r.improve.map(i=>`<div class="km-rit">${i}</div>`).join('')}</div></div><div class="km-rc2"><div class="km-rch a">→ Action items</div><div class="km-ri">${r.actions.map(a=>`<div class="km-rit">${a.item}<div style="font-size:0.85em;opacity:0.55;margin-top:0.2em;">${a.owner}</div></div>`).join('')}</div></div></div>`;
+    document.getElementById('rn-body').innerHTML=`<div style="font-size:11px;color:var(--text-light);margin-bottom:10px;">${r.context}</div><div class="rgrid"><div class="rc2"><div class="rch w"><i class="ti ti-thumb-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Went well</div><div class="ri">${r.wentWell.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch i"><i class="ti ti-arrow-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Needs improvement</div><div class="ri">${r.improve.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch a"><i class="ti ti-checkbox" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Action items</div><div class="ri">${r.actions.map(a=>`<div class="rit">${a.item}<div style="font-size:10px;color:var(--text-light);margin-top:2px;">${a.owner}</div></div>`).join('')}</div></div></div>`;
     showO('rn-out');
   }catch(e){alert('Error.');}
   setR('rn-btn','rn-st',false);
@@ -815,7 +899,7 @@ Kelly's background:
 Answer conversationally, first person as Kelly. Max 3 sentences unless depth is needed.`;
 
 const hist=[];
-function chatSend(t){document.getElementById('cin').value=t;sendChat();}
+function chatAsk(t){document.getElementById('cin').value=t;sendChat();}
 async function sendChat(){
   const inp=document.getElementById('cin');const msg=inp.value.trim();if(!msg)return;inp.value='';
   addM('u',msg);const typ=addTyp();
@@ -826,8 +910,8 @@ async function sendChat(){
     hist.push({r:'user',c:msg},{r:'assistant',c:reply});typ.remove();addM('ai',reply);
   }catch(e){typ.remove();addM('ai','Something went wrong — please try again.');}
 }
-function addM(role,text){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='km-msg '+role;d.innerHTML=`<div class="km-mav ${role==='ai'?'km-aiav':'km-uav'}">${role==='ai'?'✦':'You'}</div><div class="km-bub">${text}</div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;}
-function addTyp(){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='km-msg ai';d.innerHTML=`<div class="km-mav km-aiav">✦</div><div class="km-typing"><span></span><span></span><span></span></div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;return d;}
+function addM(role,text){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='msg '+role;d.innerHTML=`<div class="mav ${role==='ai'?'aiav':'uav'}">${role==='ai'?'<i class="ti ti-robot" style="font-size:11px"></i>':'You'}</div><div class="bub">${text}</div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function addTyp(){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='msg ai';d.innerHTML=`<div class="mav aiav"><i class="ti ti-robot" style="font-size:11px"></i></div><div class="typing"><span></span><span></span><span></span></div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;return d;}
 </script>
 </body>
 </html>
