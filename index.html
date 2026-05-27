@@ -1,0 +1,833 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Kelly Mello — Senior Product Manager</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="Kelly Mello — Senior PM with 15+ years in healthcare AI, omnichannel platforms, and member self-service." />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-soft: rgba(201,168,76,0.12);
+      --teal: #1D9E75;
+      --coral: #D85A30;
+      --serif: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Header customization */
+    #header .logo { border-color: var(--gold); color: var(--gold); font-family: var(--serif); font-size: 1.4em; letter-spacing: 0.05em; }
+    #header h1 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; }
+    #header h1 em { font-style: italic; color: var(--gold); }
+    #header p { font-size: 0.9em; line-height: 1.7; opacity: 0.75; }
+    #header nav ul li a { letter-spacing: 0.05em; font-size: 0.8em; text-transform: uppercase; }
+    #header nav ul li a:hover { background: var(--gold-soft); border-color: var(--gold); color: var(--gold); }
+
+    /* Article panels */
+    #main article h2.major { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; }
+    #main article h2.major::after { background: var(--gold); }
+
+    /* Gold accent for buttons */
+    input[type="submit"].primary,
+    .button.primary { background-color: var(--gold) !important; border-color: var(--gold) !important; }
+
+    /* Custom content styles inside panels */
+    .km-eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 1.2em; }
+    .km-eyebrow-line { width: 24px; height: 1px; background: var(--gold); }
+    .km-eyebrow-text { font-size: 0.65em; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+
+    .km-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: rgba(255,255,255,0.08); margin: 1.5em 0; }
+    .km-stat { background: rgba(0,0,0,0.2); padding: 1em; text-align: center; }
+    .km-stat-n { font-size: 1.6em; font-weight: 400; color: var(--gold); font-family: var(--serif); line-height: 1; }
+    .km-stat-l { font-size: 0.6em; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; margin-top: 0.3em; line-height: 1.4; }
+
+    .km-pills { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 1em 0; }
+    .km-pill { font-size: 0.65em; padding: 0.3em 0.8em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2em; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .km-pill.hi { border-color: rgba(201,168,76,0.5); color: var(--gold); background: var(--gold-soft); }
+
+    .km-case { border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 1em 1.2em; margin-bottom: 0.8em; transition: border-color 0.2s; }
+    .km-case:hover { border-color: rgba(201,168,76,0.4); }
+    .km-case-tag { font-size: 0.6em; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4em; }
+    .km-case-title { font-family: var(--serif); font-weight: 400; font-size: 0.95em; line-height: 1.4; margin-bottom: 0.3em; }
+    .km-case-co { font-size: 0.7em; opacity: 0.55; margin-bottom: 0.8em; }
+    .km-case-body { font-size: 0.75em; line-height: 1.75; opacity: 0.7; margin-bottom: 0.8em; }
+    .km-case-metrics { display: flex; flex-wrap: wrap; gap: 0.8em; }
+    .km-metric { font-size: 0.65em; opacity: 0.6; display: flex; align-items: center; gap: 0.3em; }
+    .km-metric strong { color: rgba(255,255,255,0.9); opacity: 1; }
+
+    .km-ptabs { display: flex; gap: 0.4em; margin-bottom: 1em; flex-wrap: wrap; }
+    .km-ptab { font-size: 0.65em; padding: 0.35em 0.9em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2em; cursor: pointer; background: none; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; transition: all 0.15s; font-family: inherit; }
+    .km-ptab.active { border-color: rgba(201,168,76,0.5); color: var(--gold); background: var(--gold-soft); }
+    .km-pc { display: none; } .km-pc.active { display: block; }
+    .km-quote { padding: 0.8em 1em; border-left: 2px solid var(--gold); background: var(--gold-soft); font-size: 0.8em; font-style: italic; color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 1em; font-family: var(--serif); }
+    .km-persona-head { display: flex; align-items: center; gap: 0.8em; margin-bottom: 0.8em; }
+    .km-pav { width: 36px; height: 36px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.75em; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
+    .km-pname { font-family: var(--serif); font-size: 0.9em; }
+    .km-prole { font-size: 0.65em; opacity: 0.55; margin-top: 0.2em; }
+    .km-pbadges { display: flex; gap: 0.3em; margin-top: 0.4em; flex-wrap: wrap; }
+    .km-pb { font-size: 0.6em; padding: 0.2em 0.6em; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; color: rgba(255,255,255,0.5); }
+    .km-pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; margin-top: 0.8em; }
+    .km-pcell { background: rgba(0,0,0,0.2); border-radius: 4px; padding: 0.8em; }
+    .km-plbl { font-size: 0.58em; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5em; }
+    .km-plist { list-style: none; padding: 0; margin: 0; }
+    .km-plist li { font-size: 0.72em; padding: 0.15em 0; opacity: 0.7; display: flex; gap: 0.4em; line-height: 1.4; }
+    .km-plist li::before { content: "—"; opacity: 0.4; flex-shrink: 0; font-size: 0.85em; margin-top: 0.1em; }
+
+    .km-jg { display: grid; grid-template-columns: repeat(5,1fr); gap: 4px; margin: 1em 0; }
+    .km-js { text-align: center; }
+    .km-jl { font-size: 0.55em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.5; margin-bottom: 0.4em; }
+    .km-ji { width: 28px; height: 28px; border-radius: 3px; margin: 0 auto 0.5em; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.08); font-size: 0.9em; }
+    .km-eds { display: flex; justify-content: center; gap: 2px; margin-bottom: 0.4em; }
+    .km-ed { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .km-ed.h { background: var(--teal); } .km-ed.m { background: var(--gold); } .km-ed.l { background: var(--coral); }
+    .km-jtp { font-size: 0.6em; opacity: 0.55; line-height: 1.3; }
+    .km-pains { display: flex; flex-wrap: wrap; gap: 0.4em; margin-top: 0.8em; }
+    .km-pain { font-size: 0.62em; padding: 0.25em 0.7em; border-radius: 2px; display: flex; align-items: center; gap: 0.3em; }
+    .km-pain.p { background: rgba(216,90,48,0.15); color: #f08060; border: 1px solid rgba(216,90,48,0.3); }
+    .km-pain.o { background: rgba(29,158,117,0.15); color: #5dd4a8; border: 1px solid rgba(29,158,117,0.3); }
+
+    /* AI Tools shared styles */
+    .km-tool-section { margin-bottom: 1.5em; }
+    .km-tool-section h3 { font-family: var(--serif); font-weight: 400; font-size: 1em; margin-bottom: 0.3em; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.5em; margin-bottom: 0.8em; }
+    .km-chips { display: flex; flex-wrap: wrap; gap: 0.35em; margin-bottom: 0.7em; }
+    .km-chip { font-size: 0.62em; padding: 0.3em 0.7em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2em; background: none; cursor: pointer; color: rgba(255,255,255,0.5); font-family: inherit; transition: all 0.12s; }
+    .km-chip:hover { border-color: rgba(201,168,76,0.5); color: var(--gold); }
+    .km-field { margin-bottom: 0.8em; }
+    .km-label { font-size: 0.62em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.55; display: block; margin-bottom: 0.3em; }
+    .km-textarea { width: 100%; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; padding: 0.6em 0.8em; font-size: 0.75em; color: rgba(255,255,255,0.8); resize: none; line-height: 1.5; font-family: inherit; }
+    .km-select { width: 100%; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; padding: 0.5em 0.8em; font-size: 0.75em; color: rgba(255,255,255,0.8); font-family: inherit; height: 32px; }
+    .km-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6em; }
+    .km-btn { display: inline-flex; align-items: center; gap: 0.4em; padding: 0.5em 1.2em; background: var(--gold); color: #0d1117; border: none; border-radius: 3px; font-size: 0.72em; font-weight: 600; cursor: pointer; font-family: inherit; letter-spacing: 0.03em; transition: opacity 0.15s; }
+    .km-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .km-btn:hover:not(:disabled) { opacity: 0.88; }
+    .km-btn-row { display: flex; align-items: center; gap: 0.8em; margin-top: 0.4em; }
+    .km-tnote { font-size: 0.6em; opacity: 0.45; }
+    .km-status { display: none; align-items: center; gap: 0.5em; padding: 0.5em 0; font-size: 0.7em; opacity: 0.6; }
+    .km-dots span { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); margin: 0 1px; animation: kmbd 0.9s infinite; }
+    .km-dots span:nth-child(2) { animation-delay: .15s; } .km-dots span:nth-child(3) { animation-delay: .3s; }
+    @keyframes kmbd { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+    .km-out { display: none; margin-top: 0.8em; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+    .km-out-hdr { padding: 0.5em 0.8em; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; }
+    .km-out-lbl { font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.5; }
+    .km-out-acts { display: flex; gap: 0.3em; }
+    .km-ab { font-size: 0.6em; padding: 0.2em 0.6em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; background: none; cursor: pointer; color: rgba(255,255,255,0.5); font-family: inherit; }
+    .km-ab:hover { border-color: var(--gold); color: var(--gold); }
+    .km-out-body { padding: 0.8em; font-size: 0.75em; color: rgba(255,255,255,0.7); line-height: 1.75; white-space: pre-wrap; max-height: 280px; overflow-y: auto; }
+
+    /* RICE specific */
+    .km-score-hero { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 0.8em 1em; margin-bottom: 0.7em; }
+    .km-score-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; margin-bottom: 0.8em; }
+    .km-score-f { font-family: var(--serif); font-size: 0.85em; line-height: 1.35; }
+    .km-score-ctx { font-size: 0.62em; opacity: 0.5; margin-top: 0.2em; }
+    .km-score-n { font-size: 2.2em; font-weight: 400; color: var(--gold); font-family: var(--serif); line-height: 1; text-align: right; }
+    .km-score-lbl { font-size: 0.58em; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.5; text-align: right; margin-top: 0.2em; }
+    .km-verdict { display: inline-flex; align-items: center; gap: 0.3em; font-size: 0.62em; padding: 0.2em 0.7em; border-radius: 2px; margin-top: 0.4em; }
+    .km-dims { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.5em; }
+    .km-dim { background: rgba(0,0,0,0.2); border-radius: 3px; padding: 0.6em 0.8em; border: 1px solid rgba(255,255,255,0.06); }
+    .km-dim-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4em; }
+    .km-dim-l { font-size: 0.6em; opacity: 0.5; letter-spacing: 0.05em; }
+    .km-dim-v { font-size: 1.1em; font-weight: 400; font-family: var(--serif); }
+    .km-dim-bar { height: 2px; border-radius: 1px; background: rgba(255,255,255,0.1); margin-bottom: 0.4em; }
+    .km-dim-fill { height: 100%; border-radius: 1px; }
+    .km-dim-r { font-size: 0.68em; opacity: 0.6; line-height: 1.45; }
+    .km-reasoning { background: rgba(0,0,0,0.2); border-radius: 4px; padding: 0.8em; margin-bottom: 0.7em; font-size: 0.75em; color: rgba(255,255,255,0.7); line-height: 1.7; }
+    .km-to-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 0.7em; }
+    .km-to-col { padding: 0.7em 0.8em; }
+    .km-to-col:first-child { border-right: 1px solid rgba(255,255,255,0.08); }
+    .km-to-ch { font-size: 0.62em; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5em; display: flex; align-items: center; gap: 0.3em; }
+    .km-to-item { font-size: 0.7em; opacity: 0.6; padding: 0.15em 0; display: flex; gap: 0.4em; line-height: 1.4; }
+    .km-to-item::before { content: "—"; opacity: 0.5; flex-shrink: 0; font-size: 0.85em; }
+    .km-q-item { font-size: 0.72em; color: rgba(255,255,255,0.75); padding: 0.5em 0; display: flex; gap: 0.6em; border-bottom: 1px solid rgba(255,255,255,0.06); line-height: 1.5; }
+    .km-q-item:last-child { border-bottom: none; }
+    .km-q-num { color: var(--gold); flex-shrink: 0; font-family: var(--serif); }
+    .km-acts { display: flex; gap: 0.4em; flex-wrap: wrap; margin-top: 0.7em; }
+    .km-act-btn { font-size: 0.62em; padding: 0.3em 0.8em; border: 1px solid rgba(255,255,255,0.15); border-radius: 2px; background: none; cursor: pointer; color: rgba(255,255,255,0.5); font-family: inherit; }
+    .km-act-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Journey narrator */
+    .km-pp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.5em; margin-bottom: 0.8em; }
+    .km-pp-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0.7em 0.8em; cursor: pointer; transition: all 0.15s; }
+    .km-pp-card:hover { border-color: rgba(201,168,76,0.4); }
+    .km-pp-card.active { border-color: var(--gold); background: var(--gold-soft); }
+    .km-pp-top { display: flex; align-items: center; gap: 0.5em; margin-bottom: 0.4em; }
+    .km-pp-av { width: 24px; height: 24px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.6em; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
+    .km-pp-nm { font-size: 0.72em; font-weight: 500; }
+    .km-pp-rl { font-size: 0.6em; opacity: 0.5; line-height: 1.3; }
+    .km-pp-tags { display: flex; flex-wrap: wrap; gap: 0.25em; }
+    .km-pp-tag { font-size: 0.55em; padding: 0.1em 0.5em; border-radius: 2px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.45); }
+    .km-jsum { background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 0.8em 1em; margin-bottom: 0.6em; }
+    .km-js-pn { font-family: var(--serif); font-size: 0.85em; }
+    .km-js-sc { font-size: 0.62em; opacity: 0.5; margin-top: 0.2em; }
+    .km-js-hl { font-size: 0.72em; opacity: 0.65; line-height: 1.6; font-style: italic; border-left: 2px solid var(--teal); padding-left: 0.7em; margin-top: 0.6em; font-family: var(--serif); }
+    .km-sent-bar { display: flex; gap: 2px; }
+    .km-sent-dot { width: 7px; height: 7px; border-radius: 50%; }
+    .km-stage-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; margin-bottom: 0.5em; overflow: hidden; }
+    .km-stage-hdr { display: flex; align-items: center; gap: 0.6em; padding: 0.6em 0.8em; cursor: pointer; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .km-stage-num { width: 18px; height: 18px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.6em; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
+    .km-stage-nm { font-size: 0.75em; font-weight: 500; flex: 1; }
+    .km-stage-emo { font-size: 0.6em; padding: 0.15em 0.6em; border-radius: 2px; white-space: nowrap; }
+    .km-stage-chev { font-size: 0.8em; opacity: 0.4; transition: transform 0.2s; }
+    .km-stage-chev.open { transform: rotate(180deg); }
+    .km-stage-body { padding: 0.7em 0.8em; display: none; }
+    .km-stage-body.open { display: block; }
+    .km-ss { margin-bottom: 0.6em; } .km-ss:last-child { margin-bottom: 0; }
+    .km-ssl { font-size: 0.58em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 0.3em; }
+    .km-st { font-size: 0.72em; opacity: 0.7; line-height: 1.6; }
+    .km-schips { display: flex; flex-wrap: wrap; gap: 0.3em; }
+    .km-sc2 { font-size: 0.62em; padding: 0.2em 0.6em; border-radius: 2px; display: flex; align-items: center; gap: 0.25em; }
+    .km-sc2.pain { background: rgba(216,90,48,0.12); color: #f08060; border: 1px solid rgba(216,90,48,0.25); }
+    .km-sc2.opp { background: rgba(29,158,117,0.12); color: #5dd4a8; border: 1px solid rgba(29,158,117,0.25); }
+    .km-sc2.touch { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.1); }
+    .km-ins-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5em; margin-top: 0.6em; }
+    .km-ins-col { background: rgba(0,0,0,0.2); border-radius: 3px; padding: 0.7em 0.8em; border: 1px solid rgba(255,255,255,0.06); }
+    .km-ins-lbl { font-size: 0.6em; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5em; display: flex; align-items: center; gap: 0.3em; }
+    .km-ins-item { font-size: 0.68em; opacity: 0.6; padding: 0.15em 0; line-height: 1.4; display: flex; gap: 0.3em; }
+    .km-ins-item::before { content: "—"; opacity: 0.5; flex-shrink: 0; font-size: 0.85em; }
+
+    /* Workflow tabs */
+    .km-wtabs { display: flex; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 1em; overflow-x: auto; scrollbar-width: none; }
+    .km-wtabs::-webkit-scrollbar { display: none; }
+    .km-wt { padding: 0.5em 0.8em; font-size: 0.65em; color: rgba(255,255,255,0.4); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; white-space: nowrap; font-family: inherit; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.12s; }
+    .km-wt.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .km-wp { display: none; } .km-wp.active { display: block; }
+    .km-ibar { display: flex; align-items: flex-start; gap: 0.6em; padding: 0.6em 0.8em; background: var(--gold-soft); border-left: 2px solid var(--gold); margin-bottom: 0.8em; border-radius: 0 3px 3px 0; }
+    .km-ibar-t { font-size: 0.7em; color: rgba(255,255,255,0.6); line-height: 1.5; }
+    .km-ibar-t strong { color: rgba(201,168,76,0.9); font-weight: 500; }
+    .km-sgrid { display: flex; flex-direction: column; gap: 0.5em; }
+    .km-sc3 { border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+    .km-sh2 { padding: 0.4em 0.7em; background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .km-sr { font-size: 0.7em; color: rgba(255,255,255,0.75); }
+    .km-sp { font-size: 0.6em; padding: 0.1em 0.5em; border-radius: 2px; background: var(--gold-soft); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+    .km-sb2 { padding: 0.6em 0.7em; font-size: 0.7em; color: rgba(255,255,255,0.65); line-height: 1.6; }
+    .km-acr { display: flex; align-items: flex-start; gap: 0.3em; padding: 0.1em 0; font-size: 0.68em; opacity: 0.65; }
+    .km-rgrid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5em; }
+    .km-rc2 { border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+    .km-rch { padding: 0.4em 0.7em; font-size: 0.58em; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .km-rch.w { color: #5dd4a8; background: rgba(29,158,117,0.1); }
+    .km-rch.i { color: var(--gold); background: var(--gold-soft); }
+    .km-rch.a { color: rgba(255,255,255,0.5); background: rgba(0,0,0,0.2); }
+    .km-ri { padding: 0.5em 0.7em; display: flex; flex-direction: column; gap: 0.4em; }
+    .km-rit { font-size: 0.68em; color: rgba(255,255,255,0.65); padding: 0.3em 0.6em; border-radius: 2px; background: rgba(0,0,0,0.2); line-height: 1.4; }
+
+    /* Chat */
+    .km-chat-wrap { border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+    .km-chat-hdr { padding: 0.6em 0.9em; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 0.5em; }
+    .km-live { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+    .km-chat-title { font-size: 0.72em; }
+    .km-chat-badge { font-size: 0.58em; margin-left: auto; color: rgba(201,168,76,0.6); border: 1px solid rgba(201,168,76,0.2); padding: 0.1em 0.5em; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .km-chat-msgs { padding: 0.8em; min-height: 140px; max-height: 240px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.6em; }
+    .km-msg { display: flex; gap: 0.5em; } .km-msg.u { flex-direction: row-reverse; }
+    .km-bub { max-width: 82%; padding: 0.55em 0.8em; font-size: 0.75em; line-height: 1.6; }
+    .km-msg.ai .km-bub { background: rgba(0,0,0,0.25); color: rgba(255,255,255,0.75); border-radius: 2px 10px 10px 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .km-msg.u .km-bub { background: var(--gold); color: #0d1117; border-radius: 10px 2px 10px 10px; font-weight: 500; }
+    .km-mav { width: 20px; height: 20px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 0.58em; flex-shrink: 0; margin-top: 0.15em; }
+    .km-aiav { background: rgba(201,168,76,0.12); color: var(--gold); border: 1px solid rgba(201,168,76,0.2); }
+    .km-uav { background: var(--gold-soft); color: var(--gold); }
+    .km-typing { display: flex; align-items: center; gap: 2px; padding: 0.55em 0.8em; background: rgba(0,0,0,0.25); border-radius: 2px 10px 10px 10px; border: 1px solid rgba(255,255,255,0.08); width: fit-content; }
+    .km-typing span { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); animation: kmbd 0.9s infinite; }
+    .km-typing span:nth-child(2) { animation-delay: .15s; } .km-typing span:nth-child(3) { animation-delay: .3s; }
+    .km-suggs { padding: 0 0.8em 0.6em; display: flex; flex-wrap: wrap; gap: 0.3em; }
+    .km-sugg { font-size: 0.6em; padding: 0.25em 0.7em; border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; background: none; cursor: pointer; color: rgba(255,255,255,0.45); font-family: inherit; }
+    .km-sugg:hover { border-color: var(--gold); color: var(--gold); }
+    .km-chat-foot { padding: 0.6em 0.8em; border-top: 1px solid rgba(255,255,255,0.08); display: flex; gap: 0.5em; background: rgba(0,0,0,0.2); }
+    .km-cin { flex: 1; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; padding: 0.5em 0.7em; font-size: 0.75em; color: rgba(255,255,255,0.8); font-family: inherit; }
+    .km-csend { padding: 0.5em 1em; background: var(--gold); color: #0d1117; border: none; border-radius: 2px; font-size: 0.7em; font-weight: 600; cursor: pointer; font-family: inherit; }
+
+    /* Panel scroll */
+    #main article { overflow-y: auto; max-height: 90vh; }
+
+    @media screen and (max-width: 736px) {
+      .km-two-col, .km-pgrid, .km-pp-grid, .km-ins-grid, .km-rgrid, .km-to-grid { grid-template-columns: 1fr; }
+      .km-jg { grid-template-columns: repeat(3,1fr); }
+      .km-dims { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+  <!-- Header -->
+  <header id="header">
+    <div class="logo">
+      <span style="font-family:'Playfair Display',serif;font-size:1.1em;letter-spacing:0.05em;">KM</span>
+    </div>
+    <div class="content">
+      <div class="inner">
+        <h1>Kelly <em>Mello</em></h1>
+        <p>Senior Product Manager · 15+ years in healthcare AI,<br>omnichannel platforms &amp; member self-service.<br>Based in Louisville, KY — open to remote.</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#cx">Personas</a></li>
+        <li><a href="#aitools">AI Tools</a></li>
+        <li><a href="#automation">Automation</a></li>
+        <li><a href="#assistant">Assistant</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="main">
+
+    <!-- ABOUT -->
+    <article id="about">
+      <h2 class="major">About</h2>
+      <div class="km-eyebrow"><div class="km-eyebrow-line"></div><span class="km-eyebrow-text">Senior Product Manager · Healthcare &amp; AI</span></div>
+      <p>I build AI-enabled experiences, omnichannel platforms, and self-service products at the intersection of enterprise technology and human-centered design. I translate messy, high-stakes problems — billing friction, contact center overload, digital adoption gaps — into products that work for real people in regulated environments.</p>
+      <div class="km-pills">
+        <span class="km-pill hi">Conversational AI</span>
+        <span class="km-pill hi">Member Self-Service</span>
+        <span class="km-pill">Omnichannel Strategy</span>
+        <span class="km-pill">Payments &amp; Billing UX</span>
+        <span class="km-pill">Healthcare &amp; PBM</span>
+        <span class="km-pill">Agile / SAFe</span>
+        <span class="km-pill">Cross-functional Leadership</span>
+        <span class="km-pill">Digital Transformation</span>
+      </div>
+      <div class="km-stats">
+        <div class="km-stat"><div class="km-stat-n">15+</div><div class="km-stat-l">Years PM experience</div></div>
+        <div class="km-stat"><div class="km-stat-n">~40%</div><div class="km-stat-l">After-call work reduction via AI</div></div>
+        <div class="km-stat"><div class="km-stat-n">7-fig</div><div class="km-stat-l">LTV impact, billing redesign</div></div>
+        <div class="km-stat"><div class="km-stat-n">3.5%</div><div class="km-stat-l">Digital lift, underserved segment</div></div>
+      </div>
+      <ul class="icons">
+        <li><a href="https://linkedin.com" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+        <li><a href="mailto:kelly@kellymello.me" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+    </article>
+
+    <!-- CASE STUDIES -->
+    <article id="cases">
+      <h2 class="major">Case studies</h2>
+      <p style="font-size:0.75em;opacity:0.55;margin-bottom:1.2em;">Employer details generalized to protect proprietary information.</p>
+
+      <div class="km-case">
+        <div class="km-case-tag">AI / 0→1</div>
+        <div class="km-case-title">AI post-interaction summarization — reducing after-call work by ~40%</div>
+        <div class="km-case-co">National health plan · Cloud-based member services platform</div>
+        <div class="km-case-body">Agents spent 8–12 minutes per call manually documenting summaries across multiple systems. I defined and led delivery of a generative AI feature that analyzed call transcripts in real time and auto-populated structured notes. Key PM challenge: balancing recall against precision — too much noise and agents wouldn't trust it. Navigated through phased piloting with agent feedback loops before full rollout.</div>
+        <div class="km-case-metrics">
+          <span class="km-metric">↓ <strong>~40%</strong> after-call work</span>
+          <span class="km-metric">⚡ Enterprise rollout</span>
+          <span class="km-metric">🔗 Reduced context switching</span>
+        </div>
+      </div>
+
+      <div class="km-case">
+        <div class="km-case-tag">Monetization</div>
+        <div class="km-case-title">Billing friction redesign — seven-figure LTV impact</div>
+        <div class="km-case-co">Large B2C health plan · Member payment experience</div>
+        <div class="km-case-body">Churn analysis surfaced members lapsing not from dissatisfaction but from payment friction — confusing statements, limited methods, no proactive outreach. Led discovery across support call analysis and member interviews, then owned cross-functional roadmap with finance, legal, and engineering. This was fundamentally a UX problem dressed up as a revenue problem.</div>
+        <div class="km-case-metrics">
+          <span class="km-metric">$ <strong>7-figure</strong> LTV impact</span>
+          <span class="km-metric">🔀 Finance, legal, eng aligned</span>
+          <span class="km-metric">↑ Reduced preventable lapse</span>
+        </div>
+      </div>
+
+      <div class="km-case">
+        <div class="km-case-tag">Growth</div>
+        <div class="km-case-title">Digital adoption initiative — 3.5% lift in underserved Medicare segment</div>
+        <div class="km-case-co">National health plan · Omnichannel &amp; self-service</div>
+        <div class="km-case-body">A Medicare segment bypassed digital entirely. Standard tactics had no effect. Discovery revealed distrust wasn't about capability — it was about confidence. Redesigned onboarding to use trusted offline touchpoints to initiate digital engagement, with in-product guidance that reduced perceived risk.</div>
+        <div class="km-case-metrics">
+          <span class="km-metric">↑ <strong>+3.5%</strong> digital adoption</span>
+          <span class="km-metric">🔍 Mixed-method discovery</span>
+          <span class="km-metric">♥ Medicare beneficiary focus</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- CX / PERSONAS -->
+    <article id="cx">
+      <h2 class="major">Personas</h2>
+      <p style="font-size:0.75em;opacity:0.55;margin-bottom:1em;">Composites from healthcare member, agent, and administrator research. Names fictional.</p>
+
+      <div class="km-ptabs">
+        <button class="km-ptab active" onclick="showP('maria')">Maria — Medicare member</button>
+        <button class="km-ptab" onclick="showP('david')">David — Agent</button>
+        <button class="km-ptab" onclick="showP('priya')">Priya — Health plan admin</button>
+      </div>
+
+      <div id="km-p-maria" class="km-pc active">
+        <div class="km-quote">"I just want to know what I owe and when. Every time I call I get a different answer."</div>
+        <div class="km-persona-head">
+          <div class="km-pav" style="background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3);">MM</div>
+          <div><div class="km-pname">Maria Martinez</div><div class="km-prole">Medicare Advantage member · Retired · Age 68</div><div class="km-pbadges"><span class="km-pb">Low digital confidence</span><span class="km-pb">Payment anxiety</span><span class="km-pb">High call volume</span></div></div>
+        </div>
+        <div class="km-pgrid">
+          <div class="km-pcell"><div class="km-plbl">Goals</div><ul class="km-plist"><li>Understand benefits without calling every time</li><li>Pay her premium simply and on time</li><li>Feel confident she won't lose coverage</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Frustrations</div><ul class="km-plist"><li>Billing statements feel confusing</li><li>Long hold times for simple questions</li><li>Digital tools feel built for someone else</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Behaviors</div><ul class="km-plist"><li>Calls before trying self-service</li><li>Pays by check or phone</li><li>Relies on family to interpret documents</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Decision drivers</div><ul class="km-plist"><li>Trust through consistent human interaction</li><li>Simplicity — one clear action at a time</li><li>Reassurance she won't make a mistake</li></ul></div>
+        </div>
+      </div>
+
+      <div id="km-p-david" class="km-pc">
+        <div class="km-quote">"By the time I've pulled up their account across all the systems, we've already lost two minutes."</div>
+        <div class="km-persona-head">
+          <div class="km-pav" style="background:rgba(29,158,117,0.15);color:#5dd4a8;border:1px solid rgba(29,158,117,0.3);">DK</div>
+          <div><div class="km-pname">David Kim</div><div class="km-prole">Contact center agent · 4 years tenure · Remote</div><div class="km-pbadges"><span class="km-pb">Power user</span><span class="km-pb">Tool frustrated</span><span class="km-pb">High workload</span></div></div>
+        </div>
+        <div class="km-pgrid">
+          <div class="km-pcell"><div class="km-plbl">Goals</div><ul class="km-plist"><li>Resolve issues on the first call</li><li>Get off the phone faster without sacrificing quality</li><li>Not worry about incomplete notes after</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Frustrations</div><ul class="km-plist"><li>Context scattered across multiple systems</li><li>After-call work eats time for next member</li><li>AI tools that surface wrong answers</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Behaviors</div><ul class="km-plist"><li>Builds personal cheat sheets for bad tooling</li><li>Escalates edge cases to avoid errors</li><li>Drafts notes mentally during calls</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Decision drivers</div><ul class="km-plist"><li>Accuracy before speed</li><li>Trust comes from consistency</li><li>Adoption when a tool removes real pain</li></ul></div>
+        </div>
+      </div>
+
+      <div id="km-p-priya" class="km-pc">
+        <div class="km-quote">"I need my team on cases that need human judgment — not answering the same administrative questions all day."</div>
+        <div class="km-persona-head">
+          <div class="km-pav" style="background:rgba(216,90,48,0.15);color:#f08060;border:1px solid rgba(216,90,48,0.3);">PS</div>
+          <div><div class="km-pname">Priya Shah</div><div class="km-prole">Health plan operations manager · Regional payer · Age 43</div><div class="km-pbadges"><span class="km-pb">Economic buyer</span><span class="km-pb">AI skeptic</span><span class="km-pb">Outcome-focused</span></div></div>
+        </div>
+        <div class="km-pgrid">
+          <div class="km-pcell"><div class="km-plbl">Goals</div><ul class="km-plist"><li>Reduce inbound volume through self-service</li><li>Show measurable ROI on tech investments</li><li>Keep team on complex, high-value cases</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Frustrations</div><ul class="km-plist"><li>Vendors who promise transformation, deliver complexity</li><li>Metrics that measure activity, not outcomes</li><li>Implementation timelines that slip</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Behaviors</div><ul class="km-plist"><li>Reads case studies before agreeing to a demo</li><li>Involves ops team in evaluation</li><li>Sets hard success criteria before pilots</li></ul></div>
+          <div class="km-pcell"><div class="km-plbl">Decision drivers</div><ul class="km-plist"><li>Proven ROI from comparable environments</li><li>Vendor partnership quality</li><li>Transparency about what it won't do</li></ul></div>
+        </div>
+      </div>
+
+      <hr style="border-color:rgba(255,255,255,0.08);margin:1.2em 0;" />
+      <h3 style="font-family:var(--serif);font-weight:400;font-size:1em;margin-bottom:0.8em;">Customer journey map</h3>
+      <p style="font-size:0.72em;opacity:0.55;margin-bottom:0.8em;">Maria's path — billing confusion → digital payment confidence</p>
+      <div class="km-jg">
+        <div class="km-js"><div class="km-jl">Trigger</div><div class="km-ji">✉</div><div class="km-eds"><div class="km-ed m"></div><div class="km-ed m"></div><div class="km-ed"></div><div class="km-ed"></div><div class="km-ed"></div></div><div class="km-jtp">Confusing bill arrives</div></div>
+        <div class="km-js"><div class="km-jl">Confusion</div><div class="km-ji">?</div><div class="km-eds"><div class="km-ed l"></div><div class="km-ed l"></div><div class="km-ed l"></div><div class="km-ed"></div><div class="km-ed"></div></div><div class="km-jtp">Calls — 18 min hold</div></div>
+        <div class="km-js"><div class="km-jl">Resolution</div><div class="km-ji">☎</div><div class="km-eds"><div class="km-ed m"></div><div class="km-ed m"></div><div class="km-ed m"></div><div class="km-ed"></div><div class="km-ed"></div></div><div class="km-jtp">Agent resolves, explains options</div></div>
+        <div class="km-js"><div class="km-jl">First try</div><div class="km-ji">📱</div><div class="km-eds"><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed"></div></div><div class="km-jtp">Tries digital with coaching</div></div>
+        <div class="km-js"><div class="km-jl">Confidence</div><div class="km-ji">✓</div><div class="km-eds"><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div><div class="km-ed h"></div></div><div class="km-jtp">Pays independently — calls drop</div></div>
+      </div>
+      <div class="km-pains">
+        <span class="km-pain p">⚠ Pain: Statement confusion drives call volume</span>
+        <span class="km-pain p">⚠ Pain: No bridge phone → digital</span>
+        <span class="km-pain o">💡 Opp: Agent-assisted digital onboarding</span>
+        <span class="km-pain o">💡 Opp: Simplified statement design</span>
+      </div>
+    </article>
+
+    <!-- AI TOOLS -->
+    <article id="aitools">
+      <h2 class="major">AI tools</h2>
+
+      <!-- AI PERSONA GENERATOR -->
+      <div class="km-tool-section">
+        <h3>AI persona generator</h3>
+        <div class="km-chips">
+          <button class="km-chip" onclick="spg('A Medicare member managing chronic conditions who struggles to understand prescription coverage')">Medicare member</button>
+          <button class="km-chip" onclick="spg('A hospital billing coordinator managing prior authorization requests and claims denials')">Hospital billing coordinator</button>
+          <button class="km-chip" onclick="spg('A health plan IT director evaluating AI tools for member engagement')">Health plan IT director</button>
+          <button class="km-chip" onclick="spg('A family caregiver managing healthcare decisions for an elderly parent with dementia')">Family caregiver</button>
+        </div>
+        <div class="km-field"><textarea class="km-textarea" id="gin" rows="2" placeholder="Describe a user type, role, or problem space…"></textarea></div>
+        <div class="km-btn-row">
+          <button class="km-btn" id="gbtn" onclick="genP()">✦ Generate persona</button>
+          <span class="km-tnote">~15 sec</span>
+        </div>
+        <div class="km-status" id="gst"><div class="km-dots"><span></span><span></span><span></span></div><span>Building persona…</span></div>
+        <div class="km-out" id="pout">
+          <div class="km-out-hdr"><span class="km-out-lbl">Generated persona</span><div class="km-out-acts"><button class="km-ab" onclick="genP()">↺ Regenerate</button></div></div>
+          <div style="padding:0.8em;">
+            <div style="display:flex;align-items:center;gap:0.7em;margin-bottom:0.6em;">
+              <div class="km-pav" id="poav"></div>
+              <div><div class="km-pname" id="ponm"></div><div class="km-prole" id="poro"></div><div class="km-pbadges" id="pobg"></div></div>
+            </div>
+            <div class="km-quote" id="poq"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5em;">
+              <div class="km-pcell"><div class="km-plbl">Goals</div><ul class="km-plist" id="pogo"></ul></div>
+              <div class="km-pcell"><div class="km-plbl">Frustrations</div><ul class="km-plist" id="pofr"></ul></div>
+              <div class="km-pcell"><div class="km-plbl">Behaviors</div><ul class="km-plist" id="pobe"></ul></div>
+              <div class="km-pcell"><div class="km-plbl">Decision drivers</div><ul class="km-plist" id="podr"></ul></div>
+            </div>
+            <div style="margin-top:0.6em;"><div class="km-ssl" style="margin-bottom:0.4em;">Product opportunities</div><div style="display:flex;flex-wrap:wrap;gap:0.3em;" id="pooc"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border-color:rgba(255,255,255,0.08);margin:1em 0;" />
+
+      <!-- RICE SCORER -->
+      <div class="km-tool-section">
+        <h3>AI RICE scorer</h3>
+        <div class="km-chips">
+          <button class="km-chip" onclick="sri('Allow members to update payment method in the app without calling customer service')">Self-serve payment update</button>
+          <button class="km-chip" onclick="sri('Proactive SMS alert 5 days before premium due to prevent member lapse')">Pre-lapse SMS alert</button>
+          <button class="km-chip" onclick="sri('Real-time agent assist panel surfacing member history during a call')">Real-time agent assist</button>
+          <button class="km-chip" onclick="sri('AI plain-language explanation of benefits summary after each claim')">Plain-language EOB</button>
+        </div>
+        <div class="km-field"><textarea class="km-textarea" id="rice-in" rows="2" placeholder="Describe a feature idea in plain language…"></textarea></div>
+        <div class="km-two-col">
+          <div class="km-field"><label class="km-label">Product context</label><select class="km-select" id="rice-prod"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option><option>Pharmacy / PBM platform</option></select></div>
+          <div class="km-field"><label class="km-label">Primary goal</label><select class="km-select" id="rice-goal"><option>Reduce member churn / lapse</option><option>Increase digital self-service adoption</option><option>Reduce contact center volume</option><option>Improve agent efficiency</option><option>Drive revenue / upsell</option></select></div>
+        </div>
+        <div class="km-btn-row">
+          <button class="km-btn" id="rice-btn" onclick="runRice()">⬡ Score this feature</button>
+          <span class="km-tnote">~15 sec · reasoning not just numbers</span>
+        </div>
+        <div class="km-status" id="rice-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Thinking through trade-offs…</span></div>
+        <div id="rice-out" style="display:none;margin-top:0.8em;">
+          <div class="km-score-hero">
+            <div class="km-score-top">
+              <div><div class="km-score-f" id="ro-feat"></div><div class="km-score-ctx" id="ro-ctx"></div><div id="ro-verdict"></div></div>
+              <div><div class="km-score-n" id="ro-score"></div><div class="km-score-lbl">RICE score</div></div>
+            </div>
+            <div class="km-dims" id="ro-dims"></div>
+          </div>
+          <div class="km-reasoning" id="ro-reason"></div>
+          <div class="km-to-grid">
+            <div class="km-to-col"><div class="km-to-ch" style="color:#5dd4a8;">✓ Arguments for</div><div id="ro-for"></div></div>
+            <div class="km-to-col"><div class="km-to-ch" style="color:#f08060;">⚠ Watch out for</div><div id="ro-against"></div></div>
+          </div>
+          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:4px;padding:0.7em 0.8em;margin-bottom:0.6em;" id="ro-qs"></div>
+          <div class="km-acts">
+            <button class="km-act-btn" onclick="runRice()">↺ Re-score</button>
+            <button class="km-act-btn" onclick="chatSend('How would you sequence this feature relative to other priorities?')">Discuss prioritization ↗</button>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border-color:rgba(255,255,255,0.08);margin:1em 0;" />
+
+      <!-- JOURNEY NARRATOR -->
+      <div class="km-tool-section">
+        <h3>AI journey narrator</h3>
+        <div class="km-pp-grid">
+          <div class="km-pp-card active" onclick="selJP(this,'maria')" id="jp-maria">
+            <div class="km-pp-top"><div class="km-pp-av" style="background:rgba(201,168,76,0.15);color:var(--gold);">MM</div><div><div class="km-pp-nm">Maria Martinez</div><div class="km-pp-rl">Medicare member · Age 68</div></div></div>
+            <div class="km-pp-tags"><span class="km-pp-tag">Payment anxiety</span><span class="km-pp-tag">Phone-first</span></div>
+          </div>
+          <div class="km-pp-card" onclick="selJP(this,'david')" id="jp-david">
+            <div class="km-pp-top"><div class="km-pp-av" style="background:rgba(29,158,117,0.15);color:#5dd4a8;">DK</div><div><div class="km-pp-nm">David Kim</div><div class="km-pp-rl">Contact center agent</div></div></div>
+            <div class="km-pp-tags"><span class="km-pp-tag">Power user</span><span class="km-pp-tag">Tool frustrated</span></div>
+          </div>
+          <div class="km-pp-card" onclick="selJP(this,'priya')" id="jp-priya">
+            <div class="km-pp-top"><div class="km-pp-av" style="background:rgba(216,90,48,0.15);color:#f08060;">PS</div><div><div class="km-pp-nm">Priya Shah</div><div class="km-pp-rl">Health plan ops manager</div></div></div>
+            <div class="km-pp-tags"><span class="km-pp-tag">Economic buyer</span><span class="km-pp-tag">AI skeptic</span></div>
+          </div>
+        </div>
+        <div class="km-chips" id="jn-chips"></div>
+        <div class="km-field"><textarea class="km-textarea" id="jn-in" rows="2" placeholder="Describe a specific situation or trigger event…"></textarea></div>
+        <div class="km-two-col">
+          <div class="km-field"><label class="km-label">Journey type</label><select class="km-select" id="jn-type"><option>Problem discovery → resolution</option><option>Onboarding → first value</option><option>Renewal / retention moment</option><option>Support escalation</option><option>Feature adoption</option></select></div>
+          <div class="km-field"><label class="km-label">Stages</label><select class="km-select" id="jn-stages"><option value="4">4 stages</option><option value="5" selected>5 stages</option><option value="6">6 stages</option></select></div>
+        </div>
+        <div class="km-btn-row">
+          <button class="km-btn" id="jn-btn" onclick="runJourney()">▶ Narrate this journey</button>
+          <span class="km-tnote">~20 sec</span>
+        </div>
+        <div class="km-status" id="jn-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Mapping the experience…</span></div>
+        <div id="jn-out" style="display:none;margin-top:0.8em;">
+          <div class="km-jsum">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0.8em;margin-bottom:0.5em;">
+              <div><div class="km-js-pn" id="jno-p"></div><div class="km-js-sc" id="jno-s"></div></div>
+              <div><div style="font-size:0.58em;opacity:0.45;margin-bottom:0.3em;text-align:right;text-transform:uppercase;letter-spacing:0.06em;">Sentiment</div><div class="km-sent-bar" id="jno-sent"></div></div>
+            </div>
+            <div class="km-js-hl" id="jno-hl"></div>
+          </div>
+          <div id="jno-stages"></div>
+          <div style="border:1px solid rgba(255,255,255,0.08);border-radius:4px;overflow:hidden;margin-bottom:0.6em;">
+            <div style="padding:0.5em 0.8em;background:rgba(0,0,0,0.2);border-bottom:1px solid rgba(255,255,255,0.06);font-size:0.62em;text-transform:uppercase;letter-spacing:0.08em;opacity:0.5;">PM insights</div>
+            <div class="km-ins-grid" style="padding:0.7em;">
+              <div><div class="km-ins-lbl" style="color:#f08060;">⚠ Top pain points</div><div id="jno-pains"></div></div>
+              <div><div class="km-ins-lbl" style="color:#5dd4a8;">💡 Opportunities</div><div id="jno-opps"></div></div>
+              <div><div class="km-ins-lbl" style="color:var(--gold);">📊 Metrics to track</div><div id="jno-mets"></div></div>
+            </div>
+          </div>
+          <div class="km-acts">
+            <button class="km-act-btn" onclick="runJourney()">↺ Regenerate</button>
+            <button class="km-act-btn" onclick="chatSend('What is the highest-leverage product intervention from this journey map?')">Highest intervention ↗</button>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- AUTOMATION LAB -->
+    <article id="automation">
+      <h2 class="major">Automation lab</h2>
+      <p style="font-size:0.75em;opacity:0.55;margin-bottom:1em;">Live AI tools — each saves 30–90 minutes of manual PM work</p>
+      <div class="km-wtabs">
+        <button class="km-wt active" onclick="wTab('prd')">PRD generator</button>
+        <button class="km-wt" onclick="wTab('us')">User story writer</button>
+        <button class="km-wt" onclick="wTab('retro')">Retro summarizer</button>
+        <button class="km-wt" onclick="wTab('comp')">Competitive snapshot</button>
+      </div>
+
+      <div id="w-prd" class="km-wp active">
+        <div class="km-ibar"><div class="km-ibar-t"><strong>Personal workflow.</strong> Paste a feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
+        <div class="km-field"><label class="km-label">Feature brief</label><textarea class="km-textarea" id="pb" rows="3" placeholder="e.g. Members should update payment method without calling — 23% of billing calls are about this."></textarea></div>
+        <div class="km-two-col">
+          <div class="km-field"><label class="km-label">Product type</label><select class="km-select" id="pt"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option></select></div>
+          <div class="km-field"><label class="km-label">Audience</label><select class="km-select" id="pa"><option>Medicare members (B2C)</option><option>Health plan admins (B2B)</option><option>Contact center agents</option><option>Clinical staff</option></select></div>
+        </div>
+        <div class="km-btn-row"><button class="km-btn" id="pb-btn" onclick="runPRD()">✦ Generate PRD</button><span class="km-tnote">~15 sec · saves 45–90 min</span></div>
+        <div class="km-status" id="pb-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Drafting PRD…</span></div>
+        <div class="km-out" id="pb-out"><div class="km-out-hdr"><span class="km-out-lbl">Generated PRD</span><div class="km-out-acts"><button class="km-ab" onclick="cp('pb-body')">Copy</button></div></div><div class="km-out-body" id="pb-body"></div></div>
+      </div>
+
+      <div id="w-us" class="km-wp">
+        <div class="km-ibar"><div class="km-ibar-t"><strong>Personal workflow.</strong> Feature idea → role-based user stories with acceptance criteria. Ready for Jira.</div></div>
+        <div class="km-field"><label class="km-label">Feature idea</label><textarea class="km-textarea" id="ub" rows="2" placeholder="e.g. Members can view explanation of benefits history, filterable by date and claim type."></textarea></div>
+        <div class="km-two-col">
+          <div class="km-field"><label class="km-label">Epic</label><select class="km-select" id="ue"><option>Member self-service</option><option>Billing &amp; payments</option><option>AI &amp; automation</option><option>Agent tools</option></select></div>
+          <div class="km-field"><label class="km-label">Stories</label><select class="km-select" id="uc"><option>3 stories</option><option>5 stories</option></select></div>
+        </div>
+        <div class="km-btn-row"><button class="km-btn" id="ub-btn" onclick="runUS()">✦ Write user stories</button><span class="km-tnote">~12 sec</span></div>
+        <div class="km-status" id="ub-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Writing stories…</span></div>
+        <div class="km-out" id="ub-out"><div class="km-out-hdr"><span class="km-out-lbl">User stories</span><div class="km-out-acts"><button class="km-ab" onclick="cp('ub-raw')">Copy</button></div></div><div class="km-sgrid" id="ub-body" style="padding:0.8em;"></div><div id="ub-raw" style="display:none;"></div></div>
+      </div>
+
+      <div id="w-retro" class="km-wp">
+        <div class="km-ibar"><div class="km-ibar-t"><strong>Personal workflow.</strong> Paste raw retro notes → structured went-well / improve / actions in seconds.</div></div>
+        <div class="km-field"><label class="km-label">Raw retro notes</label><textarea class="km-textarea" id="rn" rows="5" placeholder="e.g.&#10;- Deployments went smoothly&#10;- Design review blocked eng for 2 days&#10;- Need clearer definition of done&#10;- Stakeholder feedback arrived late"></textarea></div>
+        <div class="km-field"><label class="km-label">Sprint context (optional)</label><textarea class="km-textarea" id="rc" rows="1" placeholder="e.g. Sprint 14 · AI summarization · Team of 6"></textarea></div>
+        <div class="km-btn-row"><button class="km-btn" id="rn-btn" onclick="runRetro()">✦ Summarize retro</button><span class="km-tnote">~10 sec</span></div>
+        <div class="km-status" id="rn-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Organizing retro…</span></div>
+        <div class="km-out" id="rn-out"><div class="km-out-hdr"><span class="km-out-lbl">Retro summary</span><div class="km-out-acts"><button class="km-ab" onclick="cp('rn-raw')">Copy</button></div></div><div id="rn-body" style="padding:0.8em;"></div><div id="rn-raw" style="display:none;"></div></div>
+      </div>
+
+      <div id="w-comp" class="km-wp">
+        <div class="km-ibar"><div class="km-ibar-t"><strong>Personal workflow.</strong> Describe your product and a competitor → frank competitive snapshot with strategic questions.</div></div>
+        <div class="km-two-col">
+          <div class="km-field"><label class="km-label">Your product</label><textarea class="km-textarea" id="cy" rows="2" placeholder="e.g. AI-powered self-service for Medicare members — resolves billing questions without agent intervention."></textarea></div>
+          <div class="km-field"><label class="km-label">Competitor</label><textarea class="km-textarea" id="ct" rows="2" placeholder="e.g. Enterprise conversational AI vendor focused on healthcare contact centers."></textarea></div>
+        </div>
+        <div class="km-btn-row"><button class="km-btn" id="cy-btn" onclick="runComp()">✦ Generate snapshot</button><span class="km-tnote">~15 sec</span></div>
+        <div class="km-status" id="cy-st"><div class="km-dots"><span></span><span></span><span></span></div><span>Analyzing…</span></div>
+        <div class="km-out" id="cy-out"><div class="km-out-hdr"><span class="km-out-lbl">Competitive snapshot</span><div class="km-out-acts"><button class="km-ab" onclick="cp('cy-body')">Copy</button></div></div><div class="km-out-body" id="cy-body"></div></div>
+      </div>
+    </article>
+
+    <!-- AI ASSISTANT -->
+    <article id="assistant">
+      <h2 class="major">AI assistant</h2>
+      <p style="font-size:0.75em;opacity:0.55;margin-bottom:0.8em;">Ask anything about my background, PM approach, or how I think through product problems.</p>
+      <div class="km-chat-wrap">
+        <div class="km-chat-hdr"><div class="km-live"></div><span class="km-chat-title">Kelly's portfolio assistant</span><span class="km-chat-badge">Powered by Claude</span></div>
+        <div class="km-chat-msgs" id="cmsgs">
+          <div class="km-msg ai"><div class="km-mav km-aiav">✦</div><div class="km-bub">Hi — I'm Kelly's portfolio assistant. Ask me about her 15+ years in healthcare PM, her work on AI-enabled platforms, or how she thinks through product problems.</div></div>
+        </div>
+        <div class="km-suggs">
+          <button class="km-sugg" onclick="chatSend('Tell me about the AI summarization project and the decisions you made.')">AI summarization project</button>
+          <button class="km-sugg" onclick="chatSend('How do you approach discovery when data and users tell you different things?')">Discovery approach</button>
+          <button class="km-sugg" onclick="chatSend('How do you handle a stakeholder who wants to skip discovery and build?')">Stakeholder pushback</button>
+          <button class="km-sugg" onclick="chatSend('What is your PM philosophy in your own words?')">PM philosophy</button>
+        </div>
+        <div class="km-chat-foot">
+          <input type="text" class="km-cin" id="cin" placeholder="Ask about experience, approach, leadership…" onkeydown="if(event.key==='Enter')sendChat()" />
+          <button class="km-csend" onclick="sendChat()">Send</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <footer id="footer">
+    <p class="copyright">&copy; Kelly Mello 2026 &nbsp;·&nbsp; <a href="https://html5up.net">HTML5 UP</a></p>
+  </footer>
+</div>
+
+<div id="bg"></div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+// Persona tabs
+function showP(id){document.querySelectorAll('.km-ptab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.km-pc').forEach(c=>c.classList.remove('active'));document.getElementById('km-p-'+id).classList.add('active');event.target.classList.add('active');}
+
+// Workflow tabs
+function wTab(id){document.querySelectorAll('.km-wp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.km-wt').forEach(t=>t.classList.remove('active'));document.getElementById('w-'+id).classList.add('active');event.target.classList.add('active');}
+
+// Copy
+function cp(id){navigator.clipboard.writeText(document.getElementById(id).innerText||'').catch(()=>{});}
+
+// Button state
+function setR(b,s,on){document.getElementById(b).disabled=on;document.getElementById(s).style.display=on?'flex':'none';}
+function showO(id){document.getElementById(id).style.display='block';}
+
+// API
+async function api(sys,msg,maxT=1000){
+  const r=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:maxT,system:sys,messages:[{role:'user',content:msg}]})});
+  if(!r.ok)throw new Error('API error');
+  const d=await r.json();return d.content?.[0]?.text||'';
+}
+
+// PERSONA GENERATOR
+const AVC={blue:['rgba(201,168,76,0.15)','#C9A84C'],teal:['rgba(29,158,117,0.15)','#5dd4a8'],amber:['rgba(239,159,39,0.15)','#EF9F27'],coral:['rgba(216,90,48,0.15)','#f08060'],purple:['rgba(155,143,212,0.15)','#9B8FD4']};
+let curN='';
+function spg(t){document.getElementById('gin').value=t;}
+function li(id,arr){document.getElementById(id).innerHTML=arr.map(i=>`<li>${i}</li>`).join('');}
+async function genP(){
+  const prompt=document.getElementById('gin').value.trim();if(!prompt){document.getElementById('gin').focus();return;}
+  document.getElementById('gbtn').disabled=true;document.getElementById('gst').style.display='flex';document.getElementById('pout').style.display='none';
+  const sys=`You are a senior PM with 15+ years in healthcare. Generate a realistic user persona as JSON only. No markdown. Schema: {"name":"Full Name","role":"Title · Company · Age","initials":"2 letters","avatarColor":"blue|teal|amber|coral|purple","badges":["2-3 tags"],"quote":"Vivid first-person quote 1-2 sentences","goals":["3 goals"],"frustrations":["3 frustrations"],"behaviors":["3 behaviors"],"drivers":["3 decision drivers"],"opportunities":["3-4 product opportunities 4-8 words each"]}`;
+  try{
+    const raw=await api(sys,prompt);
+    const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    curN=p.name;
+    const c=AVC[p.avatarColor]||AVC.blue;
+    const av=document.getElementById('poav');
+    av.textContent=p.initials;
+    av.style.cssText=`width:36px;height:36px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.75em;font-weight:500;flex-shrink:0;font-family:'Playfair Display',serif;background:${c[0]};color:${c[1]};border:1px solid ${c[1]}44;`;
+    document.getElementById('ponm').textContent=p.name;
+    document.getElementById('poro').textContent=p.role;
+    document.getElementById('poq').textContent='\u201C'+p.quote+'\u201D';
+    document.getElementById('pobg').innerHTML=p.badges.map(b=>`<span class="km-pb">${b}</span>`).join('');
+    li('pogo',p.goals);li('pofr',p.frustrations);li('pobe',p.behaviors);li('podr',p.drivers);
+    document.getElementById('pooc').innerHTML=p.opportunities.map(o=>`<span class="km-sc2 opp">${o}</span>`).join('');
+    document.getElementById('pout').style.display='block';
+  }catch(e){alert('Error — please try again.');}
+  document.getElementById('gst').style.display='none';document.getElementById('gbtn').disabled=false;
+}
+
+// RICE
+const VERDICTS=[{min:0,max:15,l:'Low priority',bg:'rgba(216,90,48,0.15)',c:'#f08060',bd:'rgba(216,90,48,0.3)'},{min:15,max:35,l:'Worth exploring',bg:'rgba(201,168,76,0.12)',c:'#C9A84C',bd:'rgba(201,168,76,0.3)'},{min:35,max:60,l:'Strong candidate',bg:'rgba(29,158,117,0.12)',c:'#5dd4a8',bd:'rgba(29,158,117,0.3)'},{min:60,max:999,l:'High priority',bg:'rgba(201,168,76,0.18)',c:'#E8C96A',bd:'rgba(201,168,76,0.4)'}];
+const DC={R:{bar:'#C9A84C',txt:'#C9A84C'},I:{bar:'#5dd4a8',txt:'#5dd4a8'},C:{bar:'#9B8FD4',txt:'#9B8FD4'},E:{bar:'#f08060',txt:'#f08060'}};
+function sri(t){document.getElementById('rice-in').value=t;}
+async function runRice(){
+  const feat=document.getElementById('rice-in').value.trim();if(!feat){document.getElementById('rice-in').focus();return;}
+  setR('rice-btn','rice-st',true);document.getElementById('rice-out').style.display='none';
+  const sys=`You are Kelly Mello, Senior PM. Score a feature using RICE: (Reach×Impact×Confidence)÷Effort. Reach 1-10, Impact 0.25/0.5/1/2/3, Confidence 0.1-1.0, Effort 1-12 person-months. Return JSON only: {"reach":7,"reach_reasoning":"...","impact":2,"impact_reasoning":"...","confidence":0.7,"confidence_reasoning":"...","effort":3,"effort_reasoning":"...","rice_score":16.3,"overall_reasoning":"2-3 sentences","arguments_for":["3 reasons"],"watch_out_for":["3 risks"],"discovery_questions":["3 questions"]}. Healthcare context. Honest scores.`;
+  try{
+    const raw=await api(sys,`Feature: ${feat}\nProduct: ${document.getElementById('rice-prod').value}\nGoal: ${document.getElementById('rice-goal').value}`);
+    const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    const sc=Math.round((p.reach*p.impact*p.confidence)/p.effort*10)/10;
+    const vd=VERDICTS.find(v=>sc>=v.min&&sc<v.max)||VERDICTS[0];
+    document.getElementById('ro-feat').textContent=feat.length>60?feat.slice(0,60)+'…':feat;
+    document.getElementById('ro-ctx').textContent=document.getElementById('rice-prod').value+' · '+document.getElementById('rice-goal').value;
+    document.getElementById('ro-score').textContent=sc;
+    document.getElementById('ro-verdict').innerHTML=`<span class="km-verdict" style="background:${vd.bg};color:${vd.c};border:1px solid ${vd.bd};">${vd.l}</span>`;
+    const dims=[{k:'R',n:'Reach',v:p.reach,max:10,fmt:p.reach,r:p.reach_reasoning},{k:'I',n:'Impact',v:p.impact,max:3,fmt:p.impact,r:p.impact_reasoning},{k:'C',n:'Confidence',v:p.confidence,max:1,fmt:Math.round(p.confidence*100)+'%',r:p.confidence_reasoning},{k:'E',n:'Effort',v:p.effort,max:12,fmt:p.effort+'mo',r:p.effort_reasoning}];
+    document.getElementById('ro-dims').innerHTML=dims.map(d=>{const pct=Math.round((d.k==='E'?(1-(d.v-1)/11):d.v/d.max)*100);const c=DC[d.k];return`<div class="km-dim"><div class="km-dim-hdr"><span class="km-dim-l" style="color:${c.txt};">${d.k} — ${d.n}</span><span class="km-dim-v" style="color:${c.txt};">${d.fmt}</span></div><div class="km-dim-bar"><div class="km-dim-fill" style="width:${pct}%;background:${c.bar};"></div></div><div class="km-dim-r">${d.r}</div></div>`;}).join('');
+    document.getElementById('ro-reason').textContent=p.overall_reasoning;
+    document.getElementById('ro-for').innerHTML=p.arguments_for.map(a=>`<div class="km-to-item">${a}</div>`).join('');
+    document.getElementById('ro-against').innerHTML=p.watch_out_for.map(a=>`<div class="km-to-item">${a}</div>`).join('');
+    document.getElementById('ro-qs').innerHTML=p.discovery_questions.map((q,i)=>`<div class="km-q-item"><span class="km-q-num">Q${i+1}</span><span>${q}</span></div>`).join('');
+    document.getElementById('rice-out').style.display='block';
+  }catch(e){alert('Error — please try again.');}
+  setR('rice-btn','rice-st',false);
+}
+
+// JOURNEY NARRATOR
+const JP={maria:{name:'Maria Martinez',desc:'Medicare Advantage member · Retired · Age 68',traits:'low digital confidence, payment anxiety, phone-first, relies on family, high call volume user',scenarios:['Receives a confusing billing statement and tries to understand what she owes','Premium payment fails and she receives a lapse warning letter','Tries to find out if a new prescription is covered under her plan']},david:{name:'David Kim',desc:'Contact center agent · 4 years tenure · Remote',traits:'power user, high workload, frustrated with context-switching, accuracy-first mindset',scenarios:['Handles a complex billing dispute while managing a queue of waiting callers','Tries a new AI assist tool for the first time during a live member call','Receives a call about a claim denial and needs to explain the appeals process']},priya:{name:'Priya Shah',desc:'Health plan operations manager · Regional payer · Age 43',traits:'economic buyer, outcome-focused, AI skeptic, sets hard success criteria before pilots',scenarios:['Evaluating a new AI self-service vendor for the member portal','Presenting quarterly call volume reduction results to her VP','Running a pilot for a new digital payment feature with her team']}};
+let curJP='maria';
+const EC={frustrated:'#f08060',anxious:'#f08060',confused:'#C9A84C',neutral:'rgba(255,255,255,0.4)',hopeful:'#5dd4a8',relieved:'#5dd4a8',satisfied:'#5dd4a8',confident:'#C9A84C',overwhelmed:'#f08060',skeptical:'#C9A84C'};
+function gec(e){const k=Object.keys(EC).find(k=>e.toLowerCase().includes(k));return k?EC[k]:'rgba(255,255,255,0.4)';}
+function selJP(el,id){document.querySelectorAll('.km-pp-card').forEach(c=>c.classList.remove('active'));el.classList.add('active');curJP=id;updJChips();document.getElementById('jn-in').value='';}
+function updJChips(){const p=JP[curJP];document.getElementById('jn-chips').innerHTML=p.scenarios.map(s=>`<button class="km-chip" onclick="document.getElementById('jn-in').value=this.dataset.s" data-s="${s}">${s.length>50?s.slice(0,50)+'…':s}</button>`).join('');}
+function toggleStage(i){const b=document.getElementById('jns-'+i);const c=document.getElementById('jnc-'+i);const o=b.classList.contains('open');b.classList.toggle('open',!o);c.classList.toggle('open',!o);}
+async function runJourney(){
+  const sc=document.getElementById('jn-in').value.trim();if(!sc){document.getElementById('jn-in').focus();return;}
+  setR('jn-btn','jn-st',true);document.getElementById('jn-out').style.display='none';
+  const p=JP[curJP];const n=parseInt(document.getElementById('jn-stages').value);const jt=document.getElementById('jn-type').value;
+  const sys=`You are Kelly Mello, Senior PM. Narrate a customer journey as JSON only. Schema: {"headline":"1-2 sentence emotional arc","overall_sentiment":"positive|mixed|negative","sentiment_score":3,"stages":[{"name":"Stage name","emotion":"one word","emotion_intensity":3,"what_happens":"2-3 sentences","internal_monologue":"1 sentence","touchpoints":["2-3 items"],"pain_points":["1-2 or empty"],"opportunities":["1-2 or empty"]}],"top_pain_points":["3"],"product_opportunities":["3"],"metrics_to_track":["3"]}. Exactly ${n} stages. Emotion intensity 1-5. Sentiment score 1-5. Healthcare context.`;
+  try{
+    const raw=await api(sys,`Persona: ${p.name} — ${p.desc}\nTraits: ${p.traits}\nScenario: ${sc}\nJourney type: ${jt}`,1500);
+    const j=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    document.getElementById('jno-p').textContent=p.name+' — '+p.desc;
+    document.getElementById('jno-s').textContent=sc;
+    document.getElementById('jno-hl').textContent=j.headline;
+    const sc2=Math.max(1,Math.min(5,Math.round(j.sentiment_score)));
+    const scols=['#f08060','#C9A84C','rgba(255,255,255,0.3)','#5dd4a8','#E8C96A'];
+    document.getElementById('jno-sent').innerHTML=[1,2,3,4,5].map(i=>`<div class="km-sent-dot" style="background:${i<=sc2?scols[sc2-1]:'rgba(255,255,255,0.12)'};"></div>`).join('');
+    const stcols=['#C9A84C','#5dd4a8','#9B8FD4','#f08060','#4A9EBF'];
+    document.getElementById('jno-stages').innerHTML=j.stages.map((s,i)=>{const ec=gec(s.emotion);const sc3=stcols[i%stcols.length];const ity=Math.max(1,Math.min(5,s.emotion_intensity));return`<div class="km-stage-card"><div class="km-stage-hdr" onclick="toggleStage(${i})"><div class="km-stage-num" style="background:${sc3}22;color:${sc3};border:1px solid ${sc3}44;">${i+1}</div><span class="km-stage-nm">${s.name}</span><span class="km-stage-emo" style="background:${ec}18;color:${ec};border:1px solid ${ec}33;">${s.emotion} ${'●'.repeat(ity)}${'○'.repeat(5-ity)}</span><span class="km-stage-chev${i===0?' open':''}" id="jnc-${i}">▼</span></div><div class="km-stage-body${i===0?' open':''}" id="jns-${i}"><div class="km-ss"><div class="km-ssl">What happens</div><div class="km-st">${s.what_happens}</div></div><div class="km-ss"><div class="km-ssl">Internal monologue</div><div class="km-st" style="font-style:italic;opacity:0.6;font-family:'Playfair Display',serif;">"${s.internal_monologue}"</div></div><div class="km-ss"><div class="km-ssl">Touchpoints</div><div class="km-schips">${s.touchpoints.map(t=>`<span class="km-sc2 touch">${t}</span>`).join('')}</div></div>${s.pain_points.length?`<div class="km-ss"><div class="km-ssl">Pain points</div><div class="km-schips">${s.pain_points.map(pp=>`<span class="km-sc2 pain">${pp}</span>`).join('')}</div></div>`:''} ${s.opportunities.length?`<div class="km-ss"><div class="km-ssl">Opportunities</div><div class="km-schips">${s.opportunities.map(o=>`<span class="km-sc2 opp">${o}</span>`).join('')}</div></div>`:''}</div></div>`;}).join('');
+    document.getElementById('jno-pains').innerHTML=j.top_pain_points.map(pp=>`<div class="km-ins-item">${pp}</div>`).join('');
+    document.getElementById('jno-opps').innerHTML=j.product_opportunities.map(o=>`<div class="km-ins-item">${o}</div>`).join('');
+    document.getElementById('jno-mets').innerHTML=j.metrics_to_track.map(m=>`<div class="km-ins-item">${m}</div>`).join('');
+    document.getElementById('jn-out').style.display='block';
+  }catch(e){alert('Error — please try again.');}
+  setR('jn-btn','jn-st',false);
+}
+updJChips();
+
+// WORKFLOW TOOLS
+async function runPRD(){
+  const b=document.getElementById('pb').value.trim();if(!b){document.getElementById('pb').focus();return;}
+  setR('pb-btn','pb-st',true);
+  const sys=`You are a senior PM with 15+ years in healthcare. Write a concise PRD. Sections: ## Overview, ## Problem statement, ## Goals & success metrics, ## User stories (3 brief), ## Out of scope, ## Open questions. 350 words max.`;
+  try{const o=await api(sys,`Brief: ${b}\nProduct: ${document.getElementById('pt').value}\nAudience: ${document.getElementById('pa').value}`);document.getElementById('pb-body').textContent=o;showO('pb-out');}catch(e){alert('Error.');}
+  setR('pb-btn','pb-st',false);
+}
+async function runUS(){
+  const b=document.getElementById('ub').value.trim();if(!b){document.getElementById('ub').focus();return;}
+  setR('ub-btn','ub-st',true);const n=parseInt(document.getElementById('uc').value);
+  const sys=`You are a senior PM. Generate user stories as JSON only. Schema: [{"role":"As a [user]","action":"I want to [action]","benefit":"so that [benefit]","points":3,"ac":["AC 1","AC 2","AC 3"]}]. Exactly ${n} stories. Points 1,2,3,5,8. Testable ACs. Healthcare context.`;
+  try{
+    const raw=await api(sys,`Feature: ${b}\nEpic: ${document.getElementById('ue').value}`);
+    const ss=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    document.getElementById('ub-raw').textContent=ss.map(s=>`${s.role}\n${s.action}\n${s.benefit}\n\nAC:\n${s.ac.map(a=>'• '+a).join('\n')}`).join('\n\n---\n\n');
+    document.getElementById('ub-body').innerHTML=ss.map(s=>`<div class="km-sc3"><div class="km-sh2"><span class="km-sr">${s.role}</span><span class="km-sp">${s.points}pts</span></div><div class="km-sb2"><div style="margin-bottom:0.5em;">${s.action} <span style="opacity:0.55">${s.benefit}</span></div><div style="font-size:0.7em;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:0.3em;">Acceptance criteria</div>${s.ac.map(a=>`<div class="km-acr"><span style="color:#5dd4a8;">✓</span><span>${a}</span></div>`).join('')}</div></div>`).join('');
+    showO('ub-out');
+  }catch(e){alert('Error.');}
+  setR('ub-btn','ub-st',false);
+}
+async function runRetro(){
+  const n=document.getElementById('rn').value.trim();if(!n){document.getElementById('rn').focus();return;}
+  setR('rn-btn','rn-st',true);
+  const sys=`Organize retro notes into JSON only. Schema: {"context":"1 sentence","wentWell":["3-4 items"],"improve":["3-4 items"],"actions":[{"item":"action","owner":"name or TBD"}]}. No markdown.`;
+  try{
+    const raw=await api(sys,`Notes:\n${n}\nContext: ${document.getElementById('rc').value||'Not provided'}`);
+    const r=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    document.getElementById('rn-raw').textContent=`Went well:\n${r.wentWell.map(i=>'• '+i).join('\n')}\n\nNeeds improvement:\n${r.improve.map(i=>'• '+i).join('\n')}\n\nActions:\n${r.actions.map(a=>`• ${a.item} [${a.owner}]`).join('\n')}`;
+    document.getElementById('rn-body').innerHTML=`<div style="font-size:0.7em;opacity:0.5;margin-bottom:0.7em;">${r.context}</div><div class="km-rgrid"><div class="km-rc2"><div class="km-rch w">✓ Went well</div><div class="km-ri">${r.wentWell.map(i=>`<div class="km-rit">${i}</div>`).join('')}</div></div><div class="km-rc2"><div class="km-rch i">↑ Needs improvement</div><div class="km-ri">${r.improve.map(i=>`<div class="km-rit">${i}</div>`).join('')}</div></div><div class="km-rc2"><div class="km-rch a">→ Action items</div><div class="km-ri">${r.actions.map(a=>`<div class="km-rit">${a.item}<div style="font-size:0.85em;opacity:0.55;margin-top:0.2em;">${a.owner}</div></div>`).join('')}</div></div></div>`;
+    showO('rn-out');
+  }catch(e){alert('Error.');}
+  setR('rn-btn','rn-st',false);
+}
+async function runComp(){
+  const y=document.getElementById('cy').value.trim(),t=document.getElementById('ct').value.trim();
+  if(!y||!t){alert('Please fill in both fields.');return;}
+  setR('cy-btn','cy-st',true);
+  const sys=`You are a senior PM with healthcare product experience. Write a competitive snapshot. Sections: ## Positioning comparison, ## Their strengths, ## Your differentiated strengths, ## Gaps to watch, ## Strategic questions. Honest, specific. 300 words max.`;
+  try{const o=await api(sys,`Our product: ${y}\nCompetitor: ${t}`);document.getElementById('cy-body').textContent=o;showO('cy-out');}catch(e){alert('Error.');}
+  setR('cy-btn','cy-st',false);
+}
+
+// CHAT
+const CHAT_SYS=`You are an AI assistant in Kelly Mello's PM portfolio. Answer as Kelly in first person.
+
+Kelly's background:
+- 15+ years in product management; healthcare — large national health plans and pharmacy benefit management
+- Lead PM and Associate Director roles — end-to-end roadmaps across enterprise platforms and consumer products
+- Built AI post-interaction summarization tool → ~40% reduction in after-call work for contact center agents
+- Led billing/payment experience redesign → seven-figure LTV impact from reduced member churn
+- Drove 3.5% digital adoption lift in hard-to-reach Medicare segment via discovery-led redesign
+- Strong in: AI product development, omnichannel self-service, payments/billing UX, cross-functional alignment, growing PM talent
+- Uses JTBD for discovery, RICE for prioritization, outcome-based roadmaps
+- Agile/SAFe practitioner; enterprise cloud platforms, API-driven integrations
+- Open to industries beyond healthcare
+- PM philosophy: start with the human problem. Move fast on learning, slow on commitment.
+- Handles disagreement by anchoring on shared goals and data — never mentions specific employer names
+
+Answer conversationally, first person as Kelly. Max 3 sentences unless depth is needed.`;
+
+const hist=[];
+function chatSend(t){document.getElementById('cin').value=t;sendChat();}
+async function sendChat(){
+  const inp=document.getElementById('cin');const msg=inp.value.trim();if(!msg)return;inp.value='';
+  addM('u',msg);const typ=addTyp();
+  try{
+    const msgs=hist.map(m=>({role:m.r,content:m.c}));msgs.push({role:'user',content:msg});
+    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:CHAT_SYS,messages:msgs})});
+    const d=await res.json();const reply=d.content?.[0]?.text||'Try again!';
+    hist.push({r:'user',c:msg},{r:'assistant',c:reply});typ.remove();addM('ai',reply);
+  }catch(e){typ.remove();addM('ai','Something went wrong — please try again.');}
+}
+function addM(role,text){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='km-msg '+role;d.innerHTML=`<div class="km-mav ${role==='ai'?'km-aiav':'km-uav'}">${role==='ai'?'✦':'You'}</div><div class="km-bub">${text}</div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function addTyp(){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='km-msg ai';d.innerHTML=`<div class="km-mav km-aiav">✦</div><div class="km-typing"><span></span><span></span><span></span></div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;return d;}
+</script>
+</body>
+</html>
