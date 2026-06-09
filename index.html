@@ -66,10 +66,28 @@
     /* HERO — dark */
     .hero {
       background: var(--navy);
-      padding: 100px 24px 56px;
+      padding: 56px 24px 56px;
       text-align: center;
       border-bottom: 0.5px solid var(--border-dark);
     }
+    .hnl {
+      padding: 6px 16px; border-radius: 20px; font-size: 12px;
+      color: #9B9589; border: 0.5px solid #2A3A50;
+      text-decoration: none; display: inline-block;
+      transition: all 0.12s; cursor: pointer; background: none;
+      white-space: nowrap;
+    }
+    .hnl:hover { color: #E8E4D9; border-color: #4A5A70; }
+    .ddmenu {
+      position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+      background: #1A2235; border: 0.5px solid #2A3A50; border-radius: 6px;
+      min-width: 180px; z-index: 200; padding: 4px 0; box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .dditem {
+      display: block; padding: 8px 16px; font-size: 12px; color: #9B9589;
+      text-decoration: none; transition: all 0.1s; white-space: nowrap;
+    }
+    .dditem:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
     .eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
     .eyebrow-line { width: 28px; height: 1px; background: var(--gold); }
     .eyebrow-text { font-size: 10px; color: var(--gold); letter-spacing: 1.8px; text-transform: uppercase; }
@@ -281,9 +299,11 @@
     .ins-item::before { content: "—"; flex-shrink: 0; font-size: 10px; }
 
     /* WORKFLOW TABS */
-    .wtabs { display: flex; border-bottom: 0.5px solid var(--border-light); overflow-x: auto; scrollbar-width: none; margin-bottom: 20px; }
+    .wtabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
     .wtabs::-webkit-scrollbar { display: none; }
-    .wt { padding: 9px 14px; font-size: 11px; color: var(--text-light); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; white-space: nowrap; font-family: var(--sans); letter-spacing: 0.2px; transition: all 0.12s; }
+    .wt { padding: 14px 20px; font-size: 12px; color: var(--text-mid); cursor: pointer; border: 0.5px solid var(--border-light); background: var(--bg-light); border-radius: 6px; white-space: nowrap; font-family: var(--sans); letter-spacing: 0.2px; transition: all 0.15s; min-width: 120px; text-align: center; line-height: 1.5; }
+    .wt:hover { border-color: rgba(185,148,63,0.5); color: #B8943F; }
+    .wt.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
     .wt.active { color: var(--navy); border-bottom-color: #B8943F; font-weight: 500; }
     .wp { display: none; } .wp.active { display: block; }
     .ibar { display: flex; align-items: flex-start; gap: 8px; padding: 10px 13px; background: rgba(185,148,63,0.06); border-left: 2px solid #B8943F; margin-bottom: 14px; border-radius: 0 3px 3px 0; }
@@ -354,61 +374,56 @@
 </head>
 <body>
 
-<nav id="mainnav">
-  <div class="brand">
-    <div class="brand-mark">KM</div>
-    <div>
-      <div class="brand-name">Kelly Mello</div>
-      <div class="brand-role">Product Experience Leader</div>
-    </div>
-  </div>
-  <div class="navlinks">
-    <a class="nl active" href="#about">About</a>
-    <a class="nl" href="#cases">Cases</a>
-    <a class="nl" href="#personas">Personas</a>
-    <a class="nl" href="#aitools">AI tools</a>
-    <a class="nl" href="#automation">Automation</a>
-    <a class="nl" href="#assistant">Assistant</a>
-  </div>
-</nav>
 
-/* <!-- HERO -->
-<div class="hero">
-  <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Kelly Mello ·  Product Experience Leader</span><div class="eyebrow-line"></div></div>
-  <h1>Product Leadership Built for What Comes Next.<br><em>Product That Ships. Strategy That Sticks.</em></h1>
-  <p class="hero-sub">I help organizations move beyond incremental improvement — identifying where automation and AI unlock meaningful gains for customers and internal teams alike.  </p>
-  <div class="pills">
-    <span class="pill hi">Placeholder</span>
-    <span class="pill hi">Placeholder</span>
-    <span class="pill">Omnichannel Strategy</span>
-    <span class="pill">Payments &amp; Billing UX</span>
-    <span class="pill">Healthcare &amp; PBM</span>
-    <span class="pill">Agile / SAFe</span>
-    <span class="pill">Cross-functional Leadership</span>
-    <span class="pill">Digital Transformation</span>
+
+<!-- HERO -->
+<div class="hero" style="padding-top:56px;">
+  <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Kelly Mello · Product Experience Leader</span><div class="eyebrow-line"></div></div>
+  <h1>Product Leadership Built for What Comes Next.</h1>
+  <p class="hero-sub">I'm a Product Management &amp; Experience leader with extensive experience building and improving experiences across customer-facing products and enterprise platforms — including Voice &amp; Conversational, Digital, CRM systems, service technologies, AI-enabled experiences, and operational workflows within the healthcare ecosystem.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px;position:relative;" id="hero-nav">
+    <a class="hnl" href="#about">About</a>
+    <a class="hnl" href="#cases">Cases</a>
+    <a class="hnl" href="#personas">Personas</a>
+    <div style="position:relative;display:inline-block;" id="dd-ai">
+      <a class="hnl" href="#aitools" onclick="toggleDD('ai-menu',event)">AI Tools ▾</a>
+      <div id="ai-menu" class="ddmenu" style="display:none;">
+        <a class="dditem" href="#pg-tool" onclick="closeDD('ai-menu')">AI Persona Generator</a>
+        <a class="dditem" href="#rice-tool" onclick="closeDD('ai-menu')">AI RICE Scorer</a>
+        <a class="dditem" href="#jn-tool" onclick="closeDD('ai-menu')">AI Journey Narrator</a>
+      </div>
+    </div>
+    <div style="position:relative;display:inline-block;" id="dd-auto">
+      <a class="hnl" href="#automation" onclick="toggleDD('auto-menu',event)">Automation for PMs ▾</a>
+      <div id="auto-menu" class="ddmenu" style="display:none;">
+        <a class="dditem" href="#automation" onclick="wTab2('prd');closeDD('auto-menu')">PRD Generator</a>
+        <a class="dditem" href="#automation" onclick="wTab2('us');closeDD('auto-menu')">User Story Writer</a>
+        <a class="dditem" href="#automation" onclick="wTab2('retro');closeDD('auto-menu')">Retro Summarizer</a>
+        <a class="dditem" href="#automation" onclick="wTab2('comp');closeDD('auto-menu')">Competitive Snapshot</a>
+      </div>
+    </div>
+    <a class="hnl" href="#assistant">Assistant</a>
   </div>
-  <div class="stats">
-    <div class="stat"><div class="stat-n">1st</div><div class="stat-l">Placeholder</div></div>
-    <div class="stat"><div class="stat-n">2nd</div><div class="stat-l">Placeholder</div></div>
-    <div class="stat"><div class="stat-n">3rd</div><div class="stat-l">Placeholder</div></div>
-    <div class="stat"><div class="stat-n">4th</div><div class="stat-l">Placeholder</div></div>
-  </div>
-</div> */
+</div>
 
 <!-- ABOUT -->
 <div class="section reg" id="about">
   <div class="container">
     <div class="sec-hdr"><span class="sec-title">About</span><div class="sec-rule"></div></div>
     <div class="sec-sub">Open to healthcare and beyond — AI platform and regulated-environment experience transfers</div>
-    <div style="display:grid;grid-template-columns:2fr 1fr;gap:32px;align-items:start;">
-      <div>
-        <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">I translate messy, high-stakes problems — billing friction, contact center overload, digital adoption gaps — into AI-enabled products that work for real people in regulated environments. I connect user insight to business outcomes through structured experimentation and cross-functional leadership.</p>
-        <p style="font-size:13px;color:var(--text-mid);line-height:1.8;">My PM philosophy: <em style="color:var(--text-dark);font-style:italic;">start with the human problem</em>. Move fast on learning, slow on commitment. AI is a tool for insight, not a shortcut for thinking.</p>
+    <div style="display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:start;">
+      <div style="flex-shrink:0;">
+        <img src="images/Pro_headshot.jpeg" alt="Kelly Mello" style="width:160px;height:200px;object-fit:cover;object-position:center top;border-radius:4px;border:0.5px solid var(--border-light);display:block;" />
       </div>
-      <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:16px;">
+      <div>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">I am a Product &amp; Experience leader who possesses a deep understanding of how customers think and feel — shaped by extensive experience across all facets of Product Management &amp; Strategy. End-to-end product experience from innovation through delivery.</p>
+        <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">A strong track record in AI-enabled experiences, servicing workflows, and regulated healthcare ecosystems. Trusted by executive stakeholders to align cross-functional teams around prioritized roadmaps, measurable KPIs, and continuously optimized outcomes.</p>
+      </div>
+      <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:16px;min-width:160px;">
         <div style="font-size:9px;font-weight:500;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Connect</div>
-        <a href="https://linkedin.com" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;border-bottom:0.5px solid var(--border-light);" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-brand-linkedin" style="font-size:16px;color:#B8943F"></i>LinkedIn</a>
-        <a href="mailto:kelly@kellymello.me" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-mail" style="font-size:16px;color:#B8943F"></i>kelly@kellymello.me</a>
+        <a href="https://www.linkedin.com/in/kelly-mello-9384102/" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;border-bottom:0.5px solid var(--border-light);" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-brand-linkedin" style="font-size:16px;color:#B8943F"></i>LinkedIn</a>
+        <a href="mailto:KellyMelloPM@outlook.com" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;border-bottom:0.5px solid var(--border-light);" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-mail" style="font-size:16px;color:#B8943F"></i>KellyMelloPM@outlook.com</a>
+        <a href="assets/KellyMello_Resume.pdf" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-file-cv" style="font-size:16px;color:#B8943F"></i>View resume</a>
       </div>
     </div>
   </div>
@@ -530,14 +545,23 @@
     <div class="sec-hdr"><span class="sec-title">AI tools</span><div class="sec-rule"></div></div>
     <div class="sec-sub">Live demonstrations of AI-powered PM thinking — persona generation, prioritization, and journey mapping</div>
 
+    <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:6px;">Product Leadership Built for What Comes Next. I help organizations move beyond incremental improvement — identifying where automation and AI unlock meaningful gains for customers and internal teams alike.</p>
+    <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:24px;">My PM philosophy: <em style="color:var(--text-dark);font-style:italic;">start with the human problem.</em> AI is a tool for insight, not a shortcut for thinking.</p>
+
     <div class="tool-grid">
-      <div class="tool-card"><div class="tool-ico"><i class="ti ti-users"></i></div><div class="tool-t">AI persona generator</div><div class="tool-s">Describe any user type and Claude generates a structured, research-quality persona instantly</div></div>
-      <div class="tool-card"><div class="tool-ico"><i class="ti ti-calculator"></i></div><div class="tool-t">AI RICE scorer</div><div class="tool-s">Describe a feature — see RICE scoring with visible reasoning across all four dimensions</div></div>
-      <div class="tool-card"><div class="tool-ico"><i class="ti ti-route"></i></div><div class="tool-t">AI journey narrator</div><div class="tool-s">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</div></div>
+      <a href="#pg-tool" onclick="document.getElementById('pg-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;">
+        <div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-users"></i></div><div class="tool-t">AI persona generator</div><div class="tool-s">Describe any user type and Claude generates a structured, research-quality persona instantly</div></div>
+      </a>
+      <a href="#rice-tool" onclick="document.getElementById('rice-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;">
+        <div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-calculator"></i></div><div class="tool-t">AI RICE scorer</div><div class="tool-s">Describe a feature — see RICE scoring with visible reasoning across all four dimensions</div></div>
+      </a>
+      <a href="#jn-tool" onclick="document.getElementById('jn-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;">
+        <div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-route"></i></div><div class="tool-t">AI journey narrator</div><div class="tool-s">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</div></div>
+      </a>
     </div>
 
     <!-- AI PERSONA GENERATOR -->
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;">AI persona generator</h3>
+    <h3 id="pg-tool" style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;">AI persona generator</h3>
     <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Describe any user type — Claude generates a structured, research-quality persona instantly</p>
     <div class="chips">
       <button class="chip" onclick="spg('A Medicare member managing chronic conditions who struggles to understand prescription coverage')">Medicare member</button>
@@ -567,7 +591,7 @@
     </div>
 
     <!-- RICE SCORER -->
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;margin-top:24px;">AI RICE scorer</h3>
+    <h3 id="rice-tool" style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;margin-top:24px;">AI RICE scorer</h3>
     <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Describe a feature — see the score and the reasoning behind every dimension</p>
     <div class="chips">
       <button class="chip" onclick="sri('Allow members to update payment method in the app without calling customer service')">Self-serve payment update</button>
@@ -597,7 +621,7 @@
     </div>
 
     <!-- JOURNEY NARRATOR -->
-    <h3 style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;margin-top:24px;">AI journey narrator</h3>
+    <h3 id="jn-tool" style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;margin-top:24px;">AI journey narrator</h3>
     <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</p>
     <div class="pp-grid">
       <div class="pp-card active" onclick="selJP(this,'maria')" id="jp-maria"><div class="pp-top"><div class="pp-av" style="background:rgba(185,148,63,0.1);color:#8B6E2E;">MM</div><div><div class="pp-nm">Maria Martinez</div><div class="pp-rl">Medicare member · Age 68</div></div></div><div class="pp-tags"><span class="pp-tag">Payment anxiety</span><span class="pp-tag">Phone-first</span></div></div>
@@ -632,17 +656,11 @@
   <div class="container">
     <div class="sec-hdr"><span class="sec-title">Workflow automation lab</span><div class="sec-rule"></div></div>
     <div class="sec-sub">Live AI tools — each saves 30–90 minutes of manual PM work</div>
-    <div class="tool-grid" style="margin-bottom:28px;">
-      <div class="tool-card"><div class="tool-ico"><i class="ti ti-file-description"></i></div><div class="tool-t">PRD generator</div><div class="tool-s">Feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
-      <div class="tool-card"><div class="tool-ico"><i class="ti ti-cards"></i></div><div class="tool-t">User story writer</div><div class="tool-s">Feature idea → role-based stories with acceptance criteria. Ready for Jira.</div></div>
-      <div class="tool-card"><div class="tool-ico"><i class="ti ti-refresh"></i></div><div class="tool-t">Retro summarizer</div><div class="tool-s">Paste raw retro notes → structured went-well / improve / actions instantly.</div></div>
-      <div class="tool-card"><div class="tool-ico"><i class="ti ti-chart-bar"></i></div><div class="tool-t">Competitive snapshot</div><div class="tool-s">Describe your product and a competitor → frank competitive analysis with strategic questions.</div></div>
-    </div>
-    <div class="wtabs">
-      <button class="wt active" onclick="wTab('prd')"><i class="ti ti-file-description" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>PRD generator</button>
-      <button class="wt" onclick="wTab('us')"><i class="ti ti-cards" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>User story writer</button>
-      <button class="wt" onclick="wTab('retro')"><i class="ti ti-refresh" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>Retro summarizer</button>
-      <button class="wt" onclick="wTab('comp')"><i class="ti ti-chart-bar" style="font-size:12px;vertical-align:-1px;margin-right:3px"></i>Competitive snapshot</button>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="wt active" id="wt-prd" onclick="wTab2('prd')"><i class="ti ti-file-description" style="font-size:16px;display:block;margin:0 auto 4px;"></i>PRD generator</button>
+      <button class="wt" id="wt-us" onclick="wTab2('us')"><i class="ti ti-cards" style="font-size:16px;display:block;margin:0 auto 4px;"></i>User story writer</button>
+      <button class="wt" id="wt-retro" onclick="wTab2('retro')"><i class="ti ti-refresh" style="font-size:16px;display:block;margin:0 auto 4px;"></i>Retro summarizer</button>
+      <button class="wt" id="wt-comp" onclick="wTab2('comp')"><i class="ti ti-chart-bar" style="font-size:16px;display:block;margin:0 auto 4px;"></i>Competitive snapshot</button>
     </div>
     <div id="w-prd" class="wp active">
       <div class="ibar"><div class="ibar-t"><strong>Personal workflow.</strong> Paste a feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
@@ -716,8 +734,8 @@
   <div class="footer-inner">
     <div class="footer-brand">Kelly <span>Mello</span></div>
     <div class="footer-links">
-      <a href="https://linkedin.com" class="footer-link">LinkedIn</a>
-      <a href="mailto:kelly@kellymello.me" class="footer-link">Email</a>
+      <a href="https://www.linkedin.com/in/kelly-mello-9384102/" target="_blank" class="footer-link">LinkedIn</a>
+      <a href="mailto:KellyMelloPM@outlook.com" class="footer-link">Email</a>
     </div>
   </div>
   <div class="footer-copy">Design: HTML5 UP (Dimension template, adapted)</div>
@@ -739,6 +757,10 @@ window.addEventListener('scroll', () => {
 
 function showP(id){document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pc').forEach(c=>c.classList.remove('active'));document.getElementById('p-'+id).classList.add('active');event.target.classList.add('active');}
 function wTab(id){document.querySelectorAll('.wp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.wt').forEach(t=>t.classList.remove('active'));document.getElementById('w-'+id).classList.add('active');event.target.classList.add('active');}
+function wTab2(id){document.querySelectorAll('.wp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.wt').forEach(t=>t.classList.remove('active'));document.getElementById('w-'+id).classList.add('active');document.getElementById('wt-'+id).classList.add('active');}
+function toggleDD(menuId,e){e.preventDefault();const m=document.getElementById(menuId);const isOpen=m.style.display==='block';document.querySelectorAll('.ddmenu').forEach(d=>d.style.display='none');m.style.display=isOpen?'none':'block';}
+function closeDD(menuId){document.getElementById(menuId).style.display='none';}
+document.addEventListener('click',function(e){if(!e.target.closest('#dd-ai')&&!e.target.closest('#dd-auto')){document.querySelectorAll('.ddmenu').forEach(d=>d.style.display='none');}});
 function cp(id){navigator.clipboard.writeText(document.getElementById(id).innerText||'').catch(()=>{});}
 function setR(b,s,on){document.getElementById(b).disabled=on;document.getElementById(s).style.display=on?'flex':'none';}
 function showO(id){document.getElementById(id).style.display='block';}
