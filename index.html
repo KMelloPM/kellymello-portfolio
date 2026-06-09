@@ -66,9 +66,14 @@
     /* HERO — dark */
     .hero {
       background: var(--navy);
-      padding: 56px 24px 56px;
+      min-height: 100vh;
+      padding: 40px 24px;
       text-align: center;
       border-bottom: 0.5px solid var(--border-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     .hnl {
       padding: 6px 16px; border-radius: 20px; font-size: 12px;
@@ -93,7 +98,7 @@
     .eyebrow-text { font-size: 10px; color: var(--gold); letter-spacing: 1.8px; text-transform: uppercase; }
     .hero h1 { font-size: 38px; font-weight: 400; line-height: 1.18; color: #E8E4D9; font-family: var(--serif); letter-spacing: -0.5px; margin-bottom: 16px; max-width: 680px; margin-left: auto; margin-right: auto; }
     .hero h1 em { font-style: italic; color: var(--gold-text); }
-    .hero-sub { font-size: 12px; color: #6B7280; line-height: 1.5; max-width: 520px; margin: 0 auto 32px; }
+    .hero-sub { font-size: 14px; color: #6B7280; line-height: 1.75; max-width: 520px; margin: 0 auto 32px; }
     .pills { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 40px; }
     .pill { padding: 4px 12px; border-radius: 2px; font-size: 11px; color: #6B7280; border: 0.5px solid #2A3A50; letter-spacing: 0.2px; }
     .pill.hi { border-color: rgba(201,168,76,0.4); color: var(--gold); background: var(--gold-soft); }
@@ -377,7 +382,7 @@
 
 
 <!-- HERO -->
-<div class="hero" style="padding-top:56px;">
+<div class="hero">
   <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Kelly Mello · Product Experience Leader</span><div class="eyebrow-line"></div></div>
   <h1>Product Leadership Built for What Comes Next.</h1>
   <p class="hero-sub">I'm a Product Management &amp; Experience leader with extensive experience building and improving experiences across customer-facing products and enterprise platforms — including Voice &amp; Conversational, Digital, CRM systems, service technologies, AI-enabled experiences, and operational workflows within the healthcare ecosystem.</p>
@@ -413,7 +418,7 @@
     <div class="sec-sub">Open to healthcare and beyond — AI platform and regulated-environment experience transfers</div>
     <div style="display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:start;">
       <div style="flex-shrink:0;">
-        <img src="images/Pro headshot.jpeg" alt="Kelly Mello" style="width:160px;height:200px;object-fit:cover;object-position:center top;border-radius:4px;border:0.5px solid var(--border-light);display:block;" />
+        <img src="images/Pro_headshot.jpeg" alt="Kelly Mello" style="width:160px;height:200px;object-fit:cover;object-position:center top;border-radius:4px;border:0.5px solid var(--border-light);display:block;" />
       </div>
       <div>
         <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">I am a Product &amp; Experience leader who possesses a deep understanding of how customers think and feel — shaped by extensive experience across all facets of Product Management &amp; Strategy. End-to-end product experience from innovation through delivery.</p>
