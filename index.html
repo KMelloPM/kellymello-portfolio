@@ -3,95 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kelly Mello — P</title>
-  <meta name="description" content="Kelly Mello — Product Experience Leader />
+  <title>Kelly Mello</title>
+  <meta name="description" content="Kelly Mello - Product Experience Leader" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy: #0D1117;
-      --navy2: #111827;
-      --navy3: #1A2235;
-      --gold: #C9A84C;
-      --gold-soft: rgba(201,168,76,0.12);
-      --gold-text: #E8C96A;
-      --teal: #1D9E75;
-      --teal-soft: rgba(29,158,117,0.12);
-      --coral: #D85A30;
-      --coral-soft: rgba(216,90,48,0.12);
-      --border-dark: #1E2A3A;
-      --border-light: #E0DBD0;
-      --bg-light: #FFFFFF;
-      --bg-light2: #F8F7F4;
-      --text-dark: #1A1A1A;
-      --text-mid: #6B6660;
-      --text-light: #9B9589;
+      --navy: #0D1117; --navy2: #111827; --navy3: #1A2235;
+      --gold: #C9A84C; --gold-soft: rgba(201,168,76,0.12); --gold-text: #E8C96A;
+      --teal: #1D9E75; --teal-soft: rgba(29,158,117,0.12);
+      --coral: #D85A30; --coral-soft: rgba(216,90,48,0.12);
+      --border-dark: #1E2A3A; --border-light: #E0DBD0;
+      --bg-light: #FFFFFF; --bg-light2: #F8F7F4;
+      --text-dark: #1A1A1A; --text-mid: #6B6660; --text-light: #9B9589;
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'Inter', -apple-system, sans-serif;
     }
     html { font-family: var(--sans); font-size: 14px; scroll-behavior: smooth; }
     body { background: var(--bg-light2); color: var(--text-dark); }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: var(--navy);
-      border-bottom: 0.5px solid var(--border-dark);
-      padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 52px;
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--navy); border-bottom: 0.5px solid var(--border-dark); padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 52px; }
     .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .brand-mark {
-      width: 30px; height: 30px; border-radius: 4px;
-      border: 1.5px solid var(--gold);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 500; color: var(--gold);
-      font-family: var(--serif); letter-spacing: 0.5px;
-    }
+    .brand-mark { width: 30px; height: 30px; border-radius: 4px; border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; color: var(--gold); font-family: var(--serif); letter-spacing: 0.5px; }
     .brand-name { font-size: 13px; color: #E8E4D9; }
-    .brand-role { font-size: 10px; color: #6B7280; letter-spacing: 0.5px; text-transform: uppercase; }
     .navlinks { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
     .navlinks::-webkit-scrollbar { display: none; }
-    .nl {
-      padding: 5px 11px; border-radius: 20px; font-size: 11px;
-      color: #6B7280; cursor: pointer; border: none; background: none;
-      white-space: nowrap; font-family: var(--sans); letter-spacing: 0.2px;
-      transition: all 0.12s; text-decoration: none; display: block;
-    }
+    .nl { padding: 5px 11px; border-radius: 20px; font-size: 11px; color: #6B7280; cursor: pointer; border: none; background: none; white-space: nowrap; font-family: var(--sans); letter-spacing: 0.2px; transition: all 0.12s; text-decoration: none; display: block; }
     .nl:hover { color: #E8E4D9; }
     .nl.active { color: var(--gold); background: var(--gold-soft); }
-
-    /* HERO — dark */
-    .hero {
-      background: var(--navy);
-      min-height: 100vh;
-      padding: 40px 24px;
-      text-align: center;
-      border-bottom: 0.5px solid var(--border-dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .hnl {
-      padding: 6px 16px; border-radius: 20px; font-size: 12px;
-      color: #9B9589; border: 0.5px solid #2A3A50;
-      text-decoration: none; display: inline-block;
-      transition: all 0.12s; cursor: pointer; background: none;
-      white-space: nowrap;
-    }
+    .hero { background: var(--navy); min-height: 100vh; padding: 40px 24px; text-align: center; border-bottom: 0.5px solid var(--border-dark); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .hnl { padding: 6px 16px; border-radius: 20px; font-size: 12px; color: #9B9589; border: 0.5px solid #2A3A50; text-decoration: none; display: inline-block; transition: all 0.12s; cursor: pointer; background: none; white-space: nowrap; }
     .hnl:hover { color: #E8E4D9; border-color: #4A5A70; }
-    .ddmenu {
-      position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%);
-      background: #1A2235; border: 0.5px solid #2A3A50; border-radius: 6px;
-      min-width: 180px; z-index: 200; padding: 4px 0; box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-    }
-    .dditem {
-      display: block; padding: 8px 16px; font-size: 12px; color: #9B9589;
-      text-decoration: none; transition: all 0.1s; white-space: nowrap;
-    }
+    .ddmenu { position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: #1A2235; border: 0.5px solid #2A3A50; border-radius: 6px; min-width: 180px; z-index: 200; padding: 4px 0; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+    .dditem { display: block; padding: 8px 16px; font-size: 12px; color: #9B9589; text-decoration: none; transition: all 0.1s; white-space: nowrap; }
     .dditem:hover { color: var(--gold); background: rgba(201,168,76,0.08); }
     .eyebrow { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
     .eyebrow-line { width: 28px; height: 1px; background: var(--gold); }
@@ -99,16 +43,6 @@
     .hero h1 { font-size: 38px; font-weight: 400; line-height: 1.18; color: #E8E4D9; font-family: var(--serif); letter-spacing: -0.5px; margin-bottom: 16px; max-width: 680px; margin-left: auto; margin-right: auto; }
     .hero h1 em { font-style: italic; color: var(--gold-text); }
     .hero-sub { font-size: 14px; color: #6B7280; line-height: 1.75; max-width: 520px; margin: 0 auto 32px; }
-    .pills { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 40px; }
-    .pill { padding: 4px 12px; border-radius: 2px; font-size: 11px; color: #6B7280; border: 0.5px solid #2A3A50; letter-spacing: 0.2px; }
-    .pill.hi { border-color: rgba(201,168,76,0.4); color: var(--gold); background: var(--gold-soft); }
-    .stats { display: grid; grid-template-columns: repeat(4,1fr); max-width: 680px; margin: 0 auto; border: 0.5px solid var(--border-dark); border-radius: 4px; overflow: hidden; }
-    .stat { padding: 20px 16px; text-align: center; border-right: 0.5px solid var(--border-dark); }
-    .stat:last-child { border-right: none; }
-    .stat-n { font-size: 26px; font-weight: 400; color: var(--gold-text); font-family: var(--serif); line-height: 1; }
-    .stat-l { font-size: 10px; color: #6B7280; margin-top: 4px; letter-spacing: 0.4px; text-transform: uppercase; line-height: 1.4; }
-
-    /* SECTIONS — light */
     .section { padding: 56px 24px; border-bottom: 0.5px solid var(--border-light); }
     .section.alt { background: var(--bg-light2); }
     .section.reg { background: var(--bg-light); }
@@ -118,14 +52,17 @@
     .sec-rule { flex: 1; height: 0.5px; background: var(--border-light); }
     .sec-count { font-size: 10px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; }
     .sec-sub { font-size: 12px; color: var(--text-light); margin-bottom: 24px; }
-
-    /* CASE STUDIES */
-    .case-card {
-      background: var(--bg-light); border: 0.5px solid var(--border-light);
-      border-radius: 4px; padding: 20px 22px; margin-bottom: 10px;
-      display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;
-      transition: border-color 0.15s;
-    }
+    .about-grid { display: grid; grid-template-columns: 160px 1fr 180px; gap: 32px; align-items: start; }
+    .about-grid img { width: 160px; height: 200px; object-fit: cover; object-position: center top; border-radius: 4px; border: 0.5px solid var(--border-light); display: block; }
+    .about-bio p { font-size: 13px; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
+    .about-bio p:last-child { margin-bottom: 0; }
+    .connect-box { background: var(--bg-light2); border: 0.5px solid var(--border-light); border-radius: 4px; padding: 16px; }
+    .connect-label { font-size: 9px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+    .connect-box a { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-mid); text-decoration: none; padding: 6px 0; border-bottom: 0.5px solid var(--border-light); transition: color 0.12s; }
+    .connect-box a:last-child { border-bottom: none; }
+    .connect-box a:hover { color: #B8943F; }
+    .connect-box i { font-size: 16px; color: #B8943F; flex-shrink: 0; }
+    .case-card { background: var(--bg-light); border: 0.5px solid var(--border-light); border-radius: 4px; padding: 20px 22px; margin-bottom: 10px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; transition: border-color 0.15s; }
     .case-card:hover { border-color: rgba(185,148,63,0.5); }
     .section.alt .case-card { background: var(--bg-light); }
     .case-tag { font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: #B8943F; margin-bottom: 7px; }
@@ -138,14 +75,8 @@
     .metric-big { text-align: right; flex-shrink: 0; }
     .metric-n { font-size: 28px; font-weight: 400; color: #B8943F; font-family: var(--serif); line-height: 1; }
     .metric-l { font-size: 9px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }
-
-    /* PERSONAS */
     .ptabs { display: flex; gap: 6px; margin-bottom: 16px; flex-wrap: wrap; }
-    .ptab {
-      padding: 5px 13px; border-radius: 2px; font-size: 11px;
-      border: 0.5px solid var(--border-light); background: none;
-      cursor: pointer; color: var(--text-mid); font-family: var(--sans); transition: all 0.12s;
-    }
+    .ptab { padding: 5px 13px; border-radius: 2px; font-size: 11px; border: 0.5px solid var(--border-light); background: none; cursor: pointer; color: var(--text-mid); font-family: var(--sans); transition: all 0.12s; }
     .ptab.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
     .pc { display: none; } .pc.active { display: block; }
     .phead { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
@@ -160,9 +91,7 @@
     .plbl { font-size: 9px; font-weight: 500; color: #B8943F; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
     .plist { list-style: none; }
     .plist li { font-size: 12px; color: var(--text-mid); padding: 2px 0; display: flex; gap: 6px; line-height: 1.45; }
-    .plist li::before { content: "—"; color: var(--text-light); flex-shrink: 0; font-size: 10px; margin-top: 2px; }
-
-    /* JOURNEY */
+    .plist li::before { content: "\2014"; color: var(--text-light); flex-shrink: 0; font-size: 10px; margin-top: 2px; }
     .jg { display: grid; grid-template-columns: repeat(5,1fr); gap: 6px; margin-bottom: 14px; }
     .js { text-align: center; }
     .jl { font-size: 9px; font-weight: 500; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 7px; }
@@ -175,8 +104,6 @@
     .pain { font-size: 11px; padding: 3px 9px; border-radius: 2px; display: flex; align-items: center; gap: 3px; }
     .pp { background: rgba(216,90,48,0.08); color: #993C1D; border: 0.5px solid rgba(216,90,48,0.2); }
     .po { background: rgba(29,158,117,0.08); color: #085041; border: 0.5px solid rgba(29,158,117,0.2); }
-
-    /* TOOL CARDS */
     .tool-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 24px; }
     .tool-card { background: var(--bg-light); border: 0.5px solid var(--border-light); border-radius: 4px; padding: 16px 18px; transition: border-color 0.15s; }
     .tool-card:hover { border-color: rgba(185,148,63,0.5); }
@@ -184,11 +111,9 @@
     .tool-ico { font-size: 18px; color: #B8943F; margin-bottom: 9px; }
     .tool-t { font-size: 13px; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
     .tool-s { font-size: 11px; color: var(--text-light); line-height: 1.5; }
-
-    /* AI PERSONA OUTPUT */
     .pout { display: none; border: 0.5px solid var(--border-light); border-radius: 4px; overflow: hidden; margin-top: 12px; }
     .pot { padding: 14px 16px; border-bottom: 0.5px solid var(--border-light); display: flex; align-items: center; gap: 12px; background: var(--bg-light2); }
-    .poq { padding: 11px 14px; border-bottom: 0.5px solid var(--border-light); font-size: 12px; font-style: italic; color: #8B6E2E; background: rgba(185,148,63,0.06); border-left: 2px solid #B8943F; line-height: 1.55; font-family: var(--serif); border-radius: 0; }
+    .poq { padding: 11px 14px; border-bottom: 0.5px solid var(--border-light); font-size: 12px; font-style: italic; color: #8B6E2E; background: rgba(185,148,63,0.06); border-left: 2px solid #B8943F; line-height: 1.55; font-family: var(--serif); }
     .pog { display: grid; grid-template-columns: 1fr 1fr; }
     .poc { padding: 12px 14px; border-right: 0.5px solid var(--border-light); border-bottom: 0.5px solid var(--border-light); background: var(--bg-light); }
     .poc:nth-child(2n) { border-right: none; } .poc:nth-last-child(-n+2) { border-bottom: none; }
@@ -199,8 +124,6 @@
     .pacts { display: flex; gap: 6px; padding: 10px 14px; border-top: 0.5px solid var(--border-light); background: var(--bg-light2); }
     .pab { padding: 5px 11px; border-radius: 2px; border: 0.5px solid var(--border-light); background: none; cursor: pointer; font-size: 11px; color: var(--text-mid); font-family: var(--sans); }
     .pab:hover { border-color: #B8943F; color: #B8943F; }
-
-    /* SHARED FORM ELEMENTS */
     textarea, select, input[type=text] { width: 100%; font-family: var(--sans); font-size: 12px; color: var(--text-dark); background: var(--bg-light); border: 0.5px solid var(--border-light); border-radius: 3px; }
     textarea { resize: none; padding: 9px 11px; line-height: 1.55; }
     select { padding: 7px 10px; height: 34px; }
@@ -229,8 +152,6 @@
     .ab { padding: 3px 9px; border-radius: 2px; border: 0.5px solid var(--border-light); background: none; cursor: pointer; font-size: 10px; color: var(--text-light); font-family: var(--sans); }
     .ab:hover { border-color: #B8943F; color: #B8943F; }
     .obody { padding: 14px; font-size: 12px; color: var(--text-mid); line-height: 1.75; white-space: pre-wrap; max-height: 360px; overflow-y: auto; }
-
-    /* RICE */
     .score-hero { background: var(--bg-light2); border: 0.5px solid var(--border-light); border-radius: 4px; padding: 16px 18px; margin-bottom: 10px; }
     .score-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
     .score-f { font-size: 14px; font-weight: 400; color: var(--text-dark); font-family: var(--serif); }
@@ -254,12 +175,10 @@
     .to-col:first-child { border-right: 0.5px solid var(--border-light); }
     .to-ch { font-size: 11px; font-weight: 500; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
     .to-item { font-size: 11px; color: var(--text-light); padding: 2px 0; display: flex; align-items: flex-start; gap: 5px; line-height: 1.45; }
-    .to-item::before { content: "—"; flex-shrink: 0; font-size: 10px; margin-top: 1px; }
+    .to-item::before { content: "\2014"; flex-shrink: 0; font-size: 10px; margin-top: 1px; }
     .q-item { font-size: 12px; color: var(--text-mid); padding: 7px 0; display: flex; align-items: flex-start; gap: 8px; border-bottom: 0.5px solid var(--border-light); line-height: 1.55; }
     .q-item:last-child { border-bottom: none; padding-bottom: 0; }
     .q-num { font-size: 11px; font-weight: 500; color: #B8943F; flex-shrink: 0; margin-top: 1px; font-family: var(--serif); }
-
-    /* JOURNEY NARRATOR */
     .pp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 12px; }
     .pp-card { border: 0.5px solid var(--border-light); border-radius: 4px; padding: 12px 14px; cursor: pointer; transition: all 0.15s; background: var(--bg-light); }
     .pp-card:hover { border-color: rgba(185,148,63,0.5); }
@@ -276,7 +195,7 @@
     .js-sc { font-size: 11px; color: var(--text-light); margin-top: 2px; }
     .sent-bar { display: flex; gap: 3px; }
     .sent-dot { width: 8px; height: 8px; border-radius: 50%; }
-    .js-hl { font-size: 12px; color: var(--text-mid); line-height: 1.6; font-style: italic; border-left: 2px solid var(--teal); padding-left: 10px; font-family: var(--serif); border-radius: 0; }
+    .js-hl { font-size: 12px; color: var(--text-mid); line-height: 1.6; font-style: italic; border-left: 2px solid var(--teal); padding-left: 10px; font-family: var(--serif); }
     .stage-card { background: var(--bg-light); border: 0.5px solid var(--border-light); border-radius: 4px; margin-bottom: 7px; overflow: hidden; }
     .sh { display: flex; align-items: center; gap: 9px; padding: 10px 14px; border-bottom: 0.5px solid var(--border-light); cursor: pointer; background: var(--bg-light2); }
     .snum { width: 22px; height: 22px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; font-family: var(--serif); }
@@ -301,15 +220,11 @@
     .ins-col:last-child { border-right: none; }
     .ins-lbl { font-size: 10px; font-weight: 500; margin-bottom: 7px; display: flex; align-items: center; gap: 4px; }
     .ins-item { font-size: 11px; color: var(--text-light); padding: 2px 0; line-height: 1.45; display: flex; gap: 4px; }
-    .ins-item::before { content: "—"; flex-shrink: 0; font-size: 10px; }
-
-    /* WORKFLOW TABS */
+    .ins-item::before { content: "\2014"; flex-shrink: 0; font-size: 10px; }
     .wtabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
-    .wtabs::-webkit-scrollbar { display: none; }
-    .wt { padding: 14px 20px; font-size: 12px; color: var(--text-mid); cursor: pointer; border: 0.5px solid var(--border-light); background: var(--bg-light); border-radius: 6px; white-space: nowrap; font-family: var(--sans); letter-spacing: 0.2px; transition: all 0.15s; min-width: 120px; text-align: center; line-height: 1.5; }
+    .wt { padding: 14px 20px; font-size: 12px; color: var(--text-mid); cursor: pointer; border: 0.5px solid var(--border-light); background: var(--bg-light); border-radius: 6px; white-space: nowrap; font-family: var(--sans); transition: all 0.15s; min-width: 120px; text-align: center; line-height: 1.5; }
     .wt:hover { border-color: rgba(185,148,63,0.5); color: #B8943F; }
     .wt.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
-    .wt.active { color: var(--navy); border-bottom-color: #B8943F; font-weight: 500; }
     .wp { display: none; } .wp.active { display: block; }
     .ibar { display: flex; align-items: flex-start; gap: 8px; padding: 10px 13px; background: rgba(185,148,63,0.06); border-left: 2px solid #B8943F; margin-bottom: 14px; border-radius: 0 3px 3px 0; }
     .ibar-t { font-size: 11px; color: var(--text-mid); line-height: 1.55; }
@@ -329,8 +244,6 @@
     .rch.a { background: var(--bg-light2); color: var(--text-light); }
     .ri { padding: 8px 11px; display: flex; flex-direction: column; gap: 5px; background: var(--bg-light); }
     .rit { font-size: 11px; color: var(--text-mid); padding: 5px 8px; border-radius: 2px; background: var(--bg-light2); line-height: 1.4; border: 0.5px solid var(--border-light); }
-
-    /* CHAT — dark themed */
     .cwrap { border: 0.5px solid var(--border-dark); border-radius: 4px; overflow: hidden; }
     .chdr { padding: 11px 16px; border-bottom: 0.5px solid var(--border-dark); background: var(--navy2); display: flex; align-items: center; gap: 8px; }
     .ldot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
@@ -352,8 +265,6 @@
     .cfoot { padding: 10px 14px; border-top: 0.5px solid var(--border-dark); display: flex; gap: 7px; background: var(--navy2); }
     .cin { flex: 1; padding: 7px 11px; border-radius: 3px; border: 0.5px solid var(--border-dark); background: var(--navy); font-size: 12px; color: #E8E4D9; font-family: var(--sans); }
     .csend { padding: 7px 16px; border-radius: 3px; background: var(--gold); color: var(--navy); border: none; cursor: pointer; font-size: 11px; font-family: var(--sans); font-weight: 500; }
-
-    /* FOOTER */
     footer { background: var(--navy); border-top: 0.5px solid var(--border-dark); padding: 28px 24px; }
     .footer-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
     .footer-brand { font-size: 13px; color: #E8E4D9; font-family: var(--serif); }
@@ -362,9 +273,8 @@
     .footer-link { font-size: 11px; color: #6B7280; text-decoration: none; transition: color 0.12s; }
     .footer-link:hover { color: var(--gold); }
     .footer-copy { font-size: 10px; color: #3A4A5A; margin-top: 12px; text-align: center; }
-
-    /* RESPONSIVE */
     @media (max-width: 640px) {
+      .about-grid { grid-template-columns: 1fr; }
       .stats { grid-template-columns: repeat(2,1fr); }
       .tool-grid { grid-template-columns: 1fr 1fr; }
       .two-col, .pgrid, .pog, .to-grid, .ins-grid, .rgrid, .pp-grid { grid-template-columns: 1fr; }
@@ -379,13 +289,10 @@
 </head>
 <body>
 
-
-
-<!-- HERO -->
 <div class="hero">
   <div class="eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">Kelly Mello · Product Experience Leader</span><div class="eyebrow-line"></div></div>
   <h1>Product Leadership Built for What Comes Next.</h1>
-  <p class="hero-sub">I'm a Product Management &amp; Experience leader with extensive experience building and improving experiences across customer-facing products and enterprise platforms — including Voice &amp; Conversational, Digital, CRM systems, service technologies, AI-enabled experiences, and operational workflows within the healthcare ecosystem.</p>
+  <p class="hero-sub">I’m a Product Management &amp; Experience leader with extensive experience building and improving experiences across customer-facing products and enterprise platforms — including Voice &amp; Conversational, Digital, CRM systems, service technologies, AI-enabled experiences, and operational workflows within the healthcare ecosystem.</p>
   <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:16px;position:relative;" id="hero-nav">
     <a class="hnl" href="#about">About</a>
     <a class="hnl" href="#cases">Cases</a>
@@ -410,55 +317,29 @@
     <a class="hnl" href="#assistant">Assistant</a>
   </div>
 </div>
-<div style="display:grid;grid-template-columns:160px 1fr 180px;gap:32px;align-items:start;">
-  <img src="images/Pro_headshot.jpeg" alt="Kelly Mello" 
-    style="width:160px;height:200px;object-fit:cover;object-position:center top;
-    border-radius:4px;border:0.5px solid var(--border-light);display:block;" />
- <div>
-    <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">Hi, I'm Kelly — thanks for stopping by...</p>
-    <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">At home, I'm a mother...</p>
-    <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">Beyond motherhood...</p>
-    <p style="font-size:13px;color:var(--text-mid);line-height:1.8;">I bring that same energy...</p>
-  </div>
- <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:16px;min-width:160px;">
-    ... connect links ...
-  </div>
-</div> 
-  <!-- Bio copy -->
-  <div>
-    <p>...</p>
-    <p>...</p>
-    <p>...</p>
-    <p>...</p>
-  </div>         
-  <!-- Connect box -->
-  <div style="background:var(--bg-light2);...">
-    ...links...
-  </div>
-</div>
-<!-- ABOUT -->
+
 <div class="section reg" id="about">
   <div class="container">
     <div class="sec-hdr"><span class="sec-title">About</span><div class="sec-rule"></div></div>
     <div class="sec-sub">Open to healthcare and beyond — AI platform and regulated-environment experience transfers</div>
-          <div>
-        <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">Hi, I'm Kelly — thanks for stopping by to learn a little more about me. Feel free to peruse my resume for a deeper look at my professional life and career, but that's really only part of who I am.
-At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, and I share this full and lively life with my fiancé here in Louisville.</p>
-        <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;">Beyond motherhood, I'm an avid hiker, nature lover, and devoted meditator. I find deep fulfillment in the art of creation — whether that's baking bread, tending to my garden (vegetables, fruit, and even lion's mane and reishi mushrooms!), or more recently, crafting cement sculptures like bird baths, pots, and garden statues. I'm always searching for new ways to express myself creatively.</p>
-    <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:16px;"> I bring that same energy into my professional life. Being a nurturer and caregiver to living things has made me a dedicated, empathetic, and naturally curious person — someone who leads with creativity and a genuine desire to solve problems in meaningful ways. I operate from a place of authenticity, because I believe that's where we all do our best work.</p>
+    <div class="about-grid">
+      <img src="images/Pro_headshot.jpeg" alt="Kelly Mello" />
+      <div class="about-bio">
+        <p>Hi, I’m Kelly — thanks for stopping by to learn a little more about me. Feel free to peruse my resume for a deeper look at my professional life and career, but that’s really only part of who I am.</p>
+        <p>At home, I’m a mother to a beautiful, talented daughter and twin teenage boys, and I share this full and lively life with my fiancé here in Louisville.</p>
+        <p>Beyond motherhood, I’m an avid hiker, nature lover, and devoted meditator. I find deep fulfillment in the art of creation — whether that’s baking bread, tending to my garden (vegetables, fruit, and even lion’s mane and reishi mushrooms!), or more recently, crafting cement sculptures like bird baths, pots, and garden statues. I’m always searching for new ways to express myself creatively.</p>
+        <p>I bring that same energy into my professional life. Being a nurturer and caregiver to living things has made me a dedicated, empathetic, and naturally curious person — someone who leads with creativity and a genuine desire to solve problems in meaningful ways. I operate from a place of authenticity, because I believe that’s where we all do our best work.</p>
       </div>
-      </div>
-      <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:16px;min-width:160px;">
-        <div style="font-size:9px;font-weight:500;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:10px;">Connect</div>
-        <a href="https://www.linkedin.com/in/kelly-mello-9384102/" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;border-bottom:0.5px solid var(--border-light);" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-brand-linkedin" style="font-size:16px;color:#B8943F"></i>LinkedIn</a>
-        <a href="mailto:KellyMelloPM@outlook.com" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;border-bottom:0.5px solid var(--border-light);" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-mail" style="font-size:16px;color:#B8943F"></i>KellyMelloPM@outlook.com</a>
-        <a href="assets/KellyMello_Resume.pdf" target="_blank" style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-mid);text-decoration:none;padding:6px 0;" onmouseover="this.style.color='#B8943F'" onmouseout="this.style.color='var(--text-mid)'"><i class="ti ti-file-cv" style="font-size:16px;color:#B8943F"></i>View resume</a>
+      <div class="connect-box">
+        <div class="connect-label">Connect</div>
+        <a href="https://www.linkedin.com/in/kelly-mello-9384102/" target="_blank"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
+        <a href="mailto:KellyMelloPM@outlook.com"><i class="ti ti-mail"></i>KellyMelloPM@outlook.com</a>
+        <a href="assets/KellyMello_Resume.pdf" target="_blank"><i class="ti ti-file-cv"></i>View resume</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- CASE STUDIES -->
 <div class="section alt" id="cases">
   <div class="container">
     <div class="sec-hdr"><span class="sec-title">Case studies</span><div class="sec-rule"></div><span class="sec-count">3 projects</span></div>
@@ -468,7 +349,7 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
         <div class="case-tag">AI / 0→1</div>
         <div class="case-title">AI post-interaction summarization — reducing after-call work by ~40%</div>
         <div class="case-co">National health plan · Cloud-based member services platform</div>
-        <div class="case-body">Agents spent 8–12 minutes per call manually documenting summaries across multiple systems. I defined and led delivery of a generative AI feature that analyzed call transcripts in real time and auto-populated structured notes. Key PM challenge: balancing recall against precision — too much noise and agents wouldn't trust it. Navigated through phased piloting with agent feedback loops before full rollout.</div>
+        <div class="case-body">Agents spent 8–12 minutes per call manually documenting summaries across multiple systems. I defined and led delivery of a generative AI feature that analyzed call transcripts in real time and auto-populated structured notes. Key PM challenge: balancing recall against precision — too much noise and agents wouldn’t trust it. Navigated through phased piloting with agent feedback loops before full rollout.</div>
         <div class="case-metrics">
           <span class="case-met"><i class="ti ti-trending-down" style="color:var(--teal)"></i><strong>~40%</strong> reduction in after-call work</span>
           <span class="case-met"><i class="ti ti-users" style="color:#B8943F"></i>Enterprise contact center rollout</span>
@@ -496,7 +377,7 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
         <div class="case-tag">Growth</div>
         <div class="case-title">Digital adoption initiative — 3.5% lift in underserved Medicare segment</div>
         <div class="case-co">National health plan · Omnichannel &amp; self-service</div>
-        <div class="case-body">A Medicare segment bypassed digital entirely. Standard tactics had no effect. Discovery revealed distrust wasn't about capability — it was about confidence. Redesigned onboarding to use trusted offline touchpoints to initiate digital engagement, with in-product guidance that reduced perceived risk.</div>
+        <div class="case-body">A Medicare segment bypassed digital entirely. Standard tactics had no effect. Discovery revealed distrust wasn’t about capability — it was about confidence. Redesigned onboarding to use trusted offline touchpoints to initiate digital engagement, with in-product guidance that reduced perceived risk.</div>
         <div class="case-metrics">
           <span class="case-met"><i class="ti ti-trending-up" style="color:var(--teal)"></i><strong>+3.5%</strong> digital adoption</span>
           <span class="case-met"><i class="ti ti-eye" style="color:#B8943F"></i>Mixed-method discovery</span>
@@ -508,7 +389,6 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
   </div>
 </div>
 
-<!-- PERSONAS -->
 <div class="section reg" id="personas">
   <div class="container">
     <div class="sec-hdr"><span class="sec-title">User personas</span><div class="sec-rule"></div><span class="sec-count">3 composites</span></div>
@@ -519,17 +399,17 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
       <button class="ptab" onclick="showP('priya')">Priya — Health plan admin</button>
     </div>
     <div id="p-maria" class="pc active">
-      <div class="quote">"I just want to know what I owe and when. Every time I call I get a different answer."</div>
+      <div class="quote">“I just want to know what I owe and when. Every time I call I get a different answer.”</div>
       <div class="phead"><div class="pav" style="background:rgba(185,148,63,0.1);color:#8B6E2E;border:1px solid rgba(185,148,63,0.25);">MM</div><div><div class="pname">Maria Martinez</div><div class="prole">Medicare Advantage member · Retired · Age 68</div><div class="pbadges"><span class="pb">Low digital confidence</span><span class="pb">Payment anxiety</span><span class="pb">High call volume</span></div></div></div>
       <div class="pgrid">
-        <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Understand benefits without calling every time</li><li>Pay her premium simply and on time</li><li>Feel confident she won't lose coverage</li></ul></div>
+        <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Understand benefits without calling every time</li><li>Pay her premium simply and on time</li><li>Feel confident she won’t lose coverage</li></ul></div>
         <div class="pcell"><div class="plbl">Frustrations</div><ul class="plist"><li>Billing statements feel confusing</li><li>Long hold times for simple questions</li><li>Digital tools feel built for someone else</li></ul></div>
         <div class="pcell"><div class="plbl">Behaviors</div><ul class="plist"><li>Calls before trying self-service</li><li>Pays by check or phone</li><li>Relies on family to interpret documents</li></ul></div>
-        <div class="pcell"><div class="plbl">Decision drivers</div><ul class="plist"><li>Trust through consistent human interaction</li><li>Simplicity — one clear action at a time</li><li>Reassurance she won't make a mistake</li></ul></div>
+        <div class="pcell"><div class="plbl">Decision drivers</div><ul class="plist"><li>Trust through consistent human interaction</li><li>Simplicity — one clear action at a time</li><li>Reassurance she won’t make a mistake</li></ul></div>
       </div>
     </div>
     <div id="p-david" class="pc">
-      <div class="quote">"By the time I've pulled up their account across all the systems, we've already lost two minutes."</div>
+      <div class="quote">“By the time I’ve pulled up their account across all the systems, we’ve already lost two minutes.”</div>
       <div class="phead"><div class="pav" style="background:rgba(29,158,117,0.1);color:#085041;border:1px solid rgba(29,158,117,0.25);">DK</div><div><div class="pname">David Kim</div><div class="prole">Contact center agent · 4 years tenure · Remote</div><div class="pbadges"><span class="pb">Power user</span><span class="pb">Tool frustrated</span><span class="pb">High workload</span></div></div></div>
       <div class="pgrid">
         <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Resolve issues on the first call</li><li>Get off the phone faster without sacrificing quality</li><li>Not worry about incomplete notes after</li></ul></div>
@@ -539,19 +419,18 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
       </div>
     </div>
     <div id="p-priya" class="pc">
-      <div class="quote">"I need my team on cases that need human judgment — not answering the same administrative questions all day."</div>
+      <div class="quote">“I need my team on cases that need human judgment — not answering the same administrative questions all day.”</div>
       <div class="phead"><div class="pav" style="background:rgba(216,90,48,0.1);color:#712B13;border:1px solid rgba(216,90,48,0.25);">PS</div><div><div class="pname">Priya Shah</div><div class="prole">Health plan operations manager · Regional payer · Age 43</div><div class="pbadges"><span class="pb">Economic buyer</span><span class="pb">AI skeptic</span><span class="pb">Outcome-focused</span></div></div></div>
       <div class="pgrid">
         <div class="pcell"><div class="plbl">Goals</div><ul class="plist"><li>Reduce inbound volume through self-service</li><li>Show measurable ROI on tech investments</li><li>Keep team on complex, high-value cases</li></ul></div>
         <div class="pcell"><div class="plbl">Frustrations</div><ul class="plist"><li>Vendors who promise transformation, deliver complexity</li><li>Metrics that measure activity, not outcomes</li><li>Implementation timelines that slip</li></ul></div>
         <div class="pcell"><div class="plbl">Behaviors</div><ul class="plist"><li>Reads case studies before agreeing to a demo</li><li>Involves ops team in evaluation</li><li>Sets hard success criteria before pilots</li></ul></div>
-        <div class="pcell"><div class="plbl">Decision drivers</div><ul class="plist"><li>Proven ROI from comparable environments</li><li>Vendor partnership quality</li><li>Transparency about what it won't do</li></ul></div>
+        <div class="pcell"><div class="plbl">Decision drivers</div><ul class="plist"><li>Proven ROI from comparable environments</li><li>Vendor partnership quality</li><li>Transparency about what it won’t do</li></ul></div>
       </div>
     </div>
-
     <div style="border-top:0.5px solid var(--border-light);margin:32px 0 24px;"></div>
     <div class="sec-hdr"><span class="sec-title">Customer journey map</span><div class="sec-rule"></div></div>
-    <div class="sec-sub">Maria's path — billing confusion → digital payment confidence</div>
+    <div class="sec-sub">Maria’s path — billing confusion → digital payment confidence</div>
     <div class="jg">
       <div class="js"><div class="jl">Trigger</div><div class="ji"><i class="ti ti-mail" style="font-size:14px;color:#B8943F"></i></div><div class="eds"><div class="ed m"></div><div class="ed m"></div><div class="ed"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Confusing bill arrives</div></div>
       <div class="js"><div class="jl">Confusion</div><div class="ji"><i class="ti ti-help" style="font-size:14px;color:var(--coral)"></i></div><div class="eds"><div class="ed l"></div><div class="ed l"></div><div class="ed l"></div><div class="ed"></div><div class="ed"></div></div><div class="jtp">Calls — 18 min hold</div></div>
@@ -568,28 +447,17 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
   </div>
 </div>
 
-<!-- AI TOOLS -->
 <div class="section alt" id="aitools">
   <div class="container">
     <div class="sec-hdr"><span class="sec-title">AI tools</span><div class="sec-rule"></div></div>
     <div class="sec-sub">Live demonstrations of AI-powered PM thinking — persona generation, prioritization, and journey mapping</div>
-
     <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:6px;">Product Leadership Built for What Comes Next. I help organizations move beyond incremental improvement — identifying where automation and AI unlock meaningful gains for customers and internal teams alike.</p>
     <p style="font-size:13px;color:var(--text-mid);line-height:1.8;margin-bottom:24px;">My PM philosophy: <em style="color:var(--text-dark);font-style:italic;">start with the human problem.</em> AI is a tool for insight, not a shortcut for thinking.</p>
-
     <div class="tool-grid">
-      <a href="#pg-tool" onclick="document.getElementById('pg-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;">
-        <div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-users"></i></div><div class="tool-t">AI persona generator</div><div class="tool-s">Describe any user type and Claude generates a structured, research-quality persona instantly</div></div>
-      </a>
-      <a href="#rice-tool" onclick="document.getElementById('rice-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;">
-        <div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-calculator"></i></div><div class="tool-t">AI RICE scorer</div><div class="tool-s">Describe a feature — see RICE scoring with visible reasoning across all four dimensions</div></div>
-      </a>
-      <a href="#jn-tool" onclick="document.getElementById('jn-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;">
-        <div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-route"></i></div><div class="tool-t">AI journey narrator</div><div class="tool-s">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</div></div>
-      </a>
+      <a href="#pg-tool" onclick="document.getElementById('pg-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;"><div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-users"></i></div><div class="tool-t">AI persona generator</div><div class="tool-s">Describe any user type and Claude generates a structured, research-quality persona instantly</div></div></a>
+      <a href="#rice-tool" onclick="document.getElementById('rice-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;"><div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-calculator"></i></div><div class="tool-t">AI RICE scorer</div><div class="tool-s">Describe a feature — see RICE scoring with visible reasoning across all four dimensions</div></div></a>
+      <a href="#jn-tool" onclick="document.getElementById('jn-tool').scrollIntoView({behavior:'smooth'});return false;" style="text-decoration:none;"><div class="tool-card" style="cursor:pointer;"><div class="tool-ico"><i class="ti ti-route"></i></div><div class="tool-t">AI journey narrator</div><div class="tool-s">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</div></div></a>
     </div>
-
-    <!-- AI PERSONA GENERATOR -->
     <h3 id="pg-tool" style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;">AI persona generator</h3>
     <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Describe any user type — Claude generates a structured, research-quality persona instantly</p>
     <div class="chips">
@@ -598,28 +466,15 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
       <button class="chip" onclick="spg('A health plan IT director evaluating AI tools for member engagement')">Health plan IT director</button>
       <button class="chip" onclick="spg('A family caregiver managing healthcare decisions for an elderly parent with dementia')">Family caregiver</button>
     </div>
-    <div style="display:flex;gap:8px;margin-bottom:4px;">
-      <textarea id="gin" rows="2" placeholder="Describe a user type, role, or problem space…"></textarea>
-      <button class="run-btn" id="gbtn" style="align-self:flex-end;height:36px;" onclick="genP()"><i class="ti ti-wand" style="font-size:13px"></i>Generate</button>
-    </div>
+    <div style="display:flex;gap:8px;margin-bottom:4px;"><textarea id="gin" rows="2" placeholder="Describe a user type, role, or problem space…"></textarea><button class="run-btn" id="gbtn" style="align-self:flex-end;height:36px;" onclick="genP()"><i class="ti ti-wand" style="font-size:13px"></i>Generate</button></div>
     <div class="status" id="gst"><div class="dots"><span></span><span></span><span></span></div><span>Building persona…</span></div>
     <div class="pout" id="pout">
       <div class="pot"><div class="pav" id="poav"></div><div><div class="pname" id="ponm"></div><div class="prole" id="poro"></div><div class="pbadges" id="pobg"></div></div></div>
       <div class="poq" id="poq"></div>
-      <div class="pog">
-        <div class="poc"><div class="plbl">Goals</div><ul class="plist" id="pogo"></ul></div>
-        <div class="poc"><div class="plbl">Frustrations</div><ul class="plist" id="pofr"></ul></div>
-        <div class="poc"><div class="plbl">Behaviors</div><ul class="plist" id="pobe"></ul></div>
-        <div class="poc"><div class="plbl">Decision drivers</div><ul class="plist" id="podr"></ul></div>
-      </div>
+      <div class="pog"><div class="poc"><div class="plbl">Goals</div><ul class="plist" id="pogo"></ul></div><div class="poc"><div class="plbl">Frustrations</div><ul class="plist" id="pofr"></ul></div><div class="poc"><div class="plbl">Behaviors</div><ul class="plist" id="pobe"></ul></div><div class="poc"><div class="plbl">Decision drivers</div><ul class="plist" id="podr"></ul></div></div>
       <div class="popp"><div class="oppl"><i class="ti ti-bulb" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Product opportunities</div><div class="opcs" id="pooc"></div></div>
-      <div class="pacts">
-        <button class="pab" onclick="genP()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Regenerate</button>
-        <button class="pab" onclick="chatAsk('How would you design onboarding for '+curN+'?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Ask about onboarding ↗</button>
-      </div>
+      <div class="pacts"><button class="pab" onclick="genP()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Regenerate</button><button class="pab" onclick="chatAsk('How would you design onboarding for '+curN+'?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Ask about onboarding ↗</button></div>
     </div>
-
-    <!-- RICE SCORER -->
     <h3 id="rice-tool" style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;margin-top:24px;">AI RICE scorer</h3>
     <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Describe a feature — see the score and the reasoning behind every dimension</p>
     <div class="chips">
@@ -633,23 +488,15 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
       <div class="fr"><div class="fl">Product context</div><select id="rice-prod"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option><option>Pharmacy / PBM platform</option></select></div>
       <div class="fr"><div class="fl">Primary goal</div><select id="rice-goal"><option>Reduce member churn / lapse</option><option>Increase digital self-service adoption</option><option>Reduce contact center volume</option><option>Improve agent efficiency</option><option>Drive revenue / upsell</option></select></div>
     </div>
-    <div class="btn-row">
-      <button class="run-btn" id="rice-btn" onclick="runRice()"><i class="ti ti-calculator" style="font-size:13px"></i>Score this feature</button>
-      <span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec · reasoning not just numbers</span>
-    </div>
+    <div class="btn-row"><button class="run-btn" id="rice-btn" onclick="runRice()"><i class="ti ti-calculator" style="font-size:13px"></i>Score this feature</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec · reasoning not just numbers</span></div>
     <div class="status" id="rice-st"><div class="dots"><span></span><span></span><span></span></div><span>Thinking through trade-offs…</span></div>
     <div id="rice-out" style="display:none;margin-top:12px;">
       <div class="score-hero"><div class="score-top"><div><div class="score-f" id="ro-feat"></div><div class="score-ctx" id="ro-ctx"></div><div id="ro-verdict"></div></div><div><div class="score-n" id="ro-score"></div><div class="score-lbl">RICE score</div></div></div><div class="dims" id="ro-dims"></div></div>
-      <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:14px;margin-bottom:10px;"><div class="rc-lbl"><i class="ti ti-brain" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Kelly's reasoning</div><div style="font-size:12px;color:var(--text-mid);line-height:1.75;" id="ro-reason"></div></div>
+      <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:14px;margin-bottom:10px;"><div class="rc-lbl"><i class="ti ti-brain" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Kelly’s reasoning</div><div style="font-size:12px;color:var(--text-mid);line-height:1.75;" id="ro-reason"></div></div>
       <div class="tcard"><div class="to-hdr"><i class="ti ti-scale" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Trade-offs</div><div class="to-grid"><div class="to-col"><div class="to-ch" style="color:#085041;"><i class="ti ti-thumb-up" style="font-size:12px"></i>Arguments for</div><div id="ro-for"></div></div><div class="to-col"><div class="to-ch" style="color:#993C1D;"><i class="ti ti-alert-triangle" style="font-size:12px"></i>Watch out for</div><div id="ro-against"></div></div></div></div>
       <div style="background:var(--bg-light2);border:0.5px solid var(--border-light);border-radius:4px;padding:14px;margin-bottom:10px;"><div class="rc-lbl" style="margin-bottom:9px;"><i class="ti ti-help-circle" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Discovery questions before committing</div><div id="ro-qs"></div></div>
-      <div class="acts">
-        <button class="act-btn" onclick="runRice()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Re-score</button>
-        <button class="act-btn" onclick="chatAsk('How would you sequence this feature relative to other priorities?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Discuss prioritization ↗</button>
-      </div>
+      <div class="acts"><button class="act-btn" onclick="runRice()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Re-score</button><button class="act-btn" onclick="chatAsk('How would you sequence this feature relative to other priorities?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Discuss prioritization ↗</button></div>
     </div>
-
-    <!-- JOURNEY NARRATOR -->
     <h3 id="jn-tool" style="font-family:var(--serif);font-weight:400;font-size:18px;color:var(--text-dark);margin-bottom:8px;border-top:0.5px solid var(--border-light);padding-top:24px;margin-top:24px;">AI journey narrator</h3>
     <p style="font-size:12px;color:var(--text-light);margin-bottom:14px;">Pick a persona and scenario — Claude narrates the end-to-end experience with friction and opportunities</p>
     <div class="pp-grid">
@@ -663,24 +510,17 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
       <div class="fr"><div class="fl">Journey type</div><select id="jn-type"><option>Problem discovery → resolution</option><option>Onboarding → first value</option><option>Renewal / retention moment</option><option>Support escalation</option><option>Feature adoption</option></select></div>
       <div class="fr"><div class="fl">Stages</div><select id="jn-stages"><option value="4">4 stages</option><option value="5" selected>5 stages</option><option value="6">6 stages</option></select></div>
     </div>
-    <div class="btn-row">
-      <button class="run-btn" id="jn-btn" onclick="runJourney()"><i class="ti ti-player-play" style="font-size:13px"></i>Narrate this journey</button>
-      <span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~20 sec</span>
-    </div>
+    <div class="btn-row"><button class="run-btn" id="jn-btn" onclick="runJourney()"><i class="ti ti-player-play" style="font-size:13px"></i>Narrate this journey</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~20 sec</span></div>
     <div class="status" id="jn-st"><div class="dots"><span></span><span></span><span></span></div><span>Mapping the experience…</span></div>
     <div id="jn-out" style="display:none;margin-top:12px;">
       <div class="jsum"><div class="js-top"><div><div class="js-pn" id="jno-p"></div><div class="js-sc" id="jno-s"></div></div><div><div style="font-size:10px;color:var(--text-light);margin-bottom:4px;text-align:right;text-transform:uppercase;letter-spacing:0.4px;">Sentiment</div><div class="sent-bar" id="jno-sent"></div></div></div><div class="js-hl" id="jno-hl"></div></div>
       <div id="jno-stages"></div>
       <div class="ins-card"><div class="ins-hdr"><i class="ti ti-bulb" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>PM insights</div><div class="ins-grid"><div class="ins-col"><div class="ins-lbl" style="color:#993C1D;"><i class="ti ti-alert-circle" style="font-size:12px"></i>Top pain points</div><div id="jno-pains"></div></div><div class="ins-col"><div class="ins-lbl" style="color:#085041;"><i class="ti ti-bulb" style="font-size:12px"></i>Opportunities</div><div id="jno-opps"></div></div><div class="ins-col"><div class="ins-lbl" style="color:#8B6E2E;"><i class="ti ti-chart-bar" style="font-size:12px"></i>Metrics to track</div><div id="jno-mets"></div></div></div></div>
-      <div class="acts">
-        <button class="act-btn" onclick="runJourney()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Regenerate</button>
-        <button class="act-btn" onclick="chatAsk('What is the highest-leverage product intervention from this journey map?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Highest intervention ↗</button>
-      </div>
+      <div class="acts"><button class="act-btn" onclick="runJourney()"><i class="ti ti-refresh" style="font-size:11px;vertical-align:-1px;margin-right:2px"></i>Regenerate</button><button class="act-btn" onclick="chatAsk('What is the highest-leverage product intervention from this journey map?');document.getElementById('assistant').scrollIntoView({behavior:'smooth'})">Highest intervention ↗</button></div>
     </div>
   </div>
 </div>
 
-<!-- AUTOMATION -->
 <div class="section reg" id="automation">
   <div class="container">
     <div class="sec-hdr"><span class="sec-title">Workflow automation lab</span><div class="sec-rule"></div></div>
@@ -694,10 +534,7 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
     <div id="w-prd" class="wp active">
       <div class="ibar"><div class="ibar-t"><strong>Personal workflow.</strong> Paste a feature brief → structured PRD in seconds. Saves 45–90 min.</div></div>
       <div class="fr"><div class="fl">Feature brief</div><textarea id="pb" rows="3" placeholder="e.g. Members should update payment method without calling — 23% of billing calls are about this."></textarea></div>
-      <div class="two-col">
-        <div class="fr"><div class="fl">Product type</div><select id="pt"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option></select></div>
-        <div class="fr"><div class="fl">Audience</div><select id="pa"><option>Medicare members (B2C)</option><option>Health plan admins (B2B)</option><option>Contact center agents</option><option>Clinical staff</option></select></div>
-      </div>
+      <div class="two-col"><div class="fr"><div class="fl">Product type</div><select id="pt"><option>Member self-service portal</option><option>Contact center platform</option><option>Mobile health app</option><option>Internal ops tool</option></select></div><div class="fr"><div class="fl">Audience</div><select id="pa"><option>Medicare members (B2C)</option><option>Health plan admins (B2B)</option><option>Contact center agents</option><option>Clinical staff</option></select></div></div>
       <div class="btn-row"><button class="run-btn" id="pb-btn" onclick="runPRD()"><i class="ti ti-wand" style="font-size:13px"></i>Generate PRD</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec</span></div>
       <div class="status" id="pb-st"><div class="dots"><span></span><span></span><span></span></div><span>Drafting PRD…</span></div>
       <div class="ocard" id="pb-out"><div class="ohdr"><span class="olbl">Generated PRD</span><div class="oacts"><button class="ab" onclick="cp('pb-body')">Copy</button></div></div><div class="obody" id="pb-body"></div></div>
@@ -705,10 +542,7 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
     <div id="w-us" class="wp">
       <div class="ibar"><div class="ibar-t"><strong>Personal workflow.</strong> Feature idea → role-based user stories with acceptance criteria. Ready for Jira.</div></div>
       <div class="fr"><div class="fl">Feature idea</div><textarea id="ub" rows="2" placeholder="e.g. Members can view explanation of benefits history, filterable by date and claim type."></textarea></div>
-      <div class="two-col">
-        <div class="fr"><div class="fl">Epic</div><select id="ue"><option>Member self-service</option><option>Billing &amp; payments</option><option>AI &amp; automation</option><option>Agent tools</option></select></div>
-        <div class="fr"><div class="fl">Stories</div><select id="uc"><option>3 stories</option><option>5 stories</option></select></div>
-      </div>
+      <div class="two-col"><div class="fr"><div class="fl">Epic</div><select id="ue"><option>Member self-service</option><option>Billing &amp; payments</option><option>AI &amp; automation</option><option>Agent tools</option></select></div><div class="fr"><div class="fl">Stories</div><select id="uc"><option>3 stories</option><option>5 stories</option></select></div></div>
       <div class="btn-row"><button class="run-btn" id="ub-btn" onclick="runUS()"><i class="ti ti-cards" style="font-size:13px"></i>Write user stories</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~12 sec</span></div>
       <div class="status" id="ub-st"><div class="dots"><span></span><span></span><span></span></div><span>Writing stories…</span></div>
       <div class="ocard" id="ub-out"><div class="ohdr"><span class="olbl">User stories</span><div class="oacts"><button class="ab" onclick="cp('ub-raw')">Copy</button></div></div><div id="ub-body" class="sgrid" style="padding:14px;"></div><div id="ub-raw" style="display:none;"></div></div>
@@ -723,10 +557,7 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
     </div>
     <div id="w-comp" class="wp">
       <div class="ibar"><div class="ibar-t"><strong>Personal workflow.</strong> Describe your product and a competitor → frank competitive snapshot with strategic questions.</div></div>
-      <div class="two-col">
-        <div class="fr"><div class="fl">Your product</div><textarea id="cy" rows="2" placeholder="e.g. AI-powered self-service for Medicare members — resolves billing questions without agent intervention."></textarea></div>
-        <div class="fr"><div class="fl">Competitor</div><textarea id="ct" rows="2" placeholder="e.g. Enterprise conversational AI vendor focused on healthcare contact centers."></textarea></div>
-      </div>
+      <div class="two-col"><div class="fr"><div class="fl">Your product</div><textarea id="cy" rows="2" placeholder="e.g. AI-powered self-service for Medicare members — resolves billing questions without agent intervention."></textarea></div><div class="fr"><div class="fl">Competitor</div><textarea id="ct" rows="2" placeholder="e.g. Enterprise conversational AI vendor focused on healthcare contact centers."></textarea></div></div>
       <div class="btn-row"><button class="run-btn" id="cy-btn" onclick="runComp()"><i class="ti ti-chart-bar" style="font-size:13px"></i>Generate snapshot</button><span class="tnote"><i class="ti ti-clock" style="font-size:11px"></i>~15 sec</span></div>
       <div class="status" id="cy-st"><div class="dots"><span></span><span></span><span></span></div><span>Analyzing…</span></div>
       <div class="ocard" id="cy-out"><div class="ohdr"><span class="olbl">Competitive snapshot</span><div class="oacts"><button class="ab" onclick="cp('cy-body')">Copy</button></div></div><div class="obody" id="cy-body"></div></div>
@@ -734,16 +565,13 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
   </div>
 </div>
 
-<!-- ASSISTANT -->
 <div class="section alt" id="assistant">
   <div class="container">
     <div class="sec-hdr"><span class="sec-title">AI assistant</span><div class="sec-rule"></div></div>
-    <div class="sec-sub">Ask anything about Kelly's background, PM approach, or how she thinks through product problems</div>
+    <div class="sec-sub">Ask anything about Kelly’s background, PM approach, or how she thinks through product problems</div>
     <div class="cwrap">
-      <div class="chdr"><div class="ldot"></div><span style="font-size:12px;font-weight:500;color:#E8E4D9;">Kelly's portfolio assistant</span><span style="font-size:10px;color:#6B7280;margin-left:auto;letter-spacing:0.3px;text-transform:uppercase;">Powered by Claude</span></div>
-      <div class="cmsgs" id="cmsgs">
-        <div class="msg ai"><div class="mav aiav"><i class="ti ti-robot" style="font-size:11px"></i></div><div class="bub">Hi — I'm Kelly's portfolio assistant. Ask me about her 15+ years in healthcare PM, her work on AI-enabled platforms, or how she thinks through product problems.</div></div>
-      </div>
+      <div class="chdr"><div class="ldot"></div><span style="font-size:12px;font-weight:500;color:#E8E4D9;">Kelly’s portfolio assistant</span><span style="font-size:10px;color:#6B7280;margin-left:auto;letter-spacing:0.3px;text-transform:uppercase;">Powered by Claude</span></div>
+      <div class="cmsgs" id="cmsgs"><div class="msg ai"><div class="mav aiav"><i class="ti ti-robot" style="font-size:11px"></i></div><div class="bub">Hi — I’m Kelly’s portfolio assistant. Ask me about her 15+ years in healthcare PM, her work on AI-enabled platforms, or how she thinks through product problems.</div></div></div>
       <div class="csuggs">
         <button class="cs4" onclick="chatAsk('Tell me about the AI summarization project and the decisions you made.')">AI summarization project</button>
         <button class="cs4" onclick="chatAsk('How do you approach discovery when data and users tell you different things?')">Discovery approach</button>
@@ -751,10 +579,7 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
         <button class="cs4" onclick="chatAsk('Why would your healthcare experience translate to a different industry?')">Cross-industry fit</button>
         <button class="cs4" onclick="chatAsk('What is your PM philosophy in your own words?')">PM philosophy</button>
       </div>
-      <div class="cfoot">
-        <input type="text" class="cin" id="cin" placeholder="Ask about experience, approach, leadership…" onkeydown="if(event.key==='Enter')sendChat()" />
-        <button class="csend" onclick="sendChat()">Send</button>
-      </div>
+      <div class="cfoot"><input type="text" class="cin" id="cin" placeholder="Ask about experience, approach, leadership…" onkeydown="if(event.key==='Enter')sendChat()" /><button class="csend" onclick="sendChat()">Send</button></div>
     </div>
   </div>
 </div>
@@ -762,30 +587,15 @@ At home, I'm a mother to a beautiful, talented daughter and twin teenage boys, a
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">Kelly <span>Mello</span></div>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/kelly-mello-9384102/" target="_blank" class="footer-link">LinkedIn</a>
-      <a href="mailto:KellyMelloPM@outlook.com" class="footer-link">Email</a>
-    </div>
+    <div class="footer-links"><a href="https://www.linkedin.com/in/kelly-mello-9384102/" target="_blank" class="footer-link">LinkedIn</a><a href="mailto:KellyMelloPM@outlook.com" class="footer-link">Email</a></div>
   </div>
   <div class="footer-copy">Design: HTML5 UP (Dimension template, adapted)</div>
 </footer>
 
 <script>
-// NAV ACTIVE STATE ON SCROLL
-const sections = ['about','cases','personas','aitools','automation','assistant'];
-window.addEventListener('scroll', () => {
-  let current = 'about';
-  sections.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && window.scrollY >= el.offsetTop - 80) current = id;
-  });
-  document.querySelectorAll('.nl').forEach(l => {
-    l.classList.toggle('active', l.getAttribute('href') === '#'+current);
-  });
-});
-
+const sections=['about','cases','personas','aitools','automation','assistant'];
+window.addEventListener('scroll',()=>{let c='about';sections.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-80)c=id;});document.querySelectorAll('.nl').forEach(l=>{l.classList.toggle('active',l.getAttribute('href')==='#'+c);});});
 function showP(id){document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.pc').forEach(c=>c.classList.remove('active'));document.getElementById('p-'+id).classList.add('active');event.target.classList.add('active');}
-function wTab(id){document.querySelectorAll('.wp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.wt').forEach(t=>t.classList.remove('active'));document.getElementById('w-'+id).classList.add('active');event.target.classList.add('active');}
 function wTab2(id){document.querySelectorAll('.wp').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.wt').forEach(t=>t.classList.remove('active'));document.getElementById('w-'+id).classList.add('active');document.getElementById('wt-'+id).classList.add('active');}
 function toggleDD(menuId,e){e.preventDefault();const m=document.getElementById(menuId);const isOpen=m.style.display==='block';document.querySelectorAll('.ddmenu').forEach(d=>d.style.display='none');m.style.display=isOpen?'none':'block';}
 function closeDD(menuId){document.getElementById(menuId).style.display='none';}
@@ -793,174 +603,33 @@ document.addEventListener('click',function(e){if(!e.target.closest('#dd-ai')&&!e
 function cp(id){navigator.clipboard.writeText(document.getElementById(id).innerText||'').catch(()=>{});}
 function setR(b,s,on){document.getElementById(b).disabled=on;document.getElementById(s).style.display=on?'flex':'none';}
 function showO(id){document.getElementById(id).style.display='block';}
-
-async function api(sys,msg,maxT=1000){
-  const r=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:maxT,system:sys,messages:[{role:'user',content:msg}]})});
-  if(!r.ok){const e=await r.json();throw new Error(JSON.stringify(e));}
-  const d=await r.json();return d.content?.[0]?.text||'';
-}
-
-// PERSONA GENERATOR
+async function api(sys,msg,maxT=1000){const r=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:maxT,system:sys,messages:[{role:'user',content:msg}]})});if(!r.ok){const e=await r.json();throw new Error(JSON.stringify(e));}const d=await r.json();return d.content?.[0]?.text||'';}
 const AVC={blue:['rgba(185,148,63,0.1)','#8B6E2E'],teal:['rgba(29,158,117,0.1)','#085041'],amber:['rgba(185,148,63,0.1)','#B8943F'],coral:['rgba(216,90,48,0.1)','#712B13'],purple:['rgba(83,74,183,0.1)','#3C3489']};
 let curN='';
 function spg(t){document.getElementById('gin').value=t;}
 function li(id,arr){document.getElementById(id).innerHTML=arr.map(i=>`<li>${i}</li>`).join('');}
-async function genP(){
-  const prompt=document.getElementById('gin').value.trim();if(!prompt){document.getElementById('gin').focus();return;}
-  document.getElementById('gbtn').disabled=true;document.getElementById('gst').style.display='flex';document.getElementById('pout').style.display='none';
-  const sys=`You are a senior PM with 15+ years in healthcare. Generate a realistic user persona as JSON only. No markdown. Schema: {"name":"Full Name","role":"Title · Company · Age","initials":"2 letters","avatarColor":"blue|teal|amber|coral|purple","badges":["2-3 tags"],"quote":"Vivid first-person quote 1-2 sentences","goals":["3 goals"],"frustrations":["3 frustrations"],"behaviors":["3 behaviors"],"drivers":["3 decision drivers"],"opportunities":["3-4 product opportunities 4-8 words each"]}`;
-  try{
-    const raw=await api(sys,prompt);
-    const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    curN=p.name;
-    const c=AVC[p.avatarColor]||AVC.blue;
-    const av=document.getElementById('poav');
-    av.textContent=p.initials;
-    av.style.cssText=`width:42px;height:42px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;font-family:'Playfair Display',serif;background:${c[0]};color:${c[1]};border:1px solid ${c[1]}44;`;
-    document.getElementById('ponm').textContent=p.name;document.getElementById('poro').textContent=p.role;
-    document.getElementById('poq').textContent='\u201C'+p.quote+'\u201D';
-    document.getElementById('pobg').innerHTML=p.badges.map(b=>`<span class="pb">${b}</span>`).join('');
-    li('pogo',p.goals);li('pofr',p.frustrations);li('pobe',p.behaviors);li('podr',p.drivers);
-    document.getElementById('pooc').innerHTML=p.opportunities.map(o=>`<span class="opc">${o}</span>`).join('');
-    document.getElementById('pout').style.display='block';
-  }catch(e){alert('Error — please try again.');}
-  document.getElementById('gst').style.display='none';document.getElementById('gbtn').disabled=false;
-}
-
-// RICE SCORER
+async function genP(){const prompt=document.getElementById('gin').value.trim();if(!prompt){document.getElementById('gin').focus();return;}document.getElementById('gbtn').disabled=true;document.getElementById('gst').style.display='flex';document.getElementById('pout').style.display='none';const sys=`You are a senior PM with 15+ years in healthcare. Generate a realistic user persona as JSON only. No markdown. Schema: {"name":"Full Name","role":"Title · Company · Age","initials":"2 letters","avatarColor":"blue|teal|amber|coral|purple","badges":["2-3 tags"],"quote":"Vivid first-person quote 1-2 sentences","goals":["3 goals"],"frustrations":["3 frustrations"],"behaviors":["3 behaviors"],"drivers":["3 decision drivers"],"opportunities":["3-4 product opportunities 4-8 words each"]}`;try{const raw=await api(sys,prompt);const p=JSON.parse(raw.replace(/\`\`\`json|\`\`\`/g,'').trim());curN=p.name;const c=AVC[p.avatarColor]||AVC.blue;const av=document.getElementById('poav');av.textContent=p.initials;av.style.cssText=`width:42px;height:42px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;font-family:'Playfair Display',serif;background:${c[0]};color:${c[1]};border:1px solid ${c[1]}44;`;document.getElementById('ponm').textContent=p.name;document.getElementById('poro').textContent=p.role;document.getElementById('poq').textContent='\u201C'+p.quote+'\u201D';document.getElementById('pobg').innerHTML=p.badges.map(b=>`<span class="pb">${b}</span>`).join('');li('pogo',p.goals);li('pofr',p.frustrations);li('pobe',p.behaviors);li('podr',p.drivers);document.getElementById('pooc').innerHTML=p.opportunities.map(o=>`<span class="opc">${o}</span>`).join('');document.getElementById('pout').style.display='block';}catch(e){alert('Error \u2014 please try again.');}document.getElementById('gst').style.display='none';document.getElementById('gbtn').disabled=false;}
 const VERDICTS=[{min:0,max:15,l:'Low priority',bg:'rgba(216,90,48,0.08)',c:'#993C1D',bd:'rgba(216,90,48,0.2)'},{min:15,max:35,l:'Worth exploring',bg:'rgba(185,148,63,0.08)',c:'#8B6E2E',bd:'rgba(185,148,63,0.2)'},{min:35,max:60,l:'Strong candidate',bg:'rgba(29,158,117,0.08)',c:'#085041',bd:'rgba(29,158,117,0.2)'},{min:60,max:999,l:'High priority',bg:'rgba(185,148,63,0.12)',c:'#6B4F1A',bd:'rgba(185,148,63,0.3)'}];
 const DC={R:{bar:'#B8943F',txt:'#8B6E2E'},I:{bar:'#1D9E75',txt:'#085041'},C:{bar:'#7B6BAA',txt:'#3C3489'},E:{bar:'#D85A30',txt:'#993C1D'}};
 function sri(t){document.getElementById('rice-in').value=t;}
-async function runRice(){
-  const feat=document.getElementById('rice-in').value.trim();if(!feat){document.getElementById('rice-in').focus();return;}
-  setR('rice-btn','rice-st',true);document.getElementById('rice-out').style.display='none';
-  const sys=`You are Kelly Mello, Senior PM. Score a feature using RICE: (Reach×Impact×Confidence)÷Effort. Reach 1-10, Impact 0.25/0.5/1/2/3, Confidence 0.1-1.0, Effort 1-12 person-months. Return JSON only: {"reach":7,"reach_reasoning":"...","impact":2,"impact_reasoning":"...","confidence":0.7,"confidence_reasoning":"...","effort":3,"effort_reasoning":"...","rice_score":16.3,"overall_reasoning":"2-3 sentences","arguments_for":["3 reasons"],"watch_out_for":["3 risks"],"discovery_questions":["3 questions"]}. Healthcare context. Honest scores.`;
-  try{
-    const raw=await api(sys,`Feature: ${feat}\nProduct: ${document.getElementById('rice-prod').value}\nGoal: ${document.getElementById('rice-goal').value}`);
-    const p=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    const sc=Math.round((p.reach*p.impact*p.confidence)/p.effort*10)/10;
-    const vd=VERDICTS.find(v=>sc>=v.min&&sc<v.max)||VERDICTS[0];
-    document.getElementById('ro-feat').textContent=feat.length>65?feat.slice(0,65)+'…':feat;
-    document.getElementById('ro-ctx').textContent=document.getElementById('rice-prod').value+' · '+document.getElementById('rice-goal').value;
-    document.getElementById('ro-score').textContent=sc;
-    document.getElementById('ro-verdict').innerHTML=`<span class="verdict" style="background:${vd.bg};color:${vd.c};border:0.5px solid ${vd.bd};">${vd.l}</span>`;
-    const dims=[{k:'R',n:'Reach',v:p.reach,max:10,fmt:p.reach,r:p.reach_reasoning},{k:'I',n:'Impact',v:p.impact,max:3,fmt:p.impact,r:p.impact_reasoning},{k:'C',n:'Confidence',v:p.confidence,max:1,fmt:Math.round(p.confidence*100)+'%',r:p.confidence_reasoning},{k:'E',n:'Effort',v:p.effort,max:12,fmt:p.effort+'mo',r:p.effort_reasoning}];
-    document.getElementById('ro-dims').innerHTML=dims.map(d=>{const pct=Math.round((d.k==='E'?(1-(d.v-1)/11):d.v/d.max)*100);const c=DC[d.k];return`<div class="dim"><div class="dim-hdr"><span class="dim-l" style="color:${c.txt};">${d.k} — ${d.n}</span><span class="dim-v" style="color:${c.txt};">${d.fmt}</span></div><div class="dim-bar"><div class="dim-fill" style="width:${pct}%;background:${c.bar};"></div></div><div class="dim-r">${d.r}</div></div>`;}).join('');
-    document.getElementById('ro-reason').textContent=p.overall_reasoning;
-    document.getElementById('ro-for').innerHTML=p.arguments_for.map(a=>`<div class="to-item">${a}</div>`).join('');
-    document.getElementById('ro-against').innerHTML=p.watch_out_for.map(a=>`<div class="to-item">${a}</div>`).join('');
-    document.getElementById('ro-qs').innerHTML=p.discovery_questions.map((q,i)=>`<div class="q-item"><span class="q-num">Q${i+1}</span><span>${q}</span></div>`).join('');
-    document.getElementById('rice-out').style.display='block';
-  }catch(e){alert('Error — please try again.');}
-  setR('rice-btn','rice-st',false);
-}
-
-// JOURNEY NARRATOR
-const JP={maria:{name:'Maria Martinez',desc:'Medicare Advantage member · Retired · Age 68',traits:'low digital confidence, payment anxiety, phone-first, relies on family, high call volume user',scenarios:['Receives a confusing billing statement and tries to understand what she owes','Premium payment fails and she receives a lapse warning letter','Tries to find out if a new prescription is covered under her plan']},david:{name:'David Kim',desc:'Contact center agent · 4 years tenure · Remote',traits:'power user, high workload, frustrated with context-switching, accuracy-first mindset',scenarios:['Handles a complex billing dispute while managing a queue of waiting callers','Tries a new AI assist tool for the first time during a live member call','Receives a call about a claim denial and needs to explain the appeals process']},priya:{name:'Priya Shah',desc:'Health plan operations manager · Regional payer · Age 43',traits:'economic buyer, outcome-focused, AI skeptic, sets hard success criteria before pilots',scenarios:['Evaluating a new AI self-service vendor for the member portal','Presenting quarterly call volume reduction results to her VP','Running a pilot for a new digital payment feature with her team']}};
+async function runRice(){const feat=document.getElementById('rice-in').value.trim();if(!feat){document.getElementById('rice-in').focus();return;}setR('rice-btn','rice-st',true);document.getElementById('rice-out').style.display='none';const sys=`You are Kelly Mello, Senior PM. Score a feature using RICE: (Reach×Impact×Confidence)÷Effort. Reach 1-10, Impact 0.25/0.5/1/2/3, Confidence 0.1-1.0, Effort 1-12 person-months. Return JSON only: {"reach":7,"reach_reasoning":"...","impact":2,"impact_reasoning":"...","confidence":0.7,"confidence_reasoning":"...","effort":3,"effort_reasoning":"...","rice_score":16.3,"overall_reasoning":"2-3 sentences","arguments_for":["3 reasons"],"watch_out_for":["3 risks"],"discovery_questions":["3 questions"]}. Healthcare context. Honest scores.`;try{const raw=await api(sys,`Feature: ${feat}\nProduct: ${document.getElementById('rice-prod').value}\nGoal: ${document.getElementById('rice-goal').value}`);const p=JSON.parse(raw.replace(/\`\`\`json|\`\`\`/g,'').trim());const sc=Math.round((p.reach*p.impact*p.confidence)/p.effort*10)/10;const vd=VERDICTS.find(v=>sc>=v.min&&sc<v.max)||VERDICTS[0];document.getElementById('ro-feat').textContent=feat.length>65?feat.slice(0,65)+'\u2026':feat;document.getElementById('ro-ctx').textContent=document.getElementById('rice-prod').value+' \xb7 '+document.getElementById('rice-goal').value;document.getElementById('ro-score').textContent=sc;document.getElementById('ro-verdict').innerHTML=`<span class="verdict" style="background:${vd.bg};color:${vd.c};border:0.5px solid ${vd.bd};">${vd.l}</span>`;const dims=[{k:'R',n:'Reach',v:p.reach,max:10,fmt:p.reach,r:p.reach_reasoning},{k:'I',n:'Impact',v:p.impact,max:3,fmt:p.impact,r:p.impact_reasoning},{k:'C',n:'Confidence',v:p.confidence,max:1,fmt:Math.round(p.confidence*100)+'%',r:p.confidence_reasoning},{k:'E',n:'Effort',v:p.effort,max:12,fmt:p.effort+'mo',r:p.effort_reasoning}];document.getElementById('ro-dims').innerHTML=dims.map(d=>{const pct=Math.round((d.k==='E'?(1-(d.v-1)/11):d.v/d.max)*100);const c=DC[d.k];return`<div class="dim"><div class="dim-hdr"><span class="dim-l" style="color:${c.txt};">${d.k} \u2014 ${d.n}</span><span class="dim-v" style="color:${c.txt};">${d.fmt}</span></div><div class="dim-bar"><div class="dim-fill" style="width:${pct}%;background:${c.bar};"></div></div><div class="dim-r">${d.r}</div></div>`;}).join('');document.getElementById('ro-reason').textContent=p.overall_reasoning;document.getElementById('ro-for').innerHTML=p.arguments_for.map(a=>`<div class="to-item">${a}</div>`).join('');document.getElementById('ro-against').innerHTML=p.watch_out_for.map(a=>`<div class="to-item">${a}</div>`).join('');document.getElementById('ro-qs').innerHTML=p.discovery_questions.map((q,i)=>`<div class="q-item"><span class="q-num">Q${i+1}</span><span>${q}</span></div>`).join('');document.getElementById('rice-out').style.display='block';}catch(e){alert('Error \u2014 please try again.');}setR('rice-btn','rice-st',false);}
+const JP={maria:{name:'Maria Martinez',desc:'Medicare Advantage member \xb7 Retired \xb7 Age 68',traits:'low digital confidence, payment anxiety, phone-first, relies on family, high call volume user',scenarios:['Receives a confusing billing statement and tries to understand what she owes','Premium payment fails and she receives a lapse warning letter','Tries to find out if a new prescription is covered under her plan']},david:{name:'David Kim',desc:'Contact center agent \xb7 4 years tenure \xb7 Remote',traits:'power user, high workload, frustrated with context-switching, accuracy-first mindset',scenarios:['Handles a complex billing dispute while managing a queue of waiting callers','Tries a new AI assist tool for the first time during a live member call','Receives a call about a claim denial and needs to explain the appeals process']},priya:{name:'Priya Shah',desc:'Health plan operations manager \xb7 Regional payer \xb7 Age 43',traits:'economic buyer, outcome-focused, AI skeptic, sets hard success criteria before pilots',scenarios:['Evaluating a new AI self-service vendor for the member portal','Presenting quarterly call volume reduction results to her VP','Running a pilot for a new digital payment feature with her team']}};
 let curJP='maria';
 const EC={frustrated:'#D85A30',anxious:'#D85A30',confused:'#B8943F',neutral:'#9B9589',hopeful:'#1D9E75',relieved:'#1D9E75',satisfied:'#1D9E75',confident:'#B8943F',overwhelmed:'#D85A30',skeptical:'#B8943F'};
 function gec(e){const k=Object.keys(EC).find(k=>e.toLowerCase().includes(k));return k?EC[k]:'#9B9589';}
 function selJP(el,id){document.querySelectorAll('.pp-card').forEach(c=>c.classList.remove('active'));el.classList.add('active');curJP=id;updJChips();document.getElementById('jn-in').value='';}
-function updJChips(){const p=JP[curJP];document.getElementById('jn-chips').innerHTML=p.scenarios.map(s=>`<button class="chip" onclick="document.getElementById('jn-in').value=this.dataset.s" data-s="${s}">${s.length>52?s.slice(0,52)+'…':s}</button>`).join('');}
+function updJChips(){const p=JP[curJP];document.getElementById('jn-chips').innerHTML=p.scenarios.map(s=>`<button class="chip" onclick="document.getElementById('jn-in').value=this.dataset.s" data-s="${s}">${s.length>52?s.slice(0,52)+'\u2026':s}</button>`).join('');}
 function toggleStage(i){const b=document.getElementById('jns-'+i);const c=document.getElementById('jnc-'+i);const o=b.classList.contains('open');b.classList.toggle('open',!o);c.classList.toggle('open',!o);}
-async function runJourney(){
-  const sc=document.getElementById('jn-in').value.trim();if(!sc){document.getElementById('jn-in').focus();return;}
-  setR('jn-btn','jn-st',true);document.getElementById('jn-out').style.display='none';
-  const p=JP[curJP];const n=parseInt(document.getElementById('jn-stages').value);const jt=document.getElementById('jn-type').value;
-  const sys=`You are Kelly Mello, Senior PM. Narrate a customer journey as JSON only. Schema: {"headline":"1-2 sentence emotional arc","overall_sentiment":"positive|mixed|negative","sentiment_score":3,"stages":[{"name":"Stage name","emotion":"one word","emotion_intensity":3,"what_happens":"2-3 sentences","internal_monologue":"1 sentence","touchpoints":["2-3 items"],"pain_points":["1-2 or empty"],"opportunities":["1-2 or empty"]}],"top_pain_points":["3"],"product_opportunities":["3"],"metrics_to_track":["3"]}. Exactly ${n} stages. Emotion intensity 1-5. Sentiment score 1-5. Healthcare context.`;
-  try{
-    const raw=await api(sys,`Persona: ${p.name} — ${p.desc}\nTraits: ${p.traits}\nScenario: ${sc}\nJourney type: ${jt}`,1500);
-    const j=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    document.getElementById('jno-p').textContent=p.name+' — '+p.desc;
-    document.getElementById('jno-s').textContent=sc;
-    document.getElementById('jno-hl').textContent=j.headline;
-    const sc2=Math.max(1,Math.min(5,Math.round(j.sentiment_score)));
-    const scols=['#D85A30','#B8943F','#9B9589','#1D9E75','#8B6E2E'];
-    document.getElementById('jno-sent').innerHTML=[1,2,3,4,5].map(i=>`<div class="sent-dot" style="background:${i<=sc2?scols[sc2-1]:'var(--border-light)'};"></div>`).join('');
-    const stcols=['#B8943F','#1D9E75','#7B6BAA','#D85A30','#4A9EBF'];
-    document.getElementById('jno-stages').innerHTML=j.stages.map((s,i)=>{const ec=gec(s.emotion);const sc3=stcols[i%stcols.length];const ity=Math.max(1,Math.min(5,s.emotion_intensity));return`<div class="stage-card"><div class="sh" onclick="toggleStage(${i})"><div class="snum" style="background:${sc3}18;color:${sc3};border:0.5px solid ${sc3}33;">${i+1}</div><span class="snm">${s.name}</span><span class="semo" style="background:${ec}12;color:${ec};border:0.5px solid ${ec}2A;">${s.emotion} ${'●'.repeat(ity)}${'○'.repeat(5-ity)}</span><i class="ti ti-chevron-down sch${i===0?' open':''}" id="jnc-${i}"></i></div><div class="sb${i===0?' open':''}" id="jns-${i}"><div class="ss"><div class="ssl">What happens</div><div class="st">${s.what_happens}</div></div><div class="ss"><div class="ssl">Internal monologue</div><div class="st" style="font-style:italic;color:var(--text-light);font-family:'Playfair Display',serif;">"${s.internal_monologue}"</div></div><div class="ss"><div class="ssl">Touchpoints</div><div class="schips">${s.touchpoints.map(t=>`<span class="pc2 touch">${t}</span>`).join('')}</div></div>${s.pain_points.length?`<div class="ss"><div class="ssl">Pain points</div><div class="schips">${s.pain_points.map(pp=>`<span class="pc2 pain"><i class="ti ti-alert-circle" style="font-size:11px"></i>${pp}</span>`).join('')}</div></div>`:''} ${s.opportunities.length?`<div class="ss"><div class="ssl">Opportunities</div><div class="schips">${s.opportunities.map(o=>`<span class="pc2 opp"><i class="ti ti-bulb" style="font-size:11px"></i>${o}</span>`).join('')}</div></div>`:''}</div></div>`;}).join('');
-    document.getElementById('jno-pains').innerHTML=j.top_pain_points.map(pp=>`<div class="ins-item">${pp}</div>`).join('');
-    document.getElementById('jno-opps').innerHTML=j.product_opportunities.map(o=>`<div class="ins-item">${o}</div>`).join('');
-    document.getElementById('jno-mets').innerHTML=j.metrics_to_track.map(m=>`<div class="ins-item">${m}</div>`).join('');
-    document.getElementById('jn-out').style.display='block';
-  }catch(e){alert('Error — please try again.');}
-  setR('jn-btn','jn-st',false);
-}
+async function runJourney(){const sc=document.getElementById('jn-in').value.trim();if(!sc){document.getElementById('jn-in').focus();return;}setR('jn-btn','jn-st',true);document.getElementById('jn-out').style.display='none';const p=JP[curJP];const n=parseInt(document.getElementById('jn-stages').value);const jt=document.getElementById('jn-type').value;const sys=`You are Kelly Mello, Senior PM. Narrate a customer journey as JSON only. Schema: {"headline":"1-2 sentence emotional arc","overall_sentiment":"positive|mixed|negative","sentiment_score":3,"stages":[{"name":"Stage name","emotion":"one word","emotion_intensity":3,"what_happens":"2-3 sentences","internal_monologue":"1 sentence","touchpoints":["2-3 items"],"pain_points":["1-2 or empty"],"opportunities":["1-2 or empty"]}],"top_pain_points":["3"],"product_opportunities":["3"],"metrics_to_track":["3"]}. Exactly ${n} stages. Emotion intensity 1-5. Sentiment score 1-5. Healthcare context.`;try{const raw=await api(sys,`Persona: ${p.name} \u2014 ${p.desc}\nTraits: ${p.traits}\nScenario: ${sc}\nJourney type: ${jt}`,1500);const j=JSON.parse(raw.replace(/\`\`\`json|\`\`\`/g,'').trim());document.getElementById('jno-p').textContent=p.name+' \u2014 '+p.desc;document.getElementById('jno-s').textContent=sc;document.getElementById('jno-hl').textContent=j.headline;const sc2=Math.max(1,Math.min(5,Math.round(j.sentiment_score)));const scols=['#D85A30','#B8943F','#9B9589','#1D9E75','#8B6E2E'];document.getElementById('jno-sent').innerHTML=[1,2,3,4,5].map(i=>`<div class="sent-dot" style="background:${i<=sc2?scols[sc2-1]:'var(--border-light)'};"></div>`).join('');const stcols=['#B8943F','#1D9E75','#7B6BAA','#D85A30','#4A9EBF'];document.getElementById('jno-stages').innerHTML=j.stages.map((s,i)=>{const ec=gec(s.emotion);const sc3=stcols[i%stcols.length];const ity=Math.max(1,Math.min(5,s.emotion_intensity));return`<div class="stage-card"><div class="sh" onclick="toggleStage(${i})"><div class="snum" style="background:${sc3}18;color:${sc3};border:0.5px solid ${sc3}33;">${i+1}</div><span class="snm">${s.name}</span><span class="semo" style="background:${ec}12;color:${ec};border:0.5px solid ${ec}2A;">${s.emotion} ${'\u25cf'.repeat(ity)}${'\u25cb'.repeat(5-ity)}</span><i class="ti ti-chevron-down sch${i===0?' open':''}" id="jnc-${i}"></i></div><div class="sb${i===0?' open':''}" id="jns-${i}"><div class="ss"><div class="ssl">What happens</div><div class="st">${s.what_happens}</div></div><div class="ss"><div class="ssl">Internal monologue</div><div class="st" style="font-style:italic;color:var(--text-light);font-family:'Playfair Display',serif;">"${s.internal_monologue}"</div></div><div class="ss"><div class="ssl">Touchpoints</div><div class="schips">${s.touchpoints.map(t=>`<span class="pc2 touch">${t}</span>`).join('')}</div></div>${s.pain_points.length?`<div class="ss"><div class="ssl">Pain points</div><div class="schips">${s.pain_points.map(pp=>`<span class="pc2 pain"><i class="ti ti-alert-circle" style="font-size:11px"></i>${pp}</span>`).join('')}</div></div>`:''} ${s.opportunities.length?`<div class="ss"><div class="ssl">Opportunities</div><div class="schips">${s.opportunities.map(o=>`<span class="pc2 opp"><i class="ti ti-bulb" style="font-size:11px"></i>${o}</span>`).join('')}</div></div>`:''}</div></div>`;}).join('');document.getElementById('jno-pains').innerHTML=j.top_pain_points.map(pp=>`<div class="ins-item">${pp}</div>`).join('');document.getElementById('jno-opps').innerHTML=j.product_opportunities.map(o=>`<div class="ins-item">${o}</div>`).join('');document.getElementById('jno-mets').innerHTML=j.metrics_to_track.map(m=>`<div class="ins-item">${m}</div>`).join('');document.getElementById('jn-out').style.display='block';}catch(e){alert('Error \u2014 please try again.');}setR('jn-btn','jn-st',false);}
 updJChips();
-
-// WORKFLOW TOOLS
-async function runPRD(){
-  const b=document.getElementById('pb').value.trim();if(!b){document.getElementById('pb').focus();return;}
-  setR('pb-btn','pb-st',true);
-  const sys=`You are a senior PM with 15+ years in healthcare. Write a concise PRD. Sections: ## Overview, ## Problem statement, ## Goals & success metrics, ## User stories (3 brief), ## Out of scope, ## Open questions. 350 words max.`;
-  try{const o=await api(sys,`Brief: ${b}\nProduct: ${document.getElementById('pt').value}\nAudience: ${document.getElementById('pa').value}`);document.getElementById('pb-body').textContent=o;showO('pb-out');}catch(e){alert('Error.');}
-  setR('pb-btn','pb-st',false);
-}
-async function runUS(){
-  const b=document.getElementById('ub').value.trim();if(!b){document.getElementById('ub').focus();return;}
-  setR('ub-btn','ub-st',true);const n=parseInt(document.getElementById('uc').value);
-  const sys=`You are a senior PM. Generate user stories as JSON only. Schema: [{"role":"As a [user]","action":"I want to [action]","benefit":"so that [benefit]","points":3,"ac":["AC 1","AC 2","AC 3"]}]. Exactly ${n} stories. Points 1,2,3,5,8. Testable ACs. Healthcare context.`;
-  try{
-    const raw=await api(sys,`Feature: ${b}\nEpic: ${document.getElementById('ue').value}`);
-    const ss=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    document.getElementById('ub-raw').textContent=ss.map(s=>`${s.role}\n${s.action}\n${s.benefit}\n\nAC:\n${s.ac.map(a=>'• '+a).join('\n')}`).join('\n\n---\n\n');
-    document.getElementById('ub-body').innerHTML=ss.map(s=>`<div class="sc3"><div class="sh2"><span class="sr">${s.role}</span><span class="sp">${s.points}pts</span></div><div class="sb2"><div style="margin-bottom:7px;">${s.action} <span style="color:var(--text-light)">${s.benefit}</span></div><div style="font-size:9px;font-weight:500;color:#B8943F;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Acceptance criteria</div>${s.ac.map(a=>`<div class="acr"><i class="ti ti-check" style="font-size:11px;color:var(--teal)"></i><span>${a}</span></div>`).join('')}</div></div>`).join('');
-    showO('ub-out');
-  }catch(e){alert('Error.');}
-  setR('ub-btn','ub-st',false);
-}
-async function runRetro(){
-  const n=document.getElementById('rn').value.trim();if(!n){document.getElementById('rn').focus();return;}
-  setR('rn-btn','rn-st',true);
-  const sys=`Organize retro notes into JSON only. Schema: {"context":"1 sentence","wentWell":["3-4 items"],"improve":["3-4 items"],"actions":[{"item":"action","owner":"name or TBD"}]}. No markdown.`;
-  try{
-    const raw=await api(sys,`Notes:\n${n}\nContext: ${document.getElementById('rc').value||'Not provided'}`);
-    const r=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    document.getElementById('rn-raw').textContent=`Went well:\n${r.wentWell.map(i=>'• '+i).join('\n')}\n\nNeeds improvement:\n${r.improve.map(i=>'• '+i).join('\n')}\n\nActions:\n${r.actions.map(a=>`• ${a.item} [${a.owner}]`).join('\n')}`;
-    document.getElementById('rn-body').innerHTML=`<div style="font-size:11px;color:var(--text-light);margin-bottom:10px;">${r.context}</div><div class="rgrid"><div class="rc2"><div class="rch w"><i class="ti ti-thumb-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Went well</div><div class="ri">${r.wentWell.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch i"><i class="ti ti-arrow-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Needs improvement</div><div class="ri">${r.improve.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch a"><i class="ti ti-checkbox" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Action items</div><div class="ri">${r.actions.map(a=>`<div class="rit">${a.item}<div style="font-size:10px;color:var(--text-light);margin-top:2px;">${a.owner}</div></div>`).join('')}</div></div></div>`;
-    showO('rn-out');
-  }catch(e){alert('Error.');}
-  setR('rn-btn','rn-st',false);
-}
-async function runComp(){
-  const y=document.getElementById('cy').value.trim(),t=document.getElementById('ct').value.trim();
-  if(!y||!t){alert('Please fill in both fields.');return;}
-  setR('cy-btn','cy-st',true);
-  const sys=`You are a senior PM with healthcare product experience. Write a competitive snapshot. Sections: ## Positioning comparison, ## Their strengths, ## Your differentiated strengths, ## Gaps to watch, ## Strategic questions. Honest, specific. 300 words max.`;
-  try{const o=await api(sys,`Our product: ${y}\nCompetitor: ${t}`);document.getElementById('cy-body').textContent=o;showO('cy-out');}catch(e){alert('Error.');}
-  setR('cy-btn','cy-st',false);
-}
-
-// CHAT
-const CHAT_SYS=`You are an AI assistant in Kelly Mello's PM portfolio. Answer as Kelly in first person.
-
-Kelly's background:
-- 15+ years in product management; healthcare — large national health plans and pharmacy benefit management
-- Lead PM and Associate Director roles — end-to-end roadmaps across enterprise platforms and consumer products
-- Built AI post-interaction summarization tool → ~40% reduction in after-call work for contact center agents
-- Led billing/payment experience redesign → seven-figure LTV impact from reduced member churn
-- Drove 3.5% digital adoption lift in hard-to-reach Medicare segment via discovery-led redesign
-- Strong in: AI product development, omnichannel self-service, payments/billing UX, cross-functional alignment, growing PM talent
-- Uses JTBD for discovery, RICE for prioritization, outcome-based roadmaps
-- Agile/SAFe practitioner; enterprise cloud platforms, API-driven integrations
-- Open to industries beyond healthcare
-- PM philosophy: start with the human problem. Move fast on learning, slow on commitment.
-- Handles disagreement by anchoring on shared goals and data — never mentions specific employer names
-
-Answer conversationally, first person as Kelly. Max 3 sentences unless depth is needed.`;
-
+async function runPRD(){const b=document.getElementById('pb').value.trim();if(!b){document.getElementById('pb').focus();return;}setR('pb-btn','pb-st',true);const sys=`You are a senior PM with 15+ years in healthcare. Write a concise PRD. Sections: ## Overview, ## Problem statement, ## Goals & success metrics, ## User stories (3 brief), ## Out of scope, ## Open questions. 350 words max.`;try{const o=await api(sys,`Brief: ${b}\nProduct: ${document.getElementById('pt').value}\nAudience: ${document.getElementById('pa').value}`);document.getElementById('pb-body').textContent=o;showO('pb-out');}catch(e){alert('Error.');}setR('pb-btn','pb-st',false);}
+async function runUS(){const b=document.getElementById('ub').value.trim();if(!b){document.getElementById('ub').focus();return;}setR('ub-btn','ub-st',true);const n=parseInt(document.getElementById('uc').value);const sys=`You are a senior PM. Generate user stories as JSON only. Schema: [{"role":"As a [user]","action":"I want to [action]","benefit":"so that [benefit]","points":3,"ac":["AC 1","AC 2","AC 3"]}]. Exactly ${n} stories. Points 1,2,3,5,8. Testable ACs. Healthcare context.`;try{const raw=await api(sys,`Feature: ${b}\nEpic: ${document.getElementById('ue').value}`);const ss=JSON.parse(raw.replace(/\`\`\`json|\`\`\`/g,'').trim());document.getElementById('ub-raw').textContent=ss.map(s=>`${s.role}\n${s.action}\n${s.benefit}\n\nAC:\n${s.ac.map(a=>'\u2022 '+a).join('\n')}`).join('\n\n---\n\n');document.getElementById('ub-body').innerHTML=ss.map(s=>`<div class="sc3"><div class="sh2"><span class="sr">${s.role}</span><span class="sp">${s.points}pts</span></div><div class="sb2"><div style="margin-bottom:7px;">${s.action} <span style="color:var(--text-light)">${s.benefit}</span></div><div style="font-size:9px;font-weight:500;color:#B8943F;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Acceptance criteria</div>${s.ac.map(a=>`<div class="acr"><i class="ti ti-check" style="font-size:11px;color:var(--teal)"></i><span>${a}</span></div>`).join('')}</div></div>`).join('');showO('ub-out');}catch(e){alert('Error.');}setR('ub-btn','ub-st',false);}
+async function runRetro(){const n=document.getElementById('rn').value.trim();if(!n){document.getElementById('rn').focus();return;}setR('rn-btn','rn-st',true);const sys=`Organize retro notes into JSON only. Schema: {"context":"1 sentence","wentWell":["3-4 items"],"improve":["3-4 items"],"actions":[{"item":"action","owner":"name or TBD"}]}. No markdown.`;try{const raw=await api(sys,`Notes:\n${n}\nContext: ${document.getElementById('rc').value||'Not provided'}`);const r=JSON.parse(raw.replace(/\`\`\`json|\`\`\`/g,'').trim());document.getElementById('rn-raw').textContent=`Went well:\n${r.wentWell.map(i=>'\u2022 '+i).join('\n')}\n\nNeeds improvement:\n${r.improve.map(i=>'\u2022 '+i).join('\n')}\n\nActions:\n${r.actions.map(a=>`\u2022 ${a.item} [${a.owner}]`).join('\n')}`;document.getElementById('rn-body').innerHTML=`<div style="font-size:11px;color:var(--text-light);margin-bottom:10px;">${r.context}</div><div class="rgrid"><div class="rc2"><div class="rch w"><i class="ti ti-thumb-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Went well</div><div class="ri">${r.wentWell.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch i"><i class="ti ti-arrow-up" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Needs improvement</div><div class="ri">${r.improve.map(i=>`<div class="rit">${i}</div>`).join('')}</div></div><div class="rc2"><div class="rch a"><i class="ti ti-checkbox" style="font-size:11px;vertical-align:-1px;margin-right:3px"></i>Action items</div><div class="ri">${r.actions.map(a=>`<div class="rit">${a.item}<div style="font-size:10px;color:var(--text-light);margin-top:2px;">${a.owner}</div></div>`).join('')}</div></div></div>`;showO('rn-out');}catch(e){alert('Error.');}setR('rn-btn','rn-st',false);}
+async function runComp(){const y=document.getElementById('cy').value.trim(),t=document.getElementById('ct').value.trim();if(!y||!t){alert('Please fill in both fields.');return;}setR('cy-btn','cy-st',true);const sys=`You are a senior PM with healthcare product experience. Write a competitive snapshot. Sections: ## Positioning comparison, ## Their strengths, ## Your differentiated strengths, ## Gaps to watch, ## Strategic questions. Honest, specific. 300 words max.`;try{const o=await api(sys,`Our product: ${y}\nCompetitor: ${t}`);document.getElementById('cy-body').textContent=o;showO('cy-out');}catch(e){alert('Error.');}setR('cy-btn','cy-st',false);}
+const CHAT_SYS=`You are an AI assistant in Kelly Mello's PM portfolio. Answer as Kelly in first person. Kelly's background: 15+ years in product management; healthcare. Lead PM and Associate Director roles. Built AI post-interaction summarization tool reducing after-call work ~40%. Led billing/payment experience redesign with seven-figure LTV impact. Drove 3.5% digital adoption lift in Medicare segment. Strong in: AI product development, omnichannel self-service, payments/billing UX, cross-functional alignment. Uses JTBD for discovery, RICE for prioritization. Agile/SAFe practitioner. Open to industries beyond healthcare. PM philosophy: start with the human problem. Never mentions specific employer names. Answer conversationally, first person as Kelly. Max 3 sentences unless depth is needed.`;
 const hist=[];
 function chatAsk(t){document.getElementById('cin').value=t;sendChat();}
-async function sendChat(){
-  const inp=document.getElementById('cin');const msg=inp.value.trim();if(!msg)return;inp.value='';
-  addM('u',msg);const typ=addTyp();
-  try{
-    const msgs=hist.map(m=>({role:m.r,content:m.c}));msgs.push({role:'user',content:msg});
-    const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:CHAT_SYS,messages:msgs})});
-    const d=await res.json();const reply=d.content?.[0]?.text||'Try again!';
-    hist.push({r:'user',c:msg},{r:'assistant',c:reply});typ.remove();addM('ai',reply);
-  }catch(e){typ.remove();addM('ai','Something went wrong — please try again.');}
-}
+async function sendChat(){const inp=document.getElementById('cin');const msg=inp.value.trim();if(!msg)return;inp.value='';addM('u',msg);const typ=addTyp();try{const msgs=hist.map(m=>({role:m.r,content:m.c}));msgs.push({role:'user',content:msg});const res=await fetch('/api/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1000,system:CHAT_SYS,messages:msgs})});const d=await res.json();const reply=d.content?.[0]?.text||'Try again!';hist.push({r:'user',c:msg},{r:'assistant',c:reply});typ.remove();addM('ai',reply);}catch(e){typ.remove();addM('ai','Something went wrong \u2014 please try again.');}}
 function addM(role,text){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='msg '+role;d.innerHTML=`<div class="mav ${role==='ai'?'aiav':'uav'}">${role==='ai'?'<i class="ti ti-robot" style="font-size:11px"></i>':'You'}</div><div class="bub">${text}</div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;}
 function addTyp(){const c=document.getElementById('cmsgs');const d=document.createElement('div');d.className='msg ai';d.innerHTML=`<div class="mav aiav"><i class="ti ti-robot" style="font-size:11px"></i></div><div class="typing"><span></span><span></span><span></span></div>`;c.appendChild(d);c.scrollTop=c.scrollHeight;return d;}
 </script>
